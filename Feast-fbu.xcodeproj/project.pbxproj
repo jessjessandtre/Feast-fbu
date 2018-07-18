@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0CAC103A1206E8ADA217B3DC /* libPods-Feast-fbu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE32C27C5AAC604438835E5A /* libPods-Feast-fbu.a */; };
 		2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981333720FFEDF6003FD11C /* AppDelegate.m */; };
 		2981333B20FFEDF6003FD11C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981333A20FFEDF6003FD11C /* ViewController.m */; };
 		2981333E20FFEDF6003FD11C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2981333C20FFEDF6003FD11C /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 		2981334620FFEDF7003FD11C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981334520FFEDF7003FD11C /* main.m */; };
 		2981335020FFEDF7003FD11C /* Feast_fbuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981334F20FFEDF7003FD11C /* Feast_fbuTests.m */; };
 		2981335B20FFEDF7003FD11C /* Feast_fbuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981335A20FFEDF7003FD11C /* Feast_fbuUITests.m */; };
+		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
+		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0AF6C67F8BBF30F171F9976E /* Pods-Feast-fbu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbu/Pods-Feast-fbu.release.xcconfig"; sourceTree = "<group>"; };
+		13387CB94CC3B84C1041C9C3 /* Pods-Feast-fbuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.release.xcconfig"; sourceTree = "<group>"; };
 		2981333320FFEDF6003FD11C /* Feast-fbu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feast-fbu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981333620FFEDF6003FD11C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2981333720FFEDF6003FD11C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -51,6 +56,13 @@
 		2981335620FFEDF7003FD11C /* Feast-fbuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feast-fbuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981335A20FFEDF7003FD11C /* Feast_fbuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feast_fbuUITests.m; sourceTree = "<group>"; };
 		2981335C20FFEDF7003FD11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
+		71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE32C27C5AAC604438835E5A /* libPods-Feast-fbu.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbu.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3992A16107A66DB09AA173D /* Pods-Feast-fbu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbu/Pods-Feast-fbu.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0CAC103A1206E8ADA217B3DC /* libPods-Feast-fbu.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0346B86568139D41B5D9A843 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE32C27C5AAC604438835E5A /* libPods-Feast-fbu.a */,
+				361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */,
+				B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2981332A20FFEDF6003FD11C = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +110,8 @@
 				2981334E20FFEDF7003FD11C /* Feast-fbuTests */,
 				2981335920FFEDF7003FD11C /* Feast-fbuUITests */,
 				2981333420FFEDF6003FD11C /* Products */,
+				6A95757E88ECF3E75303709E /* Pods */,
+				0346B86568139D41B5D9A843 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +159,19 @@
 			path = "Feast-fbuUITests";
 			sourceTree = "<group>";
 		};
+		6A95757E88ECF3E75303709E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F3992A16107A66DB09AA173D /* Pods-Feast-fbu.debug.xcconfig */,
+				0AF6C67F8BBF30F171F9976E /* Pods-Feast-fbu.release.xcconfig */,
+				71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */,
+				13387CB94CC3B84C1041C9C3 /* Pods-Feast-fbuTests.release.xcconfig */,
+				2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */,
+				6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -139,9 +179,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2981335F20FFEDF7003FD11C /* Build configuration list for PBXNativeTarget "Feast-fbu" */;
 			buildPhases = (
+				B896D46EF9F7E2D7E882F6F7 /* [CP] Check Pods Manifest.lock */,
 				2981332F20FFEDF6003FD11C /* Sources */,
 				2981333020FFEDF6003FD11C /* Frameworks */,
 				2981333120FFEDF6003FD11C /* Resources */,
+				CBFC46F935F7D9ECEC9945DF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -156,6 +198,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2981336220FFEDF7003FD11C /* Build configuration list for PBXNativeTarget "Feast-fbuTests" */;
 			buildPhases = (
+				5709B48E6941B00AA67A6081 /* [CP] Check Pods Manifest.lock */,
 				2981334720FFEDF7003FD11C /* Sources */,
 				2981334820FFEDF7003FD11C /* Frameworks */,
 				2981334920FFEDF7003FD11C /* Resources */,
@@ -174,6 +217,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2981336520FFEDF7003FD11C /* Build configuration list for PBXNativeTarget "Feast-fbuUITests" */;
 			buildPhases = (
+				2C4DBDDE06E7D7FA1ACE4900 /* [CP] Check Pods Manifest.lock */,
 				2981335220FFEDF7003FD11C /* Sources */,
 				2981335320FFEDF7003FD11C /* Frameworks */,
 				2981335420FFEDF7003FD11C /* Resources */,
@@ -256,6 +300,87 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C4DBDDE06E7D7FA1ACE4900 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Feast-fbuUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5709B48E6941B00AA67A6081 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Feast-fbuTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B896D46EF9F7E2D7E882F6F7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Feast-fbu-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CBFC46F935F7D9ECEC9945DF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Feast-fbu/Pods-Feast-fbu-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
+				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/pt-BR.lproj",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/pt-BR.lproj",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Feast-fbu/Pods-Feast-fbu-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2981332F20FFEDF6003FD11C /* Sources */ = {
@@ -431,6 +556,7 @@
 		};
 		2981336020FFEDF7003FD11C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F3992A16107A66DB09AA173D /* Pods-Feast-fbu.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -447,6 +573,7 @@
 		};
 		2981336120FFEDF7003FD11C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AF6C67F8BBF30F171F9976E /* Pods-Feast-fbu.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -463,6 +590,7 @@
 		};
 		2981336320FFEDF7003FD11C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -481,6 +609,7 @@
 		};
 		2981336420FFEDF7003FD11C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13387CB94CC3B84C1041C9C3 /* Pods-Feast-fbuTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -499,6 +628,7 @@
 		};
 		2981336620FFEDF7003FD11C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Feast-fbuUITests/Info.plist";
@@ -516,6 +646,7 @@
 		};
 		2981336720FFEDF7003FD11C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = "Feast-fbuUITests/Info.plist";
