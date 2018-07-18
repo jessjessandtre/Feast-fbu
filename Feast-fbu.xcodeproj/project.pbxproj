@@ -103,6 +103,29 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		297DED9020FFFA7500A469FA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		297DED9120FFFAB200A469FA /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				293D6A4720FFF0A800B2CF67 /* LoginViewController.h */,
+				293D6A4820FFF0A800B2CF67 /* LoginViewController.m */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		297DED9220FFFAB800A469FA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		2981332A20FFEDF6003FD11C = {
 			isa = PBXGroup;
 			children = (
@@ -128,11 +151,12 @@
 		2981333520FFEDF6003FD11C /* Feast-fbu */ = {
 			isa = PBXGroup;
 			children = (
+				297DED9220FFFAB800A469FA /* Views */,
+				297DED9120FFFAB200A469FA /* View Controllers */,
+				297DED9020FFFA7500A469FA /* Models */,
 				2981333620FFEDF6003FD11C /* AppDelegate.h */,
 				2981333720FFEDF6003FD11C /* AppDelegate.m */,
 				2981333C20FFEDF6003FD11C /* Main.storyboard */,
-				293D6A4720FFF0A800B2CF67 /* LoginViewController.h */,
-				293D6A4820FFF0A800B2CF67 /* LoginViewController.m */,
 				2981333F20FFEDF7003FD11C /* Assets.xcassets */,
 				2981334120FFEDF7003FD11C /* LaunchScreen.storyboard */,
 				2981334420FFEDF7003FD11C /* Info.plist */,
