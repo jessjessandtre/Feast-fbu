@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0CAC103A1206E8ADA217B3DC /* libPods-Feast-fbu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE32C27C5AAC604438835E5A /* libPods-Feast-fbu.a */; };
+		293D6A4920FFF0A800B2CF67 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 293D6A4820FFF0A800B2CF67 /* LoginViewController.m */; };
 		2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981333720FFEDF6003FD11C /* AppDelegate.m */; };
-		2981333B20FFEDF6003FD11C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981333A20FFEDF6003FD11C /* ViewController.m */; };
 		2981333E20FFEDF6003FD11C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2981333C20FFEDF6003FD11C /* Main.storyboard */; };
 		2981334020FFEDF7003FD11C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2981333F20FFEDF7003FD11C /* Assets.xcassets */; };
 		2981334320FFEDF7003FD11C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2981334120FFEDF7003FD11C /* LaunchScreen.storyboard */; };
@@ -40,11 +40,11 @@
 /* Begin PBXFileReference section */
 		0AF6C67F8BBF30F171F9976E /* Pods-Feast-fbu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbu/Pods-Feast-fbu.release.xcconfig"; sourceTree = "<group>"; };
 		13387CB94CC3B84C1041C9C3 /* Pods-Feast-fbuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.release.xcconfig"; sourceTree = "<group>"; };
+		293D6A4720FFF0A800B2CF67 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		293D6A4820FFF0A800B2CF67 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		2981333320FFEDF6003FD11C /* Feast-fbu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Feast-fbu.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981333620FFEDF6003FD11C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		2981333720FFEDF6003FD11C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		2981333920FFEDF6003FD11C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		2981333A20FFEDF6003FD11C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		2981333D20FFEDF6003FD11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2981333F20FFEDF7003FD11C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2981334220FFEDF7003FD11C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -130,9 +130,9 @@
 			children = (
 				2981333620FFEDF6003FD11C /* AppDelegate.h */,
 				2981333720FFEDF6003FD11C /* AppDelegate.m */,
-				2981333920FFEDF6003FD11C /* ViewController.h */,
-				2981333A20FFEDF6003FD11C /* ViewController.m */,
 				2981333C20FFEDF6003FD11C /* Main.storyboard */,
+				293D6A4720FFF0A800B2CF67 /* LoginViewController.h */,
+				293D6A4820FFF0A800B2CF67 /* LoginViewController.m */,
 				2981333F20FFEDF7003FD11C /* Assets.xcassets */,
 				2981334120FFEDF7003FD11C /* LaunchScreen.storyboard */,
 				2981334420FFEDF7003FD11C /* Info.plist */,
@@ -387,7 +387,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2981333B20FFEDF6003FD11C /* ViewController.m in Sources */,
+				293D6A4920FFF0A800B2CF67 /* LoginViewController.m in Sources */,
 				2981334620FFEDF7003FD11C /* main.m in Sources */,
 				2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */,
 			);
