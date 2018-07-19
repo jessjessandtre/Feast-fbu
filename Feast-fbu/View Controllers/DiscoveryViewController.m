@@ -44,8 +44,9 @@
     [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
         if (recipes) {
             self.recipes = recipes;
-            
             [self.recipeTableView reloadData];
+            
+
         }
         else {
             NSLog(@"%@", error.localizedDescription);

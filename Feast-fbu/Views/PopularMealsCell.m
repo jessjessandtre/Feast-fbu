@@ -9,6 +9,7 @@
 #import "PopularMealsCell.h"
 #import "Parse.h"
 #import "ParseUI.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation PopularMealsCell
 
@@ -27,7 +28,7 @@
     
     _recipe = recipe;
     
-    self.recipeImage.file = recipe.image;
+    self.recipeImage.file = recipe[@"image"];
     [self.recipeImage loadInBackground];
     
     self.recipeName.text = recipe.name;
