@@ -27,9 +27,9 @@
 		29CC25732101311900BD6C01 /* DetailedRecipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */; };
 		29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC2575210131EB00BD6C01 /* DetailViewController.m */; };
 		29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC257B210148EF00BD6C01 /* CreatePostViewController.m */; };
+		29CC257F2101539C00BD6C01 /* RecipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC257E2101539B00BD6C01 /* RecipeCollectionViewCell.m */; };
 		583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */; };
 		583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38321010E2D00A2C40F /* PopularMealsCell.m */; };
-		587400FA21014B80000425F3 /* RecipeTableViewCellHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 587400F921014B80000425F3 /* RecipeTableViewCellHeaderCell.m */; };
 		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
 		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
@@ -88,14 +88,14 @@
 		29CC2575210131EB00BD6C01 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		29CC257A210148EF00BD6C01 /* CreatePostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatePostViewController.h; sourceTree = "<group>"; };
 		29CC257B210148EF00BD6C01 /* CreatePostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
+		29CC257D2101539B00BD6C01 /* RecipeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionViewCell.h; sourceTree = "<group>"; };
+		29CC257E2101539B00BD6C01 /* RecipeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewCell.m; sourceTree = "<group>"; };
 		2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		583DD38021010E2D00A2C40F /* PopularMealsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularMealsCell.h; sourceTree = "<group>"; };
 		583DD38121010E2D00A2C40F /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
 		583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
 		583DD38321010E2D00A2C40F /* PopularMealsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularMealsCell.m; sourceTree = "<group>"; };
-		587400F821014B80000425F3 /* RecipeTableViewCellHeaderCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCellHeaderCell.h; sourceTree = "<group>"; };
-		587400F921014B80000425F3 /* RecipeTableViewCellHeaderCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCellHeaderCell.m; sourceTree = "<group>"; };
 		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -178,8 +178,8 @@
 				583DD38321010E2D00A2C40F /* PopularMealsCell.m */,
 				583DD38121010E2D00A2C40F /* RecipeTableViewCell.h */,
 				583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */,
-				587400F821014B80000425F3 /* RecipeTableViewCellHeaderCell.h */,
-				587400F921014B80000425F3 /* RecipeTableViewCellHeaderCell.m */,
+				29CC257D2101539B00BD6C01 /* RecipeCollectionViewCell.h */,
+				29CC257E2101539B00BD6C01 /* RecipeCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -479,9 +479,9 @@
 			files = (
 				2981334620FFEDF7003FD11C /* main.m in Sources */,
 				298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */,
-				587400FA21014B80000425F3 /* RecipeTableViewCellHeaderCell.m in Sources */,
 				2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */,
 				583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */,
+				29CC257F2101539C00BD6C01 /* RecipeCollectionViewCell.m in Sources */,
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
 				29CC2570210116F900BD6C01 /* Post.m in Sources */,
 				29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */,

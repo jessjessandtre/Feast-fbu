@@ -7,6 +7,8 @@
 //
 
 #import "ProfileViewController.h"
+#import "Post.h"
+#import "RecipeCollectionViewCell.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -14,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
+@property (strong, nonatomic) NSArray* posts;
 @end
 
 @implementation ProfileViewController
@@ -21,11 +24,45 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
+    [self fetchPosts];
+    
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    
+    layout.minimumInteritemSpacing = 5;
+    layout.minimumLineSpacing = 5;
+    
+    CGFloat postsPerLine = 3;
+    CGFloat itemWidth = (self.collectionView.frame.size.width -  layout.minimumInteritemSpacing * (postsPerLine - 1))/ postsPerLine;
+    CGFloat itemHeight = itemWidth;
+    layout.itemSize = CGSizeMake(itemWidth,itemHeight);
+    
+    [self.collectionView reloadData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)fetchPosts {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable parsePosts, NSError * _Nullable error) {
+        if (!error){
+            NSLog(@"fetched posts successfully");
+            self.posts = parsePosts;
+            [self.collectionView reloadData];
+        }
+        else {
+            NSLog(@"error fetching posts: %@", error.localizedDescription);
+
+        }
+    }];
+
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -40,13 +77,17 @@
     NSURL *posterURL  = [NSURL URLWithString:fullPosterURLString];
     cell.posterView.image = nil;
     [cell.posterView setImageWithURL:posterURL];*/
-    UICollectionViewCell* cell = [[UICollectionViewCell alloc] init];
+    
+    RecipeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipeCollectionViewCell" forIndexPath:indexPath];
+    Post* post = self.posts[indexPath.item];
+    cell.postImageView.file = post.image;
+    [cell.postImageView loadInBackground];
     return cell;
     
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 20;;
+    return self.posts.count;
 }
 /*
 #pragma mark - Navigation
