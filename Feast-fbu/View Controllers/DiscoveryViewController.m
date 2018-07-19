@@ -29,6 +29,8 @@
     self.recipeTableView.delegate = self;
     self.recipeTableView.dataSource = self;
     
+    self.recipeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+
     [self fetchRecipes];
 }
 
