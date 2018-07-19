@@ -40,6 +40,7 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ciC-T6-tlX">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="167"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.94114847720000006" green="0.67770251879999999" blue="0.72044893229999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFt-xO-eWZ">
                                                     <rect key="frame" x="15" y="135" width="259" height="21"/>
@@ -62,9 +63,6 @@
                         <viewLayoutGuide key="safeArea" id="NQN-s3-Mas"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Ud-AD-tqu"/>
-                    <connections>
-                        <outlet property="popularRecipesTableView" destination="MMA-SW-wKC" id="W4k-yl-hLL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TT-J3-pbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -88,7 +86,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOU-Kx-eF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3088" y="346"/>
+            <point key="canvasLocation" x="2762" y="346"/>
         </scene>
     </scenes>
 </document>

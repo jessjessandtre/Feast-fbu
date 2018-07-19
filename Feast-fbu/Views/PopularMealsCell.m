@@ -24,9 +24,12 @@
 }
 
 - (void)setRecipe:(Recipe *)recipe {
+    
     _recipe = recipe;
     
-    self.recipeImage.file = recipe[@"image"];
+    self.recipeImage.file = recipe.image;
+    [self.recipeImage loadInBackground];
+    
     self.recipeName.text = recipe.name;
     
 }

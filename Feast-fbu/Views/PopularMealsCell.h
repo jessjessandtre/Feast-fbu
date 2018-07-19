@@ -17,5 +17,6 @@
 @property (weak, nonatomic) IBOutlet PFImageView *recipeImage;
 @property (weak, nonatomic) IBOutlet UILabel *recipeName;
 
+- (void)setRecipe:(Recipe *)recipe;
 
 @end
