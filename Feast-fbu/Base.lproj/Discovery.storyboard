@@ -80,11 +80,11 @@
             </objects>
             <point key="canvasLocation" x="3313" y="-675"/>
         </scene>
-        <!--Discover-->
+        <!--Navigation Controller-->
         <scene sceneID="ao3-Fy-wYj">
             <objects>
                 <navigationController storyboardIdentifier="DiscoveryNavController" automaticallyAdjustsScrollViewInsets="NO" id="7ag-19-LRa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Discover" id="eNK-pr-Mhj"/>
+                    <tabBarItem key="tabBarItem" title="" image="Icon-29 (4)" selectedImage="Icon-29 (5)" id="eNK-pr-Mhj"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bD9-au-RbY">
@@ -101,4 +101,8 @@
             <point key="canvasLocation" x="1442.4000000000001" y="-640.02998500749629"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-29 (4)" width="29" height="29"/>
+        <image name="Icon-29 (5)" width="29" height="29"/>
+    </resources>
 </document>

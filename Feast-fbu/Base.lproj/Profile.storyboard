@@ -65,11 +65,11 @@
             </objects>
             <point key="canvasLocation" x="3592.8000000000002" y="562.66866566716647"/>
         </scene>
-        <!--Profile-->
+        <!--Navigation Controller-->
         <scene sceneID="cug-ba-FEj">
             <objects>
                 <navigationController storyboardIdentifier="ProfileNavController" automaticallyAdjustsScrollViewInsets="NO" id="zLS-dZ-QBZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="Ern-aE-tTD"/>
+                    <tabBarItem key="tabBarItem" title="" image="Icon-29" selectedImage="Icon-29 (1)" id="Ern-aE-tTD"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wY5-Bt-cwZ">
@@ -86,4 +86,8 @@
             <point key="canvasLocation" x="2653.5999999999999" y="562.66866566716647"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-29" width="29" height="29"/>
+        <image name="Icon-29 (1)" width="29" height="29"/>
+    </resources>
 </document>
