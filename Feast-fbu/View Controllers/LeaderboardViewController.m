@@ -48,7 +48,7 @@
 
 - (void)fetchPopularRecipes {
     PFQuery *recipeQuery = [Recipe query];
-    [recipeQuery orderByDescending:@"createdAt"];
+    [recipeQuery orderByDescending:@"numPosts"];
     recipeQuery.limit = 10;
     
     [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
