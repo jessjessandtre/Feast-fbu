@@ -63,11 +63,13 @@
             </objects>
             <point key="canvasLocation" x="3572" y="345.87706146926541"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Popular-->
         <scene sceneID="p77-Tx-ljU">
             <objects>
                 <navigationController storyboardIdentifier="LeaderboardNavController" automaticallyAdjustsScrollViewInsets="NO" id="Etm-gu-Hsl" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Popular" id="ywP-2x-loV"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="woz-sA-3Vd">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -26,11 +26,13 @@
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="-640.02998500749629"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Discover-->
         <scene sceneID="ao3-Fy-wYj">
             <objects>
                 <navigationController storyboardIdentifier="DiscoveryNavController" automaticallyAdjustsScrollViewInsets="NO" id="7ag-19-LRa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" id="eNK-pr-Mhj"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bD9-au-RbY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
