@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
+#import "ParseUI.h"
 
 @interface PopularMealsCell : UITableViewCell
+
+@property (strong, nonatomic) Recipe * recipe;
+
+@property (weak, nonatomic) IBOutlet PFImageView *recipeImage;
+@property (weak, nonatomic) IBOutlet UILabel *recipeName;
+
 
 @end

@@ -7,6 +7,8 @@
 //
 
 #import "PopularMealsCell.h"
+#import "Parse.h"
+#import "ParseUI.h"
 
 @implementation PopularMealsCell
 
@@ -19,6 +21,14 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void)setRecipe:(Recipe *)recipe {
+    _recipe = recipe;
+    
+    self.recipeImage.file = recipe[@"image"];
+    self.recipeName.text = recipe.name;
+    
 }
 
 @end

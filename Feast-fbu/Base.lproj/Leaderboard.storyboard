@@ -30,7 +30,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="167" id="0ow-DT-Fjs">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="167" id="0ow-DT-Fjs" customClass="PopularMealsCell">
                                         <rect key="frame" x="0.0" y="140" width="375" height="167"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0ow-DT-Fjs" id="REf-4h-ASS">
@@ -50,6 +50,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="recipeImage" destination="ciC-T6-tlX" id="I59-qb-wE5"/>
+                                            <outlet property="recipeName" destination="BFt-xO-eWZ" id="MTh-xo-LPg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -58,6 +62,9 @@
                         <viewLayoutGuide key="safeArea" id="NQN-s3-Mas"/>
                     </view>
                     <navigationItem key="navigationItem" id="7Ud-AD-tqu"/>
+                    <connections>
+                        <outlet property="popularRecipesTableView" destination="MMA-SW-wKC" id="W4k-yl-hLL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TT-J3-pbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,7 +88,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOU-Kx-eF7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2632.8000000000002" y="345.87706146926541"/>
+            <point key="canvasLocation" x="3088" y="346"/>
         </scene>
     </scenes>
 </document>
