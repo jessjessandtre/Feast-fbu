@@ -80,11 +80,11 @@
             </objects>
             <point key="canvasLocation" x="3572" y="345.87706146926541"/>
         </scene>
-        <!--Popular-->
+        <!--Navigation Controller-->
         <scene sceneID="p77-Tx-ljU">
             <objects>
                 <navigationController storyboardIdentifier="LeaderboardNavController" automaticallyAdjustsScrollViewInsets="NO" id="Etm-gu-Hsl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Popular" id="ywP-2x-loV"/>
+                    <tabBarItem key="tabBarItem" title="" image="Icon-29 (2)" selectedImage="Icon-29 (3)" id="ywP-2x-loV"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="woz-sA-3Vd">
@@ -101,4 +101,8 @@
             <point key="canvasLocation" x="2762" y="346"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Icon-29 (2)" width="29" height="29"/>
+        <image name="Icon-29 (3)" width="29" height="29"/>
+    </resources>
 </document>
