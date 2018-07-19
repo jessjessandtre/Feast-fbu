@@ -17,6 +17,8 @@
 		2981335020FFEDF7003FD11C /* Feast_fbuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981334F20FFEDF7003FD11C /* Feast_fbuTests.m */; };
 		2981335B20FFEDF7003FD11C /* Feast_fbuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981335A20FFEDF7003FD11C /* Feast_fbuUITests.m */; };
 		298E336B210016BC00290BF4 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336A210016BC00290BF4 /* Discovery.storyboard */; };
+		298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336C210019A000290BF4 /* Leaderboard.storyboard */; };
+		298E336F21001A2500290BF4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336E21001A2500290BF4 /* Profile.storyboard */; };
 		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
 		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
@@ -58,6 +60,8 @@
 		2981335A20FFEDF7003FD11C /* Feast_fbuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feast_fbuUITests.m; sourceTree = "<group>"; };
 		2981335C20FFEDF7003FD11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		298E336A210016BC00290BF4 /* Discovery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discovery.storyboard; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
+		298E336C210019A000290BF4 /* Leaderboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Leaderboard.storyboard; sourceTree = "<group>"; };
+		298E336E21001A2500290BF4 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +157,8 @@
 		2981333520FFEDF6003FD11C /* Feast-fbu */ = {
 			isa = PBXGroup;
 			children = (
+				298E336E21001A2500290BF4 /* Profile.storyboard */,
+				298E336C210019A000290BF4 /* Leaderboard.storyboard */,
 				298E336A210016BC00290BF4 /* Discovery.storyboard */,
 				297DED9220FFFAB800A469FA /* Views */,
 				297DED9120FFFAB200A469FA /* View Controllers */,
@@ -306,6 +312,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				298E336F21001A2500290BF4 /* Profile.storyboard in Resources */,
+				298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */,
 				2981334320FFEDF7003FD11C /* LaunchScreen.storyboard in Resources */,
 				2981334020FFEDF7003FD11C /* Assets.xcassets in Resources */,
 				2981333E20FFEDF6003FD11C /* Main.storyboard in Resources */,

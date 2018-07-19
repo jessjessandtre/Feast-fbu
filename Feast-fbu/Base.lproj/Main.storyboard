@@ -72,6 +72,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="6Qk-BD-Ovd" kind="relationship" relationship="viewControllers" id="bUA-aG-5cO"/>
+                        <segue destination="uVd-e8-yFS" kind="relationship" relationship="viewControllers" id="7Nc-2L-EBy"/>
+                        <segue destination="bNm-wU-Us2" kind="relationship" relationship="viewControllers" id="x4c-1T-cQ8"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fL-x1-NbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -87,6 +89,26 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXR-oF-2bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2545" y="-155"/>
+        </scene>
+        <!--LeaderboardNavController-->
+        <scene sceneID="QnN-0B-eDR">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Leaderboard" referencedIdentifier="LeaderboardNavController" id="uVd-e8-yFS" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="nOw-ba-HpZ"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0kc-Is-ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2510" y="62"/>
+        </scene>
+        <!--ProfileNavController-->
+        <scene sceneID="bIL-dQ-m4T">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileNavController" id="bNm-wU-Us2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="FM1-He-uy2"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5sO-jk-9Ry" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2519" y="360"/>
         </scene>
     </scenes>
 </document>
