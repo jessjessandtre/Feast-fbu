@@ -11,6 +11,7 @@
 #import "Recipe.h"
 #import "RecipeTableViewCell.h"
 #import "DetailViewController.h"
+#import "RecipeTableViewCellHeaderCell.h"
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -73,7 +74,22 @@
     return self.recipes.count;
 }
 
+-(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
+{
+    return 68;
+}
 
+-(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    // 1. Dequeue the custom header cell
+    RecipeTableViewCellHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:@"RecipeHeaderCell"];
+    
+    // 2. Set the various properties
+    headerCell.titleLabel.text = @"Discover";
+    [headerCell.titleLabel sizeToFit];
+
+    return headerCell;
+}
 
 
 #pragma mark - Navigation
