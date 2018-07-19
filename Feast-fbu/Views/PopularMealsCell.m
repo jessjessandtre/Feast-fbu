@@ -28,7 +28,7 @@
     
     _recipe = recipe;
     
-    self.recipeImage.file = recipe[@"image"];
+    self.recipeImage.file = recipe.image;
     [self.recipeImage loadInBackground];
     
     self.recipeName.text = recipe.name;
