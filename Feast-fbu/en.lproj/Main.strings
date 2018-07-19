@@ -1,0 +1,24 @@
+
+/* Class = "UITabBarController"; title = "TabBarController"; ObjectID = "8OP-g6-ON3"; */
+"8OP-g6-ON3.title" = "TabBarController";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "G9b-WC-gCK"; */
+"G9b-WC-gCK.title" = "Item";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "HNZ-L9-EXT"; */
+"HNZ-L9-EXT.title" = "Item";
+
+/* Class = "UITextField"; placeholder = "Password"; ObjectID = "J8c-6c-D90"; */
+"J8c-6c-D90.placeholder" = "Password";
+
+/* Class = "UIButton"; normalTitle = "Login"; ObjectID = "L7f-uD-joo"; */
+"L7f-uD-joo.normalTitle" = "Login";
+
+/* Class = "UITextField"; placeholder = "Username"; ObjectID = "ca2-lI-MOf"; */
+"ca2-lI-MOf.placeholder" = "Username";
+
+/* Class = "UIButton"; normalTitle = "Signup"; ObjectID = "xr1-kA-xRa"; */
+"xr1-kA-xRa.normalTitle" = "Signup";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "z2a-nr-pjK"; */
+"z2a-nr-pjK.title" = "Item";
