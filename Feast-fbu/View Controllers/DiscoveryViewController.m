@@ -9,8 +9,9 @@
 #import "DiscoveryViewController.h"
 #import <Parse/Parse.h>
 #import "Recipe.h"
+#import "RecipeTableViewCell.h"
 
-@interface DiscoveryViewController ()
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;
@@ -22,7 +23,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    self.recipeTableView.delegate = self;
+    self.recipeTableView.dataSource = self;
+    
+    [self fetchRecipes];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,12 +37,10 @@
 
 - (void) fetchRecipes {
 
-    // construct PFQuery
     PFQuery *recipeQuery = [Recipe query];
     [recipeQuery orderByDescending:@"createdAt"];
     recipeQuery.limit = 20;
     
-    // fetch data asynchronously
     [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
         if (recipes) {
             self.recipes = recipes;
@@ -48,9 +51,18 @@
             NSLog(@"%@", error.localizedDescription);
         }
         
-        // Reload the tableView now that there is new data
         [self.recipeTableView reloadData];
     }];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PostCell" forIndexPath:indexPath];
+    
+    Recipe *recipe = self.recipes[indexPath.row];
+    
+    cell.recipe = recipe;
+    
+    return cell;
 }
 
 /*
