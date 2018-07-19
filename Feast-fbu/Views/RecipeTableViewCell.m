@@ -7,6 +7,7 @@
 //
 
 #import "RecipeTableViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation RecipeTableViewCell
 
@@ -19,6 +20,14 @@
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
+- (void) setRecipe {
+    NSString *recipeImageURLString = self.recipe.image.url;
+    NSURL *recipeImageURL = [NSURL URLWithString:recipeImageURLString];
+    [self.recipeImageView setImageWithURL:recipeImageURL];
+    
+    self.recipeTitleLabel.text = self.recipe.name;
 }
 
 @end

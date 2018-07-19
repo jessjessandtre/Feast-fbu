@@ -10,7 +10,11 @@
 #import "Recipe.h"
 
 @interface RecipeTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *recipeTitleLabel;
 
 @property (strong, nonatomic) Recipe *recipe;
+
+- (void) setRecipe;
 
 @end

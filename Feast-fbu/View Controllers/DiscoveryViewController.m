@@ -62,6 +62,8 @@
     
     cell.recipe = recipe;
     
+    [cell setRecipe];
+    
     return cell;
 }
 
