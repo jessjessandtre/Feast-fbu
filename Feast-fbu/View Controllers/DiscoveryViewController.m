@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "Recipe.h"
 #import "RecipeTableViewCell.h"
+#import "DetailViewController.h"
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -72,14 +73,24 @@
     return self.recipes.count;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    DetailViewController *detailViewController = [segue destinationViewController];
+
+    UITableViewCell *tappedCell = sender;
+    
+    NSIndexPath *indexPath = [self.recipeTableView indexPathForCell:tappedCell];
+    
+    Recipe *recipe = self.recipes[indexPath.row];
+    
+    detailViewController.recipe = recipe;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
+
 
 @end
