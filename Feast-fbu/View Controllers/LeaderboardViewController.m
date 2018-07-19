@@ -6,6 +6,7 @@
 //  Copyright © 2018 jessjessandtre. All rights reserved.
 //
 
+#import "DetailViewController.h"
 #import "LeaderboardViewController.h"
 #import "PopularMealsCell.h"
 
@@ -65,14 +66,22 @@
     }];
 }
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    DetailViewController *detailViewController = [segue destinationViewController];
+    
+    UITableViewCell *tappedCell = sender;
+    
+    NSIndexPath *indexPath = [self.recipesTableView indexPathForCell:tappedCell];
+    
+    Recipe *recipe = self.popularRecipes[indexPath.row];
+    
+    detailViewController.recipe = recipe;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 @end
