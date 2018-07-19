@@ -2,15 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Feast-fbu/Base.lproj/Profile.storyboard">
-   </FileRef>
-   <FileRef
-      location = "group:Feast-fbu/Base.lproj/Leaderboard.storyboard">
-   </FileRef>
-   <FileRef
-      location = "group:Feast-fbu/Base.lproj/Discovery.storyboard">
-   </FileRef>
-   <FileRef
       location = "group:Feast-fbu.xcodeproj">
    </FileRef>
    <FileRef
