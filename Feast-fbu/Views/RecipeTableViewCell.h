@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
 
 @interface RecipeTableViewCell : UITableViewCell
+
+@property (strong, nonatomic) Recipe *recipe;
 
 @end
