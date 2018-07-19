@@ -55,10 +55,10 @@
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="-640.02998500749629"/>
         </scene>
-        <!--DetailView-->
+        <!--DetailedRecipe-->
         <scene sceneID="4wG-MC-Q1z">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailView" id="nI5-MH-6dR" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedRecipe" id="nI5-MH-6dR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcW-pn-N7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3313" y="-675"/>

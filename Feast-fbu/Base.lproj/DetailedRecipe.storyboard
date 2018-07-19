@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fvG-WN-PHg">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Detail View Controller-->
+        <scene sceneID="thR-i0-oT6">
+            <objects>
+                <viewController id="fvG-WN-PHg" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cpf-3G-1KP">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eYg-K3-7gq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ExP-kB-OBC" customClass="PFImageView">
+                                        <rect key="frame" x="0.0" y="40" width="138.5" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="ExP-kB-OBC" secondAttribute="height" multiplier="125:116" id="arz-Ay-8Ox"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8h-mO-kEC">
+                                        <rect key="frame" x="8" y="176" width="122.5" height="25.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25.5" id="Cu4-9m-Bas"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ee-H5-9Js">
+                                        <rect key="frame" x="8" y="235.5" width="86" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="dfy-MS-p0O"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="source url" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQd-Jq-Cqr">
+                                        <rect key="frame" x="8" y="209.5" width="122.5" height="14"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                        <color key="textColor" red="0.57380935030000002" green="0.7654985835" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="list of ingredients" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ojg-OQ-N3g">
+                                        <rect key="frame" x="8" y="261" width="122.5" height="18"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNQ-mf-TrZ">
+                                        <rect key="frame" x="8" y="287" width="91" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="Teu-yJ-zrR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="list of instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="80g-aB-d1K">
+                                        <rect key="frame" x="8" y="614" width="122.5" height="37"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="ExP-kB-OBC" firstAttribute="top" secondItem="eYg-K3-7gq" secondAttribute="top" constant="40" id="3E6-VL-urT"/>
+                                    <constraint firstItem="80g-aB-d1K" firstAttribute="top" secondItem="VNQ-mf-TrZ" secondAttribute="bottom" constant="8" id="4Ml-OT-xbh"/>
+                                    <constraint firstAttribute="trailing" secondItem="ExP-kB-OBC" secondAttribute="trailing" id="6B9-N6-IcN"/>
+                                    <constraint firstItem="80g-aB-d1K" firstAttribute="leading" secondItem="eYg-K3-7gq" secondAttribute="leading" constant="8" id="89y-sr-yzK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ojg-OQ-N3g" secondAttribute="trailing" constant="8" id="8qm-6d-fW5"/>
+                                    <constraint firstAttribute="trailing" secondItem="k8h-mO-kEC" secondAttribute="trailing" constant="8" id="HcO-FW-2Uz"/>
+                                    <constraint firstAttribute="trailing" secondItem="NQd-Jq-Cqr" secondAttribute="trailing" constant="8" id="Hjz-w2-g55"/>
+                                    <constraint firstItem="NQd-Jq-Cqr" firstAttribute="leading" secondItem="eYg-K3-7gq" secondAttribute="leading" constant="8" id="IhZ-Wn-X7E"/>
+                                    <constraint firstItem="VNQ-mf-TrZ" firstAttribute="top" secondItem="Ojg-OQ-N3g" secondAttribute="bottom" constant="8" id="KbT-lY-cr3"/>
+                                    <constraint firstAttribute="trailing" secondItem="80g-aB-d1K" secondAttribute="trailing" constant="8" id="QSO-7V-ZiR"/>
+                                    <constraint firstItem="NQd-Jq-Cqr" firstAttribute="top" secondItem="k8h-mO-kEC" secondAttribute="bottom" constant="8" id="QUY-IT-iSp"/>
+                                    <constraint firstItem="1Ee-H5-9Js" firstAttribute="leading" secondItem="eYg-K3-7gq" secondAttribute="leading" constant="8" id="WhC-aS-qZ0"/>
+                                    <constraint firstItem="1Ee-H5-9Js" firstAttribute="top" secondItem="NQd-Jq-Cqr" secondAttribute="bottom" constant="12" id="adK-cG-HrF"/>
+                                    <constraint firstItem="k8h-mO-kEC" firstAttribute="top" secondItem="ExP-kB-OBC" secondAttribute="bottom" constant="8" id="apC-yq-pHB"/>
+                                    <constraint firstAttribute="bottom" secondItem="80g-aB-d1K" secondAttribute="bottom" constant="16" id="fjC-B6-ThT"/>
+                                    <constraint firstItem="ExP-kB-OBC" firstAttribute="leading" secondItem="eYg-K3-7gq" secondAttribute="leading" id="iFm-Xw-6Ul"/>
+                                    <constraint firstItem="Ojg-OQ-N3g" firstAttribute="leading" secondItem="eYg-K3-7gq" secondAttribute="leading" constant="8" id="j6V-7X-MaN"/>
+                                    <constraint firstItem="VNQ-mf-TrZ" firstAttribute="leading" secondItem="eYg-K3-7gq" secondAttribute="leading" constant="8" id="jxm-Ly-GrP"/>
+                                    <constraint firstItem="k8h-mO-kEC" firstAttribute="leading" secondItem="eYg-K3-7gq" secondAttribute="leading" constant="8" id="yLC-LU-Ajd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eYg-K3-7gq" firstAttribute="top" secondItem="cpf-3G-1KP" secondAttribute="top" id="1tB-2M-a2u"/>
+                            <constraint firstItem="eYg-K3-7gq" firstAttribute="leading" secondItem="NtK-G8-gjt" secondAttribute="leading" id="PLg-bq-hjA"/>
+                            <constraint firstItem="eYg-K3-7gq" firstAttribute="trailing" secondItem="NtK-G8-gjt" secondAttribute="trailing" id="VnG-bz-MBS"/>
+                            <constraint firstItem="eYg-K3-7gq" firstAttribute="bottom" secondItem="NtK-G8-gjt" secondAttribute="bottom" id="kWJ-sT-rjb"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="NtK-G8-gjt"/>
+                    </view>
+                    <connections>
+                        <outlet property="ingredientsLabel" destination="Ojg-OQ-N3g" id="ie1-sR-6gO"/>
+                        <outlet property="instructionsLabel" destination="80g-aB-d1K" id="2aT-4s-ojm"/>
+                        <outlet property="recipeImageView" destination="ExP-kB-OBC" id="6Kd-mf-t13"/>
+                        <outlet property="recipeTitleLabel" destination="k8h-mO-kEC" id="D5E-s8-mMB"/>
+                        <outlet property="sourceUrlLabel" destination="NQd-Jq-Cqr" id="ETP-Vv-cVr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fm-mU-AHC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-948" y="56.221889055472268"/>
+        </scene>
+    </scenes>
+</document>

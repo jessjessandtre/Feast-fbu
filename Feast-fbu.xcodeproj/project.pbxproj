@@ -23,11 +23,11 @@
 		298E33782101067A00290BF4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E33772101067A00290BF4 /* LoginViewController.m */; };
 		298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E33792101091900290BF4 /* DiscoveryViewController.m */; };
 		298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E337D2101092600290BF4 /* LeaderboardViewController.m */; };
+		29CC2570210116F900BD6C01 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC256F210116F900BD6C01 /* Post.m */; };
+		29CC25732101311900BD6C01 /* DetailedRecipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */; };
+		29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC2575210131EB00BD6C01 /* DetailViewController.m */; };
 		583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */; };
 		583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38321010E2D00A2C40F /* PopularMealsCell.m */; };
-		587400F12101298E000425F3 /* DetailView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587400F02101298E000425F3 /* DetailView.storyboard */; };
-		587400F721012D6E000425F3 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 587400F621012D6E000425F3 /* DetailViewController.m */; };
-		58C4DF1921011799007A2DB3 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 58C4DF1721011796007A2DB3 /* Post.m */; };
 		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
 		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
@@ -79,17 +79,17 @@
 		298E337A2101091900290BF4 /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
 		298E337C2101092600290BF4 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
 		298E337D2101092600290BF4 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
+		29CC256E210116F900BD6C01 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
+		29CC256F210116F900BD6C01 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
+		29CC25722101311500BD6C01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailedRecipe.storyboard; sourceTree = "<group>"; };
+		29CC2574210131EB00BD6C01 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		29CC2575210131EB00BD6C01 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		583DD38021010E2D00A2C40F /* PopularMealsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularMealsCell.h; sourceTree = "<group>"; };
 		583DD38121010E2D00A2C40F /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
 		583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
 		583DD38321010E2D00A2C40F /* PopularMealsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularMealsCell.m; sourceTree = "<group>"; };
-		587400F02101298E000425F3 /* DetailView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DetailView.storyboard; sourceTree = "<group>"; };
-		587400F521012D6E000425F3 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		587400F621012D6E000425F3 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		58C4DF1721011796007A2DB3 /* Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
-		58C4DF1821011799007A2DB3 /* Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,10 +138,10 @@
 		297DED9020FFFA7500A469FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				58C4DF1821011799007A2DB3 /* Post.h */,
-				58C4DF1721011796007A2DB3 /* Post.m */,
 				298E33702100F23800290BF4 /* Recipe.h */,
 				298E33712100F23800290BF4 /* Recipe.m */,
+				29CC256E210116F900BD6C01 /* Post.h */,
+				29CC256F210116F900BD6C01 /* Post.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -157,8 +157,8 @@
 				298E33742100F82500290BF4 /* ProfileViewController.m */,
 				298E33762101067A00290BF4 /* LoginViewController.h */,
 				298E33772101067A00290BF4 /* LoginViewController.m */,
-				587400F521012D6E000425F3 /* DetailViewController.h */,
-				587400F621012D6E000425F3 /* DetailViewController.m */,
+				29CC2574210131EB00BD6C01 /* DetailViewController.h */,
+				29CC2575210131EB00BD6C01 /* DetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -202,7 +202,7 @@
 				298E336E21001A2500290BF4 /* Profile.storyboard */,
 				298E336C210019A000290BF4 /* Leaderboard.storyboard */,
 				298E336A210016BC00290BF4 /* Discovery.storyboard */,
-				587400F02101298E000425F3 /* DetailView.storyboard */,
+				29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */,
 				297DED9220FFFAB800A469FA /* Views */,
 				297DED9120FFFAB200A469FA /* View Controllers */,
 				297DED9020FFFA7500A469FA /* Models */,
@@ -357,7 +357,7 @@
 			files = (
 				298E336F21001A2500290BF4 /* Profile.storyboard in Resources */,
 				298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */,
-				587400F12101298E000425F3 /* DetailView.storyboard in Resources */,
+				29CC25732101311900BD6C01 /* DetailedRecipe.storyboard in Resources */,
 				2981334320FFEDF7003FD11C /* LaunchScreen.storyboard in Resources */,
 				2981334020FFEDF7003FD11C /* Assets.xcassets in Resources */,
 				2981333E20FFEDF6003FD11C /* Main.storyboard in Resources */,
@@ -472,9 +472,9 @@
 				2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */,
 				583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */,
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
-				58C4DF1921011799007A2DB3 /* Post.m in Sources */,
+				29CC2570210116F900BD6C01 /* Post.m in Sources */,
 				298E33722100F23800290BF4 /* Recipe.m in Sources */,
-				587400F721012D6E000425F3 /* DetailViewController.m in Sources */,
+				29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */,
 				298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */,
 				298E33752100F82500290BF4 /* ProfileViewController.m in Sources */,
 				298E33782101067A00290BF4 /* LoginViewController.m in Sources */,
@@ -527,6 +527,14 @@
 				2981334220FFEDF7003FD11C /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29CC25722101311500BD6C01 /* Base */,
+			);
+			name = DetailedRecipe.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
