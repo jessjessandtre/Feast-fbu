@@ -31,7 +31,18 @@
     self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width / 4;
     // self.recipeImageView.clipsToBounds = YES;
     
-    self.recipeTitleLabel.text = self.recipe.name;
+    self.recipeTitleLabel.hidden = YES;
+    // self.recipeTitleLabel.text = self.recipe.name;
 }
+
+- (IBAction)longPress:(id)sender {
+    self.recipeTitleLabel.hidden = NO;
+}
+
+/*
+- (IBAction)titleButtonPressed:(id)sender {
+    self.recipeTitleLabel.hidden = NO;
+}
+ */
 
 @end
