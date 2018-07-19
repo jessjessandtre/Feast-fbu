@@ -23,7 +23,14 @@
     }];
     
     [Parse initializeWithConfiguration:config];
-    
+    PFUser *user = [PFUser currentUser];
+    if (user != nil) {
+        NSLog(@"Welcome back %@ 😀", user.username);
+        
+        UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+        UIViewController *tabController = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        self.window.rootViewController = tabController;
+    }
     return YES;
 }
 
