@@ -7,10 +7,13 @@
 //
 
 #import "DiscoveryViewController.h"
+#import <Parse/Parse.h>
+#import "Recipe.h"
 
 @interface DiscoveryViewController ()
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
+@property (strong, nonatomic) NSArray *recipes;
 
 
 @end
@@ -25,6 +28,29 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void) fetchRecipes {
+
+    // construct PFQuery
+    PFQuery *recipeQuery = [Recipe query];
+    [recipeQuery orderByDescending:@"createdAt"];
+    recipeQuery.limit = 20;
+    
+    // fetch data asynchronously
+    [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
+        if (recipes) {
+            self.recipes = recipes;
+            
+            [self.recipeTableView reloadData];
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        
+        // Reload the tableView now that there is new data
+        [self.recipeTableView reloadData];
+    }];
 }
 
 /*
