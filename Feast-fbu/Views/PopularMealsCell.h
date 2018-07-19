@@ -11,6 +11,4 @@
 
 @interface PopularMealsCell : UITableViewCell
 
-@property (strong, nonatomic)  * tweet;
-
 @end
