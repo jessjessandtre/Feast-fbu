@@ -107,12 +107,49 @@
                     <view key="view" contentMode="scaleToFill" id="Q9B-Uc-6AK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wjp-NI-DC1" customClass="PFImageView">
+                                <rect key="frame" x="16" y="90" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3N7-LB-jt8">
+                                <rect key="frame" x="16" y="226" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
                         <viewLayoutGuide key="safeArea" id="Cu9-YQ-BZN"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="OHM-pz-xWg" appends="YES" id="rIJ-sa-ihn"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="IlS-n0-D4z"/>
+                    <navigationItem key="navigationItem" id="IlS-n0-D4z">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="E5v-4P-pgb">
+                            <connections>
+                                <action selector="didTapCancel:" destination="hY7-Cj-cgi" id="dCd-hT-z93"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="tp2-KG-vUv">
+                            <connections>
+                                <action selector="didTapPost:" destination="hY7-Cj-cgi" id="VaJ-vw-nct"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="captionTextField" destination="3N7-LB-jt8" id="TzF-Ms-G6k"/>
+                        <outlet property="postImageView" destination="wjp-NI-DC1" id="Dt9-8I-cQ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJK-oP-yAl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="OHM-pz-xWg">
+                    <connections>
+                        <action selector="didTapScreen:" destination="hY7-Cj-cgi" id="s4q-qp-Asg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="756" y="55.322338830584712"/>
         </scene>
