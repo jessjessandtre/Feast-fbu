@@ -26,11 +26,13 @@
             </objects>
             <point key="canvasLocation" x="3592.8000000000002" y="562.66866566716647"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="cug-ba-FEj">
             <objects>
                 <navigationController storyboardIdentifier="ProfileNavController" automaticallyAdjustsScrollViewInsets="NO" id="zLS-dZ-QBZ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="Ern-aE-tTD"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wY5-Bt-cwZ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>

@@ -68,7 +68,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Fd4-55-spz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.47168732050000001" green="0.92558890579999997" blue="0.73136500950000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="6Qk-BD-Ovd" kind="relationship" relationship="viewControllers" id="bUA-aG-5cO"/>
@@ -84,7 +86,7 @@
         <scene sceneID="vP0-LG-EBn">
             <objects>
                 <viewControllerPlaceholder storyboardName="Discovery" referencedIdentifier="DiscoveryNavController" id="6Qk-BD-Ovd" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="U1E-xp-30z"/>
+                    <tabBarItem key="tabBarItem" title="" id="U1E-xp-30z"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JXR-oF-2bf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -94,7 +96,7 @@
         <scene sceneID="QnN-0B-eDR">
             <objects>
                 <viewControllerPlaceholder storyboardName="Leaderboard" referencedIdentifier="LeaderboardNavController" id="uVd-e8-yFS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="nOw-ba-HpZ"/>
+                    <tabBarItem key="tabBarItem" title="" id="nOw-ba-HpZ"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0kc-Is-ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -104,7 +106,7 @@
         <scene sceneID="bIL-dQ-m4T">
             <objects>
                 <viewControllerPlaceholder storyboardName="Profile" referencedIdentifier="ProfileNavController" id="bNm-wU-Us2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="FM1-He-uy2"/>
+                    <tabBarItem key="tabBarItem" title="" id="FM1-He-uy2"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sO-jk-9Ry" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

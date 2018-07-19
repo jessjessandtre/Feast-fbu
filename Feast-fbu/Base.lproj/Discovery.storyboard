@@ -47,6 +47,7 @@
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="-640.02998500749629"/>
         </scene>
+<<<<<<< HEAD
         <!--View Controller-->
         <scene sceneID="L88-5N-8gS">
             <objects>
@@ -63,10 +64,15 @@
             <point key="canvasLocation" x="3239" y="-635"/>
         </scene>
         <!--Navigation Controller-->
+=======
+        <!--Discover-->
+>>>>>>> caaac063d51e166a71fb3ecc2456cd5ce9209d62
         <scene sceneID="ao3-Fy-wYj">
             <objects>
                 <navigationController storyboardIdentifier="DiscoveryNavController" automaticallyAdjustsScrollViewInsets="NO" id="7ag-19-LRa" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Discover" id="eNK-pr-Mhj"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bD9-au-RbY">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
