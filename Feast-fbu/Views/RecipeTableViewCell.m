@@ -27,6 +27,10 @@
     NSURL *recipeImageURL = [NSURL URLWithString:recipeImageURLString];
     [self.recipeImageView setImageWithURL:recipeImageURL];
     
+    // self.recipeImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width / 4;
+    // self.recipeImageView.clipsToBounds = YES;
+    
     self.recipeTitleLabel.text = self.recipe.name;
 }
 
