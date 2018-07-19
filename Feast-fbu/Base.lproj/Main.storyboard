@@ -55,7 +55,7 @@
                     <connections>
                         <outlet property="passwordTextField" destination="J8c-6c-D90" id="tg1-eY-v80"/>
                         <outlet property="usernameTextField" destination="ca2-lI-MOf" id="D6q-D8-XyA"/>
-                        <segue destination="8OP-g6-ON3" kind="show" id="Zdd-oA-FVk"/>
+                        <segue destination="8OP-g6-ON3" kind="show" identifier="TabBarControllerSegue" id="Zdd-oA-FVk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
