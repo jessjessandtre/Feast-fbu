@@ -17,20 +17,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    NSString *recipeImageURLString = self.recipe.image.url;
-    NSURL *recipeImageURL = [NSURL URLWithString:recipeImageURLString];
-    [self.recipeImageView setImageWithURL:recipeImageURL];
-    
-    self.recipeTitleLabel.text = self.recipe.name;
-    
-    NSString *ingredientsString;
-    
-    for (int i = 0; i < self.recipe.ingredients.count; i++) {
-        ingredientsString = [NSString stringWithFormat: @"%@\n", ingredientsString];
-    }
-    
-    self.ingredientsLabel.text = ingredientsString;
+    [self refreshData];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -38,6 +26,26 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) refreshData {
+    /*NSString *recipeImageURLString = self.recipe.image.url;
+    NSURL *recipeImageURL = [NSURL URLWithString:recipeImageURLString];
+    [self.recipeImageView setImageWithURL:recipeImageURL];
+    */
+    self.recipeImageView.file = self.recipe.image;
+    [self.recipeImageView loadInBackground];
+    
+    self.recipeTitleLabel.text = self.recipe.name;
+    
+    NSString *ingredientsString = @"";
+    for (int i = 0; i < self.recipe.ingredients.count; i++) {
+        ingredientsString = [ingredientsString stringByAppendingString:[NSString stringWithFormat:@"%@\n", self.recipe.ingredients[i]] ];
+    }
+    self.ingredientsLabel.text = ingredientsString;
+    
+    self.instructionsLabel.text = self.recipe.instructions;
+    self.sourceUrlLabel.text = self.recipe.sourceURL;
+    self.numPostsLabel.text = [[self.recipe.numPosts stringValue] stringByAppendingString:@" posts"];
+}
 /*
 #pragma mark - Navigation
 

@@ -8,12 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
+#import <ParseUI/ParseUI.h>
 
 @interface DetailViewController : UIViewController
 
-@property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
+@property (weak, nonatomic) IBOutlet PFImageView *recipeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *recipeTitleLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *instructionsLabel;
+@property (strong, nonatomic) IBOutlet UILabel *sourceUrlLabel;
+@property (strong, nonatomic) IBOutlet UILabel *numPostsLabel;
 
 @property (strong, nonatomic) Recipe *recipe;
 
