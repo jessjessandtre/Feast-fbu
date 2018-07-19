@@ -8,8 +8,9 @@
 
 #import "DetailViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "CreatePostViewController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
 
@@ -46,14 +47,55 @@
     self.sourceUrlLabel.text = self.recipe.sourceURL;
     self.numPostsLabel.text = [[self.recipe.numPosts stringValue] stringByAppendingString:@" posts"];
 }
-/*
+
+- (IBAction)didTapPost:(id)sender {
+    [self createImagePickerController];
+}
+
+- (void)createImagePickerController {
+    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+    imagePickerVC.delegate = self;
+    imagePickerVC.allowsEditing = YES;
+    //imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    
+    if ([UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypeCamera)]){
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    }
+    else {
+        NSLog(@"Camera 🚫 available so we will use photo library instead");
+        imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+    }
+    [self presentViewController:imagePickerVC animated:YES completion:nil];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(nonnull NSDictionary<NSString *,id> *)info {
+    // Get thew image captured by the UIImagePickerController
+    //  UIImage *originalImage = info[UIImagePickerControllerOriginalImage];
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    // Do something with the images (based on your use case)
+    
+    // Dismess UIImagePickerController to go back to your original view controller
+    [self dismissViewControllerAnimated:YES completion:^(){
+        [self performSegueWithIdentifier:@"CreatePostSegue" sender:editedImage];
+    }];
+    
+}
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqual:@"CreatePostSegue"]){
+        UIImage *image = sender;
+        UINavigationController *navigationController =[segue destinationViewController];
+        CreatePostViewController *createPostViewController = (CreatePostViewController*) navigationController.topViewController;
+        createPostViewController.image = image;
+        //createPostViewController.delegate = self;
+    }
 }
-*/
+
 
 @end
