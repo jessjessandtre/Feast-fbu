@@ -96,6 +96,12 @@
         //createPostViewController.delegate = self;
     }
 }
+- (IBAction)backButtonTapped:(id)sender {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Discovery" bundle:nil];
+    DetailViewController *goToDiscoverViewController = [storyboard instantiateViewControllerWithIdentifier:@"Discover"];
+    [self.navigationController pushViewController:goToDiscoverViewController animated:YES];
+    [self dismissViewControllerAnimated:false completion:nil];
+}
 
 
 @end
