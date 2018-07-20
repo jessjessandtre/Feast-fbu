@@ -29,6 +29,10 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.layer.borderColor = [UIColor greenColor].CGColor;
+    self.profileImageView.layer.borderWidth = 1.5;
+    
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     
     layout.minimumInteritemSpacing = 3;

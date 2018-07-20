@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,11 +19,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-nS-HYy">
-                                <rect key="frame" x="112" y="87" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.36877338218710776" green="0.99193829298019409" blue="0.20557860991850677" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cTT-mN-6A6">
                                 <rect key="frame" x="0.0" y="299" width="375" height="368"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -53,15 +49,29 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUK-iK-xnr">
-                                <rect key="frame" x="120" y="257" width="134" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUK-iK-xnr">
+                                <rect key="frame" x="16" y="246" width="343" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-nS-HYy">
+                                <rect key="frame" x="137" y="137" width="101" height="101"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LjW-nS-HYy" secondAttribute="height" multiplier="1:1" id="O2i-6f-kGV"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xUK-iK-xnr" firstAttribute="top" secondItem="LjW-nS-HYy" secondAttribute="bottom" constant="8" id="8FL-NN-uO2"/>
+                            <constraint firstItem="LjW-nS-HYy" firstAttribute="leading" secondItem="kmK-h7-yUd" secondAttribute="leading" constant="137" id="MSe-tZ-vHl"/>
+                            <constraint firstItem="xUK-iK-xnr" firstAttribute="leading" secondItem="kmK-h7-yUd" secondAttribute="leading" constant="16" id="Zdj-B6-Pce"/>
+                            <constraint firstItem="kmK-h7-yUd" firstAttribute="trailing" secondItem="LjW-nS-HYy" secondAttribute="trailing" constant="137" id="mjt-VG-mAY"/>
+                            <constraint firstItem="LjW-nS-HYy" firstAttribute="top" secondItem="kmK-h7-yUd" secondAttribute="top" constant="73" id="rJ3-Uy-7hg"/>
+                            <constraint firstItem="kmK-h7-yUd" firstAttribute="trailing" secondItem="xUK-iK-xnr" secondAttribute="trailing" constant="16" id="zm2-PE-GnX"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="kmK-h7-yUd"/>
                     </view>
                     <navigationItem key="navigationItem" id="P4e-TS-qZG">
