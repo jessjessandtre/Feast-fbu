@@ -13,10 +13,12 @@
 #import "DetailViewController.h"
 #import "RecipeTableViewCellHeaderCell.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;
+@property (strong, nonatomic) NSArray *filteredRecipes;
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
 
 @end
@@ -28,6 +30,7 @@
     
     self.recipeTableView.delegate = self;
     self.recipeTableView.dataSource = self;
+    self.searchBar.delegate = self;
     
     self.recipeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
@@ -48,6 +51,7 @@
     [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
         if (recipes) {
             self.recipes = recipes;
+            self.filteredRecipes = self.recipes;
             [self.recipeTableView reloadData];
             
 
@@ -73,7 +77,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.recipes.count;
+    return self.filteredRecipes.count;
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -93,6 +97,24 @@
     return headerCell;
 }
 
+- (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
+    
+    if (searchText.length != 0) {
+
+        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary *bindings) {
+            Recipe *recipe = evaluatedObject;
+            return [recipe.name containsString:searchText];
+        }];
+        self.filteredRecipes = [self.recipes filteredArrayUsingPredicate:predicate];
+        
+        NSLog(@"%@", self.filteredRecipes);
+    }
+    else {
+        self.filteredRecipes = self.recipes;
+    }
+    
+    [self.recipeTableView reloadData];
+}
 
 #pragma mark - Navigation
 
