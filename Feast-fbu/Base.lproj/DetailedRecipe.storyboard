@@ -60,14 +60,6 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71y-0s-1La">
-                                        <rect key="frame" x="16" y="621" width="31" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Post"/>
-                                        <connections>
-                                            <action selector="didTapPost:" destination="fvG-WN-PHg" eventType="touchUpInside" id="DrR-E1-2Fs"/>
-                                        </connections>
-                                    </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VNQ-mf-TrZ">
                                         <rect key="frame" x="8" y="383" width="91" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -97,6 +89,11 @@
                                     <action selector="backButtonTapped:" destination="fvG-WN-PHg" eventType="touchUpInside" id="K0l-yW-wCk"/>
                                 </connections>
                             </button>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="fZt-pF-aR4">
+                            <connections>
+                                <action selector="didTapPost:" destination="fvG-WN-PHg" id="q7K-DN-qmn"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
