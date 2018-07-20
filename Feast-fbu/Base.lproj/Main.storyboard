@@ -42,10 +42,11 @@
                                 <rect key="frame" x="93" y="299" width="189" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="L7f-uD-joo" firstAttribute="top" secondItem="xr1-kA-xRa" secondAttribute="bottom" constant="8" id="8cI-oY-0N0"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J8c-6c-D90" secondAttribute="trailing" constant="93" id="EEM-qu-gfR"/>
@@ -61,6 +62,9 @@
                             <constraint firstItem="J8c-6c-D90" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="93" id="tEa-Eg-TRq"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="Cef-6S-oGy" appends="YES" id="qxU-uS-9mt"/>
+                        </connections>
                     </view>
                     <connections>
                         <outlet property="passwordTextField" destination="J8c-6c-D90" id="tg1-eY-v80"/>
@@ -69,6 +73,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Cef-6S-oGy">
+                    <connections>
+                        <action selector="didTapScreen:" destination="BYZ-38-t0r" id="xup-6f-66D"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="653.60000000000002" y="132.68365817091455"/>
         </scene>
