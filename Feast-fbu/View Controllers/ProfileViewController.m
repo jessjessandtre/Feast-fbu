@@ -49,7 +49,9 @@
 - (void)fetchPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
-    [query includeKey:@"author"];
+    [query includeKey:@"user"];
+    [query whereKey:@"user" equalTo:[PFUser currentUser]];
+
     
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable parsePosts, NSError * _Nullable error) {
         if (!error){
