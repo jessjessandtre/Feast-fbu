@@ -108,15 +108,10 @@
                         <viewLayoutGuide key="safeArea" id="NtK-G8-gjt"/>
                     </view>
                     <navigationItem key="navigationItem" id="FT5-ll-8Re">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="bxA-9M-OoZ">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Aq6-ad-gwT">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back"/>
-                                <connections>
-                                    <action selector="backButtonTapped:" destination="fvG-WN-PHg" eventType="touchUpInside" id="K0l-yW-wCk"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="bxA-9M-OoZ">
+                            <connections>
+                                <action selector="backButtonTapped:" destination="fvG-WN-PHg" id="sL1-ij-hxz"/>
+                            </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="fZt-pF-aR4">
                             <connections>
