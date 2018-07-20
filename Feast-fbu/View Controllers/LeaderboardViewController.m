@@ -70,8 +70,8 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    
-    DetailViewController *detailViewController = [segue destinationViewController];
+    UINavigationController *navigationController = [segue destinationViewController];
+    DetailViewController* detailViewController = (DetailViewController*) navigationController.topViewController;
     
     UITableViewCell *tappedCell = sender;
     
