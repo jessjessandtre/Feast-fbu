@@ -21,6 +21,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-nS-HYy">
                                 <rect key="frame" x="112" y="87" width="150" height="150"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36877338218710776" green="0.99193829298019409" blue="0.20557860991850677" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cTT-mN-6A6">
                                 <rect key="frame" x="0.0" y="299" width="375" height="368"/>

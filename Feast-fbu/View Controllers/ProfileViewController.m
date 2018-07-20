@@ -26,19 +26,17 @@
     // Do any additional setup after loading the view.
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
-    [self fetchPosts];
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     
-    layout.minimumInteritemSpacing = 5;
-    layout.minimumLineSpacing = 5;
+    layout.minimumInteritemSpacing = 3;
+    layout.minimumLineSpacing = 3;
     
     CGFloat postsPerLine = 3;
     CGFloat itemWidth = (self.collectionView.frame.size.width -  layout.minimumInteritemSpacing * (postsPerLine - 1))/ postsPerLine;
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth,itemHeight);
-    
-    [self.collectionView reloadData];
+    [self refreshData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +61,11 @@
         }
     }];
 
+}
+
+- (void) refreshData {
+    [self fetchPosts];
+    self.usernameLabel.text = [PFUser currentUser].username;
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
