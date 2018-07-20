@@ -46,17 +46,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="417.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aM6-H0-ywo">
-                                            <rect key="frame" x="16" y="11" width="343" height="343"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <gestureRecognizers/>
-                                            <state key="normal" title="Press for Title">
-                                                <color key="titleColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="custom" customColorSpace="displayP3"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="titleButtonPressed:" destination="ncZ-9s-r9Q" eventType="touchUpInside" id="omH-6d-RHf"/>
-                                            </connections>
-                                        </button>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAh-uf-RXP">
                                             <rect key="frame" x="16" y="11" width="343" height="343"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -75,7 +64,7 @@
                                 <connections>
                                     <outlet property="recipeImageView" destination="KAh-uf-RXP" id="3V0-59-Xcx"/>
                                     <outlet property="recipeTitleLabel" destination="3qc-DJ-eSx" id="xM1-Xr-AsC"/>
-                                    <segue destination="nI5-MH-6dR" kind="presentation" id="nQM-nD-D64"/>
+                                    <segue destination="nI5-MH-6dR" kind="presentation" id="vOB-Vi-b3e"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

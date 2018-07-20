@@ -35,14 +35,4 @@
     // self.recipeTitleLabel.text = self.recipe.name;
 }
 
-- (IBAction)longPress:(id)sender {
-    self.recipeTitleLabel.hidden = NO;
-}
-
-/*
-- (IBAction)titleButtonPressed:(id)sender {
-    self.recipeTitleLabel.hidden = NO;
-}
- */
-
 @end
