@@ -73,6 +73,10 @@
     
     [cell setRecipe];
     
+    if (![self.filteredRecipes isEqualToArray:self.recipes]) {
+        cell.recipeTitleLabel.hidden = NO;
+    }
+    
     return cell;
 }
 
