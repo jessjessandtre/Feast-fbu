@@ -99,15 +99,17 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-    DetailViewController *detailViewController = [segue destinationViewController];
-
+    UINavigationController *navigationController = [segue destinationViewController];
+    
+    DetailViewController *detailController = (DetailViewController*)navigationController.topViewController;
+    
     UITableViewCell *tappedCell = sender;
     
     NSIndexPath *indexPath = [self.recipeTableView indexPathForCell:tappedCell];
     
     Recipe *recipe = self.recipes[indexPath.row];
     
-    detailViewController.recipe = recipe;
+    detailController.recipe = recipe;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
