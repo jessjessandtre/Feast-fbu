@@ -67,7 +67,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
     
-    Recipe *recipe = self.recipes[indexPath.row];
+    Recipe *recipe = self.filteredRecipes[indexPath.row];
     
     cell.recipe = recipe;
     
