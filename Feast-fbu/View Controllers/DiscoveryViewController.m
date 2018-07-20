@@ -19,6 +19,7 @@
 @property (strong, nonatomic) NSArray *recipes;
 @property (strong, nonatomic) NSArray *filteredRecipes;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 
 @end
@@ -35,6 +36,10 @@
     self.recipeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
 
     [self fetchRecipes];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];
+    [self.recipeTableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -53,14 +58,13 @@
             self.recipes = recipes;
             self.filteredRecipes = self.recipes;
             [self.recipeTableView reloadData];
-            
-
         }
         else {
             NSLog(@"%@", error.localizedDescription);
         }
         
         [self.recipeTableView reloadData];
+        [self.refreshControl endRefreshing];
     }];
 }
 
