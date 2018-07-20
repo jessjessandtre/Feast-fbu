@@ -15,6 +15,8 @@
 
 @property (strong, nonatomic) Recipe *recipe;
 
+@property (nonatomic, assign) BOOL titleShown;
+
 - (void) setRecipe;
 
 @end

@@ -14,6 +14,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.titleShown = NO;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -32,7 +33,7 @@
     // self.recipeImageView.clipsToBounds = YES;
     
     self.recipeTitleLabel.hidden = YES;
-    // self.recipeTitleLabel.text = self.recipe.name;
+    self.recipeTitleLabel.text = self.recipe.name;
 }
 
 @end
