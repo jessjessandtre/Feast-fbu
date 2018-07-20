@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfileViewController : UIViewController
+@interface ProfileViewController : UIViewController 
+
+- (IBAction)didTapLogout:(id)sender;
 
 @end

@@ -65,7 +65,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="kmK-h7-yUd"/>
                     </view>
-                    <navigationItem key="navigationItem" id="P4e-TS-qZG"/>
+                    <navigationItem key="navigationItem" id="P4e-TS-qZG">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="uMT-1G-p8b">
+                            <connections>
+                                <action selector="didTapLogout:" destination="uuU-PO-4OE" id="y03-MP-m9i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="cTT-mN-6A6" id="pfR-0q-2iM"/>
                         <outlet property="profileImageView" destination="LjW-nS-HYy" id="GJa-76-Yq6"/>
