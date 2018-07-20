@@ -39,7 +39,7 @@
     
     NSString *ingredientsString = @"";
     for (int i = 0; i < self.recipe.ingredients.count; i++) {
-        ingredientsString = [ingredientsString stringByAppendingString:[NSString stringWithFormat:@"%@\n", self.recipe.ingredients[i]] ];
+        ingredientsString = [ingredientsString stringByAppendingString:[NSString stringWithFormat:@" - %@\n", self.recipe.ingredients[i]] ];
     }
     self.ingredientsLabel.text = ingredientsString;
     
