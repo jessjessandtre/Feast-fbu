@@ -8,6 +8,7 @@
 
 #import "CreatePostViewController.h"
 #import "Post.h"
+#import "SVProgressHUD.h"
 
 @interface CreatePostViewController ()
 @property (strong, nonatomic) IBOutlet UIImageView *postImageView;
@@ -52,14 +53,17 @@
     post.caption = self.captionTextField.text;
     post.image = [self getPFFileFromImage:self.image];
     
+    [SVProgressHUD show];
     [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
         if (succeeded){
             NSLog(@"post success");
-            
             [self dismissViewControllerAnimated:true completion:nil];
         }
         else {
             NSLog(@"post error: %@", error.localizedDescription);
+            [self alertControlWithTitle:@"Post error" andMessage:error.localizedDescription];
+            
         }
     }];
 }
@@ -75,6 +79,19 @@
 }
 - (IBAction)didTapScreen:(id)sender {
     [self.view endEditing:YES];
+}
+
+-(void)alertControlWithTitle:(NSString*)title andMessage:(NSString*)message {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:message  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self dismissViewControllerAnimated:true completion:nil];
+    }];
+    
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:^{
+        // code for after alert controller has finished presenting
+    }];
 }
 
 /*
