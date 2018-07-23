@@ -12,6 +12,7 @@
 #import "RecipeTableViewCell.h"
 #import "DetailViewController.h"
 #import "RecipeTableViewCellHeaderCell.h"
+#import <SVProgressHUD.h>
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
 
@@ -34,7 +35,7 @@
     self.searchBar.delegate = self;
     
     self.recipeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
-
+    [SVProgressHUD show];
     [self fetchRecipes];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -54,6 +55,7 @@
     recipeQuery.limit = 20;
     
     [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
         if (recipes) {
             self.recipes = recipes;
             self.filteredRecipes = self.recipes;

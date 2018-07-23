@@ -11,6 +11,7 @@
 #import "Post.h"
 #import "LoginViewController.h"
 #import "RecipeCollectionViewCell.h"
+#import <SVProgressHUD.h>
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UINavigationControllerDelegate>
 
@@ -42,6 +43,7 @@
     CGFloat itemWidth = (self.collectionView.frame.size.width -  layout.minimumInteritemSpacing * (postsPerLine - 1))/ postsPerLine;
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth,itemHeight);
+    [SVProgressHUD show];
     [self refreshData];
 }
 
@@ -58,6 +60,7 @@
 
     
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable parsePosts, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
         if (!error){
             NSLog(@"fetched posts successfully");
             self.posts = parsePosts;

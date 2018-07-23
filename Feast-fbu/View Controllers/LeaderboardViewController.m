@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "LeaderboardViewController.h"
 #import "PopularMealsCell.h"
+#import <SVProgressHUD.h>
 
 @interface LeaderboardViewController ()
 
@@ -25,6 +26,7 @@
     self.recipesTableView.delegate = self;
     self.recipesTableView.dataSource = self;
     
+    [SVProgressHUD show];
     [self fetchPopularRecipes];
     
 }
@@ -53,6 +55,7 @@
     recipeQuery.limit = 10;
     
     [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
         if (recipes) {
             self.popularRecipes = recipes;
             
