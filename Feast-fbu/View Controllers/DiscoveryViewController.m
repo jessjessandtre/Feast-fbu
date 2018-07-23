@@ -13,8 +13,9 @@
 #import "DetailViewController.h"
 #import "RecipeTableViewCellHeaderCell.h"
 #import <SVProgressHUD.h>
+#import "CreatePostViewController.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, PostUpdateDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;
@@ -124,6 +125,15 @@
     }
     
     [self.recipeTableView reloadData];
+}
+
+- (void) didCreatePost {
+    [self fetchRecipes];
+    
+    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+    [self.recipeTableView scrollToRowAtIndexPath:indexPath
+                         atScrollPosition:UITableViewScrollPositionTop
+                                 animated:YES];
 }
 
 #pragma mark - Navigation

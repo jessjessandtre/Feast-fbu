@@ -12,6 +12,7 @@
 #import "LoginViewController.h"
 #import "RecipeCollectionViewCell.h"
 #import <SVProgressHUD.h>
+#import "DetailedPostViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UINavigationControllerDelegate>
 
@@ -112,15 +113,18 @@
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
 }
-/*
-#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
+        RecipeCollectionViewCell* cell = (RecipeCollectionViewCell*) sender;
+        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
+        detailedPostViewController.post = cell.post;
+    }
 }
-*/
+ */
+
 
 - (IBAction)didTapLogout:(id)sender {
     [PFUser logOutInBackgroundWithBlock:^(NSError * _Nullable error) {
