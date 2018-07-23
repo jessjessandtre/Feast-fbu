@@ -45,6 +45,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="postImageView" destination="9iz-4x-Lti" id="F1v-dO-S8k"/>
+                                            <segue destination="0PI-pL-8Go" kind="show" identifier="DetailedPostSegue" id="eXS-Tp-otC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -98,6 +99,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXg-EW-AhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3422" y="546"/>
+        </scene>
+        <!--DetailedPostNavController-->
+        <scene sceneID="uzS-K8-fUY">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPostNavController" id="0PI-pL-8Go" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w7U-KH-QRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4146" y="433"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cug-ba-FEj">
