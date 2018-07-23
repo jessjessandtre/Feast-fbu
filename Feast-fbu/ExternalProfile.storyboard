@@ -99,9 +99,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="UOC-Ts-4Zb"/>
                     <connections>
+                        <outlet property="externalPostCollectionView" destination="giG-ia-7gJ" id="vli-6U-YHg"/>
                         <outlet property="externalPostTableView" destination="giG-ia-7gJ" id="qfG-2b-cXa"/>
-                        <outlet property="numberFollowers" destination="WoX-Z4-m18" id="e7J-TQ-zgc"/>
-                        <outlet property="numberFollowing" destination="BwS-03-7FI" id="PTt-rr-fdP"/>
+                        <outlet property="numberFollowersLabel" destination="WoX-Z4-m18" id="wfu-oH-Fyw"/>
+                        <outlet property="numberFollowingLabel" destination="BwS-03-7FI" id="O64-FF-dgN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sP9-7j-I6P" userLabel="First Responder" sceneMemberID="firstResponder"/>

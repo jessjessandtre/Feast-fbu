@@ -17,6 +17,9 @@
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UINavigationControllerDelegate, PostUpdateDelegate>
 
+@property (weak, nonatomic) IBOutlet UILabel *numberFollowersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numberFollowingLabel;
+
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -34,6 +37,9 @@
     
     // temporarily setting user to current user until multiple profile page viewing is allowed
     self.user = [PFUser currentUser];
+    
+    [self getNumberFollowing];
+    [self getNumberFollowers];
     
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.layer.borderColor = [UIColor greenColor].CGColor;
@@ -139,4 +145,40 @@
         }
     }];
 }
+
+- (void) getNumberFollowing {
+    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
+    [query whereKey:@"from_user" equalTo:self.user];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+        self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", number];
+    }];
+}
+
+- (void) getNumberFollowers {
+    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
+    [query whereKey:@"to_user" equalTo:self.user];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+        self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", number];
+    }];
+}
+
+- (void) getPosts {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    [query whereKey:@"authorUsername" equalTo:self.user.username];
+    
+    query.limit = 20;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
+        if (posts != nil) {
+            self.posts = posts;
+            [self.collectionView reloadData];
+        } else {
+            NSLog(@"Error%@", error.localizedDescription);
+        }
+    }];
+}
+
+
 @end
