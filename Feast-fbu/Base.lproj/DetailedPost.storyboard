@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="db2-C9-22b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HOn-0B-plU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,100 +13,61 @@
         <!--Detailed Post View Controller-->
         <scene sceneID="0WO-1Q-KKv">
             <objects>
-                <viewController id="HOn-0B-plU" customClass="DetailedPostViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailedPost" id="HOn-0B-plU" customClass="DetailedPostViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QLz-ut-Ibo">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piq-G7-qvc">
-                                <rect key="frame" x="8" y="76" width="87" height="22"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piq-G7-qvc">
+                                <rect key="frame" x="8" y="32" width="87" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N29-XY-lib">
-                                <rect key="frame" x="8" y="106" width="61.5" height="16"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="created at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N29-XY-lib">
+                                <rect key="frame" x="8" y="62" width="61.5" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1J-38-sO4">
-                                <rect key="frame" x="8" y="399" width="30" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="FAT-qQ-o9l"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1J-38-sO4">
+                                <rect key="frame" x="16" y="479" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Like"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRb-gt-oOj" customClass="PFImageView">
-                                <rect key="frame" x="0.0" y="130" width="375" height="261"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="CRb-gt-oOj" secondAttribute="height" multiplier="125:87" id="Zfe-dP-f1y"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-2N-2e0">
-                                <rect key="frame" x="8" y="437" width="359" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" fixedFrame="YES" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-2N-2e0">
+                                <rect key="frame" x="28" y="517" width="359" height="20.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFu-rJ-KOz">
-                                <rect key="frame" x="8" y="465" width="106" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="FQQ-PC-xRM"/>
-                                </constraints>
-                                <state key="normal" title="View the recipe"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VFu-rJ-KOz">
+                                <rect key="frame" x="8" y="421" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRb-gt-oOj" customClass="PFImageView">
+                                <rect key="frame" x="20" y="178" width="375" height="261"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="CRb-gt-oOj" firstAttribute="top" secondItem="N29-XY-lib" secondAttribute="bottom" constant="8" id="2bm-13-bQW"/>
-                            <constraint firstItem="Piq-G7-qvc" firstAttribute="leading" secondItem="wMK-3f-19S" secondAttribute="leading" constant="8" id="9Tv-eS-yRx"/>
-                            <constraint firstItem="a1J-38-sO4" firstAttribute="top" secondItem="CRb-gt-oOj" secondAttribute="bottom" constant="8" id="A9O-jW-bCU"/>
-                            <constraint firstItem="CRb-gt-oOj" firstAttribute="leading" secondItem="wMK-3f-19S" secondAttribute="leading" id="FLa-cX-R1z"/>
-                            <constraint firstItem="Piq-G7-qvc" firstAttribute="top" secondItem="wMK-3f-19S" secondAttribute="top" constant="12" id="Gjo-sZ-PEH"/>
-                            <constraint firstItem="2FS-2N-2e0" firstAttribute="top" secondItem="a1J-38-sO4" secondAttribute="bottom" constant="8" id="JfB-rc-gm7"/>
-                            <constraint firstItem="N29-XY-lib" firstAttribute="top" secondItem="Piq-G7-qvc" secondAttribute="bottom" constant="8" id="OzD-O6-w4m"/>
-                            <constraint firstItem="a1J-38-sO4" firstAttribute="leading" secondItem="wMK-3f-19S" secondAttribute="leading" constant="8" id="Us1-Xt-uh7"/>
-                            <constraint firstItem="wMK-3f-19S" firstAttribute="trailing" secondItem="2FS-2N-2e0" secondAttribute="trailing" constant="8" id="Uwg-mm-as6"/>
-                            <constraint firstItem="2FS-2N-2e0" firstAttribute="leading" secondItem="wMK-3f-19S" secondAttribute="leading" constant="8" id="beU-66-SGu"/>
-                            <constraint firstItem="N29-XY-lib" firstAttribute="leading" secondItem="wMK-3f-19S" secondAttribute="leading" constant="8" id="e4e-ME-UVW"/>
-                            <constraint firstItem="VFu-rJ-KOz" firstAttribute="top" secondItem="2FS-2N-2e0" secondAttribute="bottom" constant="8" id="sI0-GG-R07"/>
-                            <constraint firstItem="CRb-gt-oOj" firstAttribute="trailing" secondItem="wMK-3f-19S" secondAttribute="trailing" id="u3O-Z7-1bT"/>
-                            <constraint firstItem="VFu-rJ-KOz" firstAttribute="leading" secondItem="wMK-3f-19S" secondAttribute="leading" constant="8" id="vcB-rd-uag"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="wMK-3f-19S"/>
                     </view>
                     <navigationItem key="navigationItem" id="hG2-Zg-kJg"/>
                     <connections>
                         <outlet property="captionLabel" destination="2FS-2N-2e0" id="39G-a0-PCo"/>
                         <outlet property="createdAtLabel" destination="N29-XY-lib" id="Kxq-tG-h8R"/>
-                        <outlet property="likeButton" destination="a1J-38-sO4" id="uQF-k5-QZg"/>
                         <outlet property="postImageView" destination="CRb-gt-oOj" id="i76-LA-6ae"/>
                         <outlet property="usernameLabel" destination="Piq-G7-qvc" id="GKl-Kf-nLG"/>
-                        <outlet property="viewRecipeButton" destination="VFu-rJ-KOz" id="xO1-St-kty"/>
+                        <outlet property="viewRecipeButton" destination="VFu-rJ-KOz" id="UPb-Yz-ZNi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMw-wA-NtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-4959.1999999999998" y="315.29235382308849"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="AFf-ef-Z3N">
-            <objects>
-                <navigationController storyboardIdentifier="DetailedPostNavController" automaticallyAdjustsScrollViewInsets="NO" id="db2-C9-22b" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tlv-et-y4D">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="HOn-0B-plU" kind="relationship" relationship="rootViewController" id="QvX-Dr-hq2"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lRW-G5-Lqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-5742" y="296"/>
+            <point key="canvasLocation" x="-5420" y="325"/>
         </scene>
     </scenes>
 </document>

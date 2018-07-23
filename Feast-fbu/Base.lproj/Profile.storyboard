@@ -63,14 +63,6 @@
                                     <constraint firstAttribute="width" secondItem="LjW-nS-HYy" secondAttribute="height" multiplier="1:1" id="O2i-6f-kGV"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-aJ-Rah">
-                                <rect key="frame" x="165" y="99" width="44" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Follow"/>
-                                <connections>
-                                    <action selector="followButtonTapped:" destination="uuU-PO-4OE" eventType="touchUpInside" id="C2z-iQ-CbK"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -100,10 +92,10 @@
             </objects>
             <point key="canvasLocation" x="3422" y="546"/>
         </scene>
-        <!--DetailedPostNavController-->
+        <!--DetailedPost-->
         <scene sceneID="uzS-K8-fUY">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPostNavController" id="0PI-pL-8Go" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPost" id="0PI-pL-8Go" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7U-KH-QRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4146" y="433"/>

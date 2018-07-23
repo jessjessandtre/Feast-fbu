@@ -37,6 +37,9 @@
 		583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */; };
 		583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38321010E2D00A2C40F /* PopularMealsCell.m */; };
 		587401032106652E000425F3 /* Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 587401022106652E000425F3 /* Follow.m */; };
+		58740107210680C5000425F3 /* ExternalProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58740106210680C5000425F3 /* ExternalProfile.storyboard */; };
+		5874010A21068152000425F3 /* ExternalUserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874010921068152000425F3 /* ExternalUserCollectionViewCell.m */; };
+		5874010D210681C3000425F3 /* ExternalProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874010C210681C3000425F3 /* ExternalProfileViewController.m */; };
 		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
 		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
@@ -115,6 +118,11 @@
 		583DD38321010E2D00A2C40F /* PopularMealsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopularMealsCell.m; sourceTree = "<group>"; };
 		587401012106652E000425F3 /* Follow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Follow.h; sourceTree = "<group>"; };
 		587401022106652E000425F3 /* Follow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Follow.m; sourceTree = "<group>"; };
+		58740106210680C5000425F3 /* ExternalProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExternalProfile.storyboard; sourceTree = "<group>"; };
+		5874010821068152000425F3 /* ExternalUserCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternalUserCollectionViewCell.h; sourceTree = "<group>"; };
+		5874010921068152000425F3 /* ExternalUserCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExternalUserCollectionViewCell.m; sourceTree = "<group>"; };
+		5874010B210681C3000425F3 /* ExternalProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternalProfileViewController.h; sourceTree = "<group>"; };
+		5874010C210681C3000425F3 /* ExternalProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExternalProfileViewController.m; sourceTree = "<group>"; };
 		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +200,7 @@
 				297420782106557500B30175 /* DetailedPostViewController.m */,
 				2135FC7F2106819800543AF7 /* TimelineViewController.h */,
 				2135FC802106819800543AF7 /* TimelineViewController.m */,
+				5874010C210681C3000425F3 /* ExternalProfileViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -209,6 +218,8 @@
 				29CC257E2101539B00BD6C01 /* RecipeCollectionViewCell.m */,
 				2135FC82210681EB00543AF7 /* TimelineViewCell.h */,
 				2135FC83210681EB00543AF7 /* TimelineViewCell.m */,
+				5874010821068152000425F3 /* ExternalUserCollectionViewCell.h */,
+				5874010921068152000425F3 /* ExternalUserCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +255,7 @@
 				29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */,
 				297420742106551200B30175 /* DetailedPost.storyboard */,
 				2135FC7D21067F6400543AF7 /* Timeline.storyboard */,
+				58740106210680C5000425F3 /* ExternalProfile.storyboard */,
 				297DED9220FFFAB800A469FA /* Views */,
 				297DED9120FFFAB200A469FA /* View Controllers */,
 				297DED9020FFFA7500A469FA /* Models */,
@@ -396,6 +408,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58740107210680C5000425F3 /* ExternalProfile.storyboard in Resources */,
 				297420762106551200B30175 /* DetailedPost.storyboard in Resources */,
 				298E336F21001A2500290BF4 /* Profile.storyboard in Resources */,
 				298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */,
@@ -486,6 +499,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Feast-fbu/Pods-Feast-fbu-resources.sh",
+				"${PODS_ROOT}/DateTools/DateTools/DateTools/DateTools.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/Parse/Parse.bundle",
 				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/en.lproj",
 				"${PODS_ROOT}/ParseUI/ParseUI/Resources/Localization/fr.lproj",
@@ -494,6 +508,7 @@
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/DateTools.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/Parse.bundle",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/en.lproj",
 				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/fr.lproj",
@@ -512,10 +527,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5874010A21068152000425F3 /* ExternalUserCollectionViewCell.m in Sources */,
 				2981334620FFEDF7003FD11C /* main.m in Sources */,
 				298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */,
 				2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */,
 				583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */,
+				5874010D210681C3000425F3 /* ExternalProfileViewController.m in Sources */,
 				29CC257F2101539C00BD6C01 /* RecipeCollectionViewCell.m in Sources */,
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
 				587401032106652E000425F3 /* Follow.m in Sources */,

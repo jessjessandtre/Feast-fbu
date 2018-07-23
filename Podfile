@@ -10,6 +10,8 @@ target 'Feast-fbu' do
 	pod 'ParseUI'
 	pod 'AFNetworking' 
 	pod 'SVProgressHUD'
+  	pod 'DateTools'
+
 
   target 'Feast-fbuTests' do
     inherit! :search_paths

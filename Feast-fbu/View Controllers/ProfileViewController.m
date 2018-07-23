@@ -13,8 +13,9 @@
 #import "RecipeCollectionViewCell.h"
 #import <SVProgressHUD.h>
 #import "DetailedPostViewController.h"
+#import "CreatePostViewController.h"
 
-@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UINavigationControllerDelegate>
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UINavigationControllerDelegate, PostUpdateDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -51,12 +52,6 @@
     [self refreshData];
 }
 
-- (IBAction)followButtonTapped:(id)sender {
-    PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
-    [followActivity setObject:[PFUser currentUser] forKey:@"from_user"];
-    [followActivity setObject:self.user forKey:@"to_user"];
-    [followActivity saveEventually];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -112,6 +107,11 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
+}
+
+- (void) didCreatePost {
+    [self refreshData];
+    [self.collectionView reloadData];
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
