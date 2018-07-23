@@ -62,6 +62,11 @@
                                     <constraint firstAttribute="width" secondItem="LjW-nS-HYy" secondAttribute="height" multiplier="1:1" id="O2i-6f-kGV"/>
                                 </constraints>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4a7-aJ-Rah">
+                                <rect key="frame" x="165" y="99" width="44" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Follow"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -89,7 +94,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXg-EW-AhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3592.8000000000002" y="562.66866566716647"/>
+            <point key="canvasLocation" x="3422" y="546"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cug-ba-FEj">
