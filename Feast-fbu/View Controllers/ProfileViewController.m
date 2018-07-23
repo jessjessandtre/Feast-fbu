@@ -13,8 +13,9 @@
 #import "RecipeCollectionViewCell.h"
 #import <SVProgressHUD.h>
 #import "DetailedPostViewController.h"
+#import "CreatePostViewController.h"
 
-@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UINavigationControllerDelegate>
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UINavigationControllerDelegate, PostUpdateDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -114,12 +115,18 @@
     return self.posts.count;
 }
 
+- (void) didCreatePost {
+    [self refreshData];
+    [self.collectionView reloadData];
+}
+
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
         RecipeCollectionViewCell* cell = (RecipeCollectionViewCell*) sender;
-        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
+        UINavigationController* navigationController =[segue destinationViewController];
+        DetailedPostViewController* detailedPostViewController = (DetailedPostViewController*) navigationController.topViewController;
         detailedPostViewController.post = cell.post;
     }
 }
