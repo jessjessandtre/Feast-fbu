@@ -81,10 +81,8 @@
                     <connections>
                         <outlet property="captionLabel" destination="2FS-2N-2e0" id="39G-a0-PCo"/>
                         <outlet property="createdAtLabel" destination="N29-XY-lib" id="Kxq-tG-h8R"/>
-                        <outlet property="likeButton" destination="a1J-38-sO4" id="uQF-k5-QZg"/>
                         <outlet property="postImageView" destination="CRb-gt-oOj" id="i76-LA-6ae"/>
                         <outlet property="usernameLabel" destination="Piq-G7-qvc" id="GKl-Kf-nLG"/>
-                        <outlet property="viewRecipeButton" destination="VFu-rJ-KOz" id="xO1-St-kty"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMw-wA-NtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
