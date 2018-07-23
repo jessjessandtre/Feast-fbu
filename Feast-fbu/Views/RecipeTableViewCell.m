@@ -29,7 +29,7 @@
     [self.recipeImageView setImageWithURL:recipeImageURL];
     
     // self.recipeImageView.contentMode = UIViewContentModeScaleAspectFit;
-    self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width / 4;
+    self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width / 32;
     // self.recipeImageView.clipsToBounds = YES;
     
     self.recipeTitleLabel.hidden = YES;
