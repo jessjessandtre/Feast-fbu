@@ -100,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="3422" y="546"/>
         </scene>
-        <!--DetailedPostNavController-->
+        <!--DetailedPost-->
         <scene sceneID="uzS-K8-fUY">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPostNavController" id="0PI-pL-8Go" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPost" id="0PI-pL-8Go" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7U-KH-QRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4146" y="433"/>

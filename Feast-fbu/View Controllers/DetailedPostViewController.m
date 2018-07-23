@@ -8,6 +8,7 @@
 
 #import "DetailedPostViewController.h"
 #import <ParseUI/ParseUI.h>
+#import <DateTools.h>
 
 @interface DetailedPostViewController ()
 
@@ -15,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *createdAtLabel;
 @property (strong, nonatomic) IBOutlet PFImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UILabel *captionLabel;
+@property (strong, nonatomic) IBOutlet UIButton *viewRecipeButton;
 
 
 
@@ -39,12 +41,53 @@
 
 - (void) refreshData {
     self.usernameLabel.text = self.post.user.username;
-    //self.createdAtLabel.text = self.post.createdAt;
+    self.captionLabel.text = self.post.caption;
+    
+    
+    NSDate* date = self.post.createdAt;
+    
+    if ([date daysAgo] > 7){
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        // Configurs the input format to parse the date string
+        formatter.dateFormat = @"E MMM d HH:mm:ss X y";
+        // Convert String to Date
+        //NSDate *date = [formatter dateFromString:createdAtOriginalString];
+        // Convert output format
+        formatter.dateStyle = NSDateFormatterShortStyle;
+        formatter.timeStyle = NSDateFormatterNoStyle;
+        self.createdAtLabel.text = [formatter stringFromDate:date];
+    }
+    else if ([date hoursAgo] > 24) {
+        self.createdAtLabel.text = [NSString stringWithFormat:@"%.ldd",[date daysAgo]];
+    }
+    else if ([date minutesAgo] > 60 ) {
+        self.createdAtLabel.text = [NSString stringWithFormat:@"%.fh",[date hoursAgo]];
+    }
+    else if ([date secondsAgo] > 60 ){
+        self.createdAtLabel.text = [NSString stringWithFormat:@"%.fm",[date minutesAgo]];
+    }
+    else {
+        self.createdAtLabel.text = [NSString stringWithFormat:@"%.fs",[date secondsAgo]];
+    }
+    
+    
     self.postImageView.file = self.post.image;
     [self.postImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
         
     }];
-    self.captionLabel.text = self.post.caption;
+    
+    Recipe* recipe = self.post.recipe;
+    [recipe fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (object){
+            [self.viewRecipeButton setTitle:recipe.name forState:UIControlStateNormal];
+        }
+        else {
+            NSLog(@"error loading recipe: %@", error.localizedDescription);
+            [self.viewRecipeButton setTitle:@"View the recipe" forState:UIControlStateNormal];
+        }
+    }];
+    
+
     
 }
 /*

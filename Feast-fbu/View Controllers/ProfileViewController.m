@@ -125,8 +125,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
         RecipeCollectionViewCell* cell = (RecipeCollectionViewCell*) sender;
-        UINavigationController* navigationController =[segue destinationViewController];
-        DetailedPostViewController* detailedPostViewController = (DetailedPostViewController*) navigationController.topViewController;
+        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
         detailedPostViewController.post = cell.post;
     }
 }
