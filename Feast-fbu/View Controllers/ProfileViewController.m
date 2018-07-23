@@ -52,12 +52,6 @@
     [self refreshData];
 }
 
-- (IBAction)followButtonTapped:(id)sender {
-    PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
-    [followActivity setObject:[PFUser currentUser] forKey:@"from_user"];
-    [followActivity setObject:self.user forKey:@"to_user"];
-    [followActivity saveEventually];
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
