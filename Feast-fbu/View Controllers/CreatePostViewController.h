@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import "Post.h"
 
 @interface CreatePostViewController : UIViewController
 
 @property (strong, nonatomic) UIImage* image;
+@property (strong, nonatomic) Recipe* recipe;
 
 @end 
 

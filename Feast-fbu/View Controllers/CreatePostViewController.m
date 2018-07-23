@@ -7,7 +7,6 @@
 //
 
 #import "CreatePostViewController.h"
-#import "Post.h"
 #import "SVProgressHUD.h"
 
 @interface CreatePostViewController ()

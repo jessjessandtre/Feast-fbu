@@ -10,7 +10,7 @@
 
 @implementation Post
 
-@dynamic user, image, caption;
+@dynamic user, recipe, image, caption;
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }

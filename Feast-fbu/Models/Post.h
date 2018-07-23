@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
+#import "Recipe.h"
 
 @interface Post : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) PFUser* user;
+@property (strong, nonatomic) Recipe* recipe;
 @property (strong, nonatomic) NSString* caption;
 @property (strong, nonatomic) PFFile *image;
 

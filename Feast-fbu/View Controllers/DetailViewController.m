@@ -93,6 +93,7 @@
         UIImage *image = sender;
         UINavigationController *navigationController =[segue destinationViewController];
         CreatePostViewController *createPostViewController = (CreatePostViewController*) navigationController.topViewController;
+        
         createPostViewController.image = image;
         //createPostViewController.delegate = self;
     }
