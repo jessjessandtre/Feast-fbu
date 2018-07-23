@@ -7,8 +7,18 @@
 //
 
 #import "DetailedPostViewController.h"
+#import <ParseUI/ParseUI.h>
 
 @interface DetailedPostViewController ()
+
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *createdAtLabel;
+@property (strong, nonatomic) IBOutlet PFImageView *postImageView;
+@property (strong, nonatomic) IBOutlet UIButton *likeButton;
+@property (strong, nonatomic) IBOutlet UILabel *captionLabel;
+@property (strong, nonatomic) IBOutlet UIButton *viewRecipeButton;
+
+
 
 @end
 
