@@ -11,11 +11,12 @@
 #import "ExternalUserCollectionViewCell.h"
 
 @interface ExternalProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UICollectionView *externalPostCollectionView;
 
-@property (weak, nonatomic) IBOutlet UILabel *numberFollowers;
-@property (weak, nonatomic) IBOutlet UILabel *numberFollowing;
+@property (weak, nonatomic) IBOutlet UILabel *numberFollowersLabel;
+@property (weak, nonatomic) IBOutlet UILabel *numberFollowingLabel;
 
-@property (weak, nonatomic) IBOutlet UICollectionView *externalPostTableView;
+
 
 @property (weak, nonatomic) NSArray *posts;
 
@@ -26,6 +27,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.externalPostCollectionView.delegate = self;
+    self.externalPostCollectionView.dataSource = self;
+    
     [self getPosts];
     [self getNumberFollowers];
     [self getNumberFollowing];
@@ -59,7 +64,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
     [query whereKey:@"from_user" equalTo:self.user];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        self.numberFollowers.text = [NSString stringWithFormat:@"%d", number];
+        self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", number];
     }];
 }
 
@@ -67,7 +72,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
     [query whereKey:@"to_user" equalTo:self.user];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        self.numberFollowing.text = [NSString stringWithFormat:@"%d", number];
+        self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", number];
     }];
 }
 
@@ -82,7 +87,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
         if (posts != nil) {
             self.posts = posts;
-            [self.externalPostTableView reloadData];
+            [self.externalPostCollectionView reloadData];
         } else {
             NSLog(@"Error%@", error.localizedDescription);
         }

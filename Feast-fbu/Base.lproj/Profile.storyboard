@@ -20,7 +20,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cTT-mN-6A6">
-                                <rect key="frame" x="0.0" y="299" width="375" height="368"/>
+                                <rect key="frame" x="0.0" y="340" width="375" height="327"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rEa-z1-nvS">
@@ -51,18 +51,46 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xUK-iK-xnr">
-                                <rect key="frame" x="16" y="246" width="343" height="24"/>
+                                <rect key="frame" x="16" y="213" width="343" height="24"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-nS-HYy">
-                                <rect key="frame" x="137" y="137" width="101" height="101"/>
+                                <rect key="frame" x="137" y="104" width="101" height="101"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LjW-nS-HYy" secondAttribute="height" multiplier="1:1" id="O2i-6f-kGV"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEf-kT-A8S">
+                                <rect key="frame" x="25" y="281" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="###" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yeI-FC-APn">
+                                <rect key="frame" x="39" y="252" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="###" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jq3-lo-hS9">
+                                <rect key="frame" x="288" y="251" width="32" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Following" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kxe-qx-l5A">
+                                <rect key="frame" x="268" y="280" width="73" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -70,7 +98,7 @@
                             <constraint firstItem="LjW-nS-HYy" firstAttribute="leading" secondItem="kmK-h7-yUd" secondAttribute="leading" constant="137" id="MSe-tZ-vHl"/>
                             <constraint firstItem="xUK-iK-xnr" firstAttribute="leading" secondItem="kmK-h7-yUd" secondAttribute="leading" constant="16" id="Zdj-B6-Pce"/>
                             <constraint firstItem="kmK-h7-yUd" firstAttribute="trailing" secondItem="LjW-nS-HYy" secondAttribute="trailing" constant="137" id="mjt-VG-mAY"/>
-                            <constraint firstItem="LjW-nS-HYy" firstAttribute="top" secondItem="kmK-h7-yUd" secondAttribute="top" constant="73" id="rJ3-Uy-7hg"/>
+                            <constraint firstItem="LjW-nS-HYy" firstAttribute="top" secondItem="kmK-h7-yUd" secondAttribute="top" constant="40" id="rJ3-Uy-7hg"/>
                             <constraint firstItem="kmK-h7-yUd" firstAttribute="trailing" secondItem="xUK-iK-xnr" secondAttribute="trailing" constant="16" id="zm2-PE-GnX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kmK-h7-yUd"/>
@@ -84,13 +112,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="cTT-mN-6A6" id="pfR-0q-2iM"/>
+                        <outlet property="numberFollowersLabel" destination="yeI-FC-APn" id="0cT-em-9oY"/>
+                        <outlet property="numberFollowingLabel" destination="Jq3-lo-hS9" id="4Xl-jG-v7k"/>
                         <outlet property="profileImageView" destination="LjW-nS-HYy" id="GJa-76-Yq6"/>
                         <outlet property="usernameLabel" destination="xUK-iK-xnr" id="PT0-Ze-dC4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXg-EW-AhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3422" y="546"/>
+            <point key="canvasLocation" x="3421.5999999999999" y="545.57721139430294"/>
         </scene>
         <!--DetailedPost-->
         <scene sceneID="uzS-K8-fUY">
