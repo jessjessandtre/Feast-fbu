@@ -200,6 +200,7 @@
 				297420782106557500B30175 /* DetailedPostViewController.m */,
 				2135FC7F2106819800543AF7 /* TimelineViewController.h */,
 				2135FC802106819800543AF7 /* TimelineViewController.m */,
+				5874010B210681C3000425F3 /* ExternalProfileViewController.h */,
 				5874010C210681C3000425F3 /* ExternalProfileViewController.m */,
 			);
 			path = "View Controllers";

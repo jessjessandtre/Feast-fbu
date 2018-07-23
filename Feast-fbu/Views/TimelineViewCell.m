@@ -27,7 +27,7 @@
     
     self.postImage.file = post[@"image"];
     [self.postImage loadInBackground];
-    
+    test
     
     // Creates a circle frame for the profile pic
     self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
@@ -35,7 +35,7 @@
     self.postAuthorHeader.text = post.user.username;
     self.postAuthorCaption.text = post.user.username;
     self.recipeName.text = post.recipe;
-    self.postCaption.text = post.caption;
+    //self.postCaption.text = post.caption;
     
     
     // Format createdAt date string
