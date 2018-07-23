@@ -30,6 +30,9 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
+    // temporarily setting user to current user until multiple profile page viewing is allowed
+    self.user = [PFUser currentUser];
+    
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.layer.borderColor = [UIColor greenColor].CGColor;
     self.profileImageView.layer.borderWidth = 1.5;
@@ -45,6 +48,13 @@
     layout.itemSize = CGSizeMake(itemWidth,itemHeight);
     [SVProgressHUD show];
     [self refreshData];
+}
+
+- (IBAction)followButtonTapped:(id)sender {
+    PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
+    [followActivity setObject:[PFUser currentUser] forKey:@"from_user"];
+    [followActivity setObject:self.user forKey:@"to_user"];
+    [followActivity saveEventually];
 }
 
 - (void)didReceiveMemoryWarning {
