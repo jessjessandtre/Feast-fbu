@@ -9,9 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "Post.h"
 
 @interface RecipeCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet PFImageView *postImageView;
+
+@property (strong, nonatomic) Post* post;
 
 @end

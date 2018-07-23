@@ -95,6 +95,7 @@
         CreatePostViewController *createPostViewController = (CreatePostViewController*) navigationController.topViewController;
         
         createPostViewController.image = image;
+        createPostViewController.recipe = self.recipe;
         //createPostViewController.delegate = self;
     }
 }
