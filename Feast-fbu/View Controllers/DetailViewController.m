@@ -99,9 +99,7 @@
         //createPostViewController.delegate = self;
     }
 }
-- (IBAction)backButtonTapped:(id)sender {
-    [self dismissViewControllerAnimated:true completion:nil];
-}
+
 
 
 @end
