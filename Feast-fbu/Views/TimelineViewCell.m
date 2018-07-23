@@ -27,7 +27,6 @@
     
     self.postImage.file = post[@"image"];
     [self.postImage loadInBackground];
-    test
     
     // Creates a circle frame for the profile pic
     self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
