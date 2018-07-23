@@ -13,10 +13,12 @@
 @interface DetailedPostViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *username2Label;
+@property (strong, nonatomic) IBOutlet PFImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *createdAtLabel;
 @property (strong, nonatomic) IBOutlet PFImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UILabel *captionLabel;
-@property (strong, nonatomic) IBOutlet UIButton *viewRecipeButton;
+@property (strong, nonatomic) IBOutlet UILabel *recipeNameLabel;
 
 
 
@@ -41,8 +43,8 @@
 
 - (void) refreshData {
     self.usernameLabel.text = self.post.user.username;
+    self.username2Label.text = self.post.user.username;
     self.captionLabel.text = self.post.caption;
-    
     
     NSDate* date = self.post.createdAt;
     
@@ -70,20 +72,20 @@
         self.createdAtLabel.text = [NSString stringWithFormat:@"%.fs",[date secondsAgo]];
     }
     
-    
     self.postImageView.file = self.post.image;
-    [self.postImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
-        
-    }];
+    [self.postImageView loadInBackground];
+    
+  //  self.profileImageView.file =
+  //  [self.profileImageView loadInBackground];
     
     Recipe* recipe = self.post.recipe;
     [recipe fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if (object){
-            [self.viewRecipeButton setTitle:recipe.name forState:UIControlStateNormal];
+            self.recipeNameLabel.text = recipe.name;
         }
         else {
             NSLog(@"error loading recipe: %@", error.localizedDescription);
-            [self.viewRecipeButton setTitle:@"View the recipe" forState:UIControlStateNormal];
+            self.recipeNameLabel.text = @"View this recipe";
         }
     }];
     

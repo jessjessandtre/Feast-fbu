@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0CAC103A1206E8ADA217B3DC /* libPods-Feast-fbu.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE32C27C5AAC604438835E5A /* libPods-Feast-fbu.a */; };
+		2135FC7E21067F6400543AF7 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135FC7D21067F6400543AF7 /* Timeline.storyboard */; };
+		2135FC812106819800543AF7 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC802106819800543AF7 /* TimelineViewController.m */; };
+		2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC83210681EB00543AF7 /* TimelineViewCell.m */; };
 		297420762106551200B30175 /* DetailedPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297420742106551200B30175 /* DetailedPost.storyboard */; };
 		297420792106557500B30175 /* DetailedPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297420782106557500B30175 /* DetailedPostViewController.m */; };
 		2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981333720FFEDF6003FD11C /* AppDelegate.m */; };
@@ -61,6 +64,11 @@
 /* Begin PBXFileReference section */
 		0AF6C67F8BBF30F171F9976E /* Pods-Feast-fbu.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbu.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbu/Pods-Feast-fbu.release.xcconfig"; sourceTree = "<group>"; };
 		13387CB94CC3B84C1041C9C3 /* Pods-Feast-fbuTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.release.xcconfig"; sourceTree = "<group>"; };
+		2135FC7D21067F6400543AF7 /* Timeline.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Timeline.storyboard; sourceTree = "<group>"; };
+		2135FC7F2106819800543AF7 /* TimelineViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewController.h; sourceTree = "<group>"; };
+		2135FC802106819800543AF7 /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
+		2135FC82210681EB00543AF7 /* TimelineViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewCell.h; sourceTree = "<group>"; };
+		2135FC83210681EB00543AF7 /* TimelineViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewCell.m; sourceTree = "<group>"; };
 		297420752106551200B30175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailedPost.storyboard; sourceTree = "<group>"; };
 		297420772106557500B30175 /* DetailedPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailedPostViewController.h; sourceTree = "<group>"; };
 		297420782106557500B30175 /* DetailedPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailedPostViewController.m; sourceTree = "<group>"; };
@@ -190,6 +198,8 @@
 				29CC257B210148EF00BD6C01 /* CreatePostViewController.m */,
 				297420772106557500B30175 /* DetailedPostViewController.h */,
 				297420782106557500B30175 /* DetailedPostViewController.m */,
+				2135FC7F2106819800543AF7 /* TimelineViewController.h */,
+				2135FC802106819800543AF7 /* TimelineViewController.m */,
 				5874010B210681C3000425F3 /* ExternalProfileViewController.h */,
 				5874010C210681C3000425F3 /* ExternalProfileViewController.m */,
 			);
@@ -207,6 +217,8 @@
 				583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */,
 				29CC257D2101539B00BD6C01 /* RecipeCollectionViewCell.h */,
 				29CC257E2101539B00BD6C01 /* RecipeCollectionViewCell.m */,
+				2135FC82210681EB00543AF7 /* TimelineViewCell.h */,
+				2135FC83210681EB00543AF7 /* TimelineViewCell.m */,
 				5874010821068152000425F3 /* ExternalUserCollectionViewCell.h */,
 				5874010921068152000425F3 /* ExternalUserCollectionViewCell.m */,
 			);
@@ -243,6 +255,7 @@
 				298E336A210016BC00290BF4 /* Discovery.storyboard */,
 				29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */,
 				297420742106551200B30175 /* DetailedPost.storyboard */,
+				2135FC7D21067F6400543AF7 /* Timeline.storyboard */,
 				58740106210680C5000425F3 /* ExternalProfile.storyboard */,
 				297DED9220FFFAB800A469FA /* Views */,
 				297DED9120FFFAB200A469FA /* View Controllers */,
@@ -404,6 +417,7 @@
 				2981334320FFEDF7003FD11C /* LaunchScreen.storyboard in Resources */,
 				2981334020FFEDF7003FD11C /* Assets.xcassets in Resources */,
 				2981333E20FFEDF6003FD11C /* Main.storyboard in Resources */,
+				2135FC7E21067F6400543AF7 /* Timeline.storyboard in Resources */,
 				298E336B210016BC00290BF4 /* Discovery.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +539,8 @@
 				587401032106652E000425F3 /* Follow.m in Sources */,
 				29CC2570210116F900BD6C01 /* Post.m in Sources */,
 				29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */,
+				2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */,
+				2135FC812106819800543AF7 /* TimelineViewController.m in Sources */,
 				298E33722100F23800290BF4 /* Recipe.m in Sources */,
 				29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */,
 				298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */,
@@ -718,7 +734,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3ZDZ24QV4;
+				DEVELOPMENT_TEAM = 8XY78Q2YPY;
 				INFOPLIST_FILE = "Feast-fbu/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -737,7 +753,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3ZDZ24QV4;
+				DEVELOPMENT_TEAM = 8XY78Q2YPY;
 				INFOPLIST_FILE = "Feast-fbu/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
