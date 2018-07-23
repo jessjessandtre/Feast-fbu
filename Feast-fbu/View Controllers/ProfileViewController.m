@@ -94,8 +94,7 @@
     
     RecipeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipeCollectionViewCell" forIndexPath:indexPath];
     Post* post = self.posts[indexPath.item];
-    cell.postImageView.file = post.image;
-    [cell.postImageView loadInBackground];
+    cell.post = post;
     return cell;
     
 }

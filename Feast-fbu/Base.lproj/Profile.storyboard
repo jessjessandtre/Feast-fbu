@@ -44,7 +44,7 @@
                                             </subviews>
                                         </view>
                                         <connections>
-                                            <outlet property="postImageView" destination="9iz-4x-Lti" id="m68-Dh-lAl"/>
+                                            <outlet property="postImageView" destination="9iz-4x-Lti" id="F1v-dO-S8k"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

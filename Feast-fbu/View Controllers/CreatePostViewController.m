@@ -51,6 +51,7 @@
     post.user = [PFUser currentUser];
     post.caption = self.captionTextField.text;
     post.image = [self getPFFileFromImage:self.image];
+    [post setObject:self.recipe forKey:@"recipe"];
     
     [SVProgressHUD show];
     [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
