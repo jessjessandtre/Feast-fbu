@@ -12,6 +12,9 @@
 
 @interface ExternalProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
+@property (weak, nonatomic) IBOutlet UILabel *numberFollowers;
+@property (weak, nonatomic) IBOutlet UILabel *numberFollowing;
+
 @property (weak, nonatomic) IBOutlet UICollectionView *externalPostTableView;
 
 @property (weak, nonatomic) NSArray *posts;
@@ -23,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self getPosts];
+    [self getNumberFollowers];
+    [self getNumberFollowing];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,14 +49,45 @@
     Post* post = self.posts[indexPath.item];
     cell.post = post;
     return cell;
-    
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
 }
 
+- (void) getNumberFollowing {
+    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
+    [query whereKey:@"from_user" equalTo:self.user];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+        self.numberFollowers.text = [NSString stringWithFormat:@"%d", number];
+    }];
+}
 
+- (void) getNumberFollowers {
+    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
+    [query whereKey:@"to_user" equalTo:self.user];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+        self.numberFollowing.text = [NSString stringWithFormat:@"%d", number];
+    }];
+}
+
+- (void) getPosts {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"author"];
+    [query whereKey:@"authorUsername" equalTo:self.user.username];
+    
+    query.limit = 20;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
+        if (posts != nil) {
+            self.posts = posts;
+            [self.externalPostTableView reloadData];
+        } else {
+            NSLog(@"Error%@", error.localizedDescription);
+        }
+    }];
+}
 
 /*
 #pragma mark - Navigation
