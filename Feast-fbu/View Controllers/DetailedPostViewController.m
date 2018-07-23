@@ -14,9 +14,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *createdAtLabel;
 @property (strong, nonatomic) IBOutlet PFImageView *postImageView;
-@property (strong, nonatomic) IBOutlet UIButton *likeButton;
 @property (strong, nonatomic) IBOutlet UILabel *captionLabel;
-@property (strong, nonatomic) IBOutlet UIButton *viewRecipeButton;
 
 
 
@@ -26,14 +24,29 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view. ter
+    [self refreshData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+- (void)setPost:(Post *)post {
+    _post = post;
+    [self refreshData];
+}
 
+- (void) refreshData {
+    self.usernameLabel.text = self.post.user.username;
+    //self.createdAtLabel.text = self.post.createdAt;
+    self.postImageView.file = self.post.image;
+    [self.postImageView loadInBackground:^(UIImage * _Nullable image, NSError * _Nullable error) {
+        
+    }];
+    self.captionLabel.text = self.post.caption;
+    
+}
 /*
 #pragma mark - Navigation
 
