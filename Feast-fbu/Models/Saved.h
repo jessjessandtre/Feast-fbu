@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "Recipe.h"
 
-@interface Saved : PFObject
+@interface Saved : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) PFUser* user;
 @property (strong, nonatomic) Recipe* savedRecipe;
