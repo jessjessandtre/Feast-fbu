@@ -67,7 +67,7 @@
                                         <connections>
                                             <outlet property="recipeImage" destination="ciC-T6-tlX" id="I59-qb-wE5"/>
                                             <outlet property="recipeName" destination="BFt-xO-eWZ" id="MTh-xo-LPg"/>
-                                            <segue destination="o1p-np-5CI" kind="presentation" id="JX1-Hj-ToW"/>
+                                            <segue destination="o1p-np-5CI" kind="show" id="JX1-Hj-ToW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -95,7 +95,7 @@
         <!--DetailedRecipe-->
         <scene sceneID="oc0-WI-saj">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailedRecipe" id="o1p-np-5CI" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe" id="o1p-np-5CI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlQ-J0-x7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4447" y="325"/>
