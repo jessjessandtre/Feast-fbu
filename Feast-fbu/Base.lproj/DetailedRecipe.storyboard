@@ -13,7 +13,7 @@
         <!--Detail View Controller-->
         <scene sceneID="thR-i0-oT6">
             <objects>
-                <viewController id="fvG-WN-PHg" customClass="DetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailedRecipe" id="fvG-WN-PHg" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cpf-3G-1KP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,11 +108,6 @@
                         <viewLayoutGuide key="safeArea" id="NtK-G8-gjt"/>
                     </view>
                     <navigationItem key="navigationItem" id="FT5-ll-8Re">
-                        <barButtonItem key="leftBarButtonItem" title="Back" style="plain" id="bxA-9M-OoZ">
-                            <connections>
-                                <action selector="backButtonTapped:" destination="fvG-WN-PHg" id="sL1-ij-hxz"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="fZt-pF-aR4">
                             <connections>
                                 <action selector="didTapPost:" destination="fvG-WN-PHg" id="q7K-DN-qmn"/>

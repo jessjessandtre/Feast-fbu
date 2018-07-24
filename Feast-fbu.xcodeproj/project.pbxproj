@@ -11,6 +11,7 @@
 		2135FC7E21067F6400543AF7 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135FC7D21067F6400543AF7 /* Timeline.storyboard */; };
 		2135FC812106819800543AF7 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC802106819800543AF7 /* TimelineViewController.m */; };
 		2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC83210681EB00543AF7 /* TimelineViewCell.m */; };
+		290F36F92106B1FB00A1B704 /* Saved.m in Sources */ = {isa = PBXBuildFile; fileRef = 290F36F82106B1FB00A1B704 /* Saved.m */; };
 		297420762106551200B30175 /* DetailedPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297420742106551200B30175 /* DetailedPost.storyboard */; };
 		297420792106557500B30175 /* DetailedPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297420782106557500B30175 /* DetailedPostViewController.m */; };
 		2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981333720FFEDF6003FD11C /* AppDelegate.m */; };
@@ -69,6 +70,8 @@
 		2135FC802106819800543AF7 /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		2135FC82210681EB00543AF7 /* TimelineViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewCell.h; sourceTree = "<group>"; };
 		2135FC83210681EB00543AF7 /* TimelineViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewCell.m; sourceTree = "<group>"; };
+		290F36F72106B1FB00A1B704 /* Saved.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Saved.h; sourceTree = "<group>"; };
+		290F36F82106B1FB00A1B704 /* Saved.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saved.m; sourceTree = "<group>"; };
 		297420752106551200B30175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailedPost.storyboard; sourceTree = "<group>"; };
 		297420772106557500B30175 /* DetailedPostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailedPostViewController.h; sourceTree = "<group>"; };
 		297420782106557500B30175 /* DetailedPostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailedPostViewController.m; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				29CC256F210116F900BD6C01 /* Post.m */,
 				587401012106652E000425F3 /* Follow.h */,
 				587401022106652E000425F3 /* Follow.m */,
+				290F36F72106B1FB00A1B704 /* Saved.h */,
+				290F36F82106B1FB00A1B704 /* Saved.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -534,6 +539,7 @@
 				2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */,
 				583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */,
 				5874010D210681C3000425F3 /* ExternalProfileViewController.m in Sources */,
+				290F36F92106B1FB00A1B704 /* Saved.m in Sources */,
 				29CC257F2101539C00BD6C01 /* RecipeCollectionViewCell.m in Sources */,
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
 				587401032106652E000425F3 /* Follow.m in Sources */,

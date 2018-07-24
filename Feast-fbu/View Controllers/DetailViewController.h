@@ -21,6 +21,4 @@
 
 @property (strong, nonatomic) Recipe *recipe;
 
-- (IBAction)backButtonTapped:(id)sender;
-
 @end

@@ -8,6 +8,7 @@
 
 #import "TimelineViewCell.h"
 #import "DateTools.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation TimelineViewCell
 
@@ -22,19 +23,28 @@
     // Configure the view for the selected state
 }
 
-- (void)setPost:(Post *)post {
-    _post = post;
-    
-    self.postImage.file = post[@"image"];
+- (void)setPost {
+    NSLog(@"%@", self.post);
+    self.postImage.file = self.post.image;
     [self.postImage loadInBackground];
-    
+   
     // Creates a circle frame for the profile pic
     self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width / 2;
     
-    self.postAuthorHeader.text = post.user.username;
-    self.postAuthorCaption.text = post.user.username;
-    self.recipeName.text = post.recipe;
-    //self.postCaption.text = post.caption;
+    self.postAuthorHeader.text = self.post.user.username;
+    self.postAuthorCaption.text = self.post.user.username;
+    self.postCaption.text = self.post.caption;
+    
+    Recipe* recipe = self.post.recipe;
+    [recipe fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (object){
+            self.recipeName.text = self.post.recipe.name;
+        }
+        else {
+            NSLog(@"error loading recipe: %@", error.localizedDescription);
+            self.recipeName.text = @"";
+        }
+    }];
     
     
     // Format createdAt date string
@@ -47,7 +57,6 @@
     NSString *timeAgoDate = [NSDate shortTimeAgoSinceDate:createdAtOriginalString];
     self.createdAt = timeAgoDate;
     self.postTimestamp.text = self.createdAt;
-    
     
 }
 
