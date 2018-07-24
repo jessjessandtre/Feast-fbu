@@ -9,6 +9,7 @@
 #import "DetailedPostViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <DateTools.h>
+#import "DetailViewController.h"
 
 @interface DetailedPostViewController ()
 
@@ -20,7 +21,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *captionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *recipeNameLabel;
 
-
+@property (strong, nonatomic) Recipe* recipe;
 
 @end
 
@@ -82,10 +83,12 @@
     [recipe fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if (object){
             self.recipeNameLabel.text = recipe.name;
+            self.recipe = recipe;
         }
         else {
             NSLog(@"error loading recipe: %@", error.localizedDescription);
             self.recipeNameLabel.text = @"View this recipe";
+            self.recipe = nil;
         }
     }];
     
@@ -93,14 +96,18 @@
 
 
 
-/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"DetailedRecipeSegue"]){
+        NSLog(@"segue");
+        DetailViewController* detailViewController = [segue destinationViewController];
+        detailViewController.recipe = self.recipe;
+    }
 }
-*/
+
 
 @end
