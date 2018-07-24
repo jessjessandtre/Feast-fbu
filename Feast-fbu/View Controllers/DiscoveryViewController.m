@@ -14,6 +14,7 @@
 #import "RecipeTableViewCellHeaderCell.h"
 #import <SVProgressHUD.h>
 #import "CreatePostViewController.h"
+#import "Saved.h"
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, PostUpdateDelegate>
 
@@ -135,6 +136,19 @@
                          atScrollPosition:UITableViewScrollPositionTop
                                  animated:YES];
 }
+
+- (IBAction)didSwipeRecipe:(id)sender {
+    UISwipeGestureRecognizer* swipeGestureRecognizer = (UISwipeGestureRecognizer*)sender;
+    RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)swipeGestureRecognizer.view;
+    Recipe* recipe = recipeCell.recipe;
+    
+    Saved* saved = [Saved new];
+    [saved setObject:[PFUser currentUser] forKey:@"user"];
+    [saved setObject:recipe forKey:@"savedRecipe"];
+    [saved saveEventually];
+    
+}
+
 
 #pragma mark - Navigation
 

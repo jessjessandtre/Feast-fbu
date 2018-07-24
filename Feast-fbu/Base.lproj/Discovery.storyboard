@@ -69,6 +69,7 @@
                                 <connections>
                                     <outlet property="recipeImageView" destination="KAh-uf-RXP" id="3V0-59-Xcx"/>
                                     <outlet property="recipeTitleLabel" destination="3qc-DJ-eSx" id="xM1-Xr-AsC"/>
+                                    <outletCollection property="gestureRecognizers" destination="HLv-kY-QyR" appends="YES" id="VJd-EH-Jcb"/>
                                     <segue destination="nI5-MH-6dR" kind="show" id="vOB-Vi-b3e"/>
                                 </connections>
                             </tableViewCell>
@@ -81,6 +82,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWs-XG-Grw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <swipeGestureRecognizer direction="right" id="HLv-kY-QyR">
+                    <connections>
+                        <action selector="didSwipeRecipe:" destination="b1P-LW-wzc" id="fC5-FK-gxx"/>
+                    </connections>
+                </swipeGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="-640.02998500749629"/>
         </scene>

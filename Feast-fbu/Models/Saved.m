@@ -10,6 +10,8 @@
 
 @implementation Saved
 
+@dynamic user, savedRecipe;
+
 + (nonnull NSString *)parseClassName {
     return @"Saved";
 }
