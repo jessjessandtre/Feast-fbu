@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+#import "ParseUI.h"
 
-@interface TimelineViewController : UIViewController
+@interface TimelineViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @end

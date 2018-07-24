@@ -7,8 +7,13 @@
 //
 
 #import "TimelineViewController.h"
+#import "TimelineViewCell.h"
+#import <SVProgressHUD.h>
 
 @interface TimelineViewController ()
+
+@property (nonatomic, strong) NSArray *timeline;
+@property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
 
 @end
 
@@ -17,11 +22,55 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.timelineTableView.delegate = self;
+    self.timelineTableView.dataSource = self;
+    
+    [SVProgressHUD show];
+    [self fetchTimeline];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    TimelineViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"TimelineViewCell"];
+    
+    Post *post = self.timeline[indexPath.row];
+    
+    cell.post = post;
+    [cell setPost];
+    return cell;
+    
+}
+
+- (NSInteger)tableView:(nonnull UITableView *)timelineTableView numberOfRowsInSection:(NSInteger)section {
+    return self.timeline.count;
+}
+
+- (void)fetchTimeline {
+    PFQuery *postQuery = [Post query];
+    [postQuery includeKey:@"user"];
+    [postQuery includeKey:@"createdAt"];
+    [postQuery orderByDescending:@"createdAt"];
+    postQuery.limit = 20;
+    
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (posts) {
+            self.timeline = posts;
+            
+            [self.timelineTableView reloadData];
+            NSLog(@"%@", posts);
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        
+        [self.timelineTableView reloadData];
+    }];
 }
 
 /*

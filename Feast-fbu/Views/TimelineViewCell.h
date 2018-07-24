@@ -30,5 +30,6 @@
 - (IBAction)didTapComment:(id)sender;
 - (IBAction)didTapShare:(id)sender;
 
+- (void)setPost;
 
 @end

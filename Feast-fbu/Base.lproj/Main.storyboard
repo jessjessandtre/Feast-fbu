@@ -93,6 +93,7 @@
                         <color key="selectedImageTintColor" red="0.39215686274509803" green="0.43529411764705883" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBar>
                     <connections>
+                        <segue destination="6xM-a0-yfc" kind="relationship" relationship="viewControllers" id="vfh-38-l4w"/>
                         <segue destination="6Qk-BD-Ovd" kind="relationship" relationship="viewControllers" id="bUA-aG-5cO"/>
                         <segue destination="uVd-e8-yFS" kind="relationship" relationship="viewControllers" id="7Nc-2L-EBy"/>
                         <segue destination="bNm-wU-Us2" kind="relationship" relationship="viewControllers" id="x4c-1T-cQ8"/>
@@ -101,6 +102,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fL-x1-NbD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1466" y="133"/>
+        </scene>
+        <!--TimelineNavController-->
+        <scene sceneID="hQx-K7-g7p">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Timeline" referencedIdentifier="TimelineNavController" id="6xM-a0-yfc" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="Hus-zb-qTK"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5e-wF-Il9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2433" y="-229"/>
         </scene>
         <!--DiscoveryNavController-->
         <scene sceneID="vP0-LG-EBn">
