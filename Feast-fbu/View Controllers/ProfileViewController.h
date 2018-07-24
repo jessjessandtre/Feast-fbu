@@ -11,6 +11,7 @@
 
 @interface ProfileViewController : UIViewController
 
+@property (strong, nonatomic) UIImage *profileImage; 
 @property (strong, nonatomic) PFUser *user; 
 
 - (IBAction)didTapLogout:(id)sender;
