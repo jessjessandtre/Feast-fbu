@@ -83,10 +83,7 @@
     DetailViewController* detailController = [segue destinationViewController];
     UITapGestureRecognizer* gestureRecognizer = (UITapGestureRecognizer*)sender;
     UILabel* label = (UILabel*)gestureRecognizer.view;
-    
-
     TimelineViewCell* timelineCell = (TimelineViewCell*)[[label superview] superview];
-    
     detailController.recipe = timelineCell.post.recipe;
     
 }
