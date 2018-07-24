@@ -15,12 +15,12 @@
 #import "DetailedPostViewController.h"
 #import "CreatePostViewController.h"
 
-@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UINavigationControllerDelegate, PostUpdateDelegate>
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UIImagePickerControllerDelegate, UINavigationControllerDelegate, PostUpdateDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowingLabel;
 
-@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
@@ -35,13 +35,26 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
-    // temporarily setting user to current user until multiple profile page viewing is allowed
     self.user = [PFUser currentUser];
     
     [self getNumberFollowing];
     [self getNumberFollowers];
     
+    self.usernameLabel.text = self.user.username;
+    
+    if (self.user[@"profileImage"] == [NSNull null]) {
+        self.profileImageView.image = [UIImage imageNamed: @"profile-image-blank"];
+    }
+    else {
+        self.profileImageView.file = self.user[@"profileImage"];
+        [self.profileImageView loadInBackground];
+    }
+    
+    [self fetchPosts];
+    
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.clipsToBounds = YES;
+    
     self.profileImageView.layer.borderColor = [UIColor greenColor].CGColor;
     self.profileImageView.layer.borderWidth = 1.5;
     
@@ -54,7 +67,9 @@
     CGFloat itemWidth = (self.collectionView.frame.size.width -  layout.minimumInteritemSpacing * (postsPerLine - 1))/ postsPerLine;
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth,itemHeight);
+    
     [SVProgressHUD show];
+    
     [self refreshData];
 }
 
@@ -92,17 +107,6 @@
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
-  /*  MovieCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"MovieCollectionViewCell" forIndexPath:indexPath];
-    
-    NSDictionary *movie = self.movies[indexPath.item];
-    
-    NSString *baseURLString = @"https://image.tmdb.org/t/p/w500";
-    NSString *posterURLString = movie[@"poster_path"];
-    NSString *fullPosterURLString = [baseURLString stringByAppendingString:posterURLString];
-    
-    NSURL *posterURL  = [NSURL URLWithString:fullPosterURLString];
-    cell.posterView.image = nil;
-    [cell.posterView setImageWithURL:posterURL];*/
     
     RecipeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipeCollectionViewCell" forIndexPath:indexPath];
     Post* post = self.posts[indexPath.item];
@@ -130,6 +134,87 @@
     }
 }
 
+- (IBAction)profileImageTapped:(id)sender {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Change Profile Photo"
+                                                                   message:@"Select the source of your photo"
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+    
+    UIAlertAction *accessCamera = [UIAlertAction actionWithTitle:@"Camera"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * _Nonnull action) {
+                                                             UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+                                                             imagePickerVC.delegate = self;
+                                                             imagePickerVC.allowsEditing = YES;
+                                                             
+                                                             if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera]) {
+                                                                 imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                             }
+                                                             else {
+                                                                 NSLog(@"Camera 🚫 available so we will use photo library instead");
+                                                                 imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                                             }
+                                                             
+                                                             [self presentViewController:imagePickerVC animated:YES completion:nil];
+                                                         }];
+    
+    
+    UIAlertAction *accessCameraRoll = [UIAlertAction actionWithTitle:@"Camera Roll"
+                                                               style:UIAlertActionStyleDefault
+                                                             handler:^(UIAlertAction * _Nonnull action) {
+                                                                 UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+                                                                 imagePickerVC.delegate = self;
+                                                                 imagePickerVC.allowsEditing = YES;
+                                                                 imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                                                 
+                                                                 [self presentViewController:imagePickerVC animated:YES completion:nil];
+                                                             }];
+    [alert addAction:accessCamera];
+    [alert addAction:accessCameraRoll];
+    
+    [self presentViewController:alert animated:YES completion:^{
+        //
+    }];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info {
+    
+    UIImage *editedImage = info[UIImagePickerControllerEditedImage];
+    
+    CGSize imageSize = CGSizeMake(200, 200);
+    
+    editedImage = [self resizeImage:editedImage withSize:imageSize];
+    
+    self.profileImage = editedImage;
+    
+    [self setProfilePicture];
+    
+    [self dismissViewControllerAnimated:YES completion:^{
+        //  --
+    }];
+}
+
+- (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
+    UIImageView *resizeImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    
+    resizeImageView.contentMode = UIViewContentModeScaleAspectFill;
+    resizeImageView.image = image;
+    
+    UIGraphicsBeginImageContext(size);
+    [resizeImageView.layer renderInContext:UIGraphicsGetCurrentContext()];
+    UIImage *newImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    
+    return newImage;
+}
+
+- (void) setProfilePicture {
+    self.user[@"profileImage"] = [self getPFFileFromImage:self.profileImage];
+    
+    [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        self.profileImageView.file = self.user[@"profileImage"];
+        [self.profileImageView loadInBackground];
+    }];
+}
 
 
 - (IBAction)didTapLogout:(id)sender {
@@ -178,6 +263,22 @@
             NSLog(@"Error%@", error.localizedDescription);
         }
     }];
+}
+
+- (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
+    
+    // check if image is not nil
+    if (!image) {
+        return nil;
+    }
+    
+    NSData *imageData = UIImagePNGRepresentation(image);
+    // get image data and check if that is not nil
+    if (!imageData) {
+        return nil;
+    }
+    
+    return [PFFile fileWithName:@"image.png" data:imageData];
 }
 
 

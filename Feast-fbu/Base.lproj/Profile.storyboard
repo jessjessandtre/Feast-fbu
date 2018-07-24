@@ -56,12 +56,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-nS-HYy">
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LjW-nS-HYy" customClass="PFImageView">
                                 <rect key="frame" x="137" y="104" width="101" height="101"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="LjW-nS-HYy" secondAttribute="height" multiplier="1:1" id="O2i-6f-kGV"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="DDD-KM-07g" appends="YES" id="2XZ-sN-zSo"/>
+                                </connections>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZEf-kT-A8S">
                                 <rect key="frame" x="25" y="281" width="73" height="21"/>
@@ -114,11 +118,16 @@
                         <outlet property="collectionView" destination="cTT-mN-6A6" id="pfR-0q-2iM"/>
                         <outlet property="numberFollowersLabel" destination="yeI-FC-APn" id="0cT-em-9oY"/>
                         <outlet property="numberFollowingLabel" destination="Jq3-lo-hS9" id="4Xl-jG-v7k"/>
-                        <outlet property="profileImageView" destination="LjW-nS-HYy" id="GJa-76-Yq6"/>
+                        <outlet property="profileImageView" destination="LjW-nS-HYy" id="eoM-WM-Ev9"/>
                         <outlet property="usernameLabel" destination="xUK-iK-xnr" id="PT0-Ze-dC4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QXg-EW-AhS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="DDD-KM-07g">
+                    <connections>
+                        <action selector="profileImageTapped:" destination="uuU-PO-4OE" id="cGi-Af-pdV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3421.5999999999999" y="545.57721139430294"/>
         </scene>
