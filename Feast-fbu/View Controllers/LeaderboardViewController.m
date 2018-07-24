@@ -73,9 +73,11 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    UINavigationController *navigationController = [segue destinationViewController];
+    /*UINavigationController *navigationController = [segue destinationViewController];
     DetailViewController* detailViewController = (DetailViewController*) navigationController.topViewController;
+    */
     
+    DetailViewController* detailViewController = [segue destinationViewController];
     UITableViewCell *tappedCell = sender;
     
     NSIndexPath *indexPath = [self.recipesTableView indexPathForCell:tappedCell];
