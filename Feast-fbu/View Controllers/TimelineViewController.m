@@ -6,6 +6,7 @@
 //  Copyright © 2018 jessjessandtre. All rights reserved.
 //
 
+#import "DetailViewController.h"
 #import "TimelineViewController.h"
 #import "TimelineViewCell.h"
 #import <SVProgressHUD.h>
@@ -73,14 +74,18 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    DetailViewController* detailController = [segue destinationViewController];
+    UITapGestureRecognizer* gestureRecognizer = (UITapGestureRecognizer*)sender;
+    UILabel* label = (UILabel*)gestureRecognizer.view;
+    TimelineViewCell* timelineCell = (TimelineViewCell*)[[label superview] superview];
+    detailController.recipe = timelineCell.post.recipe;
+    
 }
-*/
 
 @end

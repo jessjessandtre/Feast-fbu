@@ -14,4 +14,5 @@
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
+
 @end

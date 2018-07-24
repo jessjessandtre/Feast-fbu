@@ -37,7 +37,9 @@
     self.searchBar.delegate = self;
     
     self.recipeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
     [SVProgressHUD show];
+    
     [self fetchRecipes];
     
     self.refreshControl = [[UIRefreshControl alloc] init];

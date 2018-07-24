@@ -24,11 +24,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineViewCell" rowHeight="518" id="cTG-t0-Ohd" customClass="TimelineViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="518"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TimelineViewCell" rowHeight="529" id="cTG-t0-Ohd" customClass="TimelineViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="529"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cTG-t0-Ohd" id="kbX-mq-APO">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="517.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="528.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nDC-FZ-Sij" customClass="PFImageView">
@@ -52,7 +52,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="axv-O2-hsf">
-                                                    <rect key="frame" x="15" y="437" width="30" height="23"/>
+                                                    <rect key="frame" x="15" y="437" width="30" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <state key="normal" title="like"/>
                                                     <connections>
@@ -60,7 +60,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-dL-tp7">
-                                                    <rect key="frame" x="58" y="437" width="41" height="23"/>
+                                                    <rect key="frame" x="58" y="437" width="41" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <state key="normal" title="comment"/>
                                                     <connections>
@@ -68,7 +68,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FrJ-ch-olY">
-                                                    <rect key="frame" x="113" y="437" width="30" height="23"/>
+                                                    <rect key="frame" x="113" y="437" width="30" height="27.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                                     <state key="normal" title="share"/>
                                                     <connections>
@@ -76,22 +76,26 @@
                                                     </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wcd-db-sRU">
-                                                    <rect key="frame" x="15" y="468" width="56" height="15"/>
+                                                    <rect key="frame" x="15" y="472.5" width="56" height="15"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8R-KF-ka4">
-                                                    <rect key="frame" x="15" y="491" width="43" height="15"/>
+                                                    <rect key="frame" x="15" y="495.5" width="43" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipe name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAR-VX-4Ox">
-                                                    <rect key="frame" x="79" y="468" width="69.5" height="15"/>
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipe name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tAR-VX-4Ox">
+                                                    <rect key="frame" x="79" y="472.5" width="69.5" height="15"/>
+                                                    <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="ZzO-dV-y61" appends="YES" id="WET-WW-JRg"/>
+                                                    </connections>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bft-8w-AFA">
                                                     <rect key="frame" x="58" y="21" width="60" height="14.5"/>
@@ -105,7 +109,7 @@
                                                 <constraint firstItem="x57-Gp-7cm" firstAttribute="top" secondItem="kbX-mq-APO" secondAttribute="topMargin" id="91L-fz-AU5"/>
                                                 <constraint firstItem="6ls-VA-DIv" firstAttribute="centerY" secondItem="bft-8w-AFA" secondAttribute="centerY" id="9dc-CL-gzz"/>
                                                 <constraint firstItem="FrJ-ch-olY" firstAttribute="leading" secondItem="LjY-dL-tp7" secondAttribute="trailing" constant="14" id="CqA-zu-DDA"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="e8R-KF-ka4" secondAttribute="bottom" constant="1" id="DPz-y1-d51"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="e8R-KF-ka4" secondAttribute="bottom" constant="8" id="DPz-y1-d51"/>
                                                 <constraint firstItem="tAR-VX-4Ox" firstAttribute="leading" secondItem="wcd-db-sRU" secondAttribute="trailing" constant="8" id="FPT-F1-C8n"/>
                                                 <constraint firstItem="axv-O2-hsf" firstAttribute="leading" secondItem="kbX-mq-APO" secondAttribute="leadingMargin" id="Fnh-Ng-vSe"/>
                                                 <constraint firstItem="wcd-db-sRU" firstAttribute="leading" secondItem="kbX-mq-APO" secondAttribute="leadingMargin" id="FuK-6g-6o6"/>
@@ -157,8 +161,21 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O0b-lX-uaL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="ZzO-dV-y61">
+                    <connections>
+                        <segue destination="n02-2m-kLI" kind="show" id="GEz-s7-afc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="693.60000000000002" y="139.880059970015"/>
+        </scene>
+        <!--DetailedRecipe-->
+        <scene sceneID="xGz-aq-TR3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe" id="n02-2m-kLI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzu-wr-IYu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1521" y="102"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1NS-KE-Dpj">
