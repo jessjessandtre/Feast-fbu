@@ -117,7 +117,7 @@
 
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary *bindings) {
             Recipe *recipe = evaluatedObject;
-            return [recipe.name containsString:searchText];
+            return [[recipe.name lowercaseString] containsString:[searchText lowercaseString]];
         }];
         self.filteredRecipes = [self.recipes filteredArrayUsingPredicate:predicate];
         
