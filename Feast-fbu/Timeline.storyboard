@@ -181,7 +181,7 @@
         <scene sceneID="1NS-KE-Dpj">
             <objects>
                 <navigationController storyboardIdentifier="TimelineNavController" automaticallyAdjustsScrollViewInsets="NO" id="1aq-GH-U5j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" id="S9A-zi-cDO"/>
+                    <tabBarItem key="tabBarItem" title="" systemItem="mostRecent" id="S9A-zi-cDO"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mbb-WH-RbS">
