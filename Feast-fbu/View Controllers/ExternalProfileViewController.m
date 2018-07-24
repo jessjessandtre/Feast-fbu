@@ -9,6 +9,7 @@
 #import "ExternalProfileViewController.h"
 #import "Post.h"
 #import "ExternalUserCollectionViewCell.h"
+#import "Follow.h"
 
 @interface ExternalProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *externalPostCollectionView;
