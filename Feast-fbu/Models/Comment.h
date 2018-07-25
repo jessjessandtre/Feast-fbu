@@ -15,6 +15,6 @@
 @property (strong, nonatomic) PFUser *fromUser;
 @property (strong, nonatomic) PFUser *toUser;
 @property (strong, nonatomic) Post *post;
-@property (strong, nonatomic) NSString *comment;
+@property (strong, nonatomic) NSString *text;
 
 @end
