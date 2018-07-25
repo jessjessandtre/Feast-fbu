@@ -10,6 +10,6 @@
 
 @implementation Comment
 
-@dynamic fromUser, toUser, post; 
+@dynamic fromUser, toUser, post;
 
 @end

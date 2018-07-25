@@ -7,10 +7,11 @@
 //
 
 #import "Post.h"
+#import <Parse/Parse.h>
 
 @implementation Post
 
-@dynamic user, recipe, image, caption;
+@dynamic user, recipe, image, caption, numberLikes, numberComments;
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }

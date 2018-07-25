@@ -12,6 +12,7 @@
 
 @implementation TimelineViewCell
 
+
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
@@ -34,6 +35,7 @@
     self.postAuthorHeader.text = self.post.user.username;
     self.postAuthorCaption.text = self.post.user.username;
     self.postCaption.text = self.post.caption;
+    self.profilePicture.file = self.post.user[@"profileImage"];
     
     Recipe* recipe = self.post.recipe;
     [recipe fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
@@ -61,6 +63,25 @@
 }
 
 - (IBAction)didTapLike:(id)sender {
+    PFObject *likeActivity = [PFObject objectWithClassName:@"Like"];
+    [likeActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
+    [likeActivity setObject:self.post.user forKey:@"toUser"];
+    [likeActivity setObject:self.post forKey:@"post"];
+    [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [self updateNumberLikes];
+    }];
+    
+    self.likeButton.enabled = NO;
+}
+
+
+- (void) updateNumberLikes {
+    PFQuery *query = [PFQuery queryWithClassName:@"Like"];
+    [query whereKey:@"post" equalTo:self.post];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+        self.post.numberLikes = [NSNumber numberWithInt:number];
+        NSLog(@"%@%d", @"number of likes is: ", number);
+    }];
 }
 
 - (IBAction)didTapComment:(id)sender {

@@ -81,6 +81,11 @@
     [self.timelineTableView reloadData];
 }
 
+- (void) didUpdateProfilePicture {
+    [self.timelineTableView reloadData];
+}
+
+
 
 
 
