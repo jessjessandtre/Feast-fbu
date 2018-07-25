@@ -10,4 +10,6 @@
 
 @implementation Like
 
+@dynamic fromUser, toUser, post; 
+
 @end

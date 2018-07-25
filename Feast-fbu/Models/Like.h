@@ -13,6 +13,7 @@
 @interface Like : PFObject
 
 @property (strong, nonatomic) PFUser *fromUser;
+@property (strong, nonatomic) PFUser *toUser;
 @property (strong, nonatomic) Post *post;
 
 @end
