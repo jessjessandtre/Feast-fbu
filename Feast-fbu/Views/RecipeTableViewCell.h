@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
+#import "MGSwipeTableCell.H"
 
-@interface RecipeTableViewCell : UITableViewCell
+@interface RecipeTableViewCell : MGSwipeTableCell
 @property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *recipeTitleLabel;
 
