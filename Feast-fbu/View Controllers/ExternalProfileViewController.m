@@ -44,8 +44,8 @@
 
 - (IBAction)followButtonTapped:(id)sender {
     PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
-    [followActivity setObject:[PFUser currentUser] forKey:@"from_user"];
-    [followActivity setObject:self.user forKey:@"to_user"];
+    [followActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
+    [followActivity setObject:self.user forKey:@"toUser"];
     [followActivity saveEventually];
 }
 
@@ -63,7 +63,7 @@
 
 - (void) getNumberFollowing {
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
-    [query whereKey:@"from_user" equalTo:self.user];
+    [query whereKey:@"fromUser" equalTo:self.user];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
         self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", number];
     }];
@@ -71,7 +71,7 @@
 
 - (void) getNumberFollowers {
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
-    [query whereKey:@"to_user" equalTo:self.user];
+    [query whereKey:@"toUser" equalTo:self.user];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
         self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", number];
     }];
@@ -80,8 +80,8 @@
 - (void) getPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
-    [query includeKey:@"author"];
-    [query whereKey:@"authorUsername" equalTo:self.user.username];
+    [query includeKey:@"user"];
+    [query whereKey:@"user" equalTo:self.user];
     
     query.limit = 20;
     

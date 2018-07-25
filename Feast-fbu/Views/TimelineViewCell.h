@@ -25,6 +25,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *recipeName;
 @property (weak, nonatomic) IBOutlet UILabel *postCaption;
 @property (weak, nonatomic) IBOutlet UILabel *postTimestamp;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 - (IBAction)didTapLike:(id)sender;
 - (IBAction)didTapComment:(id)sender;

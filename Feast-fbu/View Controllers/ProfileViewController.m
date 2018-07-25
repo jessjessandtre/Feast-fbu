@@ -190,7 +190,7 @@
     [self setProfilePicture];
     
     [self dismissViewControllerAnimated:YES completion:^{
-        //  --
+        [self.delegate didUpdateProfilePicture];
     }];
 }
 
@@ -215,6 +215,8 @@
         self.profileImageView.file = self.user[@"profileImage"];
         [self.profileImageView loadInBackground];
     }];
+    
+    [self.delegate didUpdateProfilePicture];
 }
 
 
