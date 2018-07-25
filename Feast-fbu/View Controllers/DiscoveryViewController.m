@@ -162,11 +162,28 @@
     NSArray<UIView*>* arr = nil;
     if (direction == MGSwipeDirectionLeftToRight){
         UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
+        PFQuery *saveQuery = [PFQuery queryWithClassName:@"Saved"];
+        [saveQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+        RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)cell;
+        [saveQuery whereKey:@"savedRecipe" equalTo:recipeCell.recipe];
+        [saveQuery countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+            if (!error){
+                if (number == 1){
+                    [save setSelected:YES];
+                }
+                else {
+                    [save setSelected:NO];
+                }
+            }
+            else {
+                NSLog(@"error counting number of saved recipes: %@", error.localizedDescription);
+            }
+        }];
         [save setTitle:@"save" forState:UIControlStateNormal];
         [save setTitle:@"saved" forState:UIControlStateSelected];
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-        [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
         
         UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         [share setTitle:@"share" forState:UIControlStateNormal];
