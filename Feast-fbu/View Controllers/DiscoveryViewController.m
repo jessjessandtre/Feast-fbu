@@ -118,7 +118,7 @@
     [share setTitle:@"unshare" forState:UIControlStateSelected];
     [share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     [share setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-    [share addTarget:self action:@selector(onShare) forControlEvents:UIControlEventTouchUpInside];
+    [share addTarget:self action:@selector(onShareTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[save,share] ];
     stackView.frame = CGRectMake(0, 0, 80, 80);
@@ -128,6 +128,7 @@
     cell.leftButtons = @[stackView];
     cell.leftSwipeSettings.transition = MGSwipeTransitionStatic;
     return cell;
+    
 }
 - (void) onSaveTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;
@@ -139,7 +140,7 @@
         [query whereKey:@"savedRecipe" equalTo:recipe];
         
         [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            if (objects){
+            if (!error){
                 Saved* saved = (Saved*) objects[0];
                 [saved deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                     if (succeeded){
@@ -173,15 +174,17 @@
         }];
          
     }
+    [cell hideSwipeAnimated:YES];
     //NSLog(@"%@", [[[[[[[sender superview] superview] superview] superview] superview] superview] class]);
 
 }
 
--(void) onShare {
+-(void) onShareTapped:(id)sender{
     NSLog(@"share");
 }
 
 -(BOOL) swipeTableCell:(nonnull MGSwipeTableCell *)cell shouldHideSwipeOnTap:(CGPoint) point {
+    NSLog(@"tap");
     return YES;
 }
 
