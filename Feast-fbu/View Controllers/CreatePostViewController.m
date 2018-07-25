@@ -66,6 +66,8 @@
             
         }
     }];
+    
+    [self.delegate didCreatePost];
 }
 
 - (void)setImage:(UIImage *)image {

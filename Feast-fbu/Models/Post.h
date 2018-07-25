@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <Parse/Parse.h>
 #import "Recipe.h"
+#import "Like.h"
+#import "Comment.h"
 
 @interface Post : PFObject <PFSubclassing>
 
@@ -16,5 +18,7 @@
 @property (strong, nonatomic) Recipe* recipe;
 @property (strong, nonatomic) NSString* caption;
 @property (strong, nonatomic) PFFile *image;
+@property (strong, nonatomic) NSArray *likes;
+@property (strong, nonatomic) NSArray *comments;
 
 @end
