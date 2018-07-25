@@ -49,6 +49,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="recipeImageView" destination="vO7-CT-6Ep" id="WIG-af-aZC"/>
+                                            <segue destination="9bH-1b-TUS" kind="show" identifier="DetailedRecipeSegue3" id="DQo-RP-DL8"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -64,7 +65,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g5E-np-f8R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1015.2" y="80.50974512743629"/>
+            <point key="canvasLocation" x="788" y="81"/>
+        </scene>
+        <!--DetailedRecipe-->
+        <scene sceneID="G0Y-ac-B3P">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe" id="9bH-1b-TUS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Px2-GX-suC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1434" y="-42"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Of7-Is-53G">

@@ -107,14 +107,18 @@
     cell.leftButtons = @[view];
   */
     UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    save.backgroundColor = [UIColor blackColor];
-    save.titleLabel.text = @"save";
-    [save addTarget:self action:@selector(onSave:) forControlEvents:UIControlEventTouchUpInside];
+    [save setTitle:@"save" forState:UIControlStateNormal];
+    [save setTitle:@"saved" forState:UIControlStateSelected];
+    [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [save setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    share.backgroundColor = [UIColor redColor];
-    share.titleLabel.text = @"share";
-    [share addTarget:self action:@selector(onShare) forControlEvents:UIControlEventTouchUpInside];
+    [share setTitle:@"share" forState:UIControlStateNormal];
+    [share setTitle:@"unshare" forState:UIControlStateSelected];
+    [share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [share setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+    [share addTarget:self action:@selector(onShareTapped:) forControlEvents:UIControlEventTouchUpInside];
     
     UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[save,share] ];
     stackView.frame = CGRectMake(0, 0, 80, 80);
@@ -124,26 +128,65 @@
     cell.leftButtons = @[stackView];
     cell.leftSwipeSettings.transition = MGSwipeTransitionStatic;
     return cell;
+    
 }
-- (void) onSave:(id)sender {
-    NSLog(@"save");
-    //NSLog(@"%@", [[[[[[[sender superview] superview] superview] superview] superview] superview] class]);
+- (void) onSaveTapped:(id)sender {
+    UIButton* saveButton = (UIButton*)sender;
     RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
+    Recipe* recipe = cell.recipe;
+    if ([saveButton isSelected]){
+        PFQuery* query = [PFQuery queryWithClassName:@"Saved"];
+        [query whereKey:@"user" equalTo:[PFUser currentUser]];
+        [query whereKey:@"savedRecipe" equalTo:recipe];
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            if (!error){
+                Saved* saved = (Saved*) objects[0];
+                [saved deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+                    if (succeeded){
+                        NSLog(@"deleted save object");
+                        [saveButton setSelected:false];
+                    }
+                    else {
+                        NSLog(@"error deleting save object: %@", error.localizedDescription);
+                    }
+                }];
+            }
+            else {
+                NSLog(@"error retreiving saved object: %@", error.localizedDescription);
+            }
+        }];
+        
+    }
     
-    Saved* saved = [Saved new];
-    [saved setObject:[PFUser currentUser] forKey:@"user"];
-    [saved setObject:cell.recipe forKey:@"savedRecipe"];
-    [saved saveEventually];
-    
+    else {
+        Saved* saved = [Saved new];
+        [saved setObject:[PFUser currentUser] forKey:@"user"];
+        [saved setObject:recipe forKey:@"savedRecipe"];
+        [saved saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            if (succeeded){
+                NSLog(@"saved recipe");
+                [saveButton setSelected:true];
+            }
+            else {
+                NSLog(@"error saving recipe: %@" , error.localizedDescription);
+            }
+        }];
+         
+    }
+    [cell hideSwipeAnimated:YES];
+    //NSLog(@"%@", [[[[[[[sender superview] superview] superview] superview] superview] superview] class]);
+
 }
 
--(void) onShare {
+-(void) onShareTapped:(id)sender{
     NSLog(@"share");
 }
 
 -(BOOL) swipeTableCell:(nonnull MGSwipeTableCell *)cell shouldHideSwipeOnTap:(CGPoint) point {
+    NSLog(@"tap");
     return YES;
-     }
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filteredRecipes.count;
