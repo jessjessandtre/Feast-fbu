@@ -75,7 +75,7 @@
 }
 
 
-- (void) updateNumberLikes {
+- (void)updateNumberLikes {
     PFQuery *query = [PFQuery queryWithClassName:@"Like"];
     [query whereKey:@"post" equalTo:self.post];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {

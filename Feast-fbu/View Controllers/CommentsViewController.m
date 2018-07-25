@@ -1,0 +1,87 @@
+//
+//  CommentsViewController.m
+//  Feast-fbu
+//
+//  Created by Jessica Au on 7/25/18.
+//  Copyright © 2018 jessjessandtre. All rights reserved.
+//
+
+#import "CommentsViewController.h"
+#import <Parse/Parse.h>
+#import "Comment.h"
+#import "CommentCell.h"
+
+@interface CommentsViewController () <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *commentsTableView;
+@property (strong, nonatomic) NSArray *comments;
+
+@end
+
+@implementation CommentsViewController
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+    
+    self.commentsTableView.delegate = self;
+    self.commentsTableView.dataSource = self;
+    
+    
+    
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+- (void) fetchComments {
+    PFQuery *commentQuery = [PFQuery queryWithClassName:@"Comment"];
+    [commentQuery includeKey:@"post"];
+    [commentQuery whereKey:@"post" equalTo:self.post];
+    [commentQuery orderByDescending:@"createdAt"];
+    
+    commentQuery.limit = 20;
+    
+    [commentQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable comments, NSError * _Nullable error) {
+        if (comments) {
+            self.comments = comments;
+            
+            [self.commentsTableView reloadData];
+            NSLog(@"%@", comments);
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        [self.commentsTableView reloadData];
+    }];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CommentCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CommentCell" forIndexPath:indexPath];
+    
+    Comment *comment = self.comments[indexPath.row];
+    
+    cell.comment = comment;
+    
+    [cell setComment];
+    
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.comments.count;
+}
+
+/*
+#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
+}
+*/
+
+@end

@@ -61,6 +61,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="like"/>
+                                <connections>
+                                    <action selector="likeButtonTapped:" destination="HOn-0B-plU" eventType="touchUpInside" id="3nf-dF-8ks"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SC-LY-R9E">
                                 <rect key="frame" x="107" y="455" width="32" height="21"/>
@@ -77,6 +80,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="comment"/>
+                                <connections>
+                                    <segue destination="wNH-Cz-iWa" kind="show" id="1Kg-Ls-mpU"/>
+                                </connections>
                             </button>
                             <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="recipe name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWc-BE-1g8">
                                 <rect key="frame" x="84" y="484" width="283" height="18"/>
@@ -130,6 +136,7 @@
                     <connections>
                         <outlet property="captionLabel" destination="2FS-2N-2e0" id="39G-a0-PCo"/>
                         <outlet property="createdAtLabel" destination="N29-XY-lib" id="Kxq-tG-h8R"/>
+                        <outlet property="likeButton" destination="a1J-38-sO4" id="fP7-cP-aUc"/>
                         <outlet property="postImageView" destination="CRb-gt-oOj" id="i76-LA-6ae"/>
                         <outlet property="profileImageView" destination="XuI-fa-atW" id="fwz-6e-Q07"/>
                         <outlet property="recipeNameLabel" destination="sWc-BE-1g8" id="Mbb-LY-j8S"/>
@@ -153,6 +160,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRQ-tb-oeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3927" y="283"/>
+        </scene>
+        <!--Comments-->
+        <scene sceneID="SW1-uk-cGf">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Comments" id="wNH-Cz-iWa" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0N3-kz-yfR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3866" y="446"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2dA-qd-Ma1">

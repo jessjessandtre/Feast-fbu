@@ -20,6 +20,7 @@
 @property (strong, nonatomic) IBOutlet PFImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UILabel *captionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *recipeNameLabel;
+@property (weak, nonatomic) IBOutlet UIButton *likeButton;
 
 @property (strong, nonatomic) Recipe* recipe;
 
@@ -76,9 +77,6 @@
     self.postImageView.file = self.post.image;
     [self.postImageView loadInBackground];
     
-  //  self.profileImageView.file =
-  //  [self.profileImageView loadInBackground];
-    
     Recipe* recipe = self.post.recipe;
     [recipe fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if (object){
@@ -91,8 +89,29 @@
             self.recipe = nil;
         }
     }];
-    
 }
+
+- (IBAction)likeButtonTapped:(id)sender {
+    PFObject *likeActivity = [PFObject objectWithClassName:@"Like"];
+    [likeActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
+    [likeActivity setObject:self.post.user forKey:@"toUser"];
+    [likeActivity setObject:self.post forKey:@"post"];
+    [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [self updateNumberLikes];
+    }];
+    
+    self.likeButton.enabled = NO;
+}
+
+- (void)updateNumberLikes {
+    PFQuery *query = [PFQuery queryWithClassName:@"Like"];
+    [query whereKey:@"post" equalTo:self.post];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+        self.post.numberLikes = [NSNumber numberWithInt:number];
+        NSLog(@"%@%d", @"number of likes is: ", number);
+    }];
+}
+
 
 
 
