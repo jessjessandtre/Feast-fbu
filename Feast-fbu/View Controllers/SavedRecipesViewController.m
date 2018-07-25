@@ -10,7 +10,7 @@
 #import "SVProgressHUD.h"
 #import "SavedRecipesCollectionViewCell.h"
 #import <Parse/Parse.h>
-
+#import "DetailViewController.h"
 
 
 @interface SavedRecipesViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
@@ -89,14 +89,19 @@
     return self.recipes.count;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"DetailedRecipeSegue3"]){
+        DetailViewController* detailedRecipeViewController = [segue destinationViewController];
+        SavedRecipesCollectionViewCell* cell = (SavedRecipesCollectionViewCell*)sender;
+        detailedRecipeViewController.recipe = cell.recipe;
+    }
 }
-*/
+
 
 @end
