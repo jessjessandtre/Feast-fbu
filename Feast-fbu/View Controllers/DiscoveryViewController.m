@@ -67,6 +67,7 @@
         }
         else {
             NSLog(@"%@", error.localizedDescription);
+            [self alertControlWithTitle:@"Error fetching data" andMessage:error.localizedDescription];
         }
         
         [self.recipeTableView reloadData];
@@ -137,6 +138,19 @@
     [self.recipeTableView scrollToRowAtIndexPath:indexPath
                          atScrollPosition:UITableViewScrollPositionTop
                                  animated:YES];
+}
+
+-(void)alertControlWithTitle:(NSString*)title andMessage:(NSString*)message {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:message  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //handle response
+    }];
+    
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:^{
+        // code for after alert controller has finished presenting
+    }];
 }
 
 
