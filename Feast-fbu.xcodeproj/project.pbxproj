@@ -22,6 +22,8 @@
 		2981335020FFEDF7003FD11C /* Feast_fbuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981334F20FFEDF7003FD11C /* Feast_fbuTests.m */; };
 		2981335B20FFEDF7003FD11C /* Feast_fbuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981335A20FFEDF7003FD11C /* Feast_fbuUITests.m */; };
 		29853C3A2108FC5F00971E56 /* SavedRecipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29853C382108FC5F00971E56 /* SavedRecipes.storyboard */; };
+		29853C3D2108FE1E00971E56 /* SavedRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */; };
+		29853C402108FE5200971E56 /* SavedRecipesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */; };
 		298E336B210016BC00290BF4 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336A210016BC00290BF4 /* Discovery.storyboard */; };
 		298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336C210019A000290BF4 /* Leaderboard.storyboard */; };
 		298E336F21001A2500290BF4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336E21001A2500290BF4 /* Profile.storyboard */; };
@@ -93,6 +95,10 @@
 		2981335A20FFEDF7003FD11C /* Feast_fbuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feast_fbuUITests.m; sourceTree = "<group>"; };
 		2981335C20FFEDF7003FD11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		29853C392108FC5F00971E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SavedRecipes.storyboard; sourceTree = "<group>"; };
+		29853C3B2108FE1E00971E56 /* SavedRecipesViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SavedRecipesViewController.h; sourceTree = "<group>"; };
+		29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedRecipesViewController.m; sourceTree = "<group>"; };
+		29853C3E2108FE5200971E56 /* SavedRecipesCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SavedRecipesCollectionViewCell.h; sourceTree = "<group>"; };
+		29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedRecipesCollectionViewCell.m; sourceTree = "<group>"; };
 		298E336A210016BC00290BF4 /* Discovery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discovery.storyboard; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
 		298E336C210019A000290BF4 /* Leaderboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Leaderboard.storyboard; path = Base.lproj/Leaderboard.storyboard; sourceTree = "<group>"; };
 		298E336E21001A2500290BF4 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
@@ -219,6 +225,8 @@
 				2135FC802106819800543AF7 /* TimelineViewController.m */,
 				5874010B210681C3000425F3 /* ExternalProfileViewController.h */,
 				5874010C210681C3000425F3 /* ExternalProfileViewController.m */,
+				29853C3B2108FE1E00971E56 /* SavedRecipesViewController.h */,
+				29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -238,6 +246,8 @@
 				2135FC83210681EB00543AF7 /* TimelineViewCell.m */,
 				5874010821068152000425F3 /* ExternalUserCollectionViewCell.h */,
 				5874010921068152000425F3 /* ExternalUserCollectionViewCell.m */,
+				29853C3E2108FE5200971E56 /* SavedRecipesCollectionViewCell.h */,
+				29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -559,6 +569,8 @@
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
 				587401032106652E000425F3 /* Follow.m in Sources */,
 				29CC2570210116F900BD6C01 /* Post.m in Sources */,
+				29853C402108FE5200971E56 /* SavedRecipesCollectionViewCell.m in Sources */,
+				29853C3D2108FE1E00971E56 /* SavedRecipesViewController.m in Sources */,
 				29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */,
 				587401152107F92A000425F3 /* Like.m in Sources */,
 				2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */,
