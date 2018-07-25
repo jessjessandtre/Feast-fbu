@@ -95,6 +95,7 @@
         }
         else {
             NSLog(@"error fetching posts: %@", error.localizedDescription);
+            [self alertControlWithTitle:@"Error fetching data" andMessage:error.localizedDescription];
 
         }
     }];
@@ -247,24 +248,6 @@
     }];
 }
 
-- (void) getPosts {
-    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
-    [query orderByDescending:@"createdAt"];
-    [query includeKey:@"author"];
-    [query whereKey:@"authorUsername" equalTo:self.user.username];
-    
-    query.limit = 20;
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
-        if (posts != nil) {
-            self.posts = posts;
-            [self.collectionView reloadData];
-        } else {
-            NSLog(@"Error%@", error.localizedDescription);
-        }
-    }];
-}
-
 - (PFFile *)getPFFileFromImage: (UIImage * _Nullable)image {
     
     // check if image is not nil
@@ -279,6 +262,19 @@
     }
     
     return [PFFile fileWithName:@"image.png" data:imageData];
+}
+
+-(void)alertControlWithTitle:(NSString*)title andMessage:(NSString*)message {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:message  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //handle response
+    }];
+    
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:^{
+        // code for after alert controller has finished presenting
+    }];
 }
 
 

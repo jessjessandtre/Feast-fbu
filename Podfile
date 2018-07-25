@@ -12,6 +12,7 @@ target 'Feast-fbu' do
 	pod 'SVProgressHUD'
   	pod 'DateTools'
 	pod 'MGSwipeTableCell'
+	pod 'ASHorizontalScrollViewForObjectiveC', '~> 1.3'
 
 
   target 'Feast-fbuTests' do

@@ -16,13 +16,14 @@
 #import "CreatePostViewController.h"
 #import "Saved.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, PostUpdateDelegate>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, PostUpdateDelegate, MGSwipeTableCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;
 @property (strong, nonatomic) NSArray *filteredRecipes;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 
 
 @end
@@ -67,6 +68,7 @@
         }
         else {
             NSLog(@"%@", error.localizedDescription);
+            [self alertControlWithTitle:@"Error fetching data" andMessage:error.localizedDescription];
         }
         
         [self.recipeTableView reloadData];
@@ -86,9 +88,62 @@
     if (![self.filteredRecipes isEqualToArray:self.recipes]) {
         cell.recipeTitleLabel.hidden = NO;
     }
+    /*
+    MGSwipeButton* save = [MGSwipeButton buttonWithTitle:@"save" backgroundColor:[UIColor greenColor] insets: UIEdgeInsetsMake(0, 0, 0, 0) callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
+        NSLog(@"save");
+        return YES;
+    }];
     
+    MGSwipeButton* share = [MGSwipeButton buttonWithTitle:@"share" backgroundColor:[UIColor blueColor] insets: UIEdgeInsetsMake(0, 0, 0, 0) callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
+        NSLog(@"share");
+        return YES;
+    }];
+    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 70) ];
+    view.backgroundColor = [UIColor purpleColor];
+    [view addSubview:save];
+    [view addSubview:share];
+    
+    
+    cell.leftButtons = @[view];
+  */
+    UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    save.backgroundColor = [UIColor blackColor];
+    save.titleLabel.text = @"save";
+    [save addTarget:self action:@selector(onSave:) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+    share.backgroundColor = [UIColor redColor];
+    share.titleLabel.text = @"share";
+    [share addTarget:self action:@selector(onShare) forControlEvents:UIControlEventTouchUpInside];
+    
+    UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[save,share] ];
+    stackView.frame = CGRectMake(0, 0, 80, 80);
+    stackView.axis = UILayoutConstraintAxisVertical;
+    stackView.distribution = UIStackViewDistributionFillEqually;
+    save.layer.zPosition = 1;
+    cell.leftButtons = @[stackView];
+    cell.leftSwipeSettings.transition = MGSwipeTransitionStatic;
     return cell;
 }
+- (void) onSave:(id)sender {
+    NSLog(@"save");
+    //NSLog(@"%@", [[[[[[[sender superview] superview] superview] superview] superview] superview] class]);
+    RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
+    
+    Saved* saved = [Saved new];
+    [saved setObject:[PFUser currentUser] forKey:@"user"];
+    [saved setObject:cell.recipe forKey:@"savedRecipe"];
+    [saved saveEventually];
+    
+}
+
+-(void) onShare {
+    NSLog(@"share");
+}
+
+-(BOOL) swipeTableCell:(nonnull MGSwipeTableCell *)cell shouldHideSwipeOnTap:(CGPoint) point {
+    return YES;
+     }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filteredRecipes.count;
@@ -139,6 +194,19 @@
                                  animated:YES];
 }
 
+-(void)alertControlWithTitle:(NSString*)title andMessage:(NSString*)message {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:message  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //handle response
+    }];
+    
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:^{
+        // code for after alert controller has finished presenting
+    }];
+}
+
 
 
 #pragma mark - Navigation
@@ -146,18 +214,18 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
-  //  UINavigationController *navigationController = [segue destinationViewController];
+    if ([segue.identifier isEqualToString:@"DetailedRecipeSegue2"]){
+        DetailViewController* detailController = [segue destinationViewController];
+        UITableViewCell *tappedCell = sender;
+        
+        NSIndexPath *indexPath = [self.recipeTableView indexPathForCell:tappedCell];
+        
+        Recipe *recipe = self.recipes[indexPath.row];
+        
+        detailController.recipe = recipe;
+    }
+        
     
-   // DetailViewController *detailController = (DetailViewController*)navigationController.topViewController;
-    
-    DetailViewController* detailController = [segue destinationViewController];
-    UITableViewCell *tappedCell = sender;
-    
-    NSIndexPath *indexPath = [self.recipeTableView indexPathForCell:tappedCell];
-    
-    Recipe *recipe = self.recipes[indexPath.row];
-    
-    detailController.recipe = recipe;
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }

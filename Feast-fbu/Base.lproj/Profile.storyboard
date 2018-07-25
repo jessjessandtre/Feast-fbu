@@ -113,6 +113,11 @@
                                 <action selector="didTapLogout:" destination="uuU-PO-4OE" id="y03-MP-m9i"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Saved Recipes" id="QrR-Ll-AhN">
+                            <connections>
+                                <segue destination="IgE-Bs-a3K" kind="show" id="dDH-li-Nal"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="cTT-mN-6A6" id="pfR-0q-2iM"/>
@@ -138,6 +143,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w7U-KH-QRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4146" y="433"/>
+        </scene>
+        <!--SavedRecipes-->
+        <scene sceneID="xal-AQ-Gto">
+            <objects>
+                <viewControllerPlaceholder storyboardName="SavedRecipes" referencedIdentifier="SavedRecipes" id="IgE-Bs-a3K" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vdn-HF-y7j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4130" y="268"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="cug-ba-FEj">

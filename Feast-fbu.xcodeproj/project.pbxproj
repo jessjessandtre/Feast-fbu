@@ -21,6 +21,7 @@
 		2981334620FFEDF7003FD11C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981334520FFEDF7003FD11C /* main.m */; };
 		2981335020FFEDF7003FD11C /* Feast_fbuTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981334F20FFEDF7003FD11C /* Feast_fbuTests.m */; };
 		2981335B20FFEDF7003FD11C /* Feast_fbuUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2981335A20FFEDF7003FD11C /* Feast_fbuUITests.m */; };
+		29853C3A2108FC5F00971E56 /* SavedRecipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29853C382108FC5F00971E56 /* SavedRecipes.storyboard */; };
 		298E336B210016BC00290BF4 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336A210016BC00290BF4 /* Discovery.storyboard */; };
 		298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336C210019A000290BF4 /* Leaderboard.storyboard */; };
 		298E336F21001A2500290BF4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336E21001A2500290BF4 /* Profile.storyboard */; };
@@ -91,6 +92,7 @@
 		2981335620FFEDF7003FD11C /* Feast-fbuUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Feast-fbuUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2981335A20FFEDF7003FD11C /* Feast_fbuUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Feast_fbuUITests.m; sourceTree = "<group>"; };
 		2981335C20FFEDF7003FD11C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29853C392108FC5F00971E56 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/SavedRecipes.storyboard; sourceTree = "<group>"; };
 		298E336A210016BC00290BF4 /* Discovery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discovery.storyboard; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
 		298E336C210019A000290BF4 /* Leaderboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Leaderboard.storyboard; path = Base.lproj/Leaderboard.storyboard; sourceTree = "<group>"; };
 		298E336E21001A2500290BF4 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
@@ -274,6 +276,7 @@
 				58740106210680C5000425F3 /* ExternalProfile.storyboard */,
 				2981333C20FFEDF6003FD11C /* Main.storyboard */,
 				2981334120FFEDF7003FD11C /* LaunchScreen.storyboard */,
+				29853C382108FC5F00971E56 /* SavedRecipes.storyboard */,
 				297DED9220FFFAB800A469FA /* Views */,
 				297DED9120FFFAB200A469FA /* View Controllers */,
 				297DED9020FFFA7500A469FA /* Models */,
@@ -429,6 +432,7 @@
 				298E336F21001A2500290BF4 /* Profile.storyboard in Resources */,
 				298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */,
 				29CC25732101311900BD6C01 /* DetailedRecipe.storyboard in Resources */,
+				29853C3A2108FC5F00971E56 /* SavedRecipes.storyboard in Resources */,
 				2981334320FFEDF7003FD11C /* LaunchScreen.storyboard in Resources */,
 				2981334020FFEDF7003FD11C /* Assets.xcassets in Resources */,
 				2981333E20FFEDF6003FD11C /* Main.storyboard in Resources */,
@@ -625,6 +629,14 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
+		29853C382108FC5F00971E56 /* SavedRecipes.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29853C392108FC5F00971E56 /* Base */,
+			);
+			name = SavedRecipes.storyboard;
+			sourceTree = "<group>";
+		};
 		29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -752,14 +764,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8XY78Q2YPY;
+				DEVELOPMENT_TEAM = C3ZDZ24QV4;
 				INFOPLIST_FILE = "Feast-fbu/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twiggs.Feast-fbu";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jessicashu7.Feast-fbu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -771,14 +783,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8XY78Q2YPY;
+				DEVELOPMENT_TEAM = C3ZDZ24QV4;
 				INFOPLIST_FILE = "Feast-fbu/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twiggs.Feast-fbu";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jessicashu7.Feast-fbu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
