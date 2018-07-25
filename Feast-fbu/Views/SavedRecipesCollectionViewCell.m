@@ -10,4 +10,11 @@
 
 @implementation SavedRecipesCollectionViewCell
 
+- (void)setRecipe:(Recipe *)recipe {
+    _recipe = recipe;
+    
+    self.recipeImageView.file = recipe.image;
+    [self.recipeImageView loadInBackground];
+}
+
 @end
