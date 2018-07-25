@@ -10,8 +10,10 @@
 #import "TimelineViewController.h"
 #import "TimelineViewCell.h"
 #import <SVProgressHUD.h>
+#import "ProfileViewController.h"
+#import "CreatePostViewController.h"
 
-@interface TimelineViewController ()
+@interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource, ProfileViewControllerDelegate, PostUpdateDelegate>
 
 @property (nonatomic, strong) NSArray *timeline;
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;
@@ -72,6 +74,11 @@
         
         [self.timelineTableView reloadData];
     }];
+}
+
+- (void)didCreatePost {
+    [self fetchTimeline];
+    [self.timelineTableView reloadData];
 }
 
 

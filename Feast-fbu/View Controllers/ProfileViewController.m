@@ -122,7 +122,7 @@
 
 - (void) didCreatePost {
     [self refreshData];
-    [self.collectionView reloadData];
+    [self.collectionView reloadData]; // instead refresh with every click
 }
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
