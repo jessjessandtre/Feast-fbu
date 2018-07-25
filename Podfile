@@ -11,6 +11,7 @@ target 'Feast-fbu' do
 	pod 'AFNetworking' 
 	pod 'SVProgressHUD'
   	pod 'DateTools'
+	pod 'MGSwipeTableCell'
 
 
   target 'Feast-fbuTests' do

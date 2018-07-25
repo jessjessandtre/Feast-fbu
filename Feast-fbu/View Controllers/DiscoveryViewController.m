@@ -117,7 +117,7 @@
 
         NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary *bindings) {
             Recipe *recipe = evaluatedObject;
-            return [recipe.name containsString:searchText];
+            return [[recipe.name lowercaseString] containsString:[searchText lowercaseString]];
         }];
         self.filteredRecipes = [self.recipes filteredArrayUsingPredicate:predicate];
         
@@ -139,17 +139,6 @@
                                  animated:YES];
 }
 
-- (IBAction)didSwipeRecipe:(id)sender {
-    UISwipeGestureRecognizer* swipeGestureRecognizer = (UISwipeGestureRecognizer*)sender;
-    RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)swipeGestureRecognizer.view;
-    Recipe* recipe = recipeCell.recipe;
-    
-    Saved* saved = [Saved new];
-    [saved setObject:[PFUser currentUser] forKey:@"user"];
-    [saved setObject:recipe forKey:@"savedRecipe"];
-    [saved saveEventually];
-    
-}
 
 
 #pragma mark - Navigation
