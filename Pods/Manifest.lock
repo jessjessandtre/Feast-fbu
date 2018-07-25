@@ -16,6 +16,7 @@ PODS:
     - AFNetworking/NSURLSession
   - Bolts/Tasks (1.9.0)
   - DateTools (2.0.0)
+  - MGSwipeTableCell (1.6.7)
   - Parse (1.17.1):
     - Parse/Core (= 1.17.1)
   - Parse/Core (1.17.1):
@@ -28,6 +29,7 @@ PODS:
 DEPENDENCIES:
   - AFNetworking
   - DateTools
+  - MGSwipeTableCell
   - Parse
   - ParseUI
   - SVProgressHUD
@@ -37,6 +39,7 @@ SPEC REPOS:
     - AFNetworking
     - Bolts
     - DateTools
+    - MGSwipeTableCell
     - Parse
     - ParseUI
     - SVProgressHUD
@@ -45,10 +48,11 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   DateTools: 933ac9c490f21f92127cf690ccd8c397e0126caf
+  MGSwipeTableCell: fb20e983988bde2b8d0df29c2d9e1d8ffd10b74a
   Parse: d3edaf8c7c722cb33cb83ba7821d015ae32d362d
   ParseUI: 2b37a0bc692a3e7666cf0c37b5521dfddd74a1af
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 7ea8c3a877a589d8f82f0c13d3d830a738f5ab77
+PODFILE CHECKSUM: b6e8e3d2c92243221975b9f240ed8c442ec6a993
 
 COCOAPODS: 1.5.3
