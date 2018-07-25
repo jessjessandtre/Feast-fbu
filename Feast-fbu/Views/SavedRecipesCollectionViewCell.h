@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Recipe.h"
+#import <ParseUI/ParseUI.h>
 
 @interface SavedRecipesCollectionViewCell : UICollectionViewCell
+
+@property (strong, nonatomic) Recipe* recipe;
+@property (strong, nonatomic) IBOutlet PFImageView *recipeImageView;
 
 @end
