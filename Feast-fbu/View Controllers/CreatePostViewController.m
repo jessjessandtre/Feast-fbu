@@ -69,7 +69,9 @@
         }
     }];
     
-    //NSDictionary *postDictionary = @{ @"}
+    [[NSNotificationCenter defaultCenter]
+     postNotificationName:@"PostNotification"
+     object:self];
 }
 
 - (void)setImage:(UIImage *)image {
