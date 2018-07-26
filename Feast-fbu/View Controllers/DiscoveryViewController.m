@@ -16,7 +16,7 @@
 #import "CreatePostViewController.h"
 #import "Saved.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, PostUpdateDelegate, MGSwipeTableCellDelegate>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, MGSwipeTableCellDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;

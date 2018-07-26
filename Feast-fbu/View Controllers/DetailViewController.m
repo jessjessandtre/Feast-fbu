@@ -11,7 +11,7 @@
 #import "CreatePostViewController.h"
 #import "Saved.h"
 
-@interface DetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface DetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PostUpdateDelegate>
 
 @end
 
@@ -160,7 +160,7 @@
         
         createPostViewController.image = image;
         createPostViewController.recipe = self.recipe;
-        //createPostViewController.delegate = self;
+        // createPostViewController.intermediateDelegate = self;
     }
 }
 
