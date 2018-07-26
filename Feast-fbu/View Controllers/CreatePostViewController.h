@@ -10,15 +10,17 @@
 #import <Parse/Parse.h>
 #import "Post.h"
 
-@protocol PostUpdateDelegate
+/*
+@protocol PostUpdateDelegateIntermediate
 
-- (void) didCreatePost;
+- (void) didCreatePostIntermediate;
 
 @end
+ */
 
 @interface CreatePostViewController : UIViewController
 
-@property (nonatomic, weak) id<PostUpdateDelegate> delegate;
+@property (nonatomic, weak) id<PostUpdateDelegateIntermediate> intermediateDelegate;
 
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) Recipe* recipe;

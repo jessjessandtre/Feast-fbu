@@ -8,8 +8,10 @@
 
 #import "CreatePostViewController.h"
 #import "SVProgressHUD.h"
+#import "DetailViewController.h"
 
-@interface CreatePostViewController ()
+@interface CreatePostViewController () <PostUpdateDelegate>
+
 @property (strong, nonatomic) IBOutlet UIImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UITextField *captionTextField;
 
@@ -67,7 +69,7 @@
         }
     }];
     
-    [self.delegate didCreatePost];
+    [self.intermediateDelegate didCreatePostIntermediate];
 }
 
 - (void)setImage:(UIImage *)image {
