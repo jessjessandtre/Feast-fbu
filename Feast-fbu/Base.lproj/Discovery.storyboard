@@ -29,7 +29,7 @@
                                         <size key="itemSize" width="150" height="150"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                        <inset key="sectionInset" minX="20" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                     <cells>
                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsCollectionViewCell" id="CSP-B9-uQk" customClass="FriendsCollectionViewCell">
@@ -44,7 +44,6 @@
                                                     </imageView>
                                                 </subviews>
                                             </view>
-                                            <color key="backgroundColor" red="0.99215686274509807" green="0.52156862745098043" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="r5m-fY-5M4" secondAttribute="trailing" id="1Pg-yG-zRf"/>
                                                 <constraint firstItem="r5m-fY-5M4" firstAttribute="leading" secondItem="CSP-B9-uQk" secondAttribute="leading" id="WWg-HP-T4u"/>
@@ -53,6 +52,7 @@
                                             </constraints>
                                             <connections>
                                                 <outlet property="postImage" destination="r5m-fY-5M4" id="urJ-CH-PF0"/>
+                                                <segue destination="DHP-BV-Nh5" kind="show" identifier="DetailedPostSegue" id="woK-UY-TJo"/>
                                             </connections>
                                         </collectionViewCell>
                                     </cells>
@@ -134,6 +134,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWs-XG-Grw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2381.5999999999999" y="-640.02998500749629"/>
+        </scene>
+        <!--DetailedPost-->
+        <scene sceneID="CxP-kB-KfB">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPost" id="DHP-BV-Nh5" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3KU-Os-wav" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3290" y="-780"/>
         </scene>
         <!--DetailedRecipe-->
         <scene sceneID="4wG-MC-Q1z">

@@ -25,7 +25,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *instructionsLabel;
 @property (strong, nonatomic) IBOutlet UILabel *sourceUrlLabel;
-@property (strong, nonatomic) IBOutlet UILabel *numPostsLabel;
 @property (strong, nonatomic) IBOutlet UIButton *saveButton;
 
 @property (strong, nonatomic) Recipe *recipe;
