@@ -19,7 +19,7 @@
 #import "ParseUI.h"
 #import "FriendsCollectionViewCell.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, PostUpdateDelegate, MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;
