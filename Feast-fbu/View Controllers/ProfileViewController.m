@@ -15,7 +15,7 @@
 #import "DetailedPostViewController.h"
 #import "CreatePostViewController.h"
 
-@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UIImagePickerControllerDelegate, UINavigationControllerDelegate, PostUpdateDelegate>
+@interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowingLabel;

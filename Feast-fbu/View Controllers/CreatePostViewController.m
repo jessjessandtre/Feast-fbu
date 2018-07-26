@@ -10,7 +10,7 @@
 #import "SVProgressHUD.h"
 #import "DetailViewController.h"
 
-@interface CreatePostViewController () <PostUpdateDelegate>
+@interface CreatePostViewController () 
 
 @property (strong, nonatomic) IBOutlet UIImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UITextField *captionTextField;

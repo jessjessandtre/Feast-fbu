@@ -20,7 +20,7 @@
 
 @interface CreatePostViewController : UIViewController
 
-@property (nonatomic, weak) id<PostUpdateDelegateIntermediate> intermediateDelegate;
+// @property (nonatomic, weak) id<PostUpdateDelegateIntermediate> intermediateDelegate;
 
 @property (strong, nonatomic) UIImage* image;
 @property (strong, nonatomic) Recipe* recipe;
