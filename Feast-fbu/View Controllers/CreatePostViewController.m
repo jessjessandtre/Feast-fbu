@@ -69,7 +69,7 @@
         }
     }];
     
-    [self.intermediateDelegate didCreatePostIntermediate];
+    //NSDictionary *postDictionary = @{ @"}
 }
 
 - (void)setImage:(UIImage *)image {
