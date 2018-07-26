@@ -10,7 +10,7 @@
 #import "UIImageView+AFNetworking.h"
 #import "CreatePostViewController.h"
 
-@interface DetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, PostUpdateDelegate>
+@interface DetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 
 @end
 
