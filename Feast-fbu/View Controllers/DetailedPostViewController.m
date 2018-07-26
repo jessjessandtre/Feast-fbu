@@ -10,6 +10,7 @@
 #import <ParseUI/ParseUI.h>
 #import <DateTools.h>
 #import "DetailViewController.h"
+#import "CommentsViewController.h"
 
 @interface DetailedPostViewController ()
 
@@ -125,6 +126,10 @@
         NSLog(@"segue");
         DetailViewController* detailViewController = [segue destinationViewController];
         detailViewController.recipe = self.recipe;
+    }
+    else if ([segue.identifier isEqualToString:@"CommentsSegue"]) {
+        CommentsViewController *commentsViewController = [segue destinationViewController];
+        commentsViewController.post = self.post;
     }
 }
 

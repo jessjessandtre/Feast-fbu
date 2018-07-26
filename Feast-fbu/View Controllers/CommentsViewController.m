@@ -14,6 +14,7 @@
 @interface CommentsViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *commentsTableView;
+@property (weak, nonatomic) IBOutlet UITextField *commentTextField;
 @property (strong, nonatomic) NSArray *comments;
 
 @end
@@ -27,8 +28,7 @@
     self.commentsTableView.delegate = self;
     self.commentsTableView.dataSource = self;
     
-    
-    
+    [self fetchComments];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +72,35 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.comments.count;
+}
+
+- (IBAction)commentButtonTapped:(id)sender {
+    if (![self.commentTextField.text  isEqual: @""]) {
+        PFObject *commentActivity = [PFObject objectWithClassName:@"Comment"];
+        [commentActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
+        [commentActivity setObject:self.post.user forKey:@"toUser"];
+        [commentActivity setObject:self.post forKey:@"post"];
+        [commentActivity setObject:self.commentTextField.text forKey:@"text"];
+        [commentActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+            [self updateNumberComments];
+        }];
+        
+        [self refreshComments];
+    }
+}
+
+- (void)updateNumberComments {
+    PFQuery *query = [PFQuery queryWithClassName:@"Comment"];
+    [query whereKey:@"post" equalTo:self.post];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+        self.post.numberComments = [NSNumber numberWithInt:number];
+        NSLog(@"%@%d", @"number of comments is: ", number);
+    }];
+}
+
+- (void) refreshComments {
+    [self fetchComments];
+    [self.commentsTableView reloadData];
 }
 
 /*

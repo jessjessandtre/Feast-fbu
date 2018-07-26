@@ -81,7 +81,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="comment"/>
                                 <connections>
-                                    <segue destination="wNH-Cz-iWa" kind="show" id="1Kg-Ls-mpU"/>
+                                    <segue destination="wNH-Cz-iWa" kind="show" identifier="CommentsSegue" id="1Kg-Ls-mpU"/>
                                 </connections>
                             </button>
                             <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="recipe name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWc-BE-1g8">
