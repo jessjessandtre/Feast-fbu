@@ -216,8 +216,8 @@
 			isa = PBXGroup;
 			children = (
 				298E337C2101092600290BF4 /* LeaderboardViewController.h */,
-				298E337D2101092600290BF4 /* LeaderboardViewController.m */,
 				298E337A2101091900290BF4 /* DiscoveryViewController.h */,
+				298E337D2101092600290BF4 /* LeaderboardViewController.m */,
 				298E33792101091900290BF4 /* DiscoveryViewController.m */,
 				298E33732100F82500290BF4 /* ProfileViewController.h */,
 				298E33742100F82500290BF4 /* ProfileViewController.m */,

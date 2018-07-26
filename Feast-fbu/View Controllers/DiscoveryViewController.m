@@ -88,45 +88,7 @@
     if (![self.filteredRecipes isEqualToArray:self.recipes]) {
         cell.recipeTitleLabel.hidden = NO;
     }
-    /*
-    MGSwipeButton* save = [MGSwipeButton buttonWithTitle:@"save" backgroundColor:[UIColor greenColor] insets: UIEdgeInsetsMake(0, 0, 0, 0) callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
-        NSLog(@"save");
-        return YES;
-    }];
-    
-    MGSwipeButton* share = [MGSwipeButton buttonWithTitle:@"share" backgroundColor:[UIColor blueColor] insets: UIEdgeInsetsMake(0, 0, 0, 0) callback:^BOOL(MGSwipeTableCell * _Nonnull cell) {
-        NSLog(@"share");
-        return YES;
-    }];
-    UIView* view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 70, 70) ];
-    view.backgroundColor = [UIColor purpleColor];
-    [view addSubview:save];
-    [view addSubview:share];
-    
-    
-    cell.leftButtons = @[view];
-  */
-    UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [save setTitle:@"save" forState:UIControlStateNormal];
-    [save setTitle:@"saved" forState:UIControlStateSelected];
-    [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [save setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-    [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-    [share setTitle:@"share" forState:UIControlStateNormal];
-    [share setTitle:@"unshare" forState:UIControlStateSelected];
-    [share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [share setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-    [share addTarget:self action:@selector(onShareTapped:) forControlEvents:UIControlEventTouchUpInside];
-    
-    UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[save,share] ];
-    stackView.frame = CGRectMake(0, 0, 80, 80);
-    stackView.axis = UILayoutConstraintAxisVertical;
-    stackView.distribution = UIStackViewDistributionFillEqually;
-    save.layer.zPosition = 1;
-    cell.leftButtons = @[stackView];
-    cell.leftSwipeSettings.transition = MGSwipeTransitionStatic;
+    cell.delegate = self;
     return cell;
     
 }
@@ -183,10 +145,71 @@
     NSLog(@"share");
 }
 
--(BOOL) swipeTableCell:(nonnull MGSwipeTableCell *)cell shouldHideSwipeOnTap:(CGPoint) point {
-    NSLog(@"tap");
-    return YES;
+
+
+/**
+ * Delegate method to setup the swipe buttons and swipe/expansion settings
+ * Buttons can be any kind of UIView but it's recommended to use the convenience MGSwipeButton class
+ * Setting up buttons with this delegate instead of using cell properties improves memory usage because buttons are only created in demand
+ * @param cell the UITableViewCell to configure. You can get the indexPath using [tableView indexPathForCell:cell]
+ * @param direction The swipe direction (left to right or right to left)
+ * @param swipeSettings instance to configure the swipe transition and setting (optional)
+ * @param expansionSettings instance to configure button expansions (optional)
+ * @return Buttons array
+ **/
+-(nullable NSArray<UIView*>*) swipeTableCell:(nonnull MGSwipeTableCell*) cell swipeButtonsForDirection:(MGSwipeDirection)direction
+                               swipeSettings:(nonnull MGSwipeSettings*) swipeSettings expansionSettings:(nonnull MGSwipeExpansionSettings*) expansionSettings {
+    NSArray<UIView*>* arr = nil;
+    if (direction == MGSwipeDirectionLeftToRight){
+        UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
+        PFQuery *saveQuery = [PFQuery queryWithClassName:@"Saved"];
+        [saveQuery whereKey:@"user" equalTo:[PFUser currentUser]];
+        RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)cell;
+        [saveQuery whereKey:@"savedRecipe" equalTo:recipeCell.recipe];
+        [saveQuery countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+            if (!error){
+                if (number == 1){
+                    [save setSelected:YES];
+                }
+                else {
+                    [save setSelected:NO];
+                }
+            }
+            else {
+                NSLog(@"error counting number of saved recipes: %@", error.localizedDescription);
+            }
+        }];
+        [save setTitle:@"save" forState:UIControlStateNormal];
+        [save setTitle:@"saved" forState:UIControlStateSelected];
+        [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [save setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        
+        UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        [share setTitle:@"share" forState:UIControlStateNormal];
+        [share setTitle:@"unshare" forState:UIControlStateSelected];
+        [share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+        [share setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
+        [share addTarget:self action:@selector(onShareTapped:) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[save,share] ];
+        stackView.frame = CGRectMake(0, 0, 80, 80);
+        stackView.axis = UILayoutConstraintAxisVertical;
+        stackView.distribution = UIStackViewDistributionFillEqually;
+        save.layer.zPosition = 1;
+        
+        
+        cell.leftButtons = @[stackView];
+        cell.leftSwipeSettings.transition = MGSwipeTransitionStatic;
+        
+        arr = @[stackView];
+
+    }
+    return arr;
 }
+
+
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.filteredRecipes.count;
