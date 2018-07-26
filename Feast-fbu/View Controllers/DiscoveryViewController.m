@@ -97,41 +97,18 @@
     RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
     Recipe* recipe = cell.recipe;
     if ([saveButton isSelected]){
-        PFQuery* query = [PFQuery queryWithClassName:@"Saved"];
-        [query whereKey:@"user" equalTo:[PFUser currentUser]];
-        [query whereKey:@"savedRecipe" equalTo:recipe];
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            if (!error){
-                Saved* saved = (Saved*) objects[0];
-                [saved deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                    if (succeeded){
-                        NSLog(@"deleted save object");
-                        [saveButton setSelected:false];
-                    }
-                    else {
-                        NSLog(@"error deleting save object: %@", error.localizedDescription);
-                    }
-                }];
-            }
-            else {
-                NSLog(@"error retreiving saved object: %@", error.localizedDescription);
+        [Saved deleteSavedRecipe:recipe withCompletion:^(Boolean succeeded) {
+            if (succeeded){
+                [saveButton setSelected:NO];
             }
         }];
         
     }
     
     else {
-        Saved* saved = [Saved new];
-        [saved setObject:[PFUser currentUser] forKey:@"user"];
-        [saved setObject:recipe forKey:@"savedRecipe"];
-        [saved saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [Saved saveRecipe:recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
-                NSLog(@"saved recipe");
-                [saveButton setSelected:true];
-            }
-            else {
-                NSLog(@"error saving recipe: %@" , error.localizedDescription);
+                [saveButton setSelected:YES];
             }
         }];
          
@@ -163,23 +140,16 @@
     if (direction == MGSwipeDirectionLeftToRight){
         UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
-        PFQuery *saveQuery = [PFQuery queryWithClassName:@"Saved"];
-        [saveQuery whereKey:@"user" equalTo:[PFUser currentUser]];
         RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)cell;
-        [saveQuery whereKey:@"savedRecipe" equalTo:recipeCell.recipe];
-        [saveQuery countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-            if (!error){
-                if (number == 1){
-                    [save setSelected:YES];
-                }
-                else {
-                    [save setSelected:NO];
-                }
-            }
-            else {
-                NSLog(@"error counting number of saved recipes: %@", error.localizedDescription);
+
+        [Saved savedRecipeExists:recipeCell.recipe withCompletion:^(Boolean saved) {
+            if (saved){
+                [save setSelected:YES];
+            } else {
+                [save setSelected:NO];
             }
         }];
+        
         [save setTitle:@"save" forState:UIControlStateNormal];
         [save setTitle:@"saved" forState:UIControlStateSelected];
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

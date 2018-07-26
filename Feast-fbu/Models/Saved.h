@@ -15,4 +15,9 @@
 @property (strong, nonatomic) PFUser* user;
 @property (strong, nonatomic) Recipe* savedRecipe;
 
+
++ (void)savedRecipeExists:(Recipe*)recipe withCompletion:(void(^)(Boolean saved))completion;
++ (void)deleteSavedRecipe:(Recipe*)recipe withCompletion:(void(^)(Boolean succeeded))completion;
++ (void)saveRecipe:(Recipe*)recipe withCompletion:(void(^)(Boolean succeeded))completion;
+
 @end

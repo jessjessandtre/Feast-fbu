@@ -48,20 +48,11 @@
     self.sourceUrlLabel.text = self.recipe.sourceURL;
     self.numPostsLabel.text = [[self.recipe.numPosts stringValue] stringByAppendingString:@" posts"];
     
-    PFQuery *saveQuery = [PFQuery queryWithClassName:@"Saved"];
-    [saveQuery whereKey:@"user" equalTo:[PFUser currentUser]];
-    [saveQuery whereKey:@"savedRecipe" equalTo:self.recipe];
-    [saveQuery countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        if (!error){
-            if (number >= 1){
-                [self.saveButton setSelected:YES];
-            }
-            else {
-                [self.saveButton setSelected:NO];
-            }
-        }
-        else {
-            NSLog(@"error counting number of saved recipes: %@", error.localizedDescription);
+    [Saved savedRecipeExists:self.recipe withCompletion:^(Boolean saved) {
+        if (saved){
+            [self.saveButton setSelected:YES];
+        } else {
+            [self.saveButton setSelected:NO];
         }
     }];
     
@@ -77,39 +68,16 @@
     Recipe* recipe = self.recipe;
     
     if ([saveButton isSelected]){
-        PFQuery* query = [PFQuery queryWithClassName:@"Saved"];
-        [query whereKey:@"user" equalTo:[PFUser currentUser]];
-        [query whereKey:@"savedRecipe" equalTo:recipe];
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            if (!error){
-                Saved* saved = (Saved*)objects[0];
-                [saved deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-                    if (succeeded){
-                        NSLog(@"deleted saved object");
-                        [saveButton setSelected:false];
-                    }
-                    else {
-                        NSLog(@"error deleting save object: %@", error.localizedDescription);
-                    }
-                }];
-            }
-            else {
-                NSLog(@"error retreiving saved object: %@", error.localizedDescription);
+        [Saved deleteSavedRecipe:recipe withCompletion:^(Boolean succeeded) {
+            if (succeeded){
+                [saveButton setSelected:NO];
             }
         }];
     }
     else {
-        Saved* saved = [Saved new];
-        [saved setObject:[PFUser currentUser] forKey:@"user"];
-        [saved setObject:recipe forKey:@"savedRecipe"];
-        [saved saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        [Saved saveRecipe:recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
-                NSLog(@"saved recipe");
                 [saveButton setSelected:true];
-            }
-            else {
-                NSLog(@"error saving recipe: %@", error.localizedDescription);
             }
         }];
     }
