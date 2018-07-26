@@ -37,6 +37,11 @@
     
     self.user = [PFUser currentUser];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receivePostNotification:)
+                                                 name:@"PostNotification"
+                                               object:nil];
+    
     [self getNumberFollowing];
     [self getNumberFollowers];
     
@@ -71,6 +76,14 @@
     [SVProgressHUD show];
     
     [self refreshData];
+}
+
+- (void) receivePostNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"PostNotification"]) {
+        NSLog (@"Successfully received the post notification!");
+        [self fetchPosts];
+        [self.collectionView reloadData];
+    }
 }
 
 
