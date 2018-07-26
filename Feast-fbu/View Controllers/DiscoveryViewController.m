@@ -15,14 +15,23 @@
 #import <SVProgressHUD.h>
 #import "CreatePostViewController.h"
 #import "Saved.h"
+#import "Post.h"
+#import "ParseUI.h"
+#import "FriendsCollectionViewCell.h"
 
+<<<<<<< HEAD
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, PostUpdateDelegate, MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+=======
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, MGSwipeTableCellDelegate>
+>>>>>>> 2e3677bcf2b0ecfe373d3df8e7719fb41e451e27
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;
 @property (strong, nonatomic) NSArray *filteredRecipes;
+@property (nonatomic, strong) NSArray *friendsPosts;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+@property (weak, nonatomic) IBOutlet UICollectionView *friendsCollectionView;
 
 
 
@@ -35,12 +44,27 @@
     
     self.recipeTableView.delegate = self;
     self.recipeTableView.dataSource = self;
+    self.friendsCollectionView.dataSource = self;
+    self.friendsCollectionView.delegate = self;
+    
     self.searchBar.delegate = self;
     
     self.recipeTableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
+    [self.recipeTableView setShowsVerticalScrollIndicator:NO];
+    [self.friendsCollectionView setShowsHorizontalScrollIndicator:NO];
+    
+    UICollectionViewFlowLayout *layout = self.friendsCollectionView.collectionViewLayout;
+    
+    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 20;
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+//    CGFloat postsPerLine = self.pos;
+    
     [SVProgressHUD show];
     
+    [self fetchFriendsPosts];
     [self fetchRecipes];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
@@ -51,6 +75,44 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (void)fetchFriendsPosts {
+    PFQuery *postQuery = [Post query];
+    [postQuery includeKey:@"user"];
+    [postQuery includeKey:@"createdAt"];
+    [postQuery orderByDescending:@"createdAt"];
+    postQuery.limit = 20;
+    
+    [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (posts) {
+            self.friendsPosts = posts;
+            
+            [self.friendsCollectionView reloadData];
+            NSLog(@"%@", posts);
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+        }
+        
+        [self.friendsCollectionView reloadData];
+    }];
+}
+
+- (nonnull UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    FriendsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FriendsCollectionViewCell" forIndexPath:indexPath];
+    
+    Post *post = self.friendsPosts[indexPath.row];
+    
+    cell.post = post;
+    [cell setPost];
+    return cell;
+    
+}
+
+- (NSInteger)collectionView:(nonnull UICollectionView *)friendsCollectionView numberOfItemsInSection:(NSInteger)section {
+    return self.friendsPosts.count;
 }
 
 - (void) fetchRecipes {
