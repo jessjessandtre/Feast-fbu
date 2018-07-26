@@ -29,8 +29,21 @@
     self.timelineTableView.delegate = self;
     self.timelineTableView.dataSource = self;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receivePostNotification:)
+                                                 name:@"PostNotification"
+                                               object:nil];
+    
     [SVProgressHUD show];
     [self fetchTimeline];
+}
+
+- (void) receivePostNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"PostNotification"]) {
+        NSLog (@"Successfully received the post notification!");
+        [self fetchTimeline];
+        [self.timelineTableView reloadData];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
