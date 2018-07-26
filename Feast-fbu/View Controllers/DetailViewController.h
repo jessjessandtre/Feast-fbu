@@ -10,14 +10,6 @@
 #import "Recipe.h"
 #import <ParseUI/ParseUI.h>
 
-/*
-@protocol PostUpdateDelegate
-
-- (void) didCreatePost;
-
-@end
- */
-
 @interface DetailViewController : UIViewController
 
 @property (weak, nonatomic) IBOutlet PFImageView *recipeImageView;
