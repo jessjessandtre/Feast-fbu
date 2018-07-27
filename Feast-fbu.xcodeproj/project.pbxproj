@@ -12,6 +12,8 @@
 		2135FC812106819800543AF7 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC802106819800543AF7 /* TimelineViewController.m */; };
 		2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC83210681EB00543AF7 /* TimelineViewCell.m */; };
 		214F5D9F2109498C00A47BC8 /* FriendsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F5D9E2109498C00A47BC8 /* FriendsCollectionViewCell.m */; };
+		214F5DA2210A9F0E00A47BC8 /* SuggestedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */; };
+		214F5DA8210A9F5400A47BC8 /* SuggestedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */; };
 		290F36F92106B1FB00A1B704 /* Saved.m in Sources */ = {isa = PBXBuildFile; fileRef = 290F36F82106B1FB00A1B704 /* Saved.m */; };
 		297420762106551200B30175 /* DetailedPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297420742106551200B30175 /* DetailedPost.storyboard */; };
 		297420792106557500B30175 /* DetailedPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297420782106557500B30175 /* DetailedPostViewController.m */; };
@@ -81,6 +83,10 @@
 		2135FC83210681EB00543AF7 /* TimelineViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewCell.m; sourceTree = "<group>"; };
 		214F5D9D2109498C00A47BC8 /* FriendsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsCollectionViewCell.h; sourceTree = "<group>"; };
 		214F5D9E2109498C00A47BC8 /* FriendsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsCollectionViewCell.m; sourceTree = "<group>"; };
+		214F5DA0210A9F0E00A47BC8 /* SuggestedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuggestedTableViewCell.h; sourceTree = "<group>"; };
+		214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuggestedTableViewCell.m; sourceTree = "<group>"; };
+		214F5DA6210A9F5400A47BC8 /* SuggestedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuggestedViewController.h; sourceTree = "<group>"; };
+		214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuggestedViewController.m; sourceTree = "<group>"; };
 		290F36F72106B1FB00A1B704 /* Saved.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Saved.h; sourceTree = "<group>"; };
 		290F36F82106B1FB00A1B704 /* Saved.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saved.m; sourceTree = "<group>"; };
 		297420752106551200B30175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailedPost.storyboard; sourceTree = "<group>"; };
@@ -240,6 +246,8 @@
 				29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */,
 				5874011B21091E94000425F3 /* CommentsViewController.h */,
 				5874011C21091E94000425F3 /* CommentsViewController.m */,
+				214F5DA6210A9F5400A47BC8 /* SuggestedViewController.h */,
+				214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -265,6 +273,8 @@
 				5874011F21091F40000425F3 /* CommentCell.m */,
 				214F5D9D2109498C00A47BC8 /* FriendsCollectionViewCell.h */,
 				214F5D9E2109498C00A47BC8 /* FriendsCollectionViewCell.m */,
+				214F5DA0210A9F0E00A47BC8 /* SuggestedTableViewCell.h */,
+				214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -591,6 +601,7 @@
 				29853C402108FE5200971E56 /* SavedRecipesCollectionViewCell.m in Sources */,
 				29853C3D2108FE1E00971E56 /* SavedRecipesViewController.m in Sources */,
 				29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */,
+				214F5DA2210A9F0E00A47BC8 /* SuggestedTableViewCell.m in Sources */,
 				587401152107F92A000425F3 /* Like.m in Sources */,
 				5874011D21091E94000425F3 /* CommentsViewController.m in Sources */,
 				2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */,
@@ -601,6 +612,7 @@
 				298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */,
 				297420792106557500B30175 /* DetailedPostViewController.m in Sources */,
 				214F5D9F2109498C00A47BC8 /* FriendsCollectionViewCell.m in Sources */,
+				214F5DA8210A9F5400A47BC8 /* SuggestedViewController.m in Sources */,
 				298E33752100F82500290BF4 /* ProfileViewController.m in Sources */,
 				29CC258221015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m in Sources */,
 				298E33782101067A00290BF4 /* LoginViewController.m in Sources */,

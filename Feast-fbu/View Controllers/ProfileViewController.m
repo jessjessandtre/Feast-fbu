@@ -203,7 +203,6 @@
     [self setProfilePicture];
     
     [self dismissViewControllerAnimated:YES completion:^{
-        [self.delegate didUpdateProfilePicture];
     }];
 }
 
@@ -229,7 +228,6 @@
         [self.profileImageView loadInBackground];
     }];
     
-    [self.delegate didUpdateProfilePicture];
 }
 
 
