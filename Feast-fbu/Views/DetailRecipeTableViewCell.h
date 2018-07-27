@@ -23,4 +23,6 @@
 
 @property (strong, nonatomic) Recipe *recipe;
 
+- (void) setRecipe;
+
 @end
