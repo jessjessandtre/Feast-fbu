@@ -39,7 +39,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receivePostNotification:)
-                                                 name:@"PostNotification"
+                                                 name:@"NewPostNotification"
                                                object:nil];
     
     
@@ -69,7 +69,7 @@
 }
 
 - (void) receivePostNotification: (NSNotification *) notification {
-    if ([[notification name] isEqualToString:@"PostNotification"]) {
+    if ([[notification name] isEqualToString:@"NewPostNotification"]) {
         NSLog (@"Successfully received the post notification!");
         [self fetchPosts];
     }
