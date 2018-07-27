@@ -11,6 +11,7 @@
 #import "Recipe.h"
 #import "RecipeTableViewCell.h"
 #import "DetailViewController.h"
+#import "DetailedPostViewController.h"
 #import "RecipeTableViewCellHeaderCell.h"
 #import <SVProgressHUD.h>
 #import "CreatePostViewController.h"
@@ -317,11 +318,12 @@
         Recipe *recipe = self.recipes[indexPath.row];
         
         detailController.recipe = recipe;
-    }
-        
+    } else if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
+        FriendsCollectionViewCell* cell = (FriendsCollectionViewCell*) sender;
+        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
+        detailedPostViewController.post = cell.post;
     
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    }
 }
 
 

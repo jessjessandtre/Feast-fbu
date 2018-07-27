@@ -9,18 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@protocol ProfileViewControllerDelegate
-
-- (void)didUpdateProfilePicture;
-
-@end;
-
 @interface ProfileViewController : UIViewController
 
 @property (strong, nonatomic) UIImage *profileImage; 
 @property (strong, nonatomic) PFUser *user;
-
-@property (weak, nonatomic) id<ProfileViewControllerDelegate> delegate;
 
 - (IBAction)didTapLogout:(id)sender;
 

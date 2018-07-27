@@ -46,7 +46,6 @@
     
     self.instructionsLabel.text = self.recipe.instructions;
     self.sourceUrlLabel.text = self.recipe.sourceURL;
-    self.numPostsLabel.text = [[self.recipe.numPosts stringValue] stringByAppendingString:@" posts"];
     
     [Saved savedRecipeExists:self.recipe withCompletion:^(Boolean saved) {
         if (saved){
