@@ -19,4 +19,6 @@
 @property (strong, nonatomic) NSNumber *numberLikes;
 @property (strong, nonatomic) NSNumber *numberComments;
 
++ (void)updateLikes:(int)likes ForPost:(Post*)post;
+
 @end

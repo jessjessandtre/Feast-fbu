@@ -8,6 +8,7 @@
 
 #import "Post.h"
 #import <Parse/Parse.h>
+#import "Like.h"
 
 @implementation Post
 
@@ -15,5 +16,11 @@
 + (nonnull NSString *)parseClassName {
     return @"Post";
 }
+
++ (void)updateLikes:(int)likes ForPost:(Post*)post {
+    post.numberLikes = [NSNumber numberWithInt:likes];
+    [post saveEventually];
+}
+
 
 @end
