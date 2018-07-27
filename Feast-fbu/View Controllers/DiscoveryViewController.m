@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "Recipe.h"
 #import "RecipeTableViewCell.h"
-#import "DetailViewController.h"
+#import "RecipeDetailViewController.h"
 #import "DetailedPostViewController.h"
 #import "RecipeTableViewCellHeaderCell.h"
 #import <SVProgressHUD.h>
@@ -310,14 +310,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"DetailedRecipeSegue2"]){
-        DetailViewController* detailController = [segue destinationViewController];
+        RecipeDetailViewController* detailViewController = [segue destinationViewController];
+        
         UITableViewCell *tappedCell = sender;
         
         NSIndexPath *indexPath = [self.recipeTableView indexPathForCell:tappedCell];
         
         Recipe *recipe = self.recipes[indexPath.row];
         
-        detailController.recipe = recipe;
+        detailViewController.recipe = recipe;
     } else if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
         FriendsCollectionViewCell* cell = (FriendsCollectionViewCell*) sender;
         DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
