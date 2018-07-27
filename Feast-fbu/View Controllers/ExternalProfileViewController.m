@@ -10,9 +10,14 @@
 #import "Post.h"
 #import "ExternalUserCollectionViewCell.h"
 #import "Follow.h"
+#import <Parse/Parse.h>
+#import "ParseUI.h"
+#import <SVProgressHUD.h>
 
 @interface ExternalProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet PFImageView *profileImage;
 @property (weak, nonatomic) IBOutlet UICollectionView *externalPostCollectionView;
+@property (weak, nonatomic) IBOutlet UILabel *usernameLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowingLabel;
@@ -32,9 +37,39 @@
     self.externalPostCollectionView.delegate = self;
     self.externalPostCollectionView.dataSource = self;
     
+    self.usernameLabel.text = self.user.username;
+    
+    if (self.user[@"profileImage"] == [NSNull null]) {
+        self.profileImage.image = [UIImage imageNamed: @"profile-image-blank"];
+    }
+    else {
+        self.profileImage.file = self.user[@"profileImage"];
+        [self.profileImage loadInBackground];
+    }
+    
     [self getPosts];
     [self getNumberFollowers];
     [self getNumberFollowing];
+    
+    self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
+    self.profileImage.clipsToBounds = YES;
+    
+    self.profileImage.layer.borderColor = [UIColor greenColor].CGColor;
+    self.profileImage.layer.borderWidth = 1.5;
+    
+    UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.externalPostCollectionView.collectionViewLayout;
+    
+    layout.minimumInteritemSpacing = 3;
+    layout.minimumLineSpacing = 3;
+    
+    CGFloat postsPerLine = 3;
+    CGFloat itemWidth = (self.externalPostCollectionView.frame.size.width -  layout.minimumInteritemSpacing * (postsPerLine - 1))/ postsPerLine;
+    CGFloat itemHeight = itemWidth;
+    layout.itemSize = CGSizeMake(itemWidth,itemHeight);
+    
+    [SVProgressHUD show];
+    
+    [self refreshData];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -125,6 +160,11 @@
             NSLog(@"Error%@", error.localizedDescription);
         }
     }];
+}
+
+- (void) refreshData {
+    [self getPosts];
+    self.usernameLabel.text = [PFUser currentUser].username;
 }
 
 /*

@@ -9,6 +9,7 @@
 #import <SVProgressHUD.h>
 #import "SuggestedViewController.h"
 #import "SuggestedTableViewCell.h"
+#import "ProfileViewController.h"
 
 @interface SuggestedViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -76,15 +77,20 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    ProfileViewController *profileController = [segue destinationViewController];
+    UITableViewCell *tappedCell = sender;
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
+    
+    PFUser *user = self.users[indexPath.row];
+    NSLog(@"%@", user);
+    profileController.user = user;
 }
-*/
 
 
 @end
