@@ -61,6 +61,10 @@
         if (succeeded){
             NSLog(@"post success");
             [self dismissViewControllerAnimated:true completion:nil];
+            
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"NewPostNotification"
+             object:nil];
         }
         else {
             NSLog(@"post error: %@", error.localizedDescription);
@@ -69,9 +73,6 @@
         }
     }];
     
-    [[NSNotificationCenter defaultCenter]
-     postNotificationName:@"PostNotification"
-     object:self];
 }
 
 - (void)setImage:(UIImage *)image {
