@@ -202,10 +202,7 @@
     
     [self setProfilePicture];
     
-    [self dismissViewControllerAnimated:YES completion:^{
-//
-        
-    }];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
