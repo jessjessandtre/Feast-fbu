@@ -203,6 +203,7 @@
     [self setProfilePicture];
     
     [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 - (UIImage *)resizeImage:(UIImage *)image withSize:(CGSize)size {
@@ -227,7 +228,6 @@
         [self.profileImageView loadInBackground];
     }];
     
-  //  [self.delegate didUpdateProfilePicture];
 }
 
 
