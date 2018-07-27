@@ -42,20 +42,6 @@
                                                  name:@"PostNotification"
                                                object:nil];
     
-    [self getNumberFollowing];
-    [self getNumberFollowers];
-    
-    self.usernameLabel.text = self.user.username;
-    
-    if (self.user[@"profileImage"] == [NSNull null]) {
-        self.profileImageView.image = [UIImage imageNamed: @"profile-image-blank"];
-    }
-    else {
-        self.profileImageView.file = self.user[@"profileImage"];
-        [self.profileImageView loadInBackground];
-    }
-    
-    [self fetchPosts];
     
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.clipsToBounds = YES;
@@ -74,22 +60,19 @@
     layout.itemSize = CGSizeMake(itemWidth,itemHeight);
     
     [SVProgressHUD show];
-    
     [self refreshData];
+}
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void) receivePostNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"PostNotification"]) {
         NSLog (@"Successfully received the post notification!");
         [self fetchPosts];
-        [self.collectionView reloadData];
     }
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 - (void)fetchPosts {
@@ -118,6 +101,17 @@
 - (void) refreshData {
     [self fetchPosts];
     self.usernameLabel.text = [PFUser currentUser].username;
+    
+    if (self.user[@"profileImage"] == [NSNull null]) {
+        self.profileImageView.image = [UIImage imageNamed: @"profile-image-blank"];
+    }
+    else {
+        self.profileImageView.file = self.user[@"profileImage"];
+        [self.profileImageView loadInBackground];
+    }
+    
+    [self getNumberFollowing];
+    [self getNumberFollowers];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -133,10 +127,6 @@
     return self.posts.count;
 }
 
-- (void) didCreatePost {
-    [self refreshData];
-    [self.collectionView reloadData]; // instead refresh with every click
-}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 

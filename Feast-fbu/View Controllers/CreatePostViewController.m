@@ -71,7 +71,7 @@
     
     [[NSNotificationCenter defaultCenter]
      postNotificationName:@"PostNotification"
-     object:self];
+     object:nil];
 }
 
 - (void)setImage:(UIImage *)image {
