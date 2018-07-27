@@ -128,7 +128,7 @@
                     <navigationItem key="navigationItem" id="GXn-9O-WDE">
                         <barButtonItem key="leftBarButtonItem" systemItem="add" id="xQy-bP-T5y">
                             <connections>
-                                <segue destination="yz4-QH-NZG" kind="show" id="kat-7P-EWS"/>
+                                <segue destination="yz4-QH-NZG" kind="show" id="gyv-uk-ZqR"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -186,6 +186,7 @@
                                         <connections>
                                             <outlet property="profilePic" destination="9XM-kQ-ukW" id="6uJ-gd-lZA"/>
                                             <outlet property="username" destination="yyQ-wN-Rbm" id="Cva-UU-iQZ"/>
+                                            <segue destination="3dM-Hv-fEN" kind="show" id="6Bl-QZ-qKx"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -194,13 +195,22 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="fgo-NH-lsa"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Jds-re-6pO"/>
                     <connections>
                         <outlet property="tableView" destination="nMg-LC-zpR" id="8Ql-Qg-Htd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d7l-Pi-zTK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2381.5999999999999" y="112.89355322338831"/>
+            <point key="canvasLocation" x="2382" y="84"/>
+        </scene>
+        <!--ExternalProfile-->
+        <scene sceneID="REr-YY-QVX">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ExternalProfile" referencedIdentifier="ExternalProfile" id="3dM-Hv-fEN" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ByD-Nl-M0g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3131" y="83"/>
         </scene>
         <!--DetailedPost-->
         <scene sceneID="CxP-kB-KfB">
