@@ -255,13 +255,10 @@
 				29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */,
 				5874011B21091E94000425F3 /* CommentsViewController.h */,
 				5874011C21091E94000425F3 /* CommentsViewController.m */,
-<<<<<<< HEAD
 				214F5DA6210A9F5400A47BC8 /* SuggestedViewController.h */,
 				214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */,
-=======
 				58740127210B8B1E000425F3 /* RecipeDetailViewController.h */,
 				58740128210B8B1E000425F3 /* RecipeDetailViewController.m */,
->>>>>>> bdd66917bab5c36ca94e4e628ce2b706b93b70b0
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -287,15 +284,12 @@
 				5874011F21091F40000425F3 /* CommentCell.m */,
 				214F5D9D2109498C00A47BC8 /* FriendsCollectionViewCell.h */,
 				214F5D9E2109498C00A47BC8 /* FriendsCollectionViewCell.m */,
-<<<<<<< HEAD
 				214F5DA0210A9F0E00A47BC8 /* SuggestedTableViewCell.h */,
 				214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */,
-=======
 				58740124210A9E65000425F3 /* RecipePostCollectionViewCell.h */,
 				58740125210A9E65000425F3 /* RecipePostCollectionViewCell.m */,
 				5874012A210B8B6E000425F3 /* DetailRecipeTableViewCell.h */,
 				5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */,
->>>>>>> bdd66917bab5c36ca94e4e628ce2b706b93b70b0
 			);
 			path = Views;
 			sourceTree = "<group>";
