@@ -24,8 +24,8 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sXT-NU-32j" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="936"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ExP-kB-OBC" customClass="PFImageView">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="744"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ExP-kB-OBC" customClass="PFImageView">
+                                                <rect key="frame" x="0.0" y="118" width="375" height="626"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k8h-mO-kEC">
                                                 <rect key="frame" x="8" y="752.5" width="305" height="25.5"/>
@@ -75,6 +75,33 @@
                                                     <action selector="didTapSaveButton:" destination="fvG-WN-PHg" eventType="touchUpInside" id="fvZ-uv-aCC"/>
                                                 </connections>
                                             </button>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="lMX-Mg-pjl">
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gXM-0d-684">
+                                                    <size key="itemSize" width="90" height="85"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="FnO-k4-fqG" customClass="RecipeCollectionViewCell">
+                                                        <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vyx-Y7-7r2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="85"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                </imageView>
+                                                            </subviews>
+                                                        </view>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -132,6 +159,7 @@
                     <connections>
                         <outlet property="ingredientsLabel" destination="Ojg-OQ-N3g" id="ie1-sR-6gO"/>
                         <outlet property="instructionsLabel" destination="80g-aB-d1K" id="2aT-4s-ojm"/>
+                        <outlet property="postsCollectionView" destination="lMX-Mg-pjl" id="D9X-Xg-iYV"/>
                         <outlet property="recipeImageView" destination="ExP-kB-OBC" id="6Kd-mf-t13"/>
                         <outlet property="recipeTitleLabel" destination="k8h-mO-kEC" id="D5E-s8-mMB"/>
                         <outlet property="saveButton" destination="IRt-mk-Zvu" id="KNp-2h-pLQ"/>
