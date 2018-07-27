@@ -51,6 +51,8 @@
 		5874011D21091E94000425F3 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874011C21091E94000425F3 /* CommentsViewController.m */; };
 		5874012021091F40000425F3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874011F21091F40000425F3 /* CommentCell.m */; };
 		58740126210A9E65000425F3 /* RecipePostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58740125210A9E65000425F3 /* RecipePostCollectionViewCell.m */; };
+		58740129210B8B1E000425F3 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58740128210B8B1E000425F3 /* RecipeDetailViewController.m */; };
+		5874012C210B8B6E000425F3 /* DetailRecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */; };
 		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
 		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
@@ -154,6 +156,10 @@
 		5874011F21091F40000425F3 /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
 		58740124210A9E65000425F3 /* RecipePostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipePostCollectionViewCell.h; sourceTree = "<group>"; };
 		58740125210A9E65000425F3 /* RecipePostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipePostCollectionViewCell.m; sourceTree = "<group>"; };
+		58740127210B8B1E000425F3 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
+		58740128210B8B1E000425F3 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
+		5874012A210B8B6E000425F3 /* DetailRecipeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailRecipeTableViewCell.h; sourceTree = "<group>"; };
+		5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailRecipeTableViewCell.m; sourceTree = "<group>"; };
 		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -243,6 +249,8 @@
 				29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */,
 				5874011B21091E94000425F3 /* CommentsViewController.h */,
 				5874011C21091E94000425F3 /* CommentsViewController.m */,
+				58740127210B8B1E000425F3 /* RecipeDetailViewController.h */,
+				58740128210B8B1E000425F3 /* RecipeDetailViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -270,6 +278,8 @@
 				214F5D9E2109498C00A47BC8 /* FriendsCollectionViewCell.m */,
 				58740124210A9E65000425F3 /* RecipePostCollectionViewCell.h */,
 				58740125210A9E65000425F3 /* RecipePostCollectionViewCell.m */,
+				5874012A210B8B6E000425F3 /* DetailRecipeTableViewCell.h */,
+				5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -581,6 +591,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5874012C210B8B6E000425F3 /* DetailRecipeTableViewCell.m in Sources */,
 				5874010A21068152000425F3 /* ExternalUserCollectionViewCell.m in Sources */,
 				2981334620FFEDF7003FD11C /* main.m in Sources */,
 				298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */,
@@ -600,6 +611,7 @@
 				587401152107F92A000425F3 /* Like.m in Sources */,
 				5874011D21091E94000425F3 /* CommentsViewController.m in Sources */,
 				2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */,
+				58740129210B8B1E000425F3 /* RecipeDetailViewController.m in Sources */,
 				2135FC812106819800543AF7 /* TimelineViewController.m in Sources */,
 				5874012021091F40000425F3 /* CommentCell.m in Sources */,
 				298E33722100F23800290BF4 /* Recipe.m in Sources */,
