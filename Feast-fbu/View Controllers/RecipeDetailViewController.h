@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import "Recipe.h"
 
 @interface RecipeDetailViewController : UIViewController
+
+@property (strong, nonatomic) Recipe *recipe;
 
 @end

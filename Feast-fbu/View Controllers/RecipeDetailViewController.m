@@ -7,8 +7,12 @@
 //
 
 #import "RecipeDetailViewController.h"
+#import "DetailRecipeTableViewCell.h"
+#import "Saved.h"
 
-@interface RecipeDetailViewController ()
+@interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *recipeTableView;
 
 @end
 
@@ -17,11 +21,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.recipeTableView.delegate = self;
+    self.recipeTableView.dataSource = self;
+
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)saveButtonTapped:(id)sender {
+    UIButton* saveButton = (UIButton*)sender;
+    if ([saveButton isSelected]){
+        [Saved deleteSavedRecipe:self.recipe withCompletion:^(Boolean succeeded) {
+            if (succeeded){
+                [saveButton setSelected:NO];
+            }
+        }];
+        
+    }
+    
+    else {
+        [Saved saveRecipe:self.recipe withCompletion:^(Boolean succeeded) {
+            if (succeeded){
+                [saveButton setSelected:YES];
+            }
+        }];
+        
+    }
 }
 
 /*
