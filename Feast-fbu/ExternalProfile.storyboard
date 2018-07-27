@@ -25,7 +25,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-LV-9Jj">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gTc-LV-9Jj" customClass="PFImageView">
                                 <rect key="frame" x="137" y="86" width="101" height="101"/>
                                 <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -100,9 +100,10 @@
                     <navigationItem key="navigationItem" id="UOC-Ts-4Zb"/>
                     <connections>
                         <outlet property="externalPostCollectionView" destination="giG-ia-7gJ" id="vli-6U-YHg"/>
-                        <outlet property="externalPostTableView" destination="giG-ia-7gJ" id="qfG-2b-cXa"/>
                         <outlet property="numberFollowersLabel" destination="WoX-Z4-m18" id="wfu-oH-Fyw"/>
                         <outlet property="numberFollowingLabel" destination="BwS-03-7FI" id="O64-FF-dgN"/>
+                        <outlet property="profileImage" destination="gTc-LV-9Jj" id="YYK-wa-QBG"/>
+                        <outlet property="usernameLabel" destination="e2J-ql-Ies" id="E88-Cl-Fpy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sP9-7j-I6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
