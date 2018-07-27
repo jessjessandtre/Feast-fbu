@@ -10,16 +10,23 @@
 #import "UIImageView+AFNetworking.h"
 #import "CreatePostViewController.h"
 #import "Saved.h"
+#import "RecipePostCollectionViewCell.h"
 
-@interface DetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+@interface DetailViewController () <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UICollectionView *postsCollectionView;
+@property (strong, nonatomic) NSArray *posts;
 
 @end
 
 @implementation DetailViewController
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
-    [self refreshData];
+[super viewDidLoad];
+[self refreshData];
+
+self.postsCollectionView.delegate = self;
+self.postsCollectionView.dataSource = self;
 
 }
 
@@ -30,9 +37,9 @@
 
 - (void) refreshData {
     /*NSString *recipeImageURLString = self.recipe.image.url;
-    NSURL *recipeImageURL = [NSURL URLWithString:recipeImageURLString];
-    [self.recipeImageView setImageWithURL:recipeImageURL];
-    */
+     NSURL *recipeImageURL = [NSURL URLWithString:recipeImageURLString];
+     [self.recipeImageView setImageWithURL:recipeImageURL];
+     */
     self.recipeImageView.file = self.recipe.image;
     [self.recipeImageView loadInBackground];
     
@@ -46,6 +53,7 @@
     
     self.instructionsLabel.text = self.recipe.instructions;
     self.sourceUrlLabel.text = self.recipe.sourceURL;
+    // self.numPostsLabel.text = [[self.recipe.numPosts stringValue] stringByAppendingString:@" posts"];
     
     [Saved savedRecipeExists:self.recipe withCompletion:^(Boolean saved) {
         if (saved){
@@ -112,6 +120,35 @@
         [self performSegueWithIdentifier:@"CreatePostSegue" sender:editedImage];
     }];
     
+}
+
+- (void) fetchPosts {
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"recipe"];
+    [query whereKey:@"recipe" equalTo:self.recipe];
+    
+    query.limit = 20;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
+        if (posts != nil) {
+            self.posts = posts;
+            [self.postsCollectionView reloadData];
+        } else {
+            NSLog(@"Error%@", error.localizedDescription);
+        }
+    }];
+}
+
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    RecipePostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipePostCell" forIndexPath:indexPath];
+    Post* post = self.posts[indexPath.item];
+    cell.post = post;
+    return cell;
+}
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.posts.count;
 }
 
 #pragma mark - Navigation

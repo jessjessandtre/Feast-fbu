@@ -13,7 +13,7 @@
 #import "ProfileViewController.h"
 #import "CreatePostViewController.h"
 
-@interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource, ProfileViewControllerDelegate>
+@interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) NSArray *timeline;
 @property (weak, nonatomic) IBOutlet UITableView *timelineTableView;

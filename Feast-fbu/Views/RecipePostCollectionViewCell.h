@@ -7,7 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
+#import <Parse/Parse.h>
+#import <ParseUI/ParseUI.h>
 
 @interface RecipePostCollectionViewCell : UICollectionViewCell
+
+@property (weak, nonatomic) IBOutlet PFImageView *postImageView;
+
+@property (strong, nonatomic) Post *post;
+
+- (void) setPost; 
 
 @end

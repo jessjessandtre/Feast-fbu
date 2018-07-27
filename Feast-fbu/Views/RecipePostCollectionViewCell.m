@@ -7,7 +7,14 @@
 //
 
 #import "RecipePostCollectionViewCell.h"
+#import "UIImageView+AFNetworking.h"
 
 @implementation RecipePostCollectionViewCell
+
+- (void) setPost {
+    self.postImageView.file = self.post.image;
+    [self.postImageView loadInBackground];
+
+}
 
 @end
