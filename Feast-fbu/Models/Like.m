@@ -42,7 +42,7 @@
             Like* like = (Like*)objects[0];
             [like deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (succeeded){
-                    NSLog(@"unliked object");
+                    NSLog(@"unliked post");
                     completion(true);
                 }
                 else {
@@ -66,6 +66,7 @@
     [likeActivity setObject:post forKey:@"post"];
     [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded){
+            NSLog(@"liked post");
             completion(true);
         }
         else {
