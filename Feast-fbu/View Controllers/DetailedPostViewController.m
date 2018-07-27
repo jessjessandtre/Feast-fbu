@@ -11,6 +11,7 @@
 #import <DateTools.h>
 #import "DetailViewController.h"
 #import "CommentsViewController.h"
+#import "Like.h"
 
 @interface DetailedPostViewController ()
 
@@ -22,6 +23,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *captionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *recipeNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
+@property (strong, nonatomic) IBOutlet UILabel *numLikesLabel;
 
 @property (strong, nonatomic) Recipe* recipe;
 
@@ -90,28 +92,55 @@
             self.recipe = nil;
         }
     }];
+    
+    [Like userLikesPost:self.post withCompletion:^(Boolean liked) {
+        if (liked){
+            [self.likeButton setSelected:YES];
+        }
+        else {
+            [self.likeButton setSelected:NO];
+        }
+    }];
+    
+
+    [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
+        if (likes != -1) {
+            self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
+        }
+    }];
 }
 
 - (IBAction)likeButtonTapped:(id)sender {
-    PFObject *likeActivity = [PFObject objectWithClassName:@"Like"];
-    [likeActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
-    [likeActivity setObject:self.post.user forKey:@"toUser"];
-    [likeActivity setObject:self.post forKey:@"post"];
-    [likeActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        [self updateNumberLikes];
-    }];
-    
-    self.likeButton.enabled = NO;
+    if ([self.likeButton isSelected]){
+        [Like unlikePost:self.post withCompletion:^(Boolean succeeded) {
+            if (succeeded){
+                [self.likeButton setSelected:NO];
+            }
+            [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
+                if (likes != -1) {
+                    self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
+                }
+            }];
+            [Post updateLikesForPost:self.post];
+        }];
+    }
+    else {
+        [Like likePost:self.post withCompletion:^(Boolean succeeded) {
+            if (succeeded){
+                [self.likeButton setSelected:YES];
+            }
+            [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
+                if (likes != -1) {
+                    self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
+                }
+            }];
+            [Post updateLikesForPost:self.post];
+        }];
+    }
+
+
 }
 
-- (void)updateNumberLikes {
-    PFQuery *query = [PFQuery queryWithClassName:@"Like"];
-    [query whereKey:@"post" equalTo:self.post];
-    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        self.post.numberLikes = [NSNumber numberWithInt:number];
-        NSLog(@"%@%d", @"number of likes is: ", number);
-    }];
-}
 
 
 

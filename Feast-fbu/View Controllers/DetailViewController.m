@@ -77,7 +77,7 @@
     else {
         [Saved saveRecipe:recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
-                [saveButton setSelected:true];
+                [saveButton setSelected:YES];
             }
         }];
     }

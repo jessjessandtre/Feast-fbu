@@ -16,4 +16,9 @@
 @property (strong, nonatomic) PFUser *toUser;
 @property (strong, nonatomic) Post *post;
 
++ (void)userLikesPost:(Post*)post withCompletion:(void(^)(Boolean liked))completion;
++ (void)unlikePost:(Post*)post withCompletion:(void(^)(Boolean succeeded))completion;
++ (void)likePost:(Post*)post withCompletion:(void(^)(Boolean succeeded))completion;
++ (void)numberOfLikesForPost:(Post*)post withCompletion:(void(^)(int likes))completion;
+
 @end
