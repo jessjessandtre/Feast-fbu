@@ -31,6 +31,7 @@
         }
         else {
             NSLog(@"error counting number of saved recipes: %@", error.localizedDescription);
+            completion(false);
         }
     }];
 }

@@ -32,13 +32,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRb-gt-oOj" customClass="PFImageView">
-                                <rect key="frame" x="0.0" y="150" width="375" height="297"/>
+                                <rect key="frame" x="0.0" y="150" width="375" height="375"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="CRb-gt-oOj" secondAttribute="height" multiplier="125:99" id="spe-f3-NgQ"/>
+                                    <constraint firstAttribute="width" secondItem="CRb-gt-oOj" secondAttribute="height" multiplier="100:100" id="spe-f3-NgQ"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="39v-36-TM2">
-                                <rect key="frame" x="8" y="484" width="68" height="18"/>
+                                <rect key="frame" x="8" y="562" width="68" height="18"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="jcS-Wc-8Bv"/>
                                 </constraints>
@@ -55,18 +55,19 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1J-38-sO4">
-                                <rect key="frame" x="8" y="455" width="30" height="21"/>
+                                <rect key="frame" x="8" y="533" width="30" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="Mhv-DF-dZt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <state key="normal" title="like"/>
+                                <state key="selected" title="liked"/>
                                 <connections>
                                     <action selector="likeButtonTapped:" destination="HOn-0B-plU" eventType="touchUpInside" id="3nf-dF-8ks"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1SC-LY-R9E">
-                                <rect key="frame" x="107" y="455" width="32" height="21"/>
+                                <rect key="frame" x="107" y="533" width="32" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="NgR-xl-Rdj"/>
                                 </constraints>
@@ -74,7 +75,7 @@
                                 <state key="normal" title="share"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tqm-Jz-gn6">
-                                <rect key="frame" x="46" y="455" width="53" height="21"/>
+                                <rect key="frame" x="46" y="533" width="53" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="LQZ-ss-Yzw"/>
                                 </constraints>
@@ -85,7 +86,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="recipe name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sWc-BE-1g8">
-                                <rect key="frame" x="84" y="484" width="283" height="18"/>
+                                <rect key="frame" x="84" y="562" width="283" height="18"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="gO3-bD-q6v"/>
@@ -98,7 +99,13 @@
                                 </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="caption" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2FS-2N-2e0">
-                                <rect key="frame" x="8" y="510" width="359" height="20.5"/>
+                                <rect key="frame" x="8" y="588" width="359" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="likes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yja-AU-bEo">
+                                <rect key="frame" x="154" y="532" width="73" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -120,6 +127,7 @@
                             <constraint firstItem="2FS-2N-2e0" firstAttribute="top" secondItem="39v-36-TM2" secondAttribute="bottom" constant="8" id="Yf6-5A-j2b"/>
                             <constraint firstItem="a1J-38-sO4" firstAttribute="top" secondItem="CRb-gt-oOj" secondAttribute="bottom" constant="8" id="a7q-8g-Ih0"/>
                             <constraint firstItem="39v-36-TM2" firstAttribute="leading" secondItem="wMK-3f-19S" secondAttribute="leading" constant="8" id="b5G-aC-181"/>
+                            <constraint firstItem="yja-AU-bEo" firstAttribute="top" secondItem="CRb-gt-oOj" secondAttribute="bottom" constant="7" id="c6a-LY-W7V"/>
                             <constraint firstItem="Tqm-Jz-gn6" firstAttribute="top" secondItem="CRb-gt-oOj" secondAttribute="bottom" constant="8" id="gT1-f4-TPw"/>
                             <constraint firstItem="2FS-2N-2e0" firstAttribute="leading" secondItem="wMK-3f-19S" secondAttribute="leading" constant="8" id="gqD-57-4TE"/>
                             <constraint firstItem="1SC-LY-R9E" firstAttribute="leading" secondItem="Tqm-Jz-gn6" secondAttribute="trailing" constant="8" id="hdG-Ig-4Gq"/>
@@ -127,6 +135,7 @@
                             <constraint firstItem="39v-36-TM2" firstAttribute="top" secondItem="a1J-38-sO4" secondAttribute="bottom" constant="8" id="m4y-gN-MKk"/>
                             <constraint firstItem="wMK-3f-19S" firstAttribute="trailing" secondItem="2FS-2N-2e0" secondAttribute="trailing" constant="8" id="mSE-lW-uXt"/>
                             <constraint firstItem="Piq-G7-qvc" firstAttribute="centerY" secondItem="XuI-fa-atW" secondAttribute="centerY" id="mXF-VS-Squ"/>
+                            <constraint firstItem="yja-AU-bEo" firstAttribute="leading" secondItem="1SC-LY-R9E" secondAttribute="trailing" constant="15" id="ujV-3r-ARw"/>
                             <constraint firstItem="wMK-3f-19S" firstAttribute="trailing" secondItem="sWc-BE-1g8" secondAttribute="trailing" constant="8" id="vnv-KC-zhp"/>
                             <constraint firstItem="N29-XY-lib" firstAttribute="centerY" secondItem="Piq-G7-qvc" secondAttribute="centerY" id="xrM-RA-GFf"/>
                         </constraints>
@@ -137,6 +146,7 @@
                         <outlet property="captionLabel" destination="2FS-2N-2e0" id="39G-a0-PCo"/>
                         <outlet property="createdAtLabel" destination="N29-XY-lib" id="Kxq-tG-h8R"/>
                         <outlet property="likeButton" destination="a1J-38-sO4" id="fP7-cP-aUc"/>
+                        <outlet property="numLikesLabel" destination="yja-AU-bEo" id="3UP-Mg-JYI"/>
                         <outlet property="postImageView" destination="CRb-gt-oOj" id="i76-LA-6ae"/>
                         <outlet property="profileImageView" destination="XuI-fa-atW" id="fwz-6e-Q07"/>
                         <outlet property="recipeNameLabel" destination="sWc-BE-1g8" id="Mbb-LY-j8S"/>
