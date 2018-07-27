@@ -17,13 +17,9 @@
     return @"Post";
 }
 
-+ (void)updateLikesForPost:(Post*)post{
-    [Like numberOfLikesForPost:post withCompletion:^(int likes) {
-        if (likes != -1) {
-            post.numberLikes = [NSNumber numberWithInt:likes];
-            [post saveEventually];
-        } 
-    }];
++ (void)updateLikes:(int)likes ForPost:(Post*)post {
+    post.numberLikes = [NSNumber numberWithInt:likes];
+    [post saveEventually];
 }
 
 

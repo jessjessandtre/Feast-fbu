@@ -115,26 +115,27 @@
         [Like unlikePost:self.post withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [self.likeButton setSelected:NO];
+                [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
+                    if (likes != -1) {
+                        self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
+                        [Post updateLikes:likes ForPost:self.post];
+                    }
+                }];
             }
-            [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
-                if (likes != -1) {
-                    self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
-                }
-            }];
-            [Post updateLikesForPost:self.post];
         }];
     }
     else {
         [Like likePost:self.post withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [self.likeButton setSelected:YES];
+                [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
+                    if (likes != -1) {
+                        self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
+                        [Post updateLikes:likes ForPost:self.post];
+                        
+                    }
+                }];
             }
-            [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
-                if (likes != -1) {
-                    self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
-                }
-            }];
-            [Post updateLikesForPost:self.post];
         }];
     }
 
