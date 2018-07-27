@@ -43,10 +43,42 @@
 }
 
 - (IBAction)followButtonTapped:(id)sender {
+    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
+    [query whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    [query whereKey:@"toUser" equalTo:self.user];
+    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
+        int following = number;
+        
+        if (following == 0) {
+            [self followUser];
+        }
+        else {
+            [self unfollowUser];
+        }
+    }];
+}
+
+- (void) followUser {
     PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
     [followActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
     [followActivity setObject:self.user forKey:@"toUser"];
     [followActivity saveEventually];
+    [self getNumberFollowers];
+}
+
+- (void) unfollowUser {
+    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
+    [query whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    [query whereKey:@"toUser" equalTo:self.user];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (object) {
+            [object deleteInBackground];
+        }
+        else {
+            NSLog(@"Unable to retrieve object");
+        }
+    }];
+    [self getNumberFollowers];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
