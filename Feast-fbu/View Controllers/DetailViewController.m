@@ -28,6 +28,10 @@
 self.postsCollectionView.delegate = self;
 self.postsCollectionView.dataSource = self;
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(recipeSavedNotification:)
+                                                 name:@"RecipeSaveNotification"
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,16 +59,15 @@ self.postsCollectionView.dataSource = self;
     self.sourceUrlLabel.text = self.recipe.sourceURL;
     // self.numPostsLabel.text = [[self.recipe.numPosts stringValue] stringByAppendingString:@" posts"];
     
-    [Saved savedRecipeExists:self.recipe withCompletion:^(Boolean saved) {
-        if (saved){
-            [self.saveButton setSelected:YES];
-        } else {
-            [self.saveButton setSelected:NO];
-        }
-    }];
-    
+    [self updateSaveButton];
 }
 
+- (void) recipeSavedNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
+        NSLog (@"Successfully received the recipe save notification!");
+        [self updateSaveButton];
+    }
+}
 
 - (IBAction)didTapPost:(id)sender {
     [self createImagePickerController];
@@ -78,6 +81,9 @@ self.postsCollectionView.dataSource = self;
         [Saved deleteSavedRecipe:recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [saveButton setSelected:NO];
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"RecipeSaveNotification"
+                 object:nil];
             }
         }];
     }
@@ -85,12 +91,24 @@ self.postsCollectionView.dataSource = self;
         [Saved saveRecipe:recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [saveButton setSelected:YES];
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"RecipeSaveNotification"
+                 object:nil];
             }
         }];
     }
     
 }
 
+- (void)updateSaveButton {
+    [Saved savedRecipeExists:self.recipe withCompletion:^(Boolean saved) {
+        if (saved){
+            [self.saveButton setSelected:YES];
+        } else {
+            [self.saveButton setSelected:NO];
+        }
+    }];
+}
 
 - (void)createImagePickerController {
     UIImagePickerController *imagePickerVC = [UIImagePickerController new];

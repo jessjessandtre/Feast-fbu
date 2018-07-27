@@ -43,6 +43,10 @@
                                              selector:@selector(receivePostNotification:)
                                                  name:@"NewPostNotification"
                                                object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(recipeSavedNotification:)
+                                                 name:@"RecipeSaveNotification"
+                                               object:nil];
     
     
     self.recipeTableView.delegate = self;
@@ -84,6 +88,13 @@
     if ([[notification name] isEqualToString:@"NewPostNotification"]) {
         NSLog (@"Successfully received the post notification!");
         [self fetchFriendsPosts];
+    }
+}
+
+- (void) recipeSavedNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
+        NSLog (@"Successfully received the recipe save notification!");
+        [self.recipeTableView reloadData];
     }
 }
 
@@ -172,6 +183,9 @@
         [Saved deleteSavedRecipe:recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [saveButton setSelected:NO];
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"RecipeSaveNotification"
+                 object:nil];
             }
         }];
         
@@ -181,6 +195,9 @@
         [Saved saveRecipe:recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [saveButton setSelected:YES];
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"RecipeSaveNotification"
+                 object:nil];
             }
         }];
          

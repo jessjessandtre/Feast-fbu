@@ -25,6 +25,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(recipeSavedNotification:)
+                                                 name:@"RecipeSaveNotification"
+                                               object:nil];
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
@@ -44,6 +49,12 @@
 
 }
 
+- (void) recipeSavedNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
+        NSLog (@"Successfully received the recipe save notification!");
+        [self fetchSavedRecipes];
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
