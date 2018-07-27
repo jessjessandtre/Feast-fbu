@@ -227,7 +227,7 @@
         [self.profileImageView loadInBackground];
     }];
     
-    //  [self.delegate didUpdateProfilePicture];
+  //  [self.delegate didUpdateProfilePicture];
 }
 
 
