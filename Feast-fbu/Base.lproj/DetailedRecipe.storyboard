@@ -177,7 +177,7 @@
         <!--Recipe Detail View Controller-->
         <scene sceneID="1jM-5I-NXs">
             <objects>
-                <viewController id="pfW-DH-2ke" customClass="RecipeDetailViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailedRecipe2" id="pfW-DH-2ke" customClass="RecipeDetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PnQ-em-bUY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -322,6 +322,7 @@
                     <connections>
                         <outlet property="postCollectionView" destination="J1H-af-fmB" id="6iy-d0-3Fi"/>
                         <outlet property="recipeTableView" destination="yNn-tf-86I" id="WbS-Zp-IGh"/>
+                        <segue destination="wqs-wH-4ct" kind="show" id="h6z-tx-SMy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBf-Xw-ph0" userLabel="First Responder" sceneMemberID="firstResponder"/>
