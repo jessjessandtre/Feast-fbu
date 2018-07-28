@@ -54,7 +54,6 @@
         else {
             NSLog(@"%@", error.localizedDescription);
         }
-        [self.commentsTableView reloadData];
     }];
 }
 
@@ -85,7 +84,7 @@
             [self updateNumberComments];
         }];
         
-        [self refreshComments];
+        [self fetchComments];
     }
 }
 
@@ -98,10 +97,7 @@
     }];
 }
 
-- (void) refreshComments {
-    [self fetchComments];
-    [self.commentsTableView reloadData];
-}
+
 
 /*
 #pragma mark - Navigation
