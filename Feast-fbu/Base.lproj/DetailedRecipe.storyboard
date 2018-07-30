@@ -392,7 +392,7 @@
                     <connections>
                         <outlet property="captionTextField" destination="3N7-LB-jt8" id="TzF-Ms-G6k"/>
                         <outlet property="postImageView" destination="wjp-NI-DC1" id="Dt9-8I-cQ8"/>
-                        <outlet property="tagTextField" destination="k2A-mS-6pV" id="PZd-cR-GbE"/>
+                        <outlet property="tagTextField" destination="k2A-mS-6pV" id="enz-dP-HEb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EJK-oP-yAl" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UITextField *captionTextField;
+@property (weak, nonatomic) IBOutlet UITextField *tagTextField;
 
 @end
 
