@@ -66,7 +66,7 @@
     
     [cell setComment];
     
-    return cell;
+    return cell;fd
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -82,9 +82,11 @@
         [commentActivity setObject:self.commentTextField.text forKey:@"text"];
         [commentActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             [self updateNumberComments];
+            [self fetchComments];
+            self.commentTextField.text = @"";
+
         }];
         
-        [self fetchComments];
     }
 }
 
