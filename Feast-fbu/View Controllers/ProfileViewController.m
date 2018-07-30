@@ -14,6 +14,7 @@
 #import <SVProgressHUD.h>
 #import "DetailedPostViewController.h"
 #import "CreatePostViewController.h"
+#import "Follow.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -38,8 +39,13 @@
     self.user = [PFUser currentUser];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(receivePostNotification:)
+                                             selector:@selector(receiveNotification:)
                                                  name:@"NewPostNotification"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"FollowUpdateNotification"
                                                object:nil];
     
     
@@ -68,11 +74,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) receivePostNotification: (NSNotification *) notification {
+- (void) receiveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"NewPostNotification"]) {
         NSLog (@"Successfully received the post notification!");
         [self fetchPosts];
     }
+    else if ([[notification name] isEqualToString:@"FollowUpdateNotification"]) {
+        NSLog(@"Successfully received the follow notification!");
+        [self getNumberFollowing];
+    }
+
 }
 
 - (void)fetchPosts {
@@ -236,18 +247,19 @@
 }
 
 - (void) getNumberFollowing {
-    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
-    [query whereKey:@"from_user" equalTo:self.user];
-    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", number];
+    [Follow numberOfFollowing:[PFUser currentUser] withCompletion:^(int following) {
+        if (following != -1 ){
+            self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", following];
+        }
     }];
+
 }
 
 - (void) getNumberFollowers {
-    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
-    [query whereKey:@"to_user" equalTo:self.user];
-    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", number];
+    [Follow numberOfFollowers:[PFUser currentUser] withCompletion:^(int followers) {
+        if (followers != -1){
+            self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", followers];
+        }
     }];
 }
 
