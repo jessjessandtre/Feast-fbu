@@ -220,10 +220,10 @@
             </objects>
             <point key="canvasLocation" x="3290" y="-780"/>
         </scene>
-        <!--DetailedRecipe-->
+        <!--DetailedRecipe2-->
         <scene sceneID="4wG-MC-Q1z">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe" id="nI5-MH-6dR" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe2" id="nI5-MH-6dR" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dcW-pn-N7p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3313" y="-675"/>
