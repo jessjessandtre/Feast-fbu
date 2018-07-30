@@ -31,11 +31,8 @@
     self.recipeTableView.dataSource = self;
     self.postCollectionView.delegate = self;
     self.postCollectionView.dataSource = self;
-}
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    
+    [self fetchPosts];
 }
 
 - (void) fetchPosts {
@@ -49,6 +46,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
         if (posts != nil) {
             self.posts = posts;
+            NSLog(@"%@", posts);
             [self.postCollectionView reloadData];
         } else {
             NSLog(@"Error%@", error.localizedDescription);
