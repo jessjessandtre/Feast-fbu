@@ -366,7 +366,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Add"/>
                                 <connections>
-                                    <action selector="didTapAddTag:" destination="hY7-Cj-cgi" eventType="touchUpInside" id="jIX-OM-Jc5"/>
+                                    <action selector="didTapAddTag:" destination="hY7-Cj-cgi" eventType="touchUpInside" id="wqt-JB-SFQ"/>
                                 </connections>
                             </button>
                         </subviews>

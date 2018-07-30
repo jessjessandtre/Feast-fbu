@@ -74,8 +74,19 @@
             
         }
     }];
-    
 }
+
+- (IBAction)didTapAddTag:(id)sender {
+    if (self.recipe[@"tags"][0] == nil) {
+        self.recipe[@"tags"] = [NSMutableArray arrayWithObject:[self.tagTextField.text lowercaseString]];
+        NSLog(@"Did initialize array");
+    }
+    else {
+        [self.recipe[@"tags"] addObject:[self.tagTextField.text lowercaseString]];
+        NSLog(@"Did add tag");
+    }
+}
+
 
 - (void)setImage:(UIImage *)image {
     _image = image;
