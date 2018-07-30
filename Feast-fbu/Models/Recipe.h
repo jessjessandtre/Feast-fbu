@@ -15,6 +15,7 @@
 @property (nonatomic, strong) NSArray *ingredients;
 @property (nonatomic, strong) NSString *instructions;
 @property (nonatomic, strong) NSNumber *numPosts;
-@property (nonatomic, strong) NSString *sourceURL; 
+@property (nonatomic, strong) NSString *sourceURL;
+@property (nonatomic, strong) NSMutableArray *tags;
 
 @end
