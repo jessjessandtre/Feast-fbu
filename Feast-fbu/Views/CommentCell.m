@@ -45,12 +45,5 @@
         self.profileImageView.file = self.user[@"profileImage"];
     }];
 }
-/*
-- (void) fetchUser {
-    [self.comment[@"fromUser"] fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
-        self.usernameLabel.text = self.comment.fromUser[@"username"];
-        self.profileImageView.file = self.comment.fromUser[@"profileImage"];
-    }];
-}
-*/
+
 @end

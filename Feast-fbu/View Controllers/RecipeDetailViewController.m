@@ -32,6 +32,12 @@
     self.postCollectionView.delegate = self;
     self.postCollectionView.dataSource = self;
     
+    UICollectionViewFlowLayout *collectionViewLayout = self.postCollectionView.collectionViewLayout;
+    
+    collectionViewLayout.minimumInteritemSpacing = 0;
+    collectionViewLayout.minimumLineSpacing = 20;
+    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
     [self fetchPosts];
 }
 
