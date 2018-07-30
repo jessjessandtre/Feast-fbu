@@ -25,14 +25,13 @@
     
     [self.comment fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if (object){
-            self.commentLabel.text = self.comment.text;
+            self.commentLabel.text = self.comment[@"text"];
         }
         else {
             NSLog(@"error loading comment: %@", error.localizedDescription);
             self.commentLabel.text = @"";
         }
     }];
-    // self.commentLabel.text = self.comment.text;
 }
 
 @end
