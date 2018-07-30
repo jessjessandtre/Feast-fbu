@@ -59,6 +59,8 @@
     [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (succeeded){
+            [self.recipe incrementKey:@"numPosts"];
+            [self.recipe saveEventually];
             NSLog(@"post success");
             [self dismissViewControllerAnimated:true completion:nil];
             
