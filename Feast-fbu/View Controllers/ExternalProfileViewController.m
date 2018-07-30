@@ -32,12 +32,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
+    NSLog(@"%@", self.user);
     self.externalPostCollectionView.delegate = self;
     self.externalPostCollectionView.dataSource = self;
-    
-    self.usernameLabel.text = self.user.username;
     
     if (self.user[@"profileImage"] == [NSNull null]) {
         self.profileImage.image = [UIImage imageNamed: @"profile-image-blank"];
@@ -46,10 +43,6 @@
         self.profileImage.file = self.user[@"profileImage"];
         [self.profileImage loadInBackground];
     }
-    
-    [self getPosts];
-    [self getNumberFollowers];
-    [self getNumberFollowing];
     
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
     self.profileImage.clipsToBounds = YES;
@@ -72,10 +65,7 @@
     [self refreshData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
 
 - (IBAction)followButtonTapped:(id)sender {
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
@@ -153,6 +143,7 @@
     query.limit = 20;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
         if (posts != nil) {
             self.posts = posts;
             [self.externalPostCollectionView reloadData];
@@ -164,7 +155,9 @@
 
 - (void) refreshData {
     [self getPosts];
-    self.usernameLabel.text = [PFUser currentUser].username;
+    self.usernameLabel.text = self.user.username;
+    [self getNumberFollowers];
+    [self getNumberFollowing];
 }
 
 /*

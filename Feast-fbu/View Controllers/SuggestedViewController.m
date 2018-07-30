@@ -9,7 +9,7 @@
 #import <SVProgressHUD.h>
 #import "SuggestedViewController.h"
 #import "SuggestedTableViewCell.h"
-#import "ProfileViewController.h"
+#import "ExternalProfileViewController.h"
 
 @interface SuggestedViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -82,7 +82,7 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    ProfileViewController *profileController = [segue destinationViewController];
+    ExternalProfileViewController *profileController = [segue destinationViewController];
     UITableViewCell *tappedCell = sender;
     
     NSIndexPath *indexPath = [self.tableView indexPathForCell:tappedCell];
