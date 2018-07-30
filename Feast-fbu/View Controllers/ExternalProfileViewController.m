@@ -21,6 +21,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowingLabel;
+@property (strong, nonatomic) IBOutlet UIButton *followButton;
 
 
 
@@ -32,17 +33,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    NSLog(@"%@", self.user);
+    NSLog(@"%@",self.user.username);
     self.externalPostCollectionView.delegate = self;
     self.externalPostCollectionView.dataSource = self;
-    
-    if (self.user[@"profileImage"] == [NSNull null]) {
-        self.profileImage.image = [UIImage imageNamed: @"profile-image-blank"];
-    }
-    else {
-        self.profileImage.file = self.user[@"profileImage"];
-        [self.profileImage loadInBackground];
-    }
+
     
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
     self.profileImage.clipsToBounds = YES;
@@ -68,30 +62,37 @@
 
 
 - (IBAction)followButtonTapped:(id)sender {
-    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
-    [query whereKey:@"fromUser" equalTo:[PFUser currentUser]];
-    [query whereKey:@"toUser" equalTo:self.user];
-    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        int following = number;
-        
-        if (following == 0) {
-            [self followUser];
-        }
-        else {
-            [self unfollowUser];
-        }
-    }];
+    if ([self.followButton isSelected]){
+        [self unfollowUser];
+    }
+    else {
+        [self followUser];
+    }
 }
 
 - (void) followUser {
-    PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
+    [Follow followUser:self.user fromUser:[PFUser currentUser] withCompletion:^(Boolean succeeded) {
+        if (succeeded){
+            [self getNumberFollowers];
+            [self.followButton setSelected:YES];
+        }
+    }];
+/*    PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
     [followActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
     [followActivity setObject:self.user forKey:@"toUser"];
     [followActivity saveEventually];
     [self getNumberFollowers];
+ */
 }
 
 - (void) unfollowUser {
+    [Follow unFollowUser:self.user fromUser:[PFUser currentUser] withCompletion:^(Boolean succeeded) {
+        if (succeeded) {
+            [self getNumberFollowers];
+            [self.followButton setSelected:NO];
+        }
+    }];
+    /*
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
     [query whereKey:@"fromUser" equalTo:[PFUser currentUser]];
     [query whereKey:@"toUser" equalTo:self.user];
@@ -104,6 +105,7 @@
         }
     }];
     [self getNumberFollowers];
+    */
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -119,19 +121,33 @@
 }
 
 - (void) getNumberFollowing {
+    [Follow numberOfFollowing:self.user withCompletion:^(int following) {
+        if (following != -1){
+            self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", following];
+        }
+    }];
+    /*
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
     [query whereKey:@"fromUser" equalTo:self.user];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
         self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", number];
     }];
+    */
 }
 
 - (void) getNumberFollowers {
+    [Follow numberOfFollowers:self.user withCompletion:^(int followers) {
+        if (followers != -1){
+            self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", followers];
+        }
+    }];
+    /*
     PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
     [query whereKey:@"toUser" equalTo:self.user];
     [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
         self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", number];
     }];
+    */
 }
 
 - (void) getPosts {
@@ -155,9 +171,27 @@
 
 - (void) refreshData {
     [self getPosts];
+    
     self.usernameLabel.text = self.user.username;
     [self getNumberFollowers];
     [self getNumberFollowing];
+    
+    if (self.user[@"profileImage"] == [NSNull null]) {
+        self.profileImage.image = [UIImage imageNamed: @"profile-image-blank"];
+    }
+    else {
+        self.profileImage.file = self.user[@"profileImage"];
+        [self.profileImage loadInBackground];
+    }
+    
+    [Follow userIsFollowing:self.user fromUser:[PFUser currentUser] withCompletion:^(Boolean followed) {
+        if (followed){
+            [self.followButton setSelected:YES];
+        }
+        else {
+            [self.followButton setSelected:NO];
+        }
+    }];
 }
 
 /*
