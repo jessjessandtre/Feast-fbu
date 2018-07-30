@@ -36,10 +36,9 @@
     PFQuery* query = [PFQuery queryWithClassName:@"Like"];
     [query whereKey:@"fromUser" equalTo:[PFUser currentUser]];
     [query whereKey:@"post" equalTo:post];
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        if (!error){
-            Like* like = (Like*)objects[0];
+    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        if (object){
+            Like* like = (Like*)object;
             [like deleteInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
                 if (succeeded){
                     NSLog(@"unliked post");
@@ -49,6 +48,7 @@
                     NSLog(@"error unliking object: %@", error.localizedDescription);
                     completion(false);
                 }
+                
             }];
         }
         else {

@@ -7,8 +7,10 @@
 //
 
 #import "CommentCell.h"
+#import <Parse/Parse.h>
 
 @implementation CommentCell
+
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -25,14 +27,23 @@
     
     [self.comment fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if (object){
-            self.commentLabel.text = self.comment.text;
+            self.commentLabel.text = self.comment[@"text"];
+            [self fetchUser];
         }
         else {
             NSLog(@"error loading comment: %@", error.localizedDescription);
             self.commentLabel.text = @"";
         }
     }];
-    // self.commentLabel.text = self.comment.text;
+}
+
+- (void) fetchUser {
+    self.user = self.comment[@"fromUser"];
+    
+    [self.user fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
+        self.usernameLabel.text = self.user[@"username"];
+        self.profileImageView.file = self.user[@"profileImage"];
+    }];
 }
 
 @end
