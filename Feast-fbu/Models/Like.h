@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "Post.h"
 
-@interface Like : PFObject
+@interface Like : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) PFUser *fromUser;
 @property (strong, nonatomic) PFUser *toUser;

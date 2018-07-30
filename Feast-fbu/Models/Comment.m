@@ -12,4 +12,8 @@
 
 @dynamic fromUser, toUser, post, text;
 
++ (nonnull NSString *)parseClassName {
+    return @"Comment";
+}
+
 @end
