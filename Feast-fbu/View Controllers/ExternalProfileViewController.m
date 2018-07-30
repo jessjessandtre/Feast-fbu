@@ -75,6 +75,9 @@
         if (succeeded){
             [self getNumberFollowers];
             [self.followButton setSelected:YES];
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"FollowUpdateNotification"
+             object:nil];
         }
     }];
 /*    PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
@@ -90,6 +93,9 @@
         if (succeeded) {
             [self getNumberFollowers];
             [self.followButton setSelected:NO];
+            [[NSNotificationCenter defaultCenter]
+             postNotificationName:@"FollowUpdateNotification"
+             object:nil];
         }
     }];
     /*
