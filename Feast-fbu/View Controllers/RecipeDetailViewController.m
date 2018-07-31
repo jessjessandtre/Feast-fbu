@@ -17,7 +17,7 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
-
+@property (strong, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) NSArray *posts;
 
 @end
@@ -31,6 +31,11 @@
     self.recipeTableView.dataSource = self;
     self.postCollectionView.delegate = self;
     self.postCollectionView.dataSource = self;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(recipeSavedNotification:)
+                                                 name:@"RecipeSaveNotification"
+                                               object:nil];
     
     UICollectionViewFlowLayout *collectionViewLayout = self.postCollectionView.collectionViewLayout;
     
@@ -60,12 +65,25 @@
     }];
 }
 
+- (void) recipeSavedNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
+        NSLog (@"Successfully received the recipe save notification!");
+        DetailRecipeTableViewCell* cell = [self.recipeTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [cell updateSaveButton];
+    }
+}
+
+
+
 - (IBAction)saveButtonTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;
     if ([saveButton isSelected]){
         [Saved deleteSavedRecipe:self.recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [saveButton setSelected:NO];
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"RecipeSaveNotification"
+                 object:nil];
             }
         }];
         
@@ -75,6 +93,9 @@
         [Saved saveRecipe:self.recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [saveButton setSelected:YES];
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"RecipeSaveNotification"
+                 object:nil];
             }
         }];
         
