@@ -38,16 +38,15 @@
 
 - (void) fetchComments {
     PFQuery *commentQuery = [PFQuery queryWithClassName:@"Comment"];
-    [commentQuery includeKey:@"post"];
+    [commentQuery includeKey:@"fromUser"];
     [commentQuery whereKey:@"post" equalTo:self.post];
     [commentQuery orderByDescending:@"createdAt"];
     
     commentQuery.limit = 20;
     
-    [commentQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable comments, NSError * _Nullable error) {
+    [commentQuery findObjectsInBackgroundWithBlock:^(NSArray<Comment *> * _Nullable comments, NSError * _Nullable error) {
         if (comments) {
             self.comments = comments;
-            
             [self.commentsTableView reloadData];
             NSLog(@"%@", comments);
         }
@@ -63,7 +62,7 @@
     Comment *comment = self.comments[indexPath.row];
     
     cell.comment = comment;
-    
+    NSLog(@"%@", comment.text);
     [cell setComment];
     
     return cell;
@@ -82,9 +81,11 @@
         [commentActivity setObject:self.commentTextField.text forKey:@"text"];
         [commentActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
             [self updateNumberComments];
+            [self fetchComments];
+            self.commentTextField.text = @"";
+
         }];
         
-        [self fetchComments];
     }
 }
 

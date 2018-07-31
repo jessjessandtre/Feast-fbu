@@ -10,7 +10,11 @@
 
 @implementation Like
 
-@dynamic fromUser, toUser, post; 
+@dynamic fromUser, toUser, post;
+
++ (nonnull NSString *)parseClassName {
+    return @"Like";
+}
 
 + (void)userLikesPost:(Post*)post withCompletion:(void(^)(Boolean liked))completion {
     PFQuery* query = [PFQuery queryWithClassName:@"Like"];

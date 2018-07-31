@@ -14,7 +14,7 @@
 @dynamic fromUser, toUser;
 
 + (nonnull NSString *)parseClassName {
-    return @"Recipe";
+    return @"Follow";
 }
 
 + (void)userIsFollowing:(PFUser*)user fromUser:(PFUser*)fromUser withCompletion:(void(^)(Boolean followed))completion {

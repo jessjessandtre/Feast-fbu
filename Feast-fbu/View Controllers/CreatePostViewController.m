@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UIImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UITextField *captionTextField;
+@property (weak, nonatomic) IBOutlet UITextField *tagTextField;
 
 @end
 
@@ -59,6 +60,8 @@
     [post saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (succeeded){
+            [self.recipe incrementKey:@"numPosts"];
+            [self.recipe saveEventually];
             NSLog(@"post success");
             [self dismissViewControllerAnimated:true completion:nil];
             
@@ -72,8 +75,19 @@
             
         }
     }];
-    
 }
+
+- (IBAction)didTapAddTag:(id)sender {
+    if (self.recipe[@"tags"][0] == nil) {
+        self.recipe[@"tags"] = [NSMutableArray arrayWithObject:[self.tagTextField.text lowercaseString]];
+        NSLog(@"Did initialize array");
+    }
+    else {
+        [self.recipe[@"tags"] addObject:[self.tagTextField.text lowercaseString]];
+        NSLog(@"Did add tag");
+    }
+}
+
 
 - (void)setImage:(UIImage *)image {
     _image = image;

@@ -24,7 +24,12 @@
 }
 
 - (void) setComment {
+
+    self.commentLabel.text = self.comment.text;
+    [self fetchUser];
     
+    //self.usernameLabel.text = self.comment.fromUser.username;
+    /*
     [self.comment fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if (object){
             self.commentLabel.text = self.comment[@"text"];
@@ -35,6 +40,7 @@
             self.commentLabel.text = @"";
         }
     }];
+     */
 }
 
 - (void) fetchUser {

@@ -295,12 +295,20 @@
     
     if (searchText.length != 0) {
 
-        NSPredicate *predicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary *bindings) {
+        NSPredicate *namePredicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary *bindings) {
             Recipe *recipe = evaluatedObject;
             return [[recipe.name lowercaseString] containsString:[searchText lowercaseString]];
         }];
-        self.filteredRecipes = [self.recipes filteredArrayUsingPredicate:predicate];
         
+        NSPredicate *tagPredicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
+            Recipe *recipe = evaluatedObject;
+            return [recipe[@"tags"] containsObject:[searchText lowercaseString]];
+        }];
+        
+        NSPredicate *combinedPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[namePredicate, tagPredicate]];
+        
+        self.filteredRecipes = [self.recipes filteredArrayUsingPredicate:combinedPredicate];
+
         NSLog(@"%@", self.filteredRecipes);
     }
     else {
