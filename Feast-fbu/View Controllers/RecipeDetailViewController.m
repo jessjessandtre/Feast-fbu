@@ -12,6 +12,7 @@
 #import "RecipePostCollectionViewCell.h"
 #import "Saved.h"
 #import "Post.h"
+#import "CreatePostViewController.h"
 
 @interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -159,15 +160,25 @@
     return self.posts.count;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqual:@"CreatePostSegue"]){
+        UIImage *image = sender;
+        UINavigationController *navigationController =[segue destinationViewController];
+        CreatePostViewController *createPostViewController = (CreatePostViewController*) navigationController.topViewController;
+        
+        createPostViewController.image = image;
+        createPostViewController.recipe = self.recipe;
+        // createPostViewController.intermediateDelegate = self;
+    }
 }
-*/
+
 
 @end
     
