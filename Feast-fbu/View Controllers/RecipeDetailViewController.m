@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
-@property (strong, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) NSArray *posts;
 
 @end
@@ -41,7 +40,7 @@
     UICollectionViewFlowLayout *collectionViewLayout = self.postCollectionView.collectionViewLayout;
     
     collectionViewLayout.minimumInteritemSpacing = 0;
-    collectionViewLayout.minimumLineSpacing = 20;
+    collectionViewLayout.minimumLineSpacing = 2;
     collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
     [self fetchPosts];
