@@ -10,4 +10,11 @@
 
 @implementation ExternalUserCollectionViewCell
 
+- (void) setPost:(Post *)post {
+    _post = post;
+    
+    self.postImageView.file = post.image;
+    [self.postImageView loadInBackground];
+}
+
 @end

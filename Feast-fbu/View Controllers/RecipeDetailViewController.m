@@ -12,12 +12,12 @@
 #import "RecipePostCollectionViewCell.h"
 #import "Saved.h"
 #import "Post.h"
+#import "CreatePostViewController.h"
 
 @interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
-
 @property (strong, nonatomic) NSArray *posts;
 
 @end
@@ -32,10 +32,15 @@
     self.postCollectionView.delegate = self;
     self.postCollectionView.dataSource = self;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(recipeSavedNotification:)
+                                                 name:@"RecipeSaveNotification"
+                                               object:nil];
+    
     UICollectionViewFlowLayout *collectionViewLayout = self.postCollectionView.collectionViewLayout;
     
     collectionViewLayout.minimumInteritemSpacing = 0;
-    collectionViewLayout.minimumLineSpacing = 20;
+    collectionViewLayout.minimumLineSpacing = 2;
     collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
     [self fetchPosts];
@@ -60,12 +65,25 @@
     }];
 }
 
+- (void) recipeSavedNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
+        NSLog (@"Successfully received the recipe save notification!");
+        DetailRecipeTableViewCell* cell = [self.recipeTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
+        [cell updateSaveButton];
+    }
+}
+
+
+
 - (IBAction)saveButtonTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;
     if ([saveButton isSelected]){
         [Saved deleteSavedRecipe:self.recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [saveButton setSelected:NO];
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"RecipeSaveNotification"
+                 object:nil];
             }
         }];
         
@@ -75,6 +93,9 @@
         [Saved saveRecipe:self.recipe withCompletion:^(Boolean succeeded) {
             if (succeeded){
                 [saveButton setSelected:YES];
+                [[NSNotificationCenter defaultCenter]
+                 postNotificationName:@"RecipeSaveNotification"
+                 object:nil];
             }
         }];
         
@@ -138,15 +159,25 @@
     return self.posts.count;
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqual:@"CreatePostSegue"]){
+        UIImage *image = sender;
+        UINavigationController *navigationController =[segue destinationViewController];
+        CreatePostViewController *createPostViewController = (CreatePostViewController*) navigationController.topViewController;
+        
+        createPostViewController.image = image;
+        createPostViewController.recipe = self.recipe;
+        // createPostViewController.intermediateDelegate = self;
+    }
 }
-*/
+
 
 @end
     

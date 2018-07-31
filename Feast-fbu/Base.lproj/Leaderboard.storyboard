@@ -100,11 +100,11 @@
             </objects>
             <point key="canvasLocation" x="4447" y="325"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Leaderboard-->
         <scene sceneID="p77-Tx-ljU">
             <objects>
                 <navigationController storyboardIdentifier="LeaderboardNavController" automaticallyAdjustsScrollViewInsets="NO" id="Etm-gu-Hsl" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Icon-29 (2)" selectedImage="Icon-29 (3)" id="ywP-2x-loV"/>
+                    <tabBarItem key="tabBarItem" title="Leaderboard" image="Icon-29 (2)" selectedImage="Icon-29 (3)" id="ywP-2x-loV"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="woz-sA-3Vd">

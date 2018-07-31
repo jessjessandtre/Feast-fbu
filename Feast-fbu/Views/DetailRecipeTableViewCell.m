@@ -39,6 +39,10 @@
     self.instructionsLabel.text = self.recipe.instructions;
     self.sourceURLLabel.text = self.recipe.sourceURL;
     
+    [self updateSaveButton];
+}
+
+- (void)updateSaveButton {
     [Saved savedRecipeExists:self.recipe withCompletion:^(Boolean saved) {
         if (saved){
             [self.saveButton setSelected:YES];
@@ -47,5 +51,6 @@
         }
     }];
 }
+
 
 @end

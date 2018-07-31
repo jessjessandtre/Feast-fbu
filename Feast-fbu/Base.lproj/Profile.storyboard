@@ -40,11 +40,12 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9iz-4x-Lti" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="106" height="109"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.52156862749999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
                                         <connections>
-                                            <outlet property="postImageView" destination="9iz-4x-Lti" id="F1v-dO-S8k"/>
+                                            <outlet property="postImageView" destination="9iz-4x-Lti" id="rpm-Lj-ccR"/>
                                             <segue destination="0PI-pL-8Go" kind="show" identifier="DetailedPostSegue" id="eXS-Tp-otC"/>
                                         </connections>
                                     </collectionViewCell>
@@ -152,11 +153,11 @@
             </objects>
             <point key="canvasLocation" x="4130" y="268"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="cug-ba-FEj">
             <objects>
                 <navigationController storyboardIdentifier="ProfileNavController" automaticallyAdjustsScrollViewInsets="NO" id="zLS-dZ-QBZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Icon-29" selectedImage="Icon-29 (1)" id="Ern-aE-tTD"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Icon-29" selectedImage="Icon-29 (1)" id="Ern-aE-tTD"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wY5-Bt-cwZ">
