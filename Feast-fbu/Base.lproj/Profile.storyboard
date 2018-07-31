@@ -153,11 +153,11 @@
             </objects>
             <point key="canvasLocation" x="4130" y="268"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Profile-->
         <scene sceneID="cug-ba-FEj">
             <objects>
                 <navigationController storyboardIdentifier="ProfileNavController" automaticallyAdjustsScrollViewInsets="NO" id="zLS-dZ-QBZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Icon-29" selectedImage="Icon-29 (1)" id="Ern-aE-tTD"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="Icon-29" selectedImage="Icon-29 (1)" id="Ern-aE-tTD"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wY5-Bt-cwZ">
