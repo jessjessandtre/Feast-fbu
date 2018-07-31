@@ -78,6 +78,18 @@
 }
 
 - (IBAction)didTapAddTag:(id)sender {
+    PFObject *tagActivity = [PFObject objectWithClassName:@"Tag"];
+    [tagActivity setObject:self.tagTextField.text forKey:@"name"];
+    [tagActivity setObject:self.recipe forKey:@"recipe"];
+    [tagActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
+        if (succeeded) {
+            NSLog(@"added tag");
+        }
+        else {
+            NSLog(@"error adding tag %@", error.localizedDescription);
+        }
+    }];
+    /*
     if (self.recipe[@"tags"][0] == nil) {
         self.recipe[@"tags"] = [NSMutableArray arrayWithObject:[self.tagTextField.text lowercaseString]];
         NSLog(@"Did initialize array");
@@ -86,6 +98,7 @@
         [self.recipe[@"tags"] addObject:[self.tagTextField.text lowercaseString]];
         NSLog(@"Did add tag");
     }
+     */
 }
 
 
