@@ -23,9 +23,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowingLabel;
 @property (strong, nonatomic) IBOutlet UIButton *followButton;
 
-
-
-@property (weak, nonatomic) NSArray *posts;
+@property (strong, nonatomic) NSArray *posts;
 
 @end
 
@@ -56,10 +54,23 @@
     
     [SVProgressHUD show];
     
+    
+    
     [self refreshData];
+    
 }
 
-
+- (void) receiveNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"NewPostNotification"]) {
+        NSLog (@"Successfully received the post notification!");
+        [self fetchPosts];
+    }
+    else if ([[notification name] isEqualToString:@"FollowUpdateNotification"]) {
+        NSLog(@"Successfully received the follow notification!");
+        [self getNumberFollowing];
+    }
+    
+}
 
 - (IBAction)followButtonTapped:(id)sender {
     if ([self.followButton isSelected]){
@@ -116,7 +127,7 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    ExternalUserCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ExternalPostCell" forIndexPath:indexPath];
+    ExternalUserCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ExternalUserCollectionViewCell" forIndexPath:indexPath];
     Post* post = self.posts[indexPath.item];
     cell.post = post;
     return cell;
@@ -156,10 +167,10 @@
     */
 }
 
-- (void) getPosts {
+- (void) fetchPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
-    [query includeKey:@"user"];
+    NSLog(@"%@", self.user);
     [query whereKey:@"user" equalTo:self.user];
     
     query.limit = 20;
@@ -169,14 +180,17 @@
         if (posts != nil) {
             self.posts = posts;
             [self.externalPostCollectionView reloadData];
+            NSLog(@"post \n\n\n %@", self.posts);
         } else {
             NSLog(@"Error%@", error.localizedDescription);
+            [self alertControlWithTitle:@"Error fetching data" andMessage:error.localizedDescription];
         }
     }];
+    
 }
 
 - (void) refreshData {
-    [self getPosts];
+    [self fetchPosts];
     
     self.usernameLabel.text = self.user.username;
     [self getNumberFollowers];
@@ -197,6 +211,19 @@
         else {
             [self.followButton setSelected:NO];
         }
+    }];
+}
+
+-(void)alertControlWithTitle:(NSString*)title andMessage:(NSString*)message {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:title message:message  preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        //handle response
+    }];
+    
+    [alert addAction:okAction];
+    [self presentViewController:alert animated:YES completion:^{
+        // code for after alert controller has finished presenting
     }];
 }
 

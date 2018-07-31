@@ -69,11 +69,6 @@
     [self refreshData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void) receiveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"NewPostNotification"]) {
         NSLog (@"Successfully received the post notification!");
