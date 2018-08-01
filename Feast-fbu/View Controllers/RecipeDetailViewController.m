@@ -13,6 +13,7 @@
 #import "Post.h"
 #import "CreatePostViewController.h"
 #import "PostCollectionViewCell.h"
+#import "DetailedPostViewController.h"
 
 @interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -50,6 +51,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"recipe"];
+    [query includeKey:@"user"];
     [query whereKey:@"recipe" equalTo:self.recipe];
     
     query.limit = 20;
@@ -175,6 +177,11 @@
         createPostViewController.image = image;
         createPostViewController.recipe = self.recipe;
         // createPostViewController.intermediateDelegate = self;
+    } else if ([segue.identifier isEqualToString:@"DetailedPostSegue2"]){
+        PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
+        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
+        detailedPostViewController.post = cell.post;
+        NSLog(@"detailed post segue");
     }
 }
 
