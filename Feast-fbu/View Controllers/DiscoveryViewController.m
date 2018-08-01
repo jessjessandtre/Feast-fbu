@@ -103,6 +103,7 @@
 - (void)fetchFriendsPosts {
     PFQuery *postQuery = [Post query];
     [postQuery includeKey:@"user"];
+    [postQuery includeKey:@"recipe"];
     [postQuery includeKey:@"createdAt"];
     [postQuery orderByDescending:@"createdAt"];
     postQuery.limit = 20;
@@ -124,12 +125,11 @@
 }
 
 - (nonnull UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    FriendsCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"FriendsCollectionViewCell" forIndexPath:indexPath];
+    PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
     
     Post *post = self.friendsPosts[indexPath.row];
     
     cell.post = post;
-    [cell setPost];
     return cell;
     
 }
@@ -382,7 +382,7 @@
         
         detailViewController.recipe = recipe;
     } else if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
-        FriendsCollectionViewCell* cell = (FriendsCollectionViewCell*) sender;
+        PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
         DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
         detailedPostViewController.post = cell.post;
     

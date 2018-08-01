@@ -42,7 +42,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ExternalUserCollectionViewCell" id="yon-6F-fhJ" customClass="ExternalUserCollectionViewCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionViewCell" id="yon-6F-fhJ" customClass="PostCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -57,6 +57,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="postImageView" destination="VZw-S4-uZb" id="7jy-Y7-MGH"/>
+                                            <segue destination="lYV-0N-cNd" kind="show" identifier="DetailedPostSegue4" id="6qu-Hl-kp4"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -140,6 +141,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sP9-7j-I6P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1076" y="23.838080959520241"/>
+        </scene>
+        <!--DetailedPost-->
+        <scene sceneID="BhB-ek-daN">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPost" id="lYV-0N-cNd" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JfR-Jp-XqM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1687" y="-59"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="XQi-9d-pD6">

@@ -1,17 +1,17 @@
 //
-//  RecipeCollectionViewCell.h
+//  PostCollectionViewCell.h
 //  Feast-fbu
 //
-//  Created by Jessica Shu on 7/19/18.
+//  Created by Jessica Shu on 8/1/18.
 //  Copyright © 2018 jessjessandtre. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+#import "Post.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
-#import "Post.h"
 
-@interface RecipeCollectionViewCell : UICollectionViewCell
+@interface PostCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) IBOutlet PFImageView *postImageView;
 

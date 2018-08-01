@@ -1,14 +1,14 @@
 //
-//  ExternalUserCollectionViewCell.m
+//  PostCollectionViewCell.m
 //  Feast-fbu
 //
-//  Created by Jessica Au on 7/23/18.
+//  Created by Jessica Shu on 8/1/18.
 //  Copyright © 2018 jessjessandtre. All rights reserved.
 //
 
-#import "ExternalUserCollectionViewCell.h"
+#import "PostCollectionViewCell.h"
 
-@implementation ExternalUserCollectionViewCell
+@implementation PostCollectionViewCell
 
 - (void) setPost:(Post *)post {
     _post = post;
