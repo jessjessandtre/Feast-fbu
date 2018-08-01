@@ -11,7 +11,6 @@
 		2135FC7E21067F6400543AF7 /* Timeline.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135FC7D21067F6400543AF7 /* Timeline.storyboard */; };
 		2135FC812106819800543AF7 /* TimelineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC802106819800543AF7 /* TimelineViewController.m */; };
 		2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC83210681EB00543AF7 /* TimelineViewCell.m */; };
-		214F5D9F2109498C00A47BC8 /* FriendsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F5D9E2109498C00A47BC8 /* FriendsCollectionViewCell.m */; };
 		214F5DA2210A9F0E00A47BC8 /* SuggestedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */; };
 		214F5DA8210A9F5400A47BC8 /* SuggestedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */; };
 		290F36F92106B1FB00A1B704 /* Saved.m in Sources */ = {isa = PBXBuildFile; fileRef = 290F36F82106B1FB00A1B704 /* Saved.m */; };
@@ -85,8 +84,6 @@
 		2135FC802106819800543AF7 /* TimelineViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewController.m; sourceTree = "<group>"; };
 		2135FC82210681EB00543AF7 /* TimelineViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimelineViewCell.h; sourceTree = "<group>"; };
 		2135FC83210681EB00543AF7 /* TimelineViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TimelineViewCell.m; sourceTree = "<group>"; };
-		214F5D9D2109498C00A47BC8 /* FriendsCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsCollectionViewCell.h; sourceTree = "<group>"; };
-		214F5D9E2109498C00A47BC8 /* FriendsCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsCollectionViewCell.m; sourceTree = "<group>"; };
 		214F5DA0210A9F0E00A47BC8 /* SuggestedTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuggestedTableViewCell.h; sourceTree = "<group>"; };
 		214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuggestedTableViewCell.m; sourceTree = "<group>"; };
 		214F5DA6210A9F5400A47BC8 /* SuggestedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuggestedViewController.h; sourceTree = "<group>"; };
@@ -287,8 +284,6 @@
 				29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */,
 				5874011E21091F40000425F3 /* CommentCell.h */,
 				5874011F21091F40000425F3 /* CommentCell.m */,
-				214F5D9D2109498C00A47BC8 /* FriendsCollectionViewCell.h */,
-				214F5D9E2109498C00A47BC8 /* FriendsCollectionViewCell.m */,
 				214F5DA0210A9F0E00A47BC8 /* SuggestedTableViewCell.h */,
 				214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */,
 				58740124210A9E65000425F3 /* RecipePostCollectionViewCell.h */,
@@ -635,7 +630,6 @@
 				29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */,
 				298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */,
 				297420792106557500B30175 /* DetailedPostViewController.m in Sources */,
-				214F5D9F2109498C00A47BC8 /* FriendsCollectionViewCell.m in Sources */,
 				214F5DA8210A9F5400A47BC8 /* SuggestedViewController.m in Sources */,
 				298E33752100F82500290BF4 /* ProfileViewController.m in Sources */,
 				29CC258221015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m in Sources */,
