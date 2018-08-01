@@ -33,12 +33,12 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PopularMealsCell" rowHeight="219" id="0ow-DT-Fjs" customClass="PopularMealsCell">
                                         <rect key="frame" x="0.0" y="140" width="375" height="219"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0ow-DT-Fjs" id="REf-4h-ASS">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0ow-DT-Fjs" id="REf-4h-ASS">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="218.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ciC-T6-tlX" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ciC-T6-tlX" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                                                     <color key="backgroundColor" red="0.94114847720000006" green="0.67770251879999999" blue="0.72044893229999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
@@ -48,18 +48,20 @@
                                                         <outletCollection property="gestureRecognizers" destination="R9q-It-eeB" appends="YES" id="473-27-KMD"/>
                                                     </connections>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFt-xO-eWZ">
-                                                    <rect key="frame" x="15" y="135" width="55" height="28"/>
-                                                    <fontDescription key="fontDescription" name="OriyaSangamMN-Bold" family="Oriya Sangam MN" pointSize="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFt-xO-eWZ">
+                                                    <rect key="frame" x="15" y="172" width="345" height="24"/>
+                                                    <fontDescription key="fontDescription" name="OriyaSangamMN-Bold" family="Oriya Sangam MN" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" constant="124" id="8yu-mv-F4e"/>
+                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" constant="161" id="718-7e-B89"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="BFt-xO-eWZ" secondAttribute="bottom" constant="8" id="GAo-7a-Eyb"/>
                                                 <constraint firstAttribute="trailing" secondItem="ciC-T6-tlX" secondAttribute="trailing" id="HZk-oF-B8y"/>
                                                 <constraint firstItem="ciC-T6-tlX" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leading" id="Lz3-kV-cDc"/>
                                                 <constraint firstItem="ciC-T6-tlX" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="top" id="cba-TT-HXu"/>
+                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="trailing" secondItem="REf-4h-ASS" secondAttribute="trailingMargin" id="lQc-ZS-EXQ"/>
                                                 <constraint firstAttribute="bottom" secondItem="ciC-T6-tlX" secondAttribute="bottom" constant="8" id="rSe-Tf-joV"/>
                                                 <constraint firstItem="BFt-xO-eWZ" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leadingMargin" id="sjX-n8-AQ0"/>
                                             </constraints>
