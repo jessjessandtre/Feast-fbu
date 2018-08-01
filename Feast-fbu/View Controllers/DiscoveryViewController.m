@@ -302,7 +302,13 @@
         
         NSPredicate *tagPredicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
             Recipe *recipe = evaluatedObject;
-            return [recipe[@"tags"] containsObject:[searchText lowercaseString]];
+            if ([recipe[@"tags"] containsObject:[searchText lowercaseString]]) {
+                int index = [recipe[@"tags"] indexOfObject:[searchText lowercaseString]];
+                return [recipe[@"tags"][index] containsString:[searchText lowercaseString]];
+            }
+            else {
+                return [recipe[@"tags"] containsObject:[searchText lowercaseString]];
+            }
         }];
         
         NSPredicate *combinedPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[namePredicate, tagPredicate]];
