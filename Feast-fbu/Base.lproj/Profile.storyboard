@@ -46,7 +46,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="postImageView" destination="9iz-4x-Lti" id="rpm-Lj-ccR"/>
-                                            <segue destination="0PI-pL-8Go" kind="show" identifier="DetailedPostSegue" id="eXS-Tp-otC"/>
+                                            <segue destination="0PI-pL-8Go" kind="show" identifier="DetailedPostSegue3" id="eXS-Tp-otC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

@@ -85,6 +85,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"user"];
+    [query includeKey:@"recipe"];
     [query whereKey:@"user" equalTo:[PFUser currentUser]];
 
     
@@ -279,7 +280,7 @@
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
+    if ([segue.identifier isEqualToString:@"DetailedPostSegue3"]){
         PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
         DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
         detailedPostViewController.post = cell.post;

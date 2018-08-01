@@ -101,6 +101,7 @@
 - (void)fetchFriendsPosts {
     PFQuery *postQuery = [Post query];
     [postQuery includeKey:@"user"];
+    [postQuery includeKey:@"recipe"];
     [postQuery includeKey:@"createdAt"];
     [postQuery orderByDescending:@"createdAt"];
     postQuery.limit = 20;

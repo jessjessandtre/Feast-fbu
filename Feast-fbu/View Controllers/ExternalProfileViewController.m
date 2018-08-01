@@ -13,6 +13,7 @@
 #import <Parse/Parse.h>
 #import "ParseUI.h"
 #import <SVProgressHUD.h>
+#import "DetailedPostViewController.h"
 
 @interface ExternalProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
@@ -170,7 +171,8 @@
 - (void) fetchPosts {
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
-    NSLog(@"%@", self.user);
+    [query includeKey:@"user"];
+    [query includeKey:@"recipe"];
     [query whereKey:@"user" equalTo:self.user];
     
     query.limit = 20;
@@ -227,14 +229,20 @@
     }];
 }
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqualToString:@"DetailedPostSegue4"]){
+        PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
+        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
+        detailedPostViewController.post = cell.post;
+    }
 }
-*/
+
 
 @end
