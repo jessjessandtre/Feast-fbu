@@ -20,7 +20,7 @@
 #import "ParseUI.h"
 #import "PostCollectionViewCell.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSourcePrefetching>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;
@@ -51,6 +51,7 @@
     
     self.recipeTableView.delegate = self;
     self.recipeTableView.dataSource = self;
+    self.recipeTableView.prefetchDataSource = self;
     self.friendsCollectionView.dataSource = self;
     self.friendsCollectionView.delegate = self;
     
@@ -165,6 +166,8 @@
     Recipe *recipe = self.filteredRecipes[indexPath.row];
     
     cell.recipe = recipe;
+    
+    cell.recipeImageView.image = nil;
     
     [cell setRecipe];
     
@@ -299,6 +302,19 @@
             Recipe *recipe = evaluatedObject;
             return [[recipe.name lowercaseString] containsString:[searchText lowercaseString]];
         }];
+        /*
+        NSArray *tagged;
+        PFQuery* query = [PFQuery queryWithClassName:@"Tag"];
+        [query includeKey:@"recipe"];
+        [query whereKey:@"name" containsString:[searchText lowercaseString]];
+        [query findObjectsInBackgroundWithBlock:^(NSArray<Tag *> * _Nullable tags, NSError * _Nullable error) {
+            [tagged initWithArray:tags];
+        }];
+        NSPredicate *tagPredicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary* bindings) {
+            Recipe *recipe = evaluatedObject;
+            recipe =
+        }];
+        */
         
         NSPredicate *tagPredicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary<NSString *,id> * _Nullable bindings) {
             Recipe *recipe = evaluatedObject;
@@ -310,6 +326,7 @@
                 return [recipe[@"tags"] containsObject:[searchText lowercaseString]];
             }
         }];
+        
         
         NSPredicate *combinedPredicate = [NSCompoundPredicate orPredicateWithSubpredicates:@[namePredicate, tagPredicate]];
         
