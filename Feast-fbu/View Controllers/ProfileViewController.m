@@ -10,7 +10,7 @@
 #import "ProfileViewController.h"
 #import "Post.h"
 #import "LoginViewController.h"
-#import "RecipeCollectionViewCell.h"
+#import "PostCollectionViewCell.h"
 #import <SVProgressHUD.h>
 #import "DetailedPostViewController.h"
 #import "CreatePostViewController.h"
@@ -122,7 +122,7 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    RecipeCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipeCollectionViewCell" forIndexPath:indexPath];
+    PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
     Post* post = self.posts[indexPath.item];
     cell.post = post;
     return cell;
@@ -131,17 +131,6 @@
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.posts.count;
-}
-
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
-        RecipeCollectionViewCell* cell = (RecipeCollectionViewCell*) sender;
-        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
-        detailedPostViewController.post = cell.post;
-    }
 }
 
 - (IBAction)profileImageTapped:(id)sender {
@@ -287,5 +276,13 @@
     }];
 }
 
+// In a storyboard-based application, you will often want to do a little preparation before navigation
 
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
+        PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
+        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
+        detailedPostViewController.post = cell.post;
+    }
+}
 @end

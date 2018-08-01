@@ -9,10 +9,10 @@
 #import "UIImageView+AFNetworking.h"
 #import "RecipeDetailViewController.h"
 #import "DetailRecipeTableViewCell.h"
-#import "RecipePostCollectionViewCell.h"
 #import "Saved.h"
 #import "Post.h"
 #import "CreatePostViewController.h"
+#import "PostCollectionViewCell.h"
 
 @interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -149,10 +149,9 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    RecipePostCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipePostCell" forIndexPath:indexPath];
+     PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
     Post *post = self.posts[indexPath.item];
     cell.post = post;
-    [cell setPost];
     return cell;
 }
 

@@ -8,7 +8,7 @@
 
 #import "ExternalProfileViewController.h"
 #import "Post.h"
-#import "ExternalUserCollectionViewCell.h"
+#import "PostCollectionViewCell.h"
 #import "Follow.h"
 #import <Parse/Parse.h>
 #import "ParseUI.h"
@@ -127,7 +127,7 @@
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
     
-    ExternalUserCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"ExternalUserCollectionViewCell" forIndexPath:indexPath];
+    PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
     Post* post = self.posts[indexPath.item];
     cell.post = post;
     return cell;
