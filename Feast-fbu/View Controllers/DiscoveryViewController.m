@@ -18,8 +18,7 @@
 #import "Saved.h"
 #import "Post.h"
 #import "ParseUI.h"
-#import "FriendsCollectionViewCell.h"
-#import "Tag.h"
+#import "PostCollectionViewCell.h"
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSourcePrefetching>
 
