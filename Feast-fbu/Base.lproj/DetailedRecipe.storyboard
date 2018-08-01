@@ -193,9 +193,6 @@
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J1H-af-fmB">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="120"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" secondItem="J1H-af-fmB" secondAttribute="height" multiplier="25:8" id="QI3-Y2-pAW"/>
-                                            </constraints>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NGo-Dq-UDN">
                                                 <size key="itemSize" width="111" height="94"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -231,6 +228,7 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="J1H-af-fmB" firstAttribute="leading" secondItem="AW2-bk-YlW" secondAttribute="leading" id="7JN-Rc-Zo8"/>
+                                        <constraint firstAttribute="bottom" secondItem="J1H-af-fmB" secondAttribute="bottom" id="SL9-Bv-DOD"/>
                                         <constraint firstItem="J1H-af-fmB" firstAttribute="top" secondItem="AW2-bk-YlW" secondAttribute="top" id="YSB-Ni-Snn"/>
                                         <constraint firstAttribute="trailing" secondItem="J1H-af-fmB" secondAttribute="trailing" id="tdy-bL-ugL"/>
                                     </constraints>

@@ -138,6 +138,7 @@
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailRecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell"];
     Recipe *recipe = self.recipe;
+    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.recipe = recipe;
     [cell setRecipe];
     return cell;
