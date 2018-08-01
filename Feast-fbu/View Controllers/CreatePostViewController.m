@@ -89,7 +89,7 @@
             NSLog(@"error adding tag %@", error.localizedDescription);
         }
     }];
-    /*
+    
     if (self.recipe[@"tags"][0] == nil) {
         self.recipe[@"tags"] = [NSMutableArray arrayWithObject:[self.tagTextField.text lowercaseString]];
         NSLog(@"Did initialize array");
@@ -98,7 +98,6 @@
         [self.recipe[@"tags"] addObject:[self.tagTextField.text lowercaseString]];
         NSLog(@"Did add tag");
     }
-     */
 }
 
 

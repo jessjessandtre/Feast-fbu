@@ -53,6 +53,7 @@
 		58740129210B8B1E000425F3 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58740128210B8B1E000425F3 /* RecipeDetailViewController.m */; };
 		5874012C210B8B6E000425F3 /* DetailRecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */; };
 		589382D021111E870045670D /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 589382CF21111E870045670D /* Tag.m */; };
+		589382D6211262FA0045670D /* AutofillResultCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589382D5211262FA0045670D /* AutofillResultCellTableViewCell.m */; };
 		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
 		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
@@ -160,6 +161,8 @@
 		5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailRecipeTableViewCell.m; sourceTree = "<group>"; };
 		589382CE21111E870045670D /* Tag.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Tag.h; sourceTree = "<group>"; };
 		589382CF21111E870045670D /* Tag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
+		589382D4211262FA0045670D /* AutofillResultCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutofillResultCellTableViewCell.h; sourceTree = "<group>"; };
+		589382D5211262FA0045670D /* AutofillResultCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutofillResultCellTableViewCell.m; sourceTree = "<group>"; };
 		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +283,8 @@
 				5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */,
 				299699942112209B00C83061 /* PostCollectionViewCell.h */,
 				299699952112209B00C83061 /* PostCollectionViewCell.m */,
+				589382D4211262FA0045670D /* AutofillResultCellTableViewCell.h */,
+				589382D5211262FA0045670D /* AutofillResultCellTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -617,6 +622,7 @@
 				298E33722100F23800290BF4 /* Recipe.m in Sources */,
 				29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */,
 				298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */,
+				589382D6211262FA0045670D /* AutofillResultCellTableViewCell.m in Sources */,
 				297420792106557500B30175 /* DetailedPostViewController.m in Sources */,
 				214F5DA8210A9F5400A47BC8 /* SuggestedViewController.m in Sources */,
 				298E33752100F82500290BF4 /* ProfileViewController.m in Sources */,
