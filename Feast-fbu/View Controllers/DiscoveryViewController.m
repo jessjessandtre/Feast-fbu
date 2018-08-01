@@ -18,7 +18,7 @@
 #import "Saved.h"
 #import "Post.h"
 #import "ParseUI.h"
-#import "RecipePostCollectionViewCell.h"
+#import "PostCollectionViewCell.h"
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -122,12 +122,11 @@
 }
 
 - (nonnull UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    RecipePostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipePostCell" forIndexPath:indexPath];
+    PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
     
     Post *post = self.friendsPosts[indexPath.row];
     
     cell.post = post;
-    [cell setPost];
     return cell;
     
 }
@@ -364,7 +363,7 @@
         
         detailViewController.recipe = recipe;
     } else if ([segue.identifier isEqualToString:@"DetailedPostSegue"]){
-        RecipePostCollectionViewCell* cell = (RecipePostCollectionViewCell*) sender;
+        PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
         DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
         detailedPostViewController.post = cell.post;
     
