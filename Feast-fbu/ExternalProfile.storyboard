@@ -32,36 +32,6 @@
                                     <constraint firstAttribute="width" secondItem="gTc-LV-9Jj" secondAttribute="height" multiplier="1:1" id="tZr-56-c4c"/>
                                 </constraints>
                             </imageView>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="giG-ia-7gJ">
-                                <rect key="frame" x="0.0" y="337" width="375" height="330"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ayz-5K-FdY">
-                                    <size key="itemSize" width="100" height="100"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionViewCell" id="yon-6F-fhJ" customClass="PostCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VZw-S4-uZb" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                            </subviews>
-                                        </view>
-                                        <connections>
-                                            <outlet property="postImageView" destination="VZw-S4-uZb" id="7jy-Y7-MGH"/>
-                                            <segue destination="lYV-0N-cNd" kind="show" identifier="DetailedPostSegue4" id="6qu-Hl-kp4"/>
-                                        </connections>
-                                    </collectionViewCell>
-                                </cells>
-                            </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XX7-oZ-sIq">
                                 <rect key="frame" x="137" y="245" width="101" height="30"/>
                                 <color key="backgroundColor" red="0.2901960784" green="0.62745098040000002" blue="0.92549019610000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -97,6 +67,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="giG-ia-7gJ">
+                                <rect key="frame" x="0.0" y="337" width="375" height="330"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="Ayz-5K-FdY">
+                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionViewCell" id="yon-6F-fhJ" customClass="PostCollectionViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="VZw-S4-uZb" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="VZw-S4-uZb" firstAttribute="leading" secondItem="yon-6F-fhJ" secondAttribute="leading" id="LXf-7B-p3r"/>
+                                            <constraint firstAttribute="bottom" secondItem="VZw-S4-uZb" secondAttribute="bottom" id="OKb-8n-GmK"/>
+                                            <constraint firstItem="VZw-S4-uZb" firstAttribute="top" secondItem="yon-6F-fhJ" secondAttribute="top" id="RM0-PT-wZ3"/>
+                                            <constraint firstAttribute="trailing" secondItem="VZw-S4-uZb" secondAttribute="trailing" id="nt9-YC-7vw"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="postImageView" destination="VZw-S4-uZb" id="7jy-Y7-MGH"/>
+                                            <segue destination="lYV-0N-cNd" kind="show" identifier="DetailedPostSegue4" id="6qu-Hl-kp4"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -119,8 +124,10 @@
                             <constraint firstItem="e2J-ql-Ies" firstAttribute="leading" secondItem="5NK-wz-yNt" secondAttribute="leading" constant="16" id="gVb-mg-pIE"/>
                             <constraint firstItem="cxu-aB-PZl" firstAttribute="centerY" secondItem="idd-UJ-AYO" secondAttribute="centerY" id="hcb-PC-mBF"/>
                             <constraint firstItem="e2J-ql-Ies" firstAttribute="top" secondItem="gTc-LV-9Jj" secondAttribute="bottom" constant="8" id="jpG-C0-D2q"/>
+                            <constraint firstItem="WoX-Z4-m18" firstAttribute="leading" secondItem="5NK-wz-yNt" secondAttribute="leading" constant="119" id="khN-75-cix"/>
                             <constraint firstItem="XX7-oZ-sIq" firstAttribute="top" secondItem="e2J-ql-Ies" secondAttribute="bottom" constant="8" id="mwY-yf-SSK"/>
                             <constraint firstItem="cxu-aB-PZl" firstAttribute="centerX" secondItem="BwS-03-7FI" secondAttribute="centerX" id="q00-x0-o7v"/>
+                            <constraint firstItem="WoX-Z4-m18" firstAttribute="top" secondItem="XX7-oZ-sIq" secondAttribute="bottom" constant="8" id="q1Y-gQ-Pc4"/>
                             <constraint firstItem="5NK-wz-yNt" firstAttribute="trailing" secondItem="e2J-ql-Ies" secondAttribute="trailing" constant="16" id="qyI-zL-fZh"/>
                             <constraint firstItem="BwS-03-7FI" firstAttribute="centerY" secondItem="WoX-Z4-m18" secondAttribute="centerY" id="v2m-3B-tle"/>
                             <constraint firstItem="cxu-aB-PZl" firstAttribute="top" secondItem="BwS-03-7FI" secondAttribute="bottom" constant="8" id="vSG-LL-KFU"/>
