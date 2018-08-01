@@ -78,21 +78,29 @@
         self.createdAtLabel.text = [NSString stringWithFormat:@"%.fs",[date secondsAgo]];
     }
     
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.file = self.post.user[@"profileImage"];
+    [self.profileImageView loadInBackground];
+    
+    
     self.postImageView.file = self.post.image;
     [self.postImageView loadInBackground];
     
+    self.recipe = self.post.recipe;
+    self.recipeNameLabel.text = self.recipe.name;
+    /*
     Recipe* recipe = self.post.recipe;
     [recipe fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         if (object){
             self.recipeNameLabel.text = recipe.name;
             self.recipe = recipe;
         }
-        else {
+     else {
             NSLog(@"error loading recipe: %@", error.localizedDescription);
             self.recipeNameLabel.text = @"View this recipe";
             self.recipe = nil;
         }
-    }];
+    }]; */
     
     [Like userLikesPost:self.post withCompletion:^(Boolean liked) {
         if (liked){
