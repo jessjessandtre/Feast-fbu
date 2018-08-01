@@ -33,7 +33,7 @@
                                         <inset key="sectionInset" minX="20" minY="0.0" maxX="20" maxY="0.0"/>
                                     </collectionViewFlowLayout>
                                     <cells>
-                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FriendsCollectionViewCell" id="CSP-B9-uQk" customClass="FriendsCollectionViewCell">
+                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipePostCell" id="94F-2R-YEC" customClass="RecipePostCollectionViewCell">
                                             <rect key="frame" x="20" y="0.0" width="150" height="150"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -41,19 +41,23 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r5m-fY-5M4" customClass="PFImageView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                                        <rect key="frame" x="-7" y="0.0" width="150" height="150"/>
                                                     </imageView>
                                                 </subviews>
                                             </view>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="r5m-fY-5M4" secondAttribute="trailing" id="1Pg-yG-zRf"/>
-                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="leading" secondItem="CSP-B9-uQk" secondAttribute="leading" id="WWg-HP-T4u"/>
-                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="top" secondItem="CSP-B9-uQk" secondAttribute="top" id="qTd-XD-3Nc"/>
-                                                <constraint firstAttribute="bottom" secondItem="r5m-fY-5M4" secondAttribute="bottom" id="uQJ-sA-21v"/>
+                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="top" secondItem="94F-2R-YEC" secondAttribute="top" id="L3S-16-1zp"/>
+                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="leading" secondItem="94F-2R-YEC" secondAttribute="leading" id="Nn6-HW-cHP"/>
+                                                <constraint firstAttribute="bottom" secondItem="r5m-fY-5M4" secondAttribute="bottom" id="NxQ-Hv-79q"/>
+                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="top" secondItem="94F-2R-YEC" secondAttribute="top" id="PG5-SL-Wg6"/>
+                                                <constraint firstAttribute="trailing" secondItem="r5m-fY-5M4" secondAttribute="trailing" id="Pqa-hi-Dcd"/>
+                                                <constraint firstAttribute="bottom" secondItem="r5m-fY-5M4" secondAttribute="bottom" id="dKn-f4-W5l"/>
+                                                <constraint firstAttribute="trailing" secondItem="r5m-fY-5M4" secondAttribute="trailing" constant="7" id="fle-Jq-wzx"/>
+                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="leading" secondItem="94F-2R-YEC" secondAttribute="leading" constant="-7" id="nPb-yO-Gba"/>
                                             </constraints>
                                             <connections>
-                                                <outlet property="postImage" destination="r5m-fY-5M4" id="urJ-CH-PF0"/>
-                                                <segue destination="DHP-BV-Nh5" kind="show" identifier="DetailedPostSegue" id="woK-UY-TJo"/>
+                                                <outlet property="postImageView" destination="r5m-fY-5M4" id="ZFo-AI-4Zx"/>
+                                                <segue destination="DHP-BV-Nh5" kind="show" identifier="DetailedPostSegue" id="xcK-ul-ml9"/>
                                             </connections>
                                         </collectionViewCell>
                                     </cells>
@@ -228,11 +232,11 @@
             </objects>
             <point key="canvasLocation" x="3313" y="-675"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Discover-->
         <scene sceneID="ao3-Fy-wYj">
             <objects>
                 <navigationController storyboardIdentifier="DiscoveryNavController" automaticallyAdjustsScrollViewInsets="NO" id="7ag-19-LRa" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="Icon-29 (4)" selectedImage="Icon-29 (5)" id="eNK-pr-Mhj"/>
+                    <tabBarItem key="tabBarItem" title="Discover" image="Icon-29 (4)" selectedImage="Icon-29 (5)" id="eNK-pr-Mhj"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bD9-au-RbY">

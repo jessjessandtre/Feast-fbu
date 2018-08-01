@@ -12,6 +12,7 @@
 #import "DetailViewController.h"
 #import "CommentsViewController.h"
 #import "Like.h"
+#import "RecipeDetailViewController.h"
 
 @interface DetailedPostViewController ()
 
@@ -149,7 +150,7 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"DetailedRecipeSegue"]){
         NSLog(@"segue");
-        DetailViewController* detailViewController = [segue destinationViewController];
+        RecipeDetailViewController* detailViewController = [segue destinationViewController];
         detailViewController.recipe = self.recipe;
         
     }

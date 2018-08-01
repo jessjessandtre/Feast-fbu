@@ -10,6 +10,7 @@
 #import <ParseUI/ParseUI.h>
 #import <Parse/Parse.h>
 #import "Recipe.h"
+#import "Saved.h"
 
 @interface DetailRecipeTableViewCell : UITableViewCell
 
@@ -18,11 +19,11 @@
 @property (weak, nonatomic) IBOutlet UILabel *sourceURLLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *instructionsLabel;
-
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 
 @property (strong, nonatomic) Recipe *recipe;
 
 - (void) setRecipe;
 
+-(void)updateSaveButton;
 @end
