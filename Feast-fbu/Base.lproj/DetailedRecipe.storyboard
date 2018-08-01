@@ -205,7 +205,7 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="RecipePostCell" reuseIdentifier="RecipePostCell" id="E1L-lP-rFU" customClass="RecipePostCollectionViewCell">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="RecipePostCell" reuseIdentifier="PostCollectionViewCell" id="E1L-lP-rFU" customClass="PostCollectionViewCell">
                                                     <rect key="frame" x="0.0" y="0.0" width="111" height="94"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -221,6 +221,7 @@
                                                     </view>
                                                     <connections>
                                                         <outlet property="postImageView" destination="dIk-iU-QwB" id="S70-q1-Q8q"/>
+                                                        <segue destination="s6h-k1-RTI" kind="show" identifier="DetailedPostSegue2" id="Uiy-xT-Mtn"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
@@ -427,6 +428,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2634.4000000000001" y="55.322338830584712"/>
+        </scene>
+        <!--DetailedPost-->
+        <scene sceneID="cX4-cG-aUQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPost" id="s6h-k1-RTI" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d0k-59-G3y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1324" y="-679"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="LoI-8w-4rV">

@@ -34,24 +34,22 @@
 		298E33782101067A00290BF4 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E33772101067A00290BF4 /* LoginViewController.m */; };
 		298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E33792101091900290BF4 /* DiscoveryViewController.m */; };
 		298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E337D2101092600290BF4 /* LeaderboardViewController.m */; };
+		299699962112209B00C83061 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 299699952112209B00C83061 /* PostCollectionViewCell.m */; };
 		29CC2570210116F900BD6C01 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC256F210116F900BD6C01 /* Post.m */; };
 		29CC25732101311900BD6C01 /* DetailedRecipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */; };
 		29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC2575210131EB00BD6C01 /* DetailViewController.m */; };
 		29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC257B210148EF00BD6C01 /* CreatePostViewController.m */; };
-		29CC257F2101539C00BD6C01 /* RecipeCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC257E2101539B00BD6C01 /* RecipeCollectionViewCell.m */; };
 		29CC258221015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC258021015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m */; };
 		583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */; };
 		583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38321010E2D00A2C40F /* PopularMealsCell.m */; };
 		587401032106652E000425F3 /* Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 587401022106652E000425F3 /* Follow.m */; };
 		58740107210680C5000425F3 /* ExternalProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58740106210680C5000425F3 /* ExternalProfile.storyboard */; };
-		5874010A21068152000425F3 /* ExternalUserCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874010921068152000425F3 /* ExternalUserCollectionViewCell.m */; };
 		5874010D210681C3000425F3 /* ExternalProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874010C210681C3000425F3 /* ExternalProfileViewController.m */; };
 		587401152107F92A000425F3 /* Like.m in Sources */ = {isa = PBXBuildFile; fileRef = 587401142107F92A000425F3 /* Like.m */; };
 		587401182107F969000425F3 /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = 587401172107F969000425F3 /* Comment.m */; };
 		5874011A21091E31000425F3 /* Comments.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5874011921091E31000425F3 /* Comments.storyboard */; };
 		5874011D21091E94000425F3 /* CommentsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874011C21091E94000425F3 /* CommentsViewController.m */; };
 		5874012021091F40000425F3 /* CommentCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874011F21091F40000425F3 /* CommentCell.m */; };
-		58740126210A9E65000425F3 /* RecipePostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58740125210A9E65000425F3 /* RecipePostCollectionViewCell.m */; };
 		58740129210B8B1E000425F3 /* RecipeDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58740128210B8B1E000425F3 /* RecipeDetailViewController.m */; };
 		5874012C210B8B6E000425F3 /* DetailRecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */; };
 		589382D021111E870045670D /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 589382CF21111E870045670D /* Tag.m */; };
@@ -125,6 +123,8 @@
 		298E337A2101091900290BF4 /* DiscoveryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DiscoveryViewController.h; sourceTree = "<group>"; };
 		298E337C2101092600290BF4 /* LeaderboardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LeaderboardViewController.h; sourceTree = "<group>"; };
 		298E337D2101092600290BF4 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
+		299699942112209B00C83061 /* PostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
+		299699952112209B00C83061 /* PostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
 		29CC256E210116F900BD6C01 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		29CC256F210116F900BD6C01 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		29CC25722101311500BD6C01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailedRecipe.storyboard; sourceTree = "<group>"; };
@@ -132,8 +132,6 @@
 		29CC2575210131EB00BD6C01 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		29CC257A210148EF00BD6C01 /* CreatePostViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreatePostViewController.h; sourceTree = "<group>"; };
 		29CC257B210148EF00BD6C01 /* CreatePostViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreatePostViewController.m; sourceTree = "<group>"; };
-		29CC257D2101539B00BD6C01 /* RecipeCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeCollectionViewCell.h; sourceTree = "<group>"; };
-		29CC257E2101539B00BD6C01 /* RecipeCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeCollectionViewCell.m; sourceTree = "<group>"; };
 		29CC258021015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCellHeaderCell.m; sourceTree = "<group>"; };
 		29CC258121015A7600BD6C01 /* RecipeTableViewCellHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCellHeaderCell.h; sourceTree = "<group>"; };
 		2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,8 +143,6 @@
 		587401012106652E000425F3 /* Follow.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Follow.h; sourceTree = "<group>"; };
 		587401022106652E000425F3 /* Follow.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Follow.m; sourceTree = "<group>"; };
 		58740106210680C5000425F3 /* ExternalProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ExternalProfile.storyboard; sourceTree = "<group>"; };
-		5874010821068152000425F3 /* ExternalUserCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternalUserCollectionViewCell.h; sourceTree = "<group>"; };
-		5874010921068152000425F3 /* ExternalUserCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExternalUserCollectionViewCell.m; sourceTree = "<group>"; };
 		5874010B210681C3000425F3 /* ExternalProfileViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ExternalProfileViewController.h; sourceTree = "<group>"; };
 		5874010C210681C3000425F3 /* ExternalProfileViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ExternalProfileViewController.m; sourceTree = "<group>"; };
 		587401132107F92A000425F3 /* Like.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Like.h; sourceTree = "<group>"; };
@@ -158,8 +154,6 @@
 		5874011C21091E94000425F3 /* CommentsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentsViewController.m; sourceTree = "<group>"; };
 		5874011E21091F40000425F3 /* CommentCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommentCell.h; sourceTree = "<group>"; };
 		5874011F21091F40000425F3 /* CommentCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CommentCell.m; sourceTree = "<group>"; };
-		58740124210A9E65000425F3 /* RecipePostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipePostCollectionViewCell.h; sourceTree = "<group>"; };
-		58740125210A9E65000425F3 /* RecipePostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipePostCollectionViewCell.m; sourceTree = "<group>"; };
 		58740127210B8B1E000425F3 /* RecipeDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeDetailViewController.h; sourceTree = "<group>"; };
 		58740128210B8B1E000425F3 /* RecipeDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeDetailViewController.m; sourceTree = "<group>"; };
 		5874012A210B8B6E000425F3 /* DetailRecipeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailRecipeTableViewCell.h; sourceTree = "<group>"; };
@@ -274,22 +268,18 @@
 				583DD38321010E2D00A2C40F /* PopularMealsCell.m */,
 				583DD38121010E2D00A2C40F /* RecipeTableViewCell.h */,
 				583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */,
-				29CC257D2101539B00BD6C01 /* RecipeCollectionViewCell.h */,
-				29CC257E2101539B00BD6C01 /* RecipeCollectionViewCell.m */,
 				2135FC82210681EB00543AF7 /* TimelineViewCell.h */,
 				2135FC83210681EB00543AF7 /* TimelineViewCell.m */,
-				5874010821068152000425F3 /* ExternalUserCollectionViewCell.h */,
-				5874010921068152000425F3 /* ExternalUserCollectionViewCell.m */,
 				29853C3E2108FE5200971E56 /* SavedRecipesCollectionViewCell.h */,
 				29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */,
 				5874011E21091F40000425F3 /* CommentCell.h */,
 				5874011F21091F40000425F3 /* CommentCell.m */,
 				214F5DA0210A9F0E00A47BC8 /* SuggestedTableViewCell.h */,
 				214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */,
-				58740124210A9E65000425F3 /* RecipePostCollectionViewCell.h */,
-				58740125210A9E65000425F3 /* RecipePostCollectionViewCell.m */,
 				5874012A210B8B6E000425F3 /* DetailRecipeTableViewCell.h */,
 				5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */,
+				299699942112209B00C83061 /* PostCollectionViewCell.h */,
+				299699952112209B00C83061 /* PostCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -602,16 +592,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				5874012C210B8B6E000425F3 /* DetailRecipeTableViewCell.m in Sources */,
-				5874010A21068152000425F3 /* ExternalUserCollectionViewCell.m in Sources */,
+				299699962112209B00C83061 /* PostCollectionViewCell.m in Sources */,
 				2981334620FFEDF7003FD11C /* main.m in Sources */,
 				298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */,
 				2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */,
 				583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */,
 				5874010D210681C3000425F3 /* ExternalProfileViewController.m in Sources */,
 				587401182107F969000425F3 /* Comment.m in Sources */,
-				58740126210A9E65000425F3 /* RecipePostCollectionViewCell.m in Sources */,
 				290F36F92106B1FB00A1B704 /* Saved.m in Sources */,
-				29CC257F2101539C00BD6C01 /* RecipeCollectionViewCell.m in Sources */,
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
 				587401032106652E000425F3 /* Follow.m in Sources */,
 				29CC2570210116F900BD6C01 /* Post.m in Sources */,

@@ -9,10 +9,11 @@
 #import "UIImageView+AFNetworking.h"
 #import "RecipeDetailViewController.h"
 #import "DetailRecipeTableViewCell.h"
-#import "RecipePostCollectionViewCell.h"
 #import "Saved.h"
 #import "Post.h"
 #import "CreatePostViewController.h"
+#import "PostCollectionViewCell.h"
+#import "DetailedPostViewController.h"
 
 @interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
@@ -50,6 +51,7 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Post"];
     [query orderByDescending:@"createdAt"];
     [query includeKey:@"recipe"];
+    [query includeKey:@"user"];
     [query whereKey:@"recipe" equalTo:self.recipe];
     
     query.limit = 20;
@@ -149,10 +151,9 @@
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    RecipePostCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"RecipePostCell" forIndexPath:indexPath];
+     PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
     Post *post = self.posts[indexPath.item];
     cell.post = post;
-    [cell setPost];
     return cell;
 }
 
@@ -176,6 +177,11 @@
         createPostViewController.image = image;
         createPostViewController.recipe = self.recipe;
         // createPostViewController.intermediateDelegate = self;
+    } else if ([segue.identifier isEqualToString:@"DetailedPostSegue2"]){
+        PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
+        DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
+        detailedPostViewController.post = cell.post;
+        NSLog(@"detailed post segue");
     }
 }
 

@@ -30,7 +30,7 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="RecipeCollectionViewCell" id="df2-dT-RVe" customClass="RecipeCollectionViewCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionViewCell" id="df2-dT-RVe" customClass="PostCollectionViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="106" height="109"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -46,7 +46,7 @@
                                         </view>
                                         <connections>
                                             <outlet property="postImageView" destination="9iz-4x-Lti" id="rpm-Lj-ccR"/>
-                                            <segue destination="0PI-pL-8Go" kind="show" identifier="DetailedPostSegue" id="eXS-Tp-otC"/>
+                                            <segue destination="0PI-pL-8Go" kind="show" identifier="DetailedPostSegue3" id="eXS-Tp-otC"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
