@@ -46,14 +46,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-fa-atW" customClass="PFImageView">
-                                <rect key="frame" x="8" y="72" width="70" height="70"/>
-                                <color key="backgroundColor" red="0.03956334341" green="0.99193829300000003" blue="0.16685558859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="ft3-O2-yrT"/>
-                                    <constraint firstAttribute="width" constant="70" id="w4h-RZ-sKR"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1J-38-sO4">
                                 <rect key="frame" x="8" y="533" width="30" height="21"/>
                                 <constraints>
@@ -110,6 +102,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f7A-r4-nHB">
+                                <rect key="frame" x="8" y="72" width="68" height="70"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <segue destination="IyO-C7-dzO" kind="show" identifier="ProfileSegue" id="FbR-I8-xw0"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-fa-atW" customClass="PFImageView">
+                                <rect key="frame" x="8" y="72" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.03956334341" green="0.99193829300000003" blue="0.16685558859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                </accessibility>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="ft3-O2-yrT"/>
+                                    <constraint firstAttribute="width" constant="70" id="w4h-RZ-sKR"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -162,6 +175,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-4480.8000000000002" y="324.28785607196403"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="9J6-Ub-Ui8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Profile" id="IyO-C7-dzO" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e2P-F5-chT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3788" y="159"/>
         </scene>
         <!--DetailedRecipe2-->
         <scene sceneID="oBp-t8-VUg">

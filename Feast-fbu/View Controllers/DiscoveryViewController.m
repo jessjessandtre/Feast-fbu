@@ -80,6 +80,8 @@
     [self fetchRecipes];
     // [self fetchTags];
     
+    self.navigationItem.title = @"Discover";
+    
     self.autocompleteTableView = [[UITableView alloc] initWithFrame:
                              CGRectMake(0, 80, 320, 120) style:UITableViewStylePlain];
     self.autocompleteTableView.delegate = self;
@@ -331,7 +333,7 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 68;
+    return 50;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -340,7 +342,7 @@
     RecipeTableViewCellHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:@"RecipeHeaderCell"];
     
     // 2. Set the various properties
-    headerCell.titleLabel.text = @"Discover";
+    headerCell.titleLabel.text = @"Discover Recipes";
     [headerCell.titleLabel sizeToFit];
 
     return headerCell;

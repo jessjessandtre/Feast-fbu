@@ -13,6 +13,8 @@
 #import "CommentsViewController.h"
 #import "Like.h"
 #import "RecipeDetailViewController.h"
+#import "ProfileViewController.h"
+#import "ExternalProfileViewController.h"
 
 @interface DetailedPostViewController ()
 
@@ -34,6 +36,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"%@%@", self.post.user.username, @"'s post"];
     // Do any additional setup after loading the view. ter
     [self refreshData];
 }
@@ -165,6 +169,17 @@
     else if ([segue.identifier isEqualToString:@"CommentsSegue"]) {
         CommentsViewController *commentsViewController = [segue destinationViewController];
         commentsViewController.post = self.post;
+    }
+    else if ([segue.identifier isEqualToString:@"ProfileSegue"]) {
+        if (self.post.user == [PFUser currentUser]) {
+            ProfileViewController *profileViewController = [segue destinationViewController];
+            profileViewController.user = [PFUser currentUser];
+        }
+        else {
+            ExternalProfileViewController *externalProfileViewController = [segue destinationViewController];
+            externalProfileViewController.user = self.post.user;
+        }
+        
     }
 }
 

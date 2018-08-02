@@ -26,6 +26,8 @@
     self.recipesTableView.delegate = self;
     self.recipesTableView.dataSource = self;
     
+    self.navigationItem.title = @"Leaderboard";
+    
     [self.recipesTableView setShowsVerticalScrollIndicator:NO];
     
     [SVProgressHUD show];
