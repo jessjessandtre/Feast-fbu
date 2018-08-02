@@ -31,8 +31,13 @@
     // self.recipeImageView.contentMode = UIViewContentModeScaleAspectFit;
     // self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width / 32;
     // self.recipeImageView.clipsToBounds = YES;
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.bounds;
+    gradientLayer.colors = @[(id)[UIColor clearColor].CGColor, (id)[UIColor grayColor].CGColor];
+    gradientLayer.startPoint = CGPointMake(0.5f, 0.7f);
+    gradientLayer.endPoint = CGPointMake(0.5f, 1.2f);
     
-    self.recipeTitleLabel.hidden = YES;
+    self.recipeTitleLabel.hidden = NO;
     self.recipeTitleLabel.text = self.recipe.name;
 }
 
