@@ -34,8 +34,7 @@
 @property (strong, nonatomic) NSMutableArray *tags;
 @property (strong, nonatomic) NSMutableArray *autocompleteTags;
 @property (strong, nonatomic) UITableView *autocompleteTableView;
-
-
+@property (assign, nonatomic) BOOL *moreDataLoading;
 
 @end
 
@@ -440,7 +439,16 @@
         // code for after alert controller has finished presenting
     }];
 }
-
+/*
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.moreDataLoading) {
+        int scrollViewContentHeight = self.recipeTableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.recipeTableView.bounds.size.height;
+        
+        
+    }
+}
+*/
 
 
 #pragma mark - Navigation
