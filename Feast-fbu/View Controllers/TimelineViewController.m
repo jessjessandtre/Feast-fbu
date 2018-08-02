@@ -12,6 +12,7 @@
 #import <SVProgressHUD.h>
 #import "ProfileViewController.h"
 #import "CreatePostViewController.h"
+#import "Follow.h"
 
 @interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -67,10 +68,14 @@
 }
 
 - (void)fetchTimeline {
+//    PFQuery *followerQuery = [Follow query];
+//    [followerQuery includeKey:@"toUser"];
+//    [followerQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    
     PFQuery *postQuery = [Post query];
     [postQuery includeKey:@"user"];
     [postQuery includeKey:@"createdAt"];
-    // [postQuery whereKey:@"user" equalTo:<#(nonnull id)#>]
+//    [postQuery whereKey:@"user" matchesQuery:followerQuery];
     [postQuery orderByDescending:@"createdAt"];
     postQuery.limit = 20;
     
