@@ -67,20 +67,32 @@
 }
 
 - (void)fetchTimeline {
+    PFQuery* follow = [PFQuery queryWithClassName:@"Follow"];
+    [follow includeKey:@"toUser"];
+    [follow whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    
     PFQuery *postQuery = [Post query];
     [postQuery includeKey:@"user"];
-    [postQuery includeKey:@"createdAt"];
-    // [postQuery whereKey:@"user" equalTo:<#(nonnull id)#>]
+    [postQuery includeKey:@"recipe"];
     [postQuery orderByDescending:@"createdAt"];
+    [postQuery whereKey:@"user" matchesKey:@"toUser" inQuery:follow];
     postQuery.limit = 20;
+    
+    [follow findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects){
+            NSLog(@"following %@", objects);
+        }
+        else {
+            NSLog(@"error getting follwoing");
+        }
+    }];
     
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (posts) {
             self.timeline = posts;
-            
+            NSLog(@"timeline %@", self.timeline);
             [self.timelineTableView reloadData];
-            NSLog(@"%@", posts);
         }
         else {
             NSLog(@"%@", error.localizedDescription);
