@@ -13,6 +13,10 @@
 #import "CommentsViewController.h"
 #import "Like.h"
 #import "RecipeDetailViewController.h"
+<<<<<<< HEAD
+=======
+#import "ProfileViewController.h"
+>>>>>>> c3e003c640f2070f630924ee114144f62e2f5c52
 #import "ExternalProfileViewController.h"
 
 @interface DetailedPostViewController ()
@@ -35,6 +39,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.navigationItem.title = [NSString stringWithFormat:@"%@%@", self.post.user.username, @"'s post"];
     // Do any additional setup after loading the view. ter
     [self refreshData];
 }
@@ -169,6 +175,17 @@
         NSLog(@"tapped tapped");
         ExternalProfileViewController *profileViewController = [segue destinationViewController];
         profileViewController.user = self.post.user;
+    }
+    else if ([segue.identifier isEqualToString:@"ProfileSegue"]) {
+        if (self.post.user == [PFUser currentUser]) {
+            ProfileViewController *profileViewController = [segue destinationViewController];
+            profileViewController.user = [PFUser currentUser];
+        }
+        else {
+            ExternalProfileViewController *externalProfileViewController = [segue destinationViewController];
+            externalProfileViewController.user = self.post.user;
+        }
+        
     }
 }
 

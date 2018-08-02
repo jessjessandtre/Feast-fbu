@@ -19,8 +19,10 @@
 #import "Post.h"
 #import "ParseUI.h"
 #import "PostCollectionViewCell.h"
+#import "Tag.h"
+#import "AutofillResultCellTableViewCell.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDataSourcePrefetching>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSArray *recipes;
@@ -29,8 +31,10 @@
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UICollectionView *friendsCollectionView;
-
-
+@property (strong, nonatomic) NSMutableArray *tags;
+@property (strong, nonatomic) NSMutableArray *autocompleteTags;
+@property (strong, nonatomic) UITableView *autocompleteTableView;
+@property (assign, nonatomic) BOOL *moreDataLoading;
 
 @end
 
@@ -51,7 +55,6 @@
     
     self.recipeTableView.delegate = self;
     self.recipeTableView.dataSource = self;
-    self.recipeTableView.prefetchDataSource = self;
     self.friendsCollectionView.dataSource = self;
     self.friendsCollectionView.delegate = self;
     
@@ -74,6 +77,21 @@
     
     [self fetchFriendsPosts];
     [self fetchRecipes];
+    // [self fetchTags];
+    
+    self.navigationItem.title = @"Discover";
+    
+    self.autocompleteTableView = [[UITableView alloc] initWithFrame:
+                             CGRectMake(0, 80, 320, 120) style:UITableViewStylePlain];
+    self.autocompleteTableView.delegate = self;
+    self.autocompleteTableView.dataSource = self;
+    self.autocompleteTableView.scrollEnabled = YES;
+    self.autocompleteTableView.hidden = YES;
+    
+    self.tags = [NSMutableArray new];
+    self.autocompleteTags = [NSMutableArray new];
+    
+    [self.view addSubview:self.autocompleteTableView];
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];
@@ -160,24 +178,54 @@
     }];
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
-    
-    Recipe *recipe = self.filteredRecipes[indexPath.row];
-    
-    cell.recipe = recipe;
-    
-    cell.recipeImageView.image = nil;
-    
-    [cell setRecipe];
-    
-    if (![self.filteredRecipes isEqualToArray:self.recipes]) {
-        cell.recipeTitleLabel.hidden = NO;
-    }
-    cell.delegate = self;
-    return cell;
-    
+- (void) fetchTags {
+    PFQuery *tagQuery = [PFQuery queryWithClassName:@"Tag"];
+    [tagQuery includeKey:@"name"];
+    [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tag *> * _Nullable tags, NSError * _Nullable error) {
+        if (tags) {
+            for (int i = 0; i < tags.count; i++) {
+                Tag *tag = [Tag new];
+                tag = tags[i];
+                NSString *tagName = tag[@"name"];
+                if (![self.tags containsObject:tagName]) {
+                    [self.tags addObject:tagName];
+                    NSLog(@"%@", self.tags);
+                }
+            }
+        }
+    }];
 }
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    // if (tableView == self.recipeTableView) {
+        RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
+        
+        Recipe *recipe = self.filteredRecipes[indexPath.row];
+        
+        cell.recipe = recipe;
+        
+        cell.recipeImageView.image = nil;
+        
+        [cell setRecipe];
+        
+        if (![self.filteredRecipes isEqualToArray:self.recipes]) {
+            cell.recipeTitleLabel.hidden = NO;
+        }
+        cell.delegate = self;
+        
+        return cell;
+    // }
+    /*
+    else {
+        static NSString *cellIdentifier = @"Cell";
+        AutofillResultCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+        cell.tagLabel = self.autocompleteTags[indexPath.row];
+        return cell;
+    }
+     */
+}
+
 - (void) onSaveTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;
     RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
@@ -274,12 +322,17 @@
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.filteredRecipes.count;
+    if (tableView == self.recipeTableView) {
+        return self.filteredRecipes.count;
+    }
+    else {
+        return self.autocompleteTags.count;
+    }
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 68;
+    return 50;
 }
 
 -(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
@@ -288,7 +341,7 @@
     RecipeTableViewCellHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:@"RecipeHeaderCell"];
     
     // 2. Set the various properties
-    headerCell.titleLabel.text = @"Discover";
+    headerCell.titleLabel.text = @"Discover Recipes";
     [headerCell.titleLabel sizeToFit];
 
     return headerCell;
@@ -297,6 +350,13 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     
     if (searchText.length != 0) {
+        /*
+        self.autocompleteTableView.hidden = NO;
+        
+        NSString *substring = [NSString stringWithString:searchText];
+        substring = [substring lowercaseString];
+        [self searchAutocompleteEntriesWithSubstring:substring];
+        */
 
         NSPredicate *namePredicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary *bindings) {
             Recipe *recipe = evaluatedObject;
@@ -339,7 +399,24 @@
     }
     
     [self.recipeTableView reloadData];
+    // self.autocompleteTableView.hidden = YES;
 }
+
+/*
+- (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
+    
+    // Put anything that starts with this substring into the autocompleteUrls array
+    // The items in this array is what will show up in the table view
+    [self.autocompleteTags removeAllObjects];
+    for(NSString *curString in self.tags) {
+        NSRange substringRange = [curString rangeOfString:substring];
+        if (substringRange.location == 0) {
+            [self.autocompleteTags addObject:curString];
+        }
+    }
+    [self.autocompleteTableView reloadData];
+}
+ */
 
 - (void) didCreatePost {
     [self fetchRecipes];
@@ -362,7 +439,16 @@
         // code for after alert controller has finished presenting
     }];
 }
-
+/*
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(!self.moreDataLoading) {
+        int scrollViewContentHeight = self.recipeTableView.contentSize.height;
+        int scrollOffsetThreshold = scrollViewContentHeight - self.recipeTableView.bounds.size.height;
+        
+        
+    }
+}
+*/
 
 
 #pragma mark - Navigation

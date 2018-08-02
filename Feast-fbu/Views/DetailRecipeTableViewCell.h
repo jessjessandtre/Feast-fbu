@@ -16,10 +16,10 @@
 
 @property (weak, nonatomic) IBOutlet PFImageView *recipeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *recipeTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *sourceURLLabel;
 @property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *instructionsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UITextView *urlTextView;
 
 @property (strong, nonatomic) Recipe *recipe;
 

@@ -10,7 +10,7 @@
 #import <Parse/Parse.h>
 #import "Recipe.h"
 
-@interface Tag : NSObject <PFSubclassing>
+@interface Tag : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) Recipe *recipe;
 @property (strong, nonatomic) NSString *name;

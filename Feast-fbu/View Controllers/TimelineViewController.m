@@ -70,6 +70,7 @@
     PFQuery *postQuery = [Post query];
     [postQuery includeKey:@"user"];
     [postQuery includeKey:@"createdAt"];
+    // [postQuery whereKey:@"user" equalTo:<#(nonnull id)#>]
     [postQuery orderByDescending:@"createdAt"];
     postQuery.limit = 20;
     

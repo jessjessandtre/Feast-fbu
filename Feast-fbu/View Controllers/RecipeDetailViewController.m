@@ -33,6 +33,8 @@
     self.postCollectionView.delegate = self;
     self.postCollectionView.dataSource = self;
     
+    self.navigationItem.title = self.recipe.name; 
+    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(recipeSavedNotification:)
                                                  name:@"RecipeSaveNotification"

@@ -65,6 +65,8 @@
     CGFloat itemHeight = itemWidth;
     layout.itemSize = CGSizeMake(itemWidth,itemHeight);
     
+    self.navigationItem.title = self.user.username;
+    
     [SVProgressHUD show];
     [self refreshData];
 }

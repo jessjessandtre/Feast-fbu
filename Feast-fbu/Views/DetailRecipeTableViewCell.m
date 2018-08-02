@@ -37,9 +37,12 @@
     self.ingredientsLabel.text = ingredientsString;
     
     self.instructionsLabel.text = self.recipe.instructions;
-    self.sourceURLLabel.text = self.recipe.sourceURL;
     
     [self updateSaveButton];
+    
+    NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString:@"View original recipe"];
+    [attrString addAttribute:NSLinkAttributeName value:self.recipe.sourceURL range:NSMakeRange(0, attrString.length)];
+    self.urlTextView.attributedText = attrString;
 }
 
 - (void)updateSaveButton {
