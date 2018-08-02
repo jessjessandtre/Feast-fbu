@@ -185,7 +185,6 @@
             </objects>
             <point key="canvasLocation" x="-4480.8000000000002" y="324.28785607196403"/>
         </scene>
-<<<<<<< HEAD
         <!--ExternalProfile-->
         <scene sceneID="LCl-2w-7yC">
             <objects>
@@ -193,7 +192,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdF-Oc-eqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3871" y="155"/>
-=======
+        </scene>
         <!--Profile-->
         <scene sceneID="9J6-Ub-Ui8">
             <objects>
@@ -201,7 +200,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2P-F5-chT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3788" y="159"/>
->>>>>>> c3e003c640f2070f630924ee114144f62e2f5c52
         </scene>
         <!--DetailedRecipe2-->
         <scene sceneID="oBp-t8-VUg">
