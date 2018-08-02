@@ -19,11 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piq-G7-qvc">
+                            <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piq-G7-qvc">
                                 <rect key="frame" x="86" y="96" width="87" height="22"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="7la-MU-gPM" appends="YES" id="acR-Ap-Iif"/>
+                                </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N29-XY-lib">
                                 <rect key="frame" x="305.5" y="99" width="61.5" height="16"/>
@@ -160,8 +164,21 @@
                         <segue destination="fcf-W8-xbb" kind="show" identifier="DetailedRecipeSegue" id="x0h-JL-Eyb"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="7la-MU-gPM">
+                    <connections>
+                        <segue destination="IHg-no-84U" kind="show" identifier="ProfileSegue" id="jIV-NW-bor"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-4480.8000000000002" y="324.28785607196403"/>
+        </scene>
+        <!--ExternalProfile-->
+        <scene sceneID="LCl-2w-7yC">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="ExternalProfile" referencedIdentifier="ExternalProfile" id="IHg-no-84U" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdF-Oc-eqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3871" y="155"/>
         </scene>
         <!--DetailedRecipe2-->
         <scene sceneID="oBp-t8-VUg">
