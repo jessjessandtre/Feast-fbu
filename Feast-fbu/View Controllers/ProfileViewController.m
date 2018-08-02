@@ -111,7 +111,7 @@
     [self fetchPosts];
     self.usernameLabel.text = [PFUser currentUser].username;
     
-    if (self.user[@"profileImage"] == [NSNull null]) {
+    if (self.user[@"profileImage"] == nil) {
         self.profileImageView.image = [UIImage imageNamed: @"profile-image-blank"];
     }
     else {

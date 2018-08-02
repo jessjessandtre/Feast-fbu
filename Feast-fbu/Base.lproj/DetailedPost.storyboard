@@ -26,7 +26,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
+<<<<<<< HEAD
                                     <outletCollection property="gestureRecognizers" destination="ZMD-HS-6KQ" appends="YES" id="fPF-T9-tyT"/>
+=======
+                                    <outletCollection property="gestureRecognizers" destination="7la-MU-gPM" appends="YES" id="acR-Ap-Iif"/>
+>>>>>>> 1e2576f3817aa39c1876e2c7643b996dc8489a7e
                                 </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N29-XY-lib">
@@ -174,15 +178,32 @@
                         <segue destination="fcf-W8-xbb" kind="show" identifier="DetailedRecipeSegue" id="x0h-JL-Eyb"/>
                     </connections>
                 </tapGestureRecognizer>
+<<<<<<< HEAD
                 <tapGestureRecognizer id="ZMD-HS-6KQ">
                     <connections>
                         <segue destination="IyO-C7-dzO" kind="show" identifier="ProfileSegue" id="Re3-We-xOD"/>
+=======
+                <tapGestureRecognizer id="7la-MU-gPM">
+                    <connections>
+                        <segue destination="IHg-no-84U" kind="show" identifier="ProfileSegue" id="jIV-NW-bor"/>
+>>>>>>> 1e2576f3817aa39c1876e2c7643b996dc8489a7e
                     </connections>
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-4480.8000000000002" y="324.28785607196403"/>
         </scene>
         <!--ExternalProfile-->
+<<<<<<< HEAD
+=======
+        <scene sceneID="LCl-2w-7yC">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="Profile" storyboardName="ExternalProfile" referencedIdentifier="ExternalProfile" id="IHg-no-84U" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VdF-Oc-eqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3871" y="155"/>
+        </scene>
+        <!--Profile-->
+>>>>>>> 1e2576f3817aa39c1876e2c7643b996dc8489a7e
         <scene sceneID="9J6-Ub-Ui8">
             <objects>
                 <viewControllerPlaceholder storyboardName="ExternalProfile" referencedIdentifier="ExternalProfile" id="IyO-C7-dzO" sceneMemberID="viewController"/>

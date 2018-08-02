@@ -161,7 +161,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"DetailedRecipeSegue"]){
-        NSLog(@"segue");
         RecipeDetailViewController* detailViewController = [segue destinationViewController];
         detailViewController.recipe = self.recipe;
         
@@ -169,6 +168,10 @@
     else if ([segue.identifier isEqualToString:@"CommentsSegue"]) {
         CommentsViewController *commentsViewController = [segue destinationViewController];
         commentsViewController.post = self.post;
+    } else if ([segue.identifier isEqualToString:@"ProfileSegue"]) {
+        NSLog(@"tapped tapped");
+        ExternalProfileViewController *profileViewController = [segue destinationViewController];
+        profileViewController.user = self.post.user;
     }
     else if ([segue.identifier isEqualToString:@"ProfileSegue"]) {
 //        if (self.post.user == [PFUser currentUser]) {
@@ -182,6 +185,5 @@
         
     }
 }
-
 
 @end
