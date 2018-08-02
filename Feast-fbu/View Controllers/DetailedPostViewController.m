@@ -13,10 +13,7 @@
 #import "CommentsViewController.h"
 #import "Like.h"
 #import "RecipeDetailViewController.h"
-<<<<<<< HEAD
-=======
 #import "ProfileViewController.h"
->>>>>>> c3e003c640f2070f630924ee114144f62e2f5c52
 #import "ExternalProfileViewController.h"
 
 @interface DetailedPostViewController ()
