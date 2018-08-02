@@ -8,7 +8,7 @@
 
 #import "PFObject.h"
 
-@interface Follow : PFObject
+@interface Follow : PFObject <PFSubclassing>
 
 @property (strong, nonatomic) PFUser* fromUser;
 @property (strong, nonatomic) PFUser* toUser; 
