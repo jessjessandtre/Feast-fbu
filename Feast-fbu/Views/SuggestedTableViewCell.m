@@ -22,8 +22,14 @@
 }
 
 -(void)setUser{
+    if (self.user[@"profileImage"] == nil) {
+        self.profilePic.image = [UIImage imageNamed: @"profile-image-blank"];
+    }
+    else {
         self.profilePic.file = self.user[@"profileImage"];
-        self.username.text = self.user.username;
+        [self.profilePic loadInBackground];
+    }
+    self.username.text = self.user.username;
 }
 
 @end
