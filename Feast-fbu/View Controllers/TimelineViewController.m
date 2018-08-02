@@ -12,6 +12,7 @@
 #import <SVProgressHUD.h>
 #import "ProfileViewController.h"
 #import "CreatePostViewController.h"
+#import "Follow.h"
 
 @interface TimelineViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -67,7 +68,7 @@
 }
 
 - (void)fetchTimeline {
-    PFQuery* followerQuery = [PFQuery queryWithClassName:@"Follow"];
+    PFQuery *followerQuery = [Follow query];
     [followerQuery includeKey:@"toUser"];
     [followerQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
     
