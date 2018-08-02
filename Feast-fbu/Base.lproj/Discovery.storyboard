@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,9 +23,8 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-l5-ZI1">
-                                    <rect key="frame" x="0.0" y="102" width="375" height="155"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-l5-ZI1">
+                                    <rect key="frame" x="0.0" y="101" width="375" height="168"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Et3-GD-9Wz">
                                         <size key="itemSize" width="150" height="150"/>
@@ -41,19 +41,15 @@
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="r5m-fY-5M4" customClass="PFImageView">
-                                                        <rect key="frame" x="-7" y="0.0" width="150" height="150"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
                                                     </imageView>
                                                 </subviews>
                                             </view>
                                             <constraints>
-                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="top" secondItem="94F-2R-YEC" secondAttribute="top" id="L3S-16-1zp"/>
-                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="leading" secondItem="94F-2R-YEC" secondAttribute="leading" id="Nn6-HW-cHP"/>
-                                                <constraint firstAttribute="bottom" secondItem="r5m-fY-5M4" secondAttribute="bottom" id="NxQ-Hv-79q"/>
-                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="top" secondItem="94F-2R-YEC" secondAttribute="top" id="PG5-SL-Wg6"/>
-                                                <constraint firstAttribute="trailing" secondItem="r5m-fY-5M4" secondAttribute="trailing" id="Pqa-hi-Dcd"/>
-                                                <constraint firstAttribute="bottom" secondItem="r5m-fY-5M4" secondAttribute="bottom" id="dKn-f4-W5l"/>
-                                                <constraint firstAttribute="trailing" secondItem="r5m-fY-5M4" secondAttribute="trailing" constant="7" id="fle-Jq-wzx"/>
-                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="leading" secondItem="94F-2R-YEC" secondAttribute="leading" constant="-7" id="nPb-yO-Gba"/>
+                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="top" secondItem="94F-2R-YEC" secondAttribute="top" id="Sy2-eF-tYI"/>
+                                                <constraint firstAttribute="bottom" secondItem="r5m-fY-5M4" secondAttribute="bottom" id="fbw-QQ-lE4"/>
+                                                <constraint firstAttribute="trailing" secondItem="r5m-fY-5M4" secondAttribute="trailing" id="o2z-IZ-6Mg"/>
+                                                <constraint firstItem="r5m-fY-5M4" firstAttribute="leading" secondItem="94F-2R-YEC" secondAttribute="leading" id="uRs-d1-qnc"/>
                                             </constraints>
                                             <connections>
                                                 <outlet property="postImageView" destination="r5m-fY-5M4" id="ZFo-AI-4Zx"/>
@@ -62,20 +58,36 @@
                                         </collectionViewCell>
                                     </cells>
                                 </collectionView>
-                                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-Ky-aeq">
+                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-Ky-aeq">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="56" id="uB7-eo-PXO"/>
+                                    </constraints>
                                     <textInputTraits key="textInputTraits"/>
                                 </searchBar>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Discover Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-JN-QG1">
-                                    <rect key="frame" x="19" y="65" width="167" height="29"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Discover Posts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-JN-QG1">
+                                    <rect key="frame" x="12" y="64" width="167" height="29"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="29" id="6ym-N1-U9a"/>
+                                        <constraint firstAttribute="width" constant="167" id="HaM-aH-ChN"/>
+                                    </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="yEf-Ky-aeq" firstAttribute="top" secondItem="m6Q-bu-hab" secondAttribute="top" id="98p-C4-qn2"/>
+                                <constraint firstAttribute="trailing" secondItem="yEf-Ky-aeq" secondAttribute="trailing" id="SA9-eb-vRz"/>
+                                <constraint firstAttribute="trailing" secondItem="jCL-l5-ZI1" secondAttribute="trailing" id="UNJ-xt-LzX"/>
+                                <constraint firstItem="jCL-l5-ZI1" firstAttribute="top" secondItem="cIH-JN-QG1" secondAttribute="bottom" constant="8" id="jZr-nG-4xO"/>
+                                <constraint firstItem="cIH-JN-QG1" firstAttribute="top" secondItem="yEf-Ky-aeq" secondAttribute="bottom" constant="8" id="krS-Y4-xDZ"/>
+                                <constraint firstAttribute="bottom" secondItem="jCL-l5-ZI1" secondAttribute="bottom" id="pDD-k4-JXX"/>
+                                <constraint firstItem="yEf-Ky-aeq" firstAttribute="leading" secondItem="m6Q-bu-hab" secondAttribute="leading" id="rhD-1b-rxO"/>
+                                <constraint firstItem="jCL-l5-ZI1" firstAttribute="leading" secondItem="m6Q-bu-hab" secondAttribute="leading" id="tmM-fG-1oC"/>
+                                <constraint firstItem="cIH-JN-QG1" firstAttribute="leading" secondItem="m6Q-bu-hab" secondAttribute="leading" constant="12" id="xmu-f6-JHh"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RecipeHeaderCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeHeaderCell" rowHeight="68" id="223-Ro-m55" customClass="RecipeTableViewCellHeaderCell">
@@ -106,19 +118,25 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="417.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KAh-uf-RXP">
-                                            <rect key="frame" x="16" y="11" width="343" height="343"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAh-uf-RXP">
+                                            <rect key="frame" x="16" y="11" width="343" height="396"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qc-DJ-eSx">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Recipe Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qc-DJ-eSx">
                                             <rect key="frame" x="60" y="289" width="253" height="65"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                             <color key="shadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="KAh-uf-RXP" secondAttribute="bottom" id="0Iv-VK-Ynn"/>
+                                        <constraint firstItem="3qc-DJ-eSx" firstAttribute="centerX" secondItem="KAh-uf-RXP" secondAttribute="centerX" id="5r4-kg-yb6"/>
+                                        <constraint firstItem="KAh-uf-RXP" firstAttribute="top" secondItem="MTh-9Y-eGZ" secondAttribute="topMargin" id="dyp-0p-3kf"/>
+                                        <constraint firstItem="3qc-DJ-eSx" firstAttribute="top" secondItem="KAh-uf-RXP" secondAttribute="bottom" constant="-118" id="p4A-8L-U1X"/>
+                                        <constraint firstItem="KAh-uf-RXP" firstAttribute="trailing" secondItem="MTh-9Y-eGZ" secondAttribute="trailingMargin" id="pu1-7F-HYJ"/>
+                                        <constraint firstItem="KAh-uf-RXP" firstAttribute="leading" secondItem="MTh-9Y-eGZ" secondAttribute="leadingMargin" id="wHm-ur-Gep"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
                                 <connections>
