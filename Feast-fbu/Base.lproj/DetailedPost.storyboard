@@ -31,7 +31,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRb-gt-oOj" customClass="PFImageView">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRb-gt-oOj" customClass="PFImageView">
                                 <rect key="frame" x="0.0" y="150" width="375" height="375"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CRb-gt-oOj" secondAttribute="height" multiplier="100:100" id="spe-f3-NgQ"/>

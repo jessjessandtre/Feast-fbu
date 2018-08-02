@@ -209,7 +209,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="111" height="94"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dIk-iU-QwB" customClass="PFImageView">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dIk-iU-QwB" customClass="PFImageView">
                                                         <rect key="frame" x="0.0" y="0.0" width="111" height="94"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" red="1" green="0.66782497799776319" blue="0.20964926468138656" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

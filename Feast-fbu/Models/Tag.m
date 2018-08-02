@@ -10,6 +10,10 @@
 
 @implementation Tag
 
-@dynamic recipe, name; 
+@dynamic recipe, name;
+
++ (nonnull NSString *)parseClassName {
+    return @"Tag";
+}
 
 @end

@@ -78,7 +78,7 @@
     
     [self fetchFriendsPosts];
     [self fetchRecipes];
-    [self fetchTags];
+    // [self fetchTags];
     
     self.autocompleteTableView = [[UITableView alloc] initWithFrame:
                              CGRectMake(0, 80, 320, 120) style:UITableViewStylePlain];
@@ -86,6 +86,9 @@
     self.autocompleteTableView.dataSource = self;
     self.autocompleteTableView.scrollEnabled = YES;
     self.autocompleteTableView.hidden = YES;
+    
+    self.tags = [NSMutableArray new];
+    self.autocompleteTags = [NSMutableArray new];
     
     [self.view addSubview:self.autocompleteTableView];
     
@@ -176,11 +179,16 @@
 
 - (void) fetchTags {
     PFQuery *tagQuery = [PFQuery queryWithClassName:@"Tag"];
+    [tagQuery includeKey:@"name"];
     [tagQuery findObjectsInBackgroundWithBlock:^(NSArray<Tag *> * _Nullable tags, NSError * _Nullable error) {
         if (tags) {
             for (int i = 0; i < tags.count; i++) {
-                if (![self.tags containsObject:tags[i]]) {
-                    [self.tags addObject:tags[i]];
+                Tag *tag = [Tag new];
+                tag = tags[i];
+                NSString *tagName = tag[@"name"];
+                if (![self.tags containsObject:tagName]) {
+                    [self.tags addObject:tagName];
+                    NSLog(@"%@", self.tags);
                 }
             }
         }
@@ -189,7 +197,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if (tableView == self.recipeTableView) {
+    // if (tableView == self.recipeTableView) {
         RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
         
         Recipe *recipe = self.filteredRecipes[indexPath.row];
@@ -204,15 +212,17 @@
             cell.recipeTitleLabel.hidden = NO;
         }
         cell.delegate = self;
+        
         return cell;
-    }
-    
+    // }
+    /*
     else {
         static NSString *cellIdentifier = @"Cell";
         AutofillResultCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
         cell.tagLabel = self.autocompleteTags[indexPath.row];
         return cell;
     }
+     */
 }
 
 - (void) onSaveTapped:(id)sender {
@@ -339,14 +349,13 @@
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText {
     
     if (searchText.length != 0) {
-        // -------- for autocomplete table view
+        /*
         self.autocompleteTableView.hidden = NO;
         
         NSString *substring = [NSString stringWithString:searchText];
-        substring = [substring
-                     stringByAppendingString:substring];
+        substring = [substring lowercaseString];
         [self searchAutocompleteEntriesWithSubstring:substring];
-        // --------
+        */
 
         NSPredicate *namePredicate = [NSPredicate predicateWithBlock:^BOOL(Recipe *evaluatedObject, NSDictionary *bindings) {
             Recipe *recipe = evaluatedObject;
@@ -389,8 +398,10 @@
     }
     
     [self.recipeTableView reloadData];
+    // self.autocompleteTableView.hidden = YES;
 }
 
+/*
 - (void)searchAutocompleteEntriesWithSubstring:(NSString *)substring {
     
     // Put anything that starts with this substring into the autocompleteUrls array
@@ -404,6 +415,7 @@
     }
     [self.autocompleteTableView reloadData];
 }
+ */
 
 - (void) didCreatePost {
     [self fetchRecipes];
