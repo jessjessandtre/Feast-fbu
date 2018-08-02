@@ -171,14 +171,14 @@
         commentsViewController.post = self.post;
     }
     else if ([segue.identifier isEqualToString:@"ProfileSegue"]) {
-        if (self.post.user == [PFUser currentUser]) {
-            ProfileViewController *profileViewController = [segue destinationViewController];
-            profileViewController.user = [PFUser currentUser];
-        }
-        else {
+//        if (self.post.user == [PFUser currentUser]) {
+//            ProfileViewController *profileViewController = [segue destinationViewController];
+//            profileViewController.user = [PFUser currentUser];
+//        }
+//        else {
             ExternalProfileViewController *externalProfileViewController = [segue destinationViewController];
             externalProfileViewController.user = self.post.user;
-        }
+//        }
         
     }
 }

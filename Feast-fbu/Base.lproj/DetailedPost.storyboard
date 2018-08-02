@@ -19,11 +19,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piq-G7-qvc">
+                            <label opaque="NO" contentMode="left" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Piq-G7-qvc">
                                 <rect key="frame" x="86" y="96" width="87" height="22"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="ZMD-HS-6KQ" appends="YES" id="fPF-T9-tyT"/>
+                                </connections>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="created at" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N29-XY-lib">
                                 <rect key="frame" x="305.5" y="99" width="61.5" height="16"/>
@@ -108,9 +112,6 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <connections>
-                                    <segue destination="IyO-C7-dzO" kind="show" identifier="ProfileSegue" id="FbR-I8-xw0"/>
-                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-fa-atW" customClass="PFImageView">
                                 <rect key="frame" x="8" y="72" width="70" height="70"/>
@@ -173,13 +174,18 @@
                         <segue destination="fcf-W8-xbb" kind="show" identifier="DetailedRecipeSegue" id="x0h-JL-Eyb"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="ZMD-HS-6KQ">
+                    <connections>
+                        <segue destination="IyO-C7-dzO" kind="show" identifier="ProfileSegue" id="Re3-We-xOD"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-4480.8000000000002" y="324.28785607196403"/>
         </scene>
-        <!--Profile-->
+        <!--ExternalProfile-->
         <scene sceneID="9J6-Ub-Ui8">
             <objects>
-                <viewControllerPlaceholder storyboardName="Profile" id="IyO-C7-dzO" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ExternalProfile" referencedIdentifier="ExternalProfile" id="IyO-C7-dzO" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e2P-F5-chT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3788" y="159"/>
@@ -190,7 +196,7 @@
                 <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe2" id="fcf-W8-xbb" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cRQ-tb-oeu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3927" y="283"/>
+            <point key="canvasLocation" x="-3727" y="302"/>
         </scene>
         <!--Comments-->
         <scene sceneID="SW1-uk-cGf">
