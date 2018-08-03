@@ -175,6 +175,8 @@
         
         [self.recipeTableView reloadData];
         [self.refreshControl endRefreshing];
+        
+        NSLog(@"%@", self.recipes[0][@"courseType"]);
     }];
 }
 

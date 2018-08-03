@@ -10,7 +10,7 @@
 
 @implementation Recipe
 
-@dynamic name, image, ingredients, instructions, numPosts, sourceURL, tags;
+@dynamic name, image, ingredients, instructions, numPosts, sourceURL, tags, courseType;
 
 + (nonnull NSString *)parseClassName {
     return @"Recipe";
