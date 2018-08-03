@@ -13,6 +13,7 @@
 		2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2135FC83210681EB00543AF7 /* TimelineViewCell.m */; };
 		214F5DA2210A9F0E00A47BC8 /* SuggestedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */; };
 		214F5DA8210A9F5400A47BC8 /* SuggestedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */; };
+		217CFDFB2114DB9000A2DE60 /* OpenSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 217CFDFA2114D97E00A2DE60 /* OpenSans-Bold.ttf */; };
 		290F36F92106B1FB00A1B704 /* Saved.m in Sources */ = {isa = PBXBuildFile; fileRef = 290F36F82106B1FB00A1B704 /* Saved.m */; };
 		297420762106551200B30175 /* DetailedPost.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 297420742106551200B30175 /* DetailedPost.storyboard */; };
 		297420792106557500B30175 /* DetailedPostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 297420782106557500B30175 /* DetailedPostViewController.m */; };
@@ -92,6 +93,9 @@
 		214F5DA1210A9F0E00A47BC8 /* SuggestedTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuggestedTableViewCell.m; sourceTree = "<group>"; };
 		214F5DA6210A9F5400A47BC8 /* SuggestedViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SuggestedViewController.h; sourceTree = "<group>"; };
 		214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuggestedViewController.m; sourceTree = "<group>"; };
+		217CFDF82114D97C00A2DE60 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
+		217CFDF92114D97D00A2DE60 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
+		217CFDFA2114D97E00A2DE60 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
 		290F36F72106B1FB00A1B704 /* Saved.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Saved.h; sourceTree = "<group>"; };
 		290F36F82106B1FB00A1B704 /* Saved.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saved.m; sourceTree = "<group>"; };
 		297420752106551200B30175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailedPost.storyboard; sourceTree = "<group>"; };
@@ -273,6 +277,9 @@
 				214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */,
 				58740127210B8B1E000425F3 /* RecipeDetailViewController.h */,
 				58740128210B8B1E000425F3 /* RecipeDetailViewController.m */,
+				217CFDFA2114D97E00A2DE60 /* OpenSans-Bold.ttf */,
+				217CFDF92114D97D00A2DE60 /* OpenSans-ExtraBold.ttf */,
+				217CFDF82114D97C00A2DE60 /* OpenSans-SemiBold.ttf */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -507,6 +514,7 @@
 				2981334320FFEDF7003FD11C /* LaunchScreen.storyboard in Resources */,
 				2981334020FFEDF7003FD11C /* Assets.xcassets in Resources */,
 				2981333E20FFEDF6003FD11C /* Main.storyboard in Resources */,
+				217CFDFB2114DB9000A2DE60 /* OpenSans-Bold.ttf in Resources */,
 				2135FC7E21067F6400543AF7 /* Timeline.storyboard in Resources */,
 				298E336B210016BC00290BF4 /* Discovery.storyboard in Resources */,
 				58BB7CCB2114D5370097A046 /* Search.storyboard in Resources */,
