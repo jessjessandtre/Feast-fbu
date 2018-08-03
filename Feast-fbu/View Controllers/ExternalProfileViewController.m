@@ -198,7 +198,7 @@
     [self getNumberFollowers];
     [self getNumberFollowing];
     
-    if (self.user[@"profileImage"] == [NSNull null]) {
+    if (self.user[@"profileImage"] == nil) {
         self.profileImage.image = [UIImage imageNamed: @"profile-image-blank"];
     }
     else {

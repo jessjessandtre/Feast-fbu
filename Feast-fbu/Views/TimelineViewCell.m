@@ -35,7 +35,14 @@
     self.postAuthorHeader.text = self.post.user.username;
     self.postAuthorCaption.text = self.post.user.username;
     self.postCaption.text = self.post.caption;
-    self.profilePicture.file = self.post.user[@"profileImage"];
+    
+    if (self.post.user[@"profileImage"] == nil) {
+        self.profilePicture.image = [UIImage imageNamed: @"profile-image-blank"];
+    }
+    else {
+        self.profilePicture.file = self.post.user[@"profileImage"];
+        [self.profilePicture loadInBackground];
+    }
     
     Recipe* recipe = self.post.recipe;
     [recipe fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {

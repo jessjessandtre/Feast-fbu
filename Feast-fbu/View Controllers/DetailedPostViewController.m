@@ -83,7 +83,14 @@
     }
     
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
-    self.profileImageView.file = self.post.user[@"profileImage"];
+    
+    if (self.post.user[@"profileImage"] == nil) {
+        self.profileImageView.image = [UIImage imageNamed: @"profile-image-blank"];
+    }
+    else {
+        self.profileImageView.file = self.post.user[@"profileImage"];
+        [self.profileImageView loadInBackground];
+    }
     [self.profileImageView loadInBackground];
     
     
