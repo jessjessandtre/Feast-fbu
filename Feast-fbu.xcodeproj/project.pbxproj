@@ -54,6 +54,8 @@
 		5874012C210B8B6E000425F3 /* DetailRecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 5874012B210B8B6E000425F3 /* DetailRecipeTableViewCell.m */; };
 		589382D021111E870045670D /* Tag.m in Sources */ = {isa = PBXBuildFile; fileRef = 589382CF21111E870045670D /* Tag.m */; };
 		589382D6211262FA0045670D /* AutofillResultCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589382D5211262FA0045670D /* AutofillResultCellTableViewCell.m */; };
+		58BB7CCB2114D5370097A046 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BB7CC92114D5370097A046 /* Search.storyboard */; };
+		58BB7CCE2114D54B0097A046 /* RecipeResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BB7CCC2114D54B0097A046 /* RecipeResults.storyboard */; };
 		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
 		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
@@ -163,6 +165,8 @@
 		589382CF21111E870045670D /* Tag.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tag.m; sourceTree = "<group>"; };
 		589382D4211262FA0045670D /* AutofillResultCellTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutofillResultCellTableViewCell.h; sourceTree = "<group>"; };
 		589382D5211262FA0045670D /* AutofillResultCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutofillResultCellTableViewCell.m; sourceTree = "<group>"; };
+		58BB7CCA2114D5370097A046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
+		58BB7CCD2114D54B0097A046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecipeResults.storyboard; sourceTree = "<group>"; };
 		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -325,6 +329,8 @@
 				2981334120FFEDF7003FD11C /* LaunchScreen.storyboard */,
 				29853C382108FC5F00971E56 /* SavedRecipes.storyboard */,
 				5874011921091E31000425F3 /* Comments.storyboard */,
+				58BB7CC92114D5370097A046 /* Search.storyboard */,
+				58BB7CCC2114D54B0097A046 /* RecipeResults.storyboard */,
 				297DED9220FFFAB800A469FA /* Views */,
 				297DED9120FFFAB200A469FA /* View Controllers */,
 				297DED9020FFFA7500A469FA /* Models */,
@@ -478,6 +484,7 @@
 				5874011A21091E31000425F3 /* Comments.storyboard in Resources */,
 				58740107210680C5000425F3 /* ExternalProfile.storyboard in Resources */,
 				297420762106551200B30175 /* DetailedPost.storyboard in Resources */,
+				58BB7CCE2114D54B0097A046 /* RecipeResults.storyboard in Resources */,
 				298E336F21001A2500290BF4 /* Profile.storyboard in Resources */,
 				298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */,
 				29CC25732101311900BD6C01 /* DetailedRecipe.storyboard in Resources */,
@@ -487,6 +494,7 @@
 				2981333E20FFEDF6003FD11C /* Main.storyboard in Resources */,
 				2135FC7E21067F6400543AF7 /* Timeline.storyboard in Resources */,
 				298E336B210016BC00290BF4 /* Discovery.storyboard in Resources */,
+				58BB7CCB2114D5370097A046 /* Search.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -701,6 +709,22 @@
 				29CC25722101311500BD6C01 /* Base */,
 			);
 			name = DetailedRecipe.storyboard;
+			sourceTree = "<group>";
+		};
+		58BB7CC92114D5370097A046 /* Search.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58BB7CCA2114D5370097A046 /* Base */,
+			);
+			name = Search.storyboard;
+			sourceTree = "<group>";
+		};
+		58BB7CCC2114D54B0097A046 /* RecipeResults.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				58BB7CCD2114D54B0097A046 /* Base */,
+			);
+			name = RecipeResults.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
