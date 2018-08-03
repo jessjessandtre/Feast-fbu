@@ -21,4 +21,9 @@
     // Configure the view for the selected state
 }
 
+- (void)setCourseType {
+    self.courseTypeImageView.image = self.courseType.image;
+    self.courseTypeLabel.text = self.courseType.name; 
+}
+
 @end
