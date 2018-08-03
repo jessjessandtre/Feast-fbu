@@ -17,5 +17,6 @@
 @property (nonatomic, strong) NSNumber *numPosts;
 @property (nonatomic, strong) NSString *sourceURL;
 @property (nonatomic, strong) NSMutableArray *tags;
+@property (nonatomic, strong) NSString *courseType;
 
 @end
