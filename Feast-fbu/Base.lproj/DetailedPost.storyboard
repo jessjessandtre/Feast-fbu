@@ -26,7 +26,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                                 <connections>
-                                    <outletCollection property="gestureRecognizers" destination="ZMD-HS-6KQ" appends="YES" id="fPF-T9-tyT"/>
                                     <outletCollection property="gestureRecognizers" destination="7la-MU-gPM" appends="YES" id="acR-Ap-Iif"/>
                                 </connections>
                             </label>
@@ -116,7 +115,6 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XuI-fa-atW" customClass="PFImageView">
                                 <rect key="frame" x="8" y="72" width="70" height="70"/>
-                                <color key="backgroundColor" red="0.03956334341" green="0.99193829300000003" blue="0.16685558859999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" button="YES" image="YES"/>
                                 </accessibility>
@@ -167,6 +165,7 @@
                         <outlet property="recipeNameLabel" destination="sWc-BE-1g8" id="Mbb-LY-j8S"/>
                         <outlet property="username2Label" destination="39v-36-TM2" id="yJ0-JK-WZR"/>
                         <outlet property="usernameLabel" destination="Piq-G7-qvc" id="GKl-Kf-nLG"/>
+                        <segue destination="IHg-no-84U" kind="show" identifier="ExternalProfileSegue" id="Sai-3D-xwi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NMw-wA-NtO" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -175,14 +174,9 @@
                         <segue destination="fcf-W8-xbb" kind="show" identifier="DetailedRecipeSegue" id="x0h-JL-Eyb"/>
                     </connections>
                 </tapGestureRecognizer>
-                <tapGestureRecognizer id="ZMD-HS-6KQ">
-                    <connections>
-                        <segue destination="IyO-C7-dzO" kind="show" identifier="ProfileSegue" id="Re3-We-xOD"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="7la-MU-gPM">
                     <connections>
-                        <segue destination="IHg-no-84U" kind="show" identifier="ProfileSegue" id="jIV-NW-bor"/>
+                        <action selector="tapUsername:" destination="HOn-0B-plU" id="rRb-0D-83c"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
@@ -195,14 +189,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VdF-Oc-eqZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3871" y="155"/>
-        </scene>
-        <!--Profile-->
-        <scene sceneID="9J6-Ub-Ui8">
-            <objects>
-                <viewControllerPlaceholder storyboardName="ExternalProfile" referencedIdentifier="ExternalProfile" id="IyO-C7-dzO" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e2P-F5-chT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-3788" y="159"/>
         </scene>
         <!--DetailedRecipe2-->
         <scene sceneID="oBp-t8-VUg">
