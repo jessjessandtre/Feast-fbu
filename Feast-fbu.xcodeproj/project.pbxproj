@@ -27,6 +27,7 @@
 		29853C3A2108FC5F00971E56 /* SavedRecipes.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29853C382108FC5F00971E56 /* SavedRecipes.storyboard */; };
 		29853C3D2108FE1E00971E56 /* SavedRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */; };
 		29853C402108FE5200971E56 /* SavedRecipesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */; };
+		29888859211523AA00557B22 /* RecipeResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29888858211523AA00557B22 /* RecipeResultsViewController.m */; };
 		298E336B210016BC00290BF4 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336A210016BC00290BF4 /* Discovery.storyboard */; };
 		298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336C210019A000290BF4 /* Leaderboard.storyboard */; };
 		298E336F21001A2500290BF4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336E21001A2500290BF4 /* Profile.storyboard */; };
@@ -120,6 +121,8 @@
 		29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedRecipesViewController.m; sourceTree = "<group>"; };
 		29853C3E2108FE5200971E56 /* SavedRecipesCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SavedRecipesCollectionViewCell.h; sourceTree = "<group>"; };
 		29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedRecipesCollectionViewCell.m; sourceTree = "<group>"; };
+		29888857211523AA00557B22 /* RecipeResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeResultsViewController.h; sourceTree = "<group>"; };
+		29888858211523AA00557B22 /* RecipeResultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeResultsViewController.m; sourceTree = "<group>"; };
 		298E336A210016BC00290BF4 /* Discovery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discovery.storyboard; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
 		298E336C210019A000290BF4 /* Leaderboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Leaderboard.storyboard; path = Base.lproj/Leaderboard.storyboard; sourceTree = "<group>"; };
 		298E336E21001A2500290BF4 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
@@ -277,9 +280,8 @@
 				214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */,
 				58740127210B8B1E000425F3 /* RecipeDetailViewController.h */,
 				58740128210B8B1E000425F3 /* RecipeDetailViewController.m */,
-				217CFDFA2114D97E00A2DE60 /* OpenSans-Bold.ttf */,
-				217CFDF92114D97D00A2DE60 /* OpenSans-ExtraBold.ttf */,
-				217CFDF82114D97C00A2DE60 /* OpenSans-SemiBold.ttf */,
+				29888857211523AA00557B22 /* RecipeResultsViewController.h */,
+				29888858211523AA00557B22 /* RecipeResultsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -353,6 +355,9 @@
 				5874011921091E31000425F3 /* Comments.storyboard */,
 				58BB7CC92114D5370097A046 /* Search.storyboard */,
 				58BB7CCC2114D54B0097A046 /* RecipeResults.storyboard */,
+				217CFDFA2114D97E00A2DE60 /* OpenSans-Bold.ttf */,
+				217CFDF92114D97D00A2DE60 /* OpenSans-ExtraBold.ttf */,
+				217CFDF82114D97C00A2DE60 /* OpenSans-SemiBold.ttf */,
 				297DED9220FFFAB800A469FA /* Views */,
 				297DED9120FFFAB200A469FA /* View Controllers */,
 				297DED9020FFFA7500A469FA /* Models */,
@@ -640,6 +645,7 @@
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
 				587401032106652E000425F3 /* Follow.m in Sources */,
 				29CC2570210116F900BD6C01 /* Post.m in Sources */,
+				29888859211523AA00557B22 /* RecipeResultsViewController.m in Sources */,
 				58BB7CDA2114E20E0097A046 /* TagCollectionViewCell.m in Sources */,
 				29853C402108FE5200971E56 /* SavedRecipesCollectionViewCell.m in Sources */,
 				29853C3D2108FE1E00971E56 /* SavedRecipesViewController.m in Sources */,
