@@ -45,6 +45,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveNotification:)
+     
                                                  name:@"FollowUpdateNotification"
                                                object:nil];
     
@@ -52,7 +53,7 @@
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.clipsToBounds = YES;
     
-    self.profileImageView.layer.borderColor = [UIColor greenColor].CGColor;
+    self.profileImageView.layer.borderColor = [UIColor colorWithRed:0.96 green:0.00 blue:0.00 alpha:1.0].CGColor;
     self.profileImageView.layer.borderWidth = 1.5;
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
