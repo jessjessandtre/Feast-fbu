@@ -159,6 +159,29 @@
     }];
 }
 
+- (IBAction)tapUsername:(id)sender {
+    if ([self.post.user.username isEqual:[PFUser currentUser].username]){
+        NSLog(@"my profile");
+        int controllerIndex = 3;
+        UIView * fromView = self.tabBarController.selectedViewController.view;
+        UIView * toView = [[self.tabBarController.viewControllers objectAtIndex:controllerIndex] view];
+        
+        // Transition using a page curl.
+        [UIView transitionFromView:fromView
+                            toView:toView
+                          duration:0.5
+                           options:(controllerIndex > self.tabBarController.selectedIndex ? UIViewAnimationOptionTransitionFlipFromRight : UIViewAnimationOptionTransitionFlipFromLeft)
+                        completion:^(BOOL finished) {
+                            if (finished) {
+                                self.tabBarController.selectedIndex = controllerIndex;
+                            }
+                        }];
+    }
+    else {
+        NSLog(@"not my profile");
+        [self performSegueWithIdentifier:@"ExternalProfileSegue" sender:nil];
+    }
+}
 
 
 #pragma mark - Navigation
@@ -171,26 +194,14 @@
         RecipeDetailViewController* detailViewController = [segue destinationViewController];
         detailViewController.recipe = self.recipe;
         
-    }
-    else if ([segue.identifier isEqualToString:@"CommentsSegue"]) {
+    } else if ([segue.identifier isEqualToString:@"CommentsSegue"]) {
         CommentsViewController *commentsViewController = [segue destinationViewController];
         commentsViewController.post = self.post;
-    } else if ([segue.identifier isEqualToString:@"ProfileSegue"]) {
-        NSLog(@"tapped tapped");
+    } else if ([segue.identifier isEqualToString:@"ExternalProfileSegue"]){
         ExternalProfileViewController *profileViewController = [segue destinationViewController];
         profileViewController.user = self.post.user;
     }
-    else if ([segue.identifier isEqualToString:@"ProfileSegue"]) {
-//        if (self.post.user == [PFUser currentUser]) {
-//            ProfileViewController *profileViewController = [segue destinationViewController];
-//            profileViewController.user = [PFUser currentUser];
-//        }
-//        else {
-            ExternalProfileViewController *externalProfileViewController = [segue destinationViewController];
-            externalProfileViewController.user = self.post.user;
-//        }
-        
-    }
+
 }
 
 @end
