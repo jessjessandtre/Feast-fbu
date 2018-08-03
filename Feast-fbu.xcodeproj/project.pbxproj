@@ -56,6 +56,10 @@
 		589382D6211262FA0045670D /* AutofillResultCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 589382D5211262FA0045670D /* AutofillResultCellTableViewCell.m */; };
 		58BB7CCB2114D5370097A046 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BB7CC92114D5370097A046 /* Search.storyboard */; };
 		58BB7CCE2114D54B0097A046 /* RecipeResults.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 58BB7CCC2114D54B0097A046 /* RecipeResults.storyboard */; };
+		58BB7CD12114DF0A0097A046 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BB7CD02114DF0A0097A046 /* SearchViewController.m */; };
+		58BB7CD42114DF1F0097A046 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BB7CD32114DF1F0097A046 /* SearchResultsViewController.m */; };
+		58BB7CD72114E1F40097A046 /* CourseTypeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BB7CD62114E1F40097A046 /* CourseTypeTableViewCell.m */; };
+		58BB7CDA2114E20E0097A046 /* TagCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 58BB7CD92114E20E0097A046 /* TagCollectionViewCell.m */; };
 		5FE6602A253EBEE70814F11C /* libPods-Feast-fbuUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */; };
 		AA866F1881DA6E0F2166EC09 /* libPods-Feast-fbuTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */; };
 /* End PBXBuildFile section */
@@ -167,6 +171,14 @@
 		589382D5211262FA0045670D /* AutofillResultCellTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutofillResultCellTableViewCell.m; sourceTree = "<group>"; };
 		58BB7CCA2114D5370097A046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Search.storyboard; sourceTree = "<group>"; };
 		58BB7CCD2114D54B0097A046 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/RecipeResults.storyboard; sourceTree = "<group>"; };
+		58BB7CCF2114DF0A0097A046 /* SearchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		58BB7CD02114DF0A0097A046 /* SearchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		58BB7CD22114DF1F0097A046 /* SearchResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		58BB7CD32114DF1F0097A046 /* SearchResultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		58BB7CD52114E1F40097A046 /* CourseTypeTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CourseTypeTableViewCell.h; sourceTree = "<group>"; };
+		58BB7CD62114E1F40097A046 /* CourseTypeTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CourseTypeTableViewCell.m; sourceTree = "<group>"; };
+		58BB7CD82114E20E0097A046 /* TagCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TagCollectionViewCell.h; sourceTree = "<group>"; };
+		58BB7CD92114E20E0097A046 /* TagCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TagCollectionViewCell.m; sourceTree = "<group>"; };
 		6ADE14948C125656DA4A20A5 /* Pods-Feast-fbuUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.release.xcconfig"; sourceTree = "<group>"; };
 		71BE23A7132DCFE14D5584F8 /* Pods-Feast-fbuTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuTests/Pods-Feast-fbuTests.debug.xcconfig"; sourceTree = "<group>"; };
 		B0BD2D765F9267BA295EAE56 /* libPods-Feast-fbuUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -236,6 +248,8 @@
 		297DED9120FFFAB200A469FA /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				58BB7CCF2114DF0A0097A046 /* SearchViewController.h */,
+				58BB7CD02114DF0A0097A046 /* SearchViewController.m */,
 				298E337C2101092600290BF4 /* LeaderboardViewController.h */,
 				298E337D2101092600290BF4 /* LeaderboardViewController.m */,
 				298E337A2101091900290BF4 /* DiscoveryViewController.h */,
@@ -262,6 +276,8 @@
 				214F5DA7210A9F5400A47BC8 /* SuggestedViewController.m */,
 				58740127210B8B1E000425F3 /* RecipeDetailViewController.h */,
 				58740128210B8B1E000425F3 /* RecipeDetailViewController.m */,
+				58BB7CD22114DF1F0097A046 /* SearchResultsViewController.h */,
+				58BB7CD32114DF1F0097A046 /* SearchResultsViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -289,6 +305,10 @@
 				299699952112209B00C83061 /* PostCollectionViewCell.m */,
 				589382D4211262FA0045670D /* AutofillResultCellTableViewCell.h */,
 				589382D5211262FA0045670D /* AutofillResultCellTableViewCell.m */,
+				58BB7CD52114E1F40097A046 /* CourseTypeTableViewCell.h */,
+				58BB7CD62114E1F40097A046 /* CourseTypeTableViewCell.m */,
+				58BB7CD82114E20E0097A046 /* TagCollectionViewCell.h */,
+				58BB7CD92114E20E0097A046 /* TagCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -611,11 +631,13 @@
 				2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */,
 				583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */,
 				5874010D210681C3000425F3 /* ExternalProfileViewController.m in Sources */,
+				58BB7CD72114E1F40097A046 /* CourseTypeTableViewCell.m in Sources */,
 				587401182107F969000425F3 /* Comment.m in Sources */,
 				290F36F92106B1FB00A1B704 /* Saved.m in Sources */,
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
 				587401032106652E000425F3 /* Follow.m in Sources */,
 				29CC2570210116F900BD6C01 /* Post.m in Sources */,
+				58BB7CDA2114E20E0097A046 /* TagCollectionViewCell.m in Sources */,
 				29853C402108FE5200971E56 /* SavedRecipesCollectionViewCell.m in Sources */,
 				29853C3D2108FE1E00971E56 /* SavedRecipesViewController.m in Sources */,
 				29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */,
@@ -623,6 +645,8 @@
 				587401152107F92A000425F3 /* Like.m in Sources */,
 				5874011D21091E94000425F3 /* CommentsViewController.m in Sources */,
 				2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */,
+				58BB7CD42114DF1F0097A046 /* SearchResultsViewController.m in Sources */,
+				58BB7CD12114DF0A0097A046 /* SearchViewController.m in Sources */,
 				58740129210B8B1E000425F3 /* RecipeDetailViewController.m in Sources */,
 				2135FC812106819800543AF7 /* TimelineViewController.m in Sources */,
 				5874012021091F40000425F3 /* CommentCell.m in Sources */,

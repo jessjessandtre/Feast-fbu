@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Search View Controller-->
         <scene sceneID="8wM-eK-0Uy">
             <objects>
-                <viewController id="s3o-d0-1nP" sceneMemberID="viewController">
+                <viewController id="s3o-d0-1nP" customClass="SearchViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xIp-Ue-bfM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -56,7 +56,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PnC-h5-bo0">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PnC-h5-bo0" customClass="TagCollectionViewCell">
                                                     <rect key="frame" x="0.0" y="0.0" width="119" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -72,6 +72,9 @@
                                                             </label>
                                                         </subviews>
                                                     </view>
+                                                    <connections>
+                                                        <outlet property="tagLabel" destination="0eR-zZ-UQt" id="Z7Y-V2-Hmi"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
@@ -79,7 +82,7 @@
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="93" id="QEE-8G-4p5">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="93" id="QEE-8G-4p5" customClass="CourseTypeTableViewCell">
                                         <rect key="frame" x="0.0" y="98" width="375" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QEE-8G-4p5" id="fFx-KT-fbM">
@@ -99,6 +102,10 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="courseTypeImageView" destination="7aD-aS-U1Q" id="hut-Vr-WQH"/>
+                                            <outlet property="courseTypeLabel" destination="pEa-sJ-i6p" id="uwR-TF-JIu"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
