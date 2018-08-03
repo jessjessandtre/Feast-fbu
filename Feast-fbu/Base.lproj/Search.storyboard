@@ -119,11 +119,13 @@
             </objects>
             <point key="canvasLocation" x="780" y="-83.208395802098963"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Search-->
         <scene sceneID="lGv-0m-jkB">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rfb-22-ZDj" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="Search" automaticallyAdjustsScrollViewInsets="NO" id="Rfb-22-ZDj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Search" image="001-search-1" selectedImage="001-search-1" id="73V-f5-zcT"/>
                     <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Nim-0u-jMH">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -138,4 +140,7 @@
             <point key="canvasLocation" x="-218" y="-83"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="001-search-1" width="32" height="32"/>
+    </resources>
 </document>
