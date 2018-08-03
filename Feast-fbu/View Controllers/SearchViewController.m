@@ -7,6 +7,8 @@
 //
 
 #import "SearchViewController.h"
+#import "CourseType.h"
+#import "CourseTypeTableViewCell.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -19,14 +21,48 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    CourseType *mainDish = [CourseType new];
+    mainDish.name = @"Main";
+    mainDish.image = [UIImage imageNamed:@"main"];
     
+    CourseType *appetizer = [CourseType new];
+    appetizer.name = @"Appetizer";
+    mainDish.image = [UIImage imageNamed:@"appetizer"];
     
-    // Do any additional setup after loading the view.
+    CourseType *salad = [CourseType new];
+    salad.name = @"Salad";
+    salad.image = [UIImage imageNamed:@"salad"];
+    
+    CourseType *dessert = [CourseType new];
+    dessert.name = @"Dessert";
+    dessert.image = [UIImage imageNamed:@"dessert"];
+    
+    CourseType *snack = [CourseType new];
+    snack.name = @"Snack";
+    snack.image = [UIImage imageNamed:@"snack"];
+    
+    CourseType *drink = [CourseType new];
+    drink.name = @"Drink";
+    drink.image = [UIImage imageNamed:@"snack"];
+    
+    self.courseTypes = @[mainDish, appetizer, salad, dessert, snack, drink];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    CourseTypeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CourseTypeCell" forIndexPath:indexPath];
+    CourseType *courseType = self.courseTypes[indexPath.row];
+    cell.courseType = courseType;
+    [cell setCourseType];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.courseTypes.count;
 }
 
 /*
