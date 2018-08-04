@@ -10,6 +10,5 @@
 
 @implementation CourseType
 
-@dynamic name, image; 
 
 @end

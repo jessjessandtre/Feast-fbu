@@ -21,27 +21,27 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    CourseType *mainDish = [CourseType new];
+    CourseType *mainDish = [[CourseType alloc ] init];
     mainDish.name = @"Main";
     mainDish.image = [UIImage imageNamed:@"main"];
     
-    CourseType *appetizer = [CourseType new];
+    CourseType *appetizer = [[CourseType alloc] init];
     appetizer.name = @"Appetizer";
     mainDish.image = [UIImage imageNamed:@"appetizer"];
     
-    CourseType *salad = [CourseType new];
+    CourseType *salad = [[CourseType alloc] init];
     salad.name = @"Salad";
     salad.image = [UIImage imageNamed:@"salad"];
     
-    CourseType *dessert = [CourseType new];
+    CourseType *dessert = [[CourseType alloc] init];
     dessert.name = @"Dessert";
     dessert.image = [UIImage imageNamed:@"dessert"];
     
-    CourseType *snack = [CourseType new];
+    CourseType *snack = [[CourseType alloc] init];
     snack.name = @"Snack";
     snack.image = [UIImage imageNamed:@"snack"];
     
-    CourseType *drink = [CourseType new];
+    CourseType *drink = [[CourseType alloc] init];
     drink.name = @"Drink";
     drink.image = [UIImage imageNamed:@"snack"];
     
