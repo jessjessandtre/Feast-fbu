@@ -34,9 +34,9 @@
                                             <textInputTraits key="textInputTraits"/>
                                         </textField>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JkB-dq-l1B">
-                                            <rect key="frame" x="307" y="20" width="46" height="30"/>
+                                            <rect key="frame" x="306" y="20" width="48" height="30"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" title="Button"/>
+                                            <state key="normal" title="Search"/>
                                         </button>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -56,7 +56,7 @@
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PnC-h5-bo0" customClass="TagCollectionViewCell">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TagCollectionViewCell" id="PnC-h5-bo0" customClass="TagCollectionViewCell">
                                                     <rect key="frame" x="0.0" y="0.0" width="119" height="47"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -64,7 +64,7 @@
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0eR-zZ-UQt">
-                                                                <rect key="frame" x="20" y="13" width="28" height="21"/>
+                                                                <rect key="frame" x="20" y="12" width="28" height="21"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -114,6 +114,13 @@
                         <viewLayoutGuide key="safeArea" id="Dgv-4u-bvS"/>
                     </view>
                     <navigationItem key="navigationItem" id="f7Z-Hu-pNQ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Ze7-pc-CyS" id="mfY-Ze-07a"/>
+                        <outlet property="search" destination="Tz3-rz-6Ha" id="lSf-Ws-Fji"/>
+                        <outlet property="searchButton" destination="JkB-dq-l1B" id="pou-46-oIj"/>
+                        <outlet property="searchTextField" destination="QI1-Gq-cOr" id="WFs-ez-DAg"/>
+                        <outlet property="tableview" destination="Tz3-rz-6Ha" id="dTV-CH-pjk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubj-Ig-1YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -9,10 +9,16 @@
 #import "SearchViewController.h"
 #import "CourseType.h"
 #import "CourseTypeTableViewCell.h"
+#import "TagCollectionViewCell.h"
 
-@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) NSArray *courseTypes;
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
+@property (strong, nonatomic) IBOutlet UITableView *search;
+@property (strong, nonatomic) IBOutlet UITextField *searchTextField;
+@property (strong, nonatomic) IBOutlet UIButton *searchButton;
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @end
 
@@ -20,6 +26,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableview.delegate = self;
+    self.tableview.dataSource = self;
+    self.collectionView.delegate = self;
+    self.collectionView.dataSource = self;
     
     CourseType *mainDish = [[CourseType alloc ] init];
     mainDish.name = @"Main";
@@ -65,6 +75,15 @@
     return self.courseTypes.count;
 }
 
+- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    TagCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TagCollectionViewCell" forIndexPath:indexPath];
+    
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
 /*
 #pragma mark - Navigation
 

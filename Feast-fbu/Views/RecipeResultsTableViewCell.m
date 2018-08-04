@@ -7,7 +7,6 @@
 //
 
 #import "RecipeResultsTableViewCell.h"
-#import <Parse/Parse.h>
 
 @implementation RecipeResultsTableViewCell
 
