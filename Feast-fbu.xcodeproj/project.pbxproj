@@ -28,6 +28,7 @@
 		29853C3D2108FE1E00971E56 /* SavedRecipesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853C3C2108FE1E00971E56 /* SavedRecipesViewController.m */; };
 		29853C402108FE5200971E56 /* SavedRecipesCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */; };
 		29888859211523AA00557B22 /* RecipeResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29888858211523AA00557B22 /* RecipeResultsViewController.m */; };
+		2988885C211527FC00557B22 /* RecipeResultsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2988885B211527FC00557B22 /* RecipeResultsTableViewCell.m */; };
 		298E336B210016BC00290BF4 /* Discovery.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336A210016BC00290BF4 /* Discovery.storyboard */; };
 		298E336D210019A000290BF4 /* Leaderboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336C210019A000290BF4 /* Leaderboard.storyboard */; };
 		298E336F21001A2500290BF4 /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 298E336E21001A2500290BF4 /* Profile.storyboard */; };
@@ -124,6 +125,8 @@
 		29853C3F2108FE5200971E56 /* SavedRecipesCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SavedRecipesCollectionViewCell.m; sourceTree = "<group>"; };
 		29888857211523AA00557B22 /* RecipeResultsViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeResultsViewController.h; sourceTree = "<group>"; };
 		29888858211523AA00557B22 /* RecipeResultsViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeResultsViewController.m; sourceTree = "<group>"; };
+		2988885A211527FC00557B22 /* RecipeResultsTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RecipeResultsTableViewCell.h; sourceTree = "<group>"; };
+		2988885B211527FC00557B22 /* RecipeResultsTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecipeResultsTableViewCell.m; sourceTree = "<group>"; };
 		298E336A210016BC00290BF4 /* Discovery.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Discovery.storyboard; path = Base.lproj/Discovery.storyboard; sourceTree = "<group>"; };
 		298E336C210019A000290BF4 /* Leaderboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Leaderboard.storyboard; path = Base.lproj/Leaderboard.storyboard; sourceTree = "<group>"; };
 		298E336E21001A2500290BF4 /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Profile.storyboard; path = Base.lproj/Profile.storyboard; sourceTree = "<group>"; };
@@ -318,6 +321,8 @@
 				58BB7CD62114E1F40097A046 /* CourseTypeTableViewCell.m */,
 				58BB7CD82114E20E0097A046 /* TagCollectionViewCell.h */,
 				58BB7CD92114E20E0097A046 /* TagCollectionViewCell.m */,
+				2988885A211527FC00557B22 /* RecipeResultsTableViewCell.h */,
+				2988885B211527FC00557B22 /* RecipeResultsTableViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -639,6 +644,7 @@
 			files = (
 				5874012C210B8B6E000425F3 /* DetailRecipeTableViewCell.m in Sources */,
 				299699962112209B00C83061 /* PostCollectionViewCell.m in Sources */,
+				2988885C211527FC00557B22 /* RecipeResultsTableViewCell.m in Sources */,
 				2981334620FFEDF7003FD11C /* main.m in Sources */,
 				298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */,
 				2981333820FFEDF6003FD11C /* AppDelegate.m in Sources */,

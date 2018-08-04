@@ -23,7 +23,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="463" id="6wg-IE-40r">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeResultsTableViewCell" rowHeight="463" id="6wg-IE-40r" customClass="RecipeResultsTableViewCell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="463"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6wg-IE-40r" id="NO6-hx-jK2">
@@ -51,6 +51,9 @@
                         <viewLayoutGuide key="safeArea" id="NRG-aQ-Yh5"/>
                     </view>
                     <navigationItem key="navigationItem" id="7tO-Ej-MLV"/>
+                    <connections>
+                        <outlet property="tableView" destination="4Jh-iA-Tk1" id="lnu-he-Fh6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ipq-pB-58h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

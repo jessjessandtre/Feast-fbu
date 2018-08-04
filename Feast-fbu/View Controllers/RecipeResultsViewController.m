@@ -7,10 +7,12 @@
 //
 
 #import "RecipeResultsViewController.h"
+#import "RecipeResultsTableViewCell.h"
 
-@interface RecipeResultsViewController ()
+@interface RecipeResultsViewController () <UITableViewDelegate, UITableViewDataSource>
 
-
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
+@property (strong, nonatomic) NSArray* recipes;
 
 @end
 
@@ -18,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
     // Do any additional setup after loading the view.
 }
 
@@ -26,6 +30,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RecipeResultsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
+    cell.recipe = self.recipes[indexPath.row];
+    return cell;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.recipes.count;
+}
 /*
 #pragma mark - Navigation
 
