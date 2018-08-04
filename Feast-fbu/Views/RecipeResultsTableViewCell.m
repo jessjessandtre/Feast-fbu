@@ -7,6 +7,7 @@
 //
 
 #import "RecipeResultsTableViewCell.h"
+#import <Parse/Parse.h>
 
 @implementation RecipeResultsTableViewCell
 
@@ -24,7 +25,8 @@
 - (void)setRecipe:(Recipe *)recipe {
     _recipe = recipe;
     
-    
+    self.recipeImageView.file = self.recipe.image;
+    [self.recipeImageView loadInBackground];
     
 }
 @end

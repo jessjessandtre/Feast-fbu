@@ -12,4 +12,7 @@
 @interface RecipeResultsTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) Recipe* recipe;
+@property (strong, nonatomic) IBOutlet PFImageView *recipeImageView;
+@property (strong, nonatomic) IBOutlet UILabel *recipeNameLabel;
+
 @end
