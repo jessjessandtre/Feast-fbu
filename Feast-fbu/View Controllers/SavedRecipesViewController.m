@@ -10,12 +10,12 @@
 #import "SVProgressHUD.h"
 #import "SavedRecipesCollectionViewCell.h"
 #import <Parse/Parse.h>
-#import "DetailViewController.h"
+#import "RecipeDetailViewController.h"
 
 
 @interface SavedRecipesViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;\
+@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 @property (strong, nonatomic) NSMutableArray* recipes;
 
 @end
@@ -108,7 +108,7 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"DetailedRecipeSegue3"]){
-        DetailViewController* detailedRecipeViewController = [segue destinationViewController];
+        RecipeDetailViewController* detailedRecipeViewController = [segue destinationViewController];
         SavedRecipesCollectionViewCell* cell = (SavedRecipesCollectionViewCell*)sender;
         detailedRecipeViewController.recipe = cell.recipe;
     }

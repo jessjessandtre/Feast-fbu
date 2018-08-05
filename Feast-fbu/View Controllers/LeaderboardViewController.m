@@ -6,7 +6,7 @@
 //  Copyright © 2018 jessjessandtre. All rights reserved.
 //
 
-#import "DetailViewController.h"
+#import "RecipeDetailViewController.h"
 #import "LeaderboardViewController.h"
 #import "PopularMealsCell.h"
 #import <SVProgressHUD.h>
@@ -95,7 +95,7 @@
     DetailViewController* detailViewController = (DetailViewController*) navigationController.topViewController;
     */
     
-    DetailViewController* detailViewController = [segue destinationViewController];
+    RecipeDetailViewController* detailViewController = [segue destinationViewController];
     UITableViewCell *tappedCell = sender;
     
     NSIndexPath *indexPath = [self.recipesTableView indexPathForCell:tappedCell];
