@@ -31,7 +31,7 @@
 
 - (void) fetchRecipes {
     PFQuery* query = [PFQuery queryWithClassName:@"Recipe"];
-    //[query whereKey:@"courseType" equalTo:self.courseType.name];
+    [query whereKey:@"courseType" equalTo:self.courseType.name];
     query.limit = 20;
     
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {

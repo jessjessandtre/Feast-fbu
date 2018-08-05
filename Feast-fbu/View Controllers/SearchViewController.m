@@ -32,27 +32,27 @@
     self.tagCollectionView.dataSource = self;
     
     CourseType *mainDish = [[CourseType alloc ] init];
-    mainDish.name = @"Main";
+    mainDish.name = @"main";
     mainDish.image = [UIImage imageNamed:@"main"];
     
     CourseType *appetizer = [[CourseType alloc] init];
-    appetizer.name = @"Appetizer";
+    appetizer.name = @"appetizer";
     appetizer.image = [UIImage imageNamed:@"appetizer"];
     
     CourseType *salad = [[CourseType alloc] init];
-    salad.name = @"Salad";
+    salad.name = @"salad";
     salad.image = [UIImage imageNamed:@"salad"];
     
     CourseType *dessert = [[CourseType alloc] init];
-    dessert.name = @"Dessert";
+    dessert.name = @"dessert";
     dessert.image = [UIImage imageNamed:@"dessert"];
     
     CourseType *snack = [[CourseType alloc] init];
-    snack.name = @"Snack";
+    snack.name = @"snack";
     snack.image = [UIImage imageNamed:@"snack"];
     
     CourseType *drink = [[CourseType alloc] init];
-    drink.name = @"Drink";
+    drink.name = @"drink";
     drink.image = [UIImage imageNamed:@"drink"];
     
     self.courseTypes = @[mainDish, appetizer, salad, dessert, snack, drink];
