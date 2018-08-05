@@ -14,11 +14,10 @@
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (nonatomic, strong) NSArray *courseTypes;
-@property (strong, nonatomic) IBOutlet UITableView *tableview;
-@property (strong, nonatomic) IBOutlet UITableView *search;
+@property (strong, nonatomic) IBOutlet UITableView *searchTableView;
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
 @property (strong, nonatomic) IBOutlet UIButton *searchButton;
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
+@property (strong, nonatomic) IBOutlet UICollectionView *tagCollectionView;
 
 @end
 
@@ -26,10 +25,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.tableview.delegate = self;
-    self.tableview.dataSource = self;
-    self.collectionView.delegate = self;
-    self.collectionView.dataSource = self;
+    self.searchTableView.delegate = self;
+    self.searchTableView.dataSource = self;
+    self.tagCollectionView.delegate = self;
+    self.tagCollectionView.dataSource = self;
     
     CourseType *mainDish = [[CourseType alloc ] init];
     mainDish.name = @"Main";
@@ -37,7 +36,7 @@
     
     CourseType *appetizer = [[CourseType alloc] init];
     appetizer.name = @"Appetizer";
-    mainDish.image = [UIImage imageNamed:@"appetizer"];
+    appetizer.image = [UIImage imageNamed:@"appetizer"];
     
     CourseType *salad = [[CourseType alloc] init];
     salad.name = @"Salad";
@@ -53,7 +52,7 @@
     
     CourseType *drink = [[CourseType alloc] init];
     drink.name = @"Drink";
-    drink.image = [UIImage imageNamed:@"snack"];
+    drink.image = [UIImage imageNamed:@"drink"];
     
     self.courseTypes = @[mainDish, appetizer, salad, dessert, snack, drink];
 }
