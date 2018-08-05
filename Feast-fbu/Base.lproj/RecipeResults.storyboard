@@ -61,7 +61,7 @@
                                         <connections>
                                             <outlet property="recipeImageView" destination="cT7-iW-AeZ" id="k02-SU-999"/>
                                             <outlet property="recipeNameLabel" destination="FA4-oo-yYB" id="JUV-Km-oFA"/>
-                                            <segue destination="h52-tY-CeE" kind="show" id="MjS-Qy-MiM"/>
+                                            <segue destination="h52-tY-CeE" kind="show" identifier="DetailedRecipeSegue4" id="MjS-Qy-MiM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
