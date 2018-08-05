@@ -27,5 +27,7 @@
     self.recipeImageView.file = self.recipe.image;
     [self.recipeImageView loadInBackground];
     
+    self.recipeNameLabel.text = self.recipe.name;
+    
 }
 @end

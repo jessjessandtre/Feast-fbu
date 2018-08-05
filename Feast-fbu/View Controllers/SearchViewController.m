@@ -10,6 +10,7 @@
 #import "CourseType.h"
 #import "CourseTypeTableViewCell.h"
 #import "TagCollectionViewCell.h"
+#import "RecipeResultsViewController.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -84,15 +85,20 @@
     return 1;
 }
 
-/*
+
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
+     if ([segue.identifier isEqualToString:@"RecipeResultsSegue"]){
+         RecipeResultsViewController* recipeResults = [segue destinationViewController];
+         CourseTypeTableViewCell* cell = (CourseTypeTableViewCell*)sender;
+         recipeResults.courseType = cell.courseType;
+     }
  }
- */
+
 
 
 @end

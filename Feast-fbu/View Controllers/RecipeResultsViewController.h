@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CourseType.h"
 
 @interface RecipeResultsViewController : UIViewController
 
+@property (strong, nonatomic) CourseType* courseType;
 @end

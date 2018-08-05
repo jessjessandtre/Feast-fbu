@@ -8,6 +8,8 @@
 
 #import "RecipeResultsViewController.h"
 #import "RecipeResultsTableViewCell.h"
+#import <Parse/Parse.h>
+#import "SVProgressHUD.h"
 
 @interface RecipeResultsViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -23,11 +25,25 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     // Do any additional setup after loading the view.
+    [SVProgressHUD show];
+    [self fetchRecipes];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) fetchRecipes {
+    PFQuery* query = [PFQuery queryWithClassName:@"Recipe"];
+    //[query whereKey:@"courseType" equalTo:self.courseType.name];
+    query.limit = 20;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (objects){
+            self.recipes = objects;
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"error finding recipe results: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

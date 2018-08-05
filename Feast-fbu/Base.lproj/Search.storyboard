@@ -125,6 +125,7 @@
                                         <connections>
                                             <outlet property="courseTypeImageView" destination="7aD-aS-U1Q" id="hut-Vr-WQH"/>
                                             <outlet property="courseTypeLabel" destination="zjx-So-Ltj" id="ys4-YG-zEl"/>
+                                            <segue destination="4K6-xF-A9h" kind="show" identifier="RecipeResultsSegue" id="iyc-D1-CBL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -150,6 +151,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubj-Ig-1YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="780" y="-83.208395802098963"/>
+        </scene>
+        <!--RecipeResults-->
+        <scene sceneID="fVL-ZA-Yr2">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecipeResults" referencedIdentifier="RecipeResults" id="4K6-xF-A9h" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GAF-zu-7il" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1368" y="-175"/>
         </scene>
         <!--Search-->
         <scene sceneID="lGv-0m-jkB">
