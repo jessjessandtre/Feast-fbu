@@ -94,10 +94,10 @@
             </objects>
             <point key="canvasLocation" x="3572" y="345.87706146926541"/>
         </scene>
-        <!--DetailedRecipe-->
+        <!--DetailedRecipe2-->
         <scene sceneID="oc0-WI-saj">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe" id="o1p-np-5CI" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe2" id="o1p-np-5CI" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vlQ-J0-x7d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4447" y="325"/>

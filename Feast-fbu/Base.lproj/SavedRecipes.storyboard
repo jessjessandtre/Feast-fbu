@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="788" y="81"/>
         </scene>
-        <!--DetailedRecipe-->
+        <!--DetailedRecipe2-->
         <scene sceneID="G0Y-ac-B3P">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe" id="9bH-1b-TUS" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedRecipe" referencedIdentifier="DetailedRecipe2" id="9bH-1b-TUS" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Px2-GX-suC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1434" y="-42"/>
