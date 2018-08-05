@@ -7,6 +7,7 @@
 //
 
 #import "PFObject.h"
+#import <Parse/Parse.h>
 
 @interface Follow : PFObject <PFSubclassing>
 

@@ -7,7 +7,6 @@
 //
 
 #import "Follow.h"
-#import <Parse/Parse.h>
 
 @implementation Follow
 
