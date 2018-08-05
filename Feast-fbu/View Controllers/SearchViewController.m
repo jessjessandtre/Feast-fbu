@@ -11,6 +11,9 @@
 #import "CourseTypeTableViewCell.h"
 #import "TagCollectionViewCell.h"
 #import "RecipeResultsViewController.h"
+#import "SVProgressHUD.h"
+#import <Parse/Parse.h>
+#import "Tag.h"
 
 @interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -19,6 +22,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
 @property (strong, nonatomic) IBOutlet UIButton *searchButton;
 @property (strong, nonatomic) IBOutlet UICollectionView *tagCollectionView;
+@property (strong, nonatomic) NSMutableDictionary<NSString*, NSNumber*>* tagDictionary;
+@property (strong, nonatomic) NSArray<NSString*>* orderedTagNamesArray;
 
 @end
 
@@ -56,11 +61,49 @@
     drink.image = [UIImage imageNamed:@"drink"];
     
     self.courseTypes = @[mainDish, appetizer, salad, dessert, snack, drink];
+    
+    [SVProgressHUD show];
+    [self getTags];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) getTags {
+    PFQuery* query = [PFQuery queryWithClassName:@"Tag"];
+    self.tagDictionary = [[NSMutableDictionary alloc] init];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (objects) {
+            NSLog(@"objects %@", objects);
+            for (Tag* tag in objects){
+                if ([self.tagDictionary objectForKey:tag.name]){
+                    NSInteger num = [[self.tagDictionary objectForKey:tag.name] integerValue];
+                    num += 1;
+                    [self.tagDictionary setObject:[NSNumber numberWithInt:num] forKey:tag.name];
+                }
+                else {
+                    [self.tagDictionary setObject:[NSNumber numberWithInt:1] forKey:tag.name];
+                }
+            }
+            NSLog(@" dictionary %@",self.tagDictionary);
+            self.orderedTagNamesArray = [self.tagDictionary keysSortedByValueUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+                NSNumber* left = (NSNumber*)obj1;
+                NSNumber* right = (NSNumber*)obj2;
+                if (left < right){
+                    return NSOrderedDescending;
+                }
+                else if (right > left){
+                    return NSOrderedAscending;
+                }
+                else {
+                    return NSOrderedSame;
+                }
+            }];
+            NSLog(@"tag array: %@", self.orderedTagNamesArray);
+        }
+        else {
+            NSLog(@"error getting tags: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -82,7 +125,7 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return 1;
+    return self.orderedTagNamesArray.count;
 }
 
 
