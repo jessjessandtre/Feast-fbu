@@ -268,16 +268,26 @@
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dIk-iU-QwB" customClass="PFImageView">
                                                                         <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
                                                                     </imageView>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="I3D-Ed-0sb" customClass="PFImageView">
+                                                                        <rect key="frame" x="68" y="68" width="30" height="30"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="I3D-Ed-0sb" secondAttribute="height" multiplier="1:1" id="7XQ-we-o7W"/>
+                                                                        </constraints>
+                                                                    </imageView>
                                                                 </subviews>
                                                             </view>
                                                             <constraints>
+                                                                <constraint firstItem="I3D-Ed-0sb" firstAttribute="width" secondItem="dIk-iU-QwB" secondAttribute="height" multiplier="2:7" id="9Oq-DX-la2"/>
                                                                 <constraint firstItem="dIk-iU-QwB" firstAttribute="leading" secondItem="E1L-lP-rFU" secondAttribute="leading" id="B1c-mv-96k"/>
                                                                 <constraint firstItem="dIk-iU-QwB" firstAttribute="top" secondItem="E1L-lP-rFU" secondAttribute="top" id="NIb-Oa-2L6"/>
                                                                 <constraint firstAttribute="trailing" secondItem="dIk-iU-QwB" secondAttribute="trailing" id="PbQ-kW-5iK"/>
                                                                 <constraint firstAttribute="bottom" secondItem="dIk-iU-QwB" secondAttribute="bottom" id="gJ0-25-zu3"/>
+                                                                <constraint firstItem="I3D-Ed-0sb" firstAttribute="top" secondItem="dIk-iU-QwB" secondAttribute="bottom" constant="-37" id="ofa-WW-4NJ"/>
+                                                                <constraint firstItem="I3D-Ed-0sb" firstAttribute="leading" secondItem="dIk-iU-QwB" secondAttribute="trailing" constant="-37" id="zPB-fI-DEw"/>
                                                             </constraints>
                                                             <connections>
-                                                                <outlet property="postImageView" destination="dIk-iU-QwB" id="S70-q1-Q8q"/>
+                                                                <outlet property="postImageView" destination="dIk-iU-QwB" id="A45-pk-GMk"/>
+                                                                <outlet property="profileImageView" destination="I3D-Ed-0sb" id="BrO-5v-qh9"/>
                                                                 <segue destination="s6h-k1-RTI" kind="show" identifier="DetailedPostSegue2" id="Uiy-xT-Mtn"/>
                                                             </connections>
                                                         </collectionViewCell>
