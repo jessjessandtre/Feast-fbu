@@ -19,7 +19,6 @@
 - (void) setTagName:(NSString *)tagName {
     _tagName = tagName;
     
-    self.tagLabel.text = tagName;
-    NSLog(@"tag label %@", self.tagLabel.text);
+    self.tagLabel.text = [NSString stringWithFormat:@"#%@", tagName];
 }
 @end

@@ -11,6 +11,7 @@
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
 #import "RecipeDetailViewController.h"
+#import "Tag.h"
 
 @interface RecipeResultsViewController () <UITableViewDelegate, UITableViewDataSource>
 
@@ -26,25 +27,49 @@
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     // Do any additional setup after loading the view.
+    NSLog(@"coursetype %@", self.courseType );
+    NSLog(@"tagname %@", self.tagName);
     [SVProgressHUD show];
     [self fetchRecipes];
 }
 
 - (void) fetchRecipes {
-    PFQuery* query = [PFQuery queryWithClassName:@"Recipe"];
-    [query whereKey:@"courseType" equalTo:self.courseType.name];
-    query.limit = 20;
-    
-    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-        [SVProgressHUD dismiss];
-        if (objects){
-            self.recipes = objects;
-            [self.tableView reloadData];
-        }
-        else {
-            NSLog(@"error finding recipe results: %@", error.localizedDescription);
-        }
-    }];
+    if (self.courseType){
+        PFQuery* query = [PFQuery queryWithClassName:@"Recipe"];
+        [query whereKey:@"courseType" equalTo:self.courseType.name];
+        query.limit = 20;
+        
+        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            if (objects){
+                self.recipes = objects;
+                [self.tableView reloadData];
+            }
+            else {
+                NSLog(@"error finding recipe results: %@", error.localizedDescription);
+            }
+        }];
+    } else if (self.tagName){
+        PFQuery* tagQuery = [PFQuery queryWithClassName:@"Tag"];
+        [tagQuery whereKey:@"name" equalTo:self.tagName];
+        [tagQuery includeKey:@"recipe"];
+        tagQuery.limit = 20;
+        
+        [tagQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            if (objects){
+                NSMutableArray* arr = [[NSMutableArray alloc]init];
+                for (Tag* tag in objects){
+                    [arr addObject:tag.recipe];
+                }
+                self.recipes = [NSArray arrayWithArray:arr];
+                [self.tableView reloadData];
+            }else {
+                NSLog(@"error finding recipe results: %@", error.localizedDescription);
+            }
+        }];
+        
+    }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

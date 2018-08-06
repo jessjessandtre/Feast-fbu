@@ -38,9 +38,9 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipe name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FA4-oo-yYB">
-                                                    <rect key="frame" x="15" y="383" width="345" height="50"/>
+                                                    <rect key="frame" x="15" y="383" width="345" height="55"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="QM3-Mi-jci"/>
+                                                        <constraint firstAttribute="height" constant="55" id="QM3-Mi-jci"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>

@@ -151,10 +151,15 @@
  - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
  // Get the new view controller using [segue destinationViewController].
  // Pass the selected object to the new view controller.
-     if ([segue.identifier isEqualToString:@"RecipeResultsSegue"]){
+     if ([segue.identifier isEqualToString:@"CourseTypeRecipeResultsSegue"]){
          RecipeResultsViewController* recipeResults = [segue destinationViewController];
          CourseTypeTableViewCell* cell = (CourseTypeTableViewCell*)sender;
          recipeResults.courseType = cell.courseType;
+     }
+     else if ([segue.identifier isEqualToString:@"TagRecipeResultsSegue"]){
+         RecipeResultsViewController* recipeResults = [segue destinationViewController];
+         TagCollectionViewCell* cell = (TagCollectionViewCell*)sender;
+         recipeResults.tagName = cell.tagName;
      }
  }
 

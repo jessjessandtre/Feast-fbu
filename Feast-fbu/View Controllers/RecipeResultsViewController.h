@@ -12,4 +12,5 @@
 @interface RecipeResultsViewController : UIViewController
 
 @property (strong, nonatomic) CourseType* courseType;
+@property (strong, nonatomic) NSString* tagName;
 @end

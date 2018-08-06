@@ -92,6 +92,7 @@
                                                     </constraints>
                                                     <connections>
                                                         <outlet property="tagLabel" destination="0eR-zZ-UQt" id="IFB-Xv-lyM"/>
+                                                        <segue destination="4K6-xF-A9h" kind="show" identifier="TagRecipeResultsSegue" id="Fg1-Ex-xFV"/>
                                                     </connections>
                                                 </collectionViewCell>
                                             </cells>
@@ -135,7 +136,7 @@
                                         <connections>
                                             <outlet property="courseTypeImageView" destination="7aD-aS-U1Q" id="hut-Vr-WQH"/>
                                             <outlet property="courseTypeLabel" destination="zjx-So-Ltj" id="ys4-YG-zEl"/>
-                                            <segue destination="4K6-xF-A9h" kind="show" identifier="RecipeResultsSegue" id="iyc-D1-CBL"/>
+                                            <segue destination="4K6-xF-A9h" kind="show" identifier="CourseTypeRecipeResultsSegue" id="iyc-D1-CBL"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -169,7 +170,7 @@
                 <viewControllerPlaceholder storyboardName="RecipeResults" referencedIdentifier="RecipeResults" id="4K6-xF-A9h" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GAF-zu-7il" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368" y="-175"/>
+            <point key="canvasLocation" x="1522" y="-180"/>
         </scene>
         <!--Search-->
         <scene sceneID="lGv-0m-jkB">
@@ -195,4 +196,7 @@
     <resources>
         <image name="001-search-1" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fg1-Ex-xFV"/>
+    </inferredMetricsTieBreakers>
 </document>
