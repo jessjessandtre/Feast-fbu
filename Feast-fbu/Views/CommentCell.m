@@ -48,7 +48,13 @@
     
     [self.user fetchInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
         self.usernameLabel.text = self.user[@"username"];
-        self.profileImageView.file = self.user[@"profileImage"];
+        if (self.user[@"profileImage"] == nil) {
+            self.profileImageView.image = [UIImage imageNamed: @"profile-image-blank"];
+        }
+        else {
+            self.profileImageView.file = self.user[@"profileImage"];
+            [self.profileImageView loadInBackground];
+        }
     }];
 }
 
