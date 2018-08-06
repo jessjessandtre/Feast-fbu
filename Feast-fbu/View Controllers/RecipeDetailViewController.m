@@ -15,7 +15,7 @@
 #import "PostCollectionViewCell.h"
 #import "DetailedPostViewController.h"
 
-@interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
+@interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeTableView;
 //@property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
@@ -106,7 +106,8 @@
     }
 }
 
-- (IBAction)postButtonTapped:(id)sender {
+- (IBAction)postTapped:(id)sender {
+    NSLog(@"adf");
     [self createImagePickerController];
 }
 
@@ -182,6 +183,12 @@
     return self.posts.count;
 }
 
+-(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    //if (kind == UICollectionElementKindSectionFooter) {
+        UICollectionReusableView* header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"AddPostCollectionViewCell" forIndexPath:indexPath];
+        return header;
+    
+}
 
 #pragma mark - Navigation
 
