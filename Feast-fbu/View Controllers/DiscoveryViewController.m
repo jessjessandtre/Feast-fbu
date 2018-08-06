@@ -343,7 +343,7 @@
     RecipeTableViewCellHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:@"RecipeHeaderCell"];
     
     // 2. Set the various properties
-    headerCell.titleLabel.text = @"Discover Recipes";
+    headerCell.titleLabel.text = @"Recipes For You";
     [headerCell.titleLabel sizeToFit];
 
     return headerCell;
