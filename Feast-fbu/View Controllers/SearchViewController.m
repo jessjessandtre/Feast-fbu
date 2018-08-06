@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *tagCollectionView;
 @property (strong, nonatomic) NSMutableDictionary<NSString*, NSNumber*>* tagDictionary;
 @property (strong, nonatomic) NSArray<NSString*>* orderedTagNamesArray;
+@property (strong, nonatomic) NSString *searchString;
 
 @end
 
@@ -146,6 +147,12 @@
     return self.orderedTagNamesArray.count;
 }
 
+- (IBAction)didTapSearch:(id)sender {
+    self.searchString = self.searchTextField.text;
+    self.searchTextField.text = @"";
+}
+
+
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -164,7 +171,7 @@
      }
      else if ([segue.identifier isEqualToString:@"SearchResultsSegue"]) {
          RecipeResultsViewController *recipeResults = [segue destinationViewController];
-         recipeResults.searchString = self.searchTextField.text;
+         recipeResults.searchString = self.searchString;
      }
  }
 
