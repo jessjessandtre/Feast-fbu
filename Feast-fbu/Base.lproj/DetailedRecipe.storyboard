@@ -201,7 +201,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpH-8L-2yD">
-                                                    <rect key="frame" x="8" y="490" width="302" height="25.5"/>
+                                                    <rect key="frame" x="8" y="490" width="115.5" height="25.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -313,29 +313,27 @@
                                                         </connections>
                                                     </collectionReusableView>
                                                 </collectionView>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojt-YE-lCa">
-                                                    <rect key="frame" x="318" y="490" width="34" height="30"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="dxU-Ls-QZr"/>
-                                                        <constraint firstAttribute="width" constant="34" id="xRk-5B-lfP"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Save"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojt-YE-lCa">
+                                                    <rect key="frame" x="8" y="363" width="30" height="30"/>
+                                                    <state key="normal" image="bookmark-outline"/>
+                                                    <state key="selected" image="bookmark"/>
                                                     <connections>
-                                                        <action selector="saveButtonTapped:" destination="pfW-DH-2ke" eventType="touchUpInside" id="WDg-Ce-sKQ"/>
+                                                        <action selector="saveButtonTapped:" destination="pfW-DH-2ke" eventType="touchUpInside" id="8N2-LJ-aLT"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="Ojt-YE-lCa" secondAttribute="trailing" constant="8" id="1au-AT-z1q"/>
+                                                <constraint firstItem="KrZ-Zb-7IR" firstAttribute="leading" secondItem="Ojt-YE-lCa" secondAttribute="trailing" constant="-38" id="43N-MS-XGM"/>
                                                 <constraint firstItem="KrZ-Zb-7IR" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" id="9cg-Fj-dKQ"/>
                                                 <constraint firstItem="7V3-nK-veD" firstAttribute="top" secondItem="Uhs-1p-EC5" secondAttribute="bottom" constant="8" id="BE1-De-P8b"/>
                                                 <constraint firstAttribute="bottom" secondItem="7V3-nK-veD" secondAttribute="bottom" constant="4" id="E6t-1d-OVq"/>
                                                 <constraint firstItem="dpH-8L-2yD" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" constant="8" id="FS3-yx-FEo"/>
                                                 <constraint firstItem="7V3-nK-veD" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" constant="8" id="MrG-uG-HBI"/>
-                                                <constraint firstItem="Ojt-YE-lCa" firstAttribute="leading" secondItem="dpH-8L-2yD" secondAttribute="trailing" constant="8" id="Mwh-sT-P4N"/>
                                                 <constraint firstItem="J1H-af-fmB" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" id="Nje-Kh-Oeb"/>
+                                                <constraint firstItem="Ojt-YE-lCa" firstAttribute="top" secondItem="KrZ-Zb-7IR" secondAttribute="bottom" constant="-12" id="RHY-29-qiS"/>
                                                 <constraint firstItem="R5F-aO-9jU" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" constant="8" id="SjP-jy-s86"/>
                                                 <constraint firstAttribute="trailing" secondItem="J1H-af-fmB" secondAttribute="trailing" id="T6r-Sv-rNT"/>
+                                                <constraint firstItem="J1H-af-fmB" firstAttribute="top" secondItem="Ojt-YE-lCa" secondAttribute="bottom" constant="-16" id="TAP-CI-b3S"/>
                                                 <constraint firstItem="G7N-vx-3bo" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" constant="8" id="Yls-XD-cHH"/>
                                                 <constraint firstAttribute="trailing" secondItem="KrZ-Zb-7IR" secondAttribute="trailing" id="b2n-qr-unn"/>
                                                 <constraint firstItem="G7N-vx-3bo" firstAttribute="top" secondItem="dpH-8L-2yD" secondAttribute="bottom" constant="8" id="bDu-Ym-fBr"/>
@@ -343,13 +341,13 @@
                                                 <constraint firstItem="R5F-aO-9jU" firstAttribute="top" secondItem="Ffb-aV-BAK" secondAttribute="bottom" constant="8" id="edQ-sH-DbN"/>
                                                 <constraint firstItem="Uhs-1p-EC5" firstAttribute="top" secondItem="R5F-aO-9jU" secondAttribute="bottom" constant="12" id="egQ-DE-jzq"/>
                                                 <constraint firstItem="KrZ-Zb-7IR" firstAttribute="top" secondItem="nzm-ia-Qek" secondAttribute="top" id="ejg-8N-Xey"/>
+                                                <constraint firstItem="Ojt-YE-lCa" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" constant="8" id="gi6-jC-2dh"/>
                                                 <constraint firstItem="Ffb-aV-BAK" firstAttribute="top" secondItem="G7N-vx-3bo" secondAttribute="bottom" constant="12" id="iWv-te-KDQ"/>
                                                 <constraint firstItem="Ffb-aV-BAK" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" constant="8" id="qLZ-Vy-SEf"/>
                                                 <constraint firstItem="Uhs-1p-EC5" firstAttribute="leading" secondItem="nzm-ia-Qek" secondAttribute="leading" constant="8" id="uby-Ki-3P9"/>
                                                 <constraint firstAttribute="trailing" secondItem="R5F-aO-9jU" secondAttribute="trailing" constant="8" id="xDw-wl-uVd"/>
                                                 <constraint firstItem="J1H-af-fmB" firstAttribute="top" secondItem="KrZ-Zb-7IR" secondAttribute="bottom" constant="2" id="z64-Jm-YJd"/>
                                                 <constraint firstAttribute="trailing" secondItem="7V3-nK-veD" secondAttribute="trailing" constant="8" id="zCl-Ty-B6T"/>
-                                                <constraint firstItem="Ojt-YE-lCa" firstAttribute="top" secondItem="J1H-af-fmB" secondAttribute="bottom" constant="8" id="zUG-DL-K3I"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -358,7 +356,7 @@
                                             <outlet property="postCollectionView" destination="J1H-af-fmB" id="tIE-tn-tnV"/>
                                             <outlet property="recipeImageView" destination="KrZ-Zb-7IR" id="BfP-PO-Rz8"/>
                                             <outlet property="recipeTitleLabel" destination="dpH-8L-2yD" id="KNu-ux-vmz"/>
-                                            <outlet property="saveButton" destination="Ojt-YE-lCa" id="Y4M-Qa-I5s"/>
+                                            <outlet property="saveButton" destination="Ojt-YE-lCa" id="gjV-xM-LV9"/>
                                             <outlet property="urlTextView" destination="G7N-vx-3bo" id="UP8-k0-mIF"/>
                                         </connections>
                                     </tableViewCell>
@@ -514,5 +512,7 @@
     </scenes>
     <resources>
         <image name="add-48" width="48" height="48"/>
+        <image name="bookmark" width="24" height="24"/>
+        <image name="bookmark-outline" width="24" height="24"/>
     </resources>
 </document>

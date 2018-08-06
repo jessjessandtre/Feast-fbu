@@ -107,7 +107,6 @@
 }
 
 - (IBAction)postTapped:(id)sender {
-    NSLog(@"adf");
     [self createImagePickerController];
 }
 
