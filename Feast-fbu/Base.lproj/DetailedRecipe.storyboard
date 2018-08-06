@@ -245,21 +245,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J1H-af-fmB">
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="J1H-af-fmB">
                                                     <rect key="frame" x="0.0" y="377" width="375" height="105"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="105" id="2od-hF-VMg"/>
                                                     </constraints>
-                                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NGo-Dq-UDN">
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="NGo-Dq-UDN">
                                                         <size key="itemSize" width="105" height="105"/>
-                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="headerReferenceSize" width="105" height="105"/>
                                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                     </collectionViewFlowLayout>
                                                     <cells>
                                                         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="RecipePostCell" reuseIdentifier="PostCollectionViewCell" id="E1L-lP-rFU" customClass="PostCollectionViewCell">
-                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                            <rect key="frame" x="105" y="0.0" width="105" height="105"/>
                                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                                 <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
@@ -292,6 +293,25 @@
                                                             </connections>
                                                         </collectionViewCell>
                                                     </cells>
+                                                    <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="AddPostCollectionViewCell" id="erh-5E-Xej" customClass="AddPostCollectionViewCell">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="105"/>
+                                                        <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vok-zj-goK">
+                                                                <rect key="frame" x="16" y="0.0" width="73" height="105"/>
+                                                                <state key="normal" image="add-48"/>
+                                                            </button>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstAttribute="bottomMargin" secondItem="Vok-zj-goK" secondAttribute="bottom" id="Hks-jL-u77"/>
+                                                            <constraint firstAttribute="trailingMargin" secondItem="Vok-zj-goK" secondAttribute="trailing" id="LYw-dg-SAf"/>
+                                                            <constraint firstItem="Vok-zj-goK" firstAttribute="leading" secondItem="erh-5E-Xej" secondAttribute="leadingMargin" id="nHo-Lc-RcP"/>
+                                                            <constraint firstItem="Vok-zj-goK" firstAttribute="top" secondItem="erh-5E-Xej" secondAttribute="topMargin" id="wQs-p5-6Bd"/>
+                                                        </constraints>
+                                                    </collectionReusableView>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="w6i-xO-bCu" appends="YES" id="QPz-PA-mcc"/>
+                                                    </connections>
                                                 </collectionView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojt-YE-lCa">
                                                     <rect key="frame" x="318" y="490" width="34" height="30"/>
@@ -354,13 +374,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="10b-11-xCi"/>
                     </view>
-                    <navigationItem key="navigationItem" id="GZm-ew-b8O">
-                        <barButtonItem key="rightBarButtonItem" title="Post" id="dH4-F2-kFZ">
-                            <connections>
-                                <action selector="postButtonTapped:" destination="pfW-DH-2ke" id="n9M-gV-AQi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="GZm-ew-b8O"/>
                     <size key="freeformSize" width="375" height="800"/>
                     <connections>
                         <outlet property="recipeTableView" destination="yNn-tf-86I" id="WbS-Zp-IGh"/>
@@ -368,6 +382,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBf-Xw-ph0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="w6i-xO-bCu">
+                    <connections>
+                        <action selector="postTapped:" destination="pfW-DH-2ke" id="jpB-GJ-oUU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="864.79999999999995" y="73.763118440779621"/>
         </scene>
@@ -493,4 +512,7 @@
             <point key="canvasLocation" x="-74.400000000000006" y="73.313343328335833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="add-48" width="48" height="48"/>
+    </resources>
 </document>
