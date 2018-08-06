@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Tag.h"
 
 @interface TagCollectionViewCell : UICollectionViewCell
 
-@property (weak, nonatomic) IBOutlet UILabel *tagLabel;
-@property (strong, nonatomic) Tag* tag;
+@property (strong, nonatomic) NSString* tagName;
+@property (strong, nonatomic) IBOutlet UILabel *tagLabel;
+
 @end

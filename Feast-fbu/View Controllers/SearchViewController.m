@@ -36,6 +36,13 @@
     self.tagCollectionView.delegate = self;
     self.tagCollectionView.dataSource = self;
     
+    UICollectionViewFlowLayout *layout =(UICollectionViewFlowLayout *) self.tagCollectionView.collectionViewLayout;
+    
+    layout.estimatedItemSize = CGSizeMake(1.f, 1.f);
+    layout.minimumInteritemSpacing = 0;
+    layout.minimumLineSpacing = 10;
+    layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
     CourseType *mainDish = [[CourseType alloc ] init];
     mainDish.name = @"main";
     mainDish.image = [UIImage imageNamed:@"main"];
@@ -99,6 +106,7 @@
                 }
             }];
             NSLog(@"tag array: %@", self.orderedTagNamesArray);
+            [self.tagCollectionView reloadData];
         }
         else {
             NSLog(@"error getting tags: %@", error.localizedDescription);

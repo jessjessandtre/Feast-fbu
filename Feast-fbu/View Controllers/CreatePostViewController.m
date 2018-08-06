@@ -79,7 +79,8 @@
 
 - (IBAction)didTapAddTag:(id)sender {
     PFObject *tagActivity = [PFObject objectWithClassName:@"Tag"];
-    [tagActivity setObject:[self.tagTextField.text lowercaseString] forKey:@"name"];
+    NSString* name = self.tagTextField.text;
+    [tagActivity setObject:[name lowercaseString] forKey:@"name"];
     [tagActivity setObject:self.recipe forKey:@"recipe"];
     [tagActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {

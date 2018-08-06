@@ -10,4 +10,16 @@
 
 @implementation TagCollectionViewCell
 
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.contentView.translatesAutoresizingMaskIntoConstraints = NO;
+
+}
+
+- (void) setTagName:(NSString *)tagName {
+    _tagName = tagName;
+    
+    self.tagLabel.text = tagName;
+    NSLog(@"tag label %@", self.tagLabel.text);
+}
 @end

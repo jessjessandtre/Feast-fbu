@@ -65,7 +65,7 @@
     [self.recipeTableView setShowsVerticalScrollIndicator:NO];
     [self.friendsCollectionView setShowsHorizontalScrollIndicator:NO];
     
-    UICollectionViewFlowLayout *layout = self.friendsCollectionView.collectionViewLayout;
+    UICollectionViewFlowLayout *layout =(UICollectionViewFlowLayout *) self.friendsCollectionView.collectionViewLayout;
     
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 20;
