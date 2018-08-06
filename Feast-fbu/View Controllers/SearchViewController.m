@@ -136,6 +136,9 @@
     return self.orderedTagNamesArray.count;
 }
 
+- (IBAction)didTapScreen:(id)sender {
+    [self.view endEditing:YES];
+}
 
  #pragma mark - Navigation
  
