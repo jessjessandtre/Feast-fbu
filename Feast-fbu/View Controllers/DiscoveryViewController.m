@@ -21,6 +21,7 @@
 #import "PostCollectionViewCell.h"
 #import "Tag.h"
 #import "AutofillResultCellTableViewCell.h"
+#import "Follow.h"
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
@@ -118,11 +119,16 @@
 }
 
 - (void)fetchFriendsPosts {
+    PFQuery *followerQuery = [Follow query];
+    [followerQuery includeKey:@"toUser"];
+    [followerQuery whereKey:@"fromUser" equalTo:[PFUser currentUser]];
+    
     PFQuery *postQuery = [Post query];
     [postQuery includeKey:@"user"];
     [postQuery includeKey:@"recipe"];
     [postQuery includeKey:@"createdAt"];
     [postQuery orderByDescending:@"createdAt"];
+    [postQuery whereKey:@"user" matchesKey:@"toUser" inQuery:followerQuery];
     postQuery.limit = 20;
     
     [postQuery findObjectsInBackgroundWithBlock:^(NSArray<Post *> * _Nullable posts, NSError * _Nullable error) {
@@ -343,7 +349,7 @@
     RecipeTableViewCellHeaderCell *headerCell = [tableView dequeueReusableCellWithIdentifier:@"RecipeHeaderCell"];
     
     // 2. Set the various properties
-    headerCell.titleLabel.text = @"Discover Recipes";
+    headerCell.titleLabel.text = @"Recipes For You";
     [headerCell.titleLabel sizeToFit];
 
     return headerCell;
