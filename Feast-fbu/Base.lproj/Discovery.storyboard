@@ -26,11 +26,11 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <view key="tableHeaderView" contentMode="scaleToFill" misplaced="YES" id="m6Q-bu-hab">
-                            <rect key="frame" x="0.0" y="0.0" width="375" height="269"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="216"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-l5-ZI1">
-                                    <rect key="frame" x="0.0" y="101" width="375" height="232"/>
+                                    <rect key="frame" x="0.0" y="49" width="375" height="284"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Et3-GD-9Wz">
                                         <size key="itemSize" width="150" height="150"/>
@@ -75,15 +75,8 @@
                                         </collectionViewCell>
                                     </cells>
                                 </collectionView>
-                                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="yEf-Ky-aeq">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
-                                    <constraints>
-                                        <constraint firstAttribute="height" constant="56" id="uB7-eo-PXO"/>
-                                    </constraints>
-                                    <textInputTraits key="textInputTraits"/>
-                                </searchBar>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-JN-QG1">
-                                    <rect key="frame" x="14" y="64" width="167" height="29"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cIH-JN-QG1">
+                                    <rect key="frame" x="12" y="12" width="167" height="29"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="29" id="6ym-N1-U9a"/>
                                         <constraint firstAttribute="width" constant="167" id="HaM-aH-ChN"/>
@@ -95,20 +88,17 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstItem="yEf-Ky-aeq" firstAttribute="top" secondItem="m6Q-bu-hab" secondAttribute="top" id="98p-C4-qn2"/>
-                                <constraint firstAttribute="trailing" secondItem="yEf-Ky-aeq" secondAttribute="trailing" id="SA9-eb-vRz"/>
+                                <constraint firstItem="cIH-JN-QG1" firstAttribute="top" secondItem="m6Q-bu-hab" secondAttribute="top" constant="12" id="CP5-jM-4Ez"/>
                                 <constraint firstAttribute="trailing" secondItem="jCL-l5-ZI1" secondAttribute="trailing" id="UNJ-xt-LzX"/>
                                 <constraint firstItem="jCL-l5-ZI1" firstAttribute="top" secondItem="cIH-JN-QG1" secondAttribute="bottom" constant="8" id="jZr-nG-4xO"/>
-                                <constraint firstItem="cIH-JN-QG1" firstAttribute="top" secondItem="yEf-Ky-aeq" secondAttribute="bottom" constant="8" id="krS-Y4-xDZ"/>
                                 <constraint firstAttribute="bottom" secondItem="jCL-l5-ZI1" secondAttribute="bottom" id="pDD-k4-JXX"/>
-                                <constraint firstItem="yEf-Ky-aeq" firstAttribute="leading" secondItem="m6Q-bu-hab" secondAttribute="leading" id="rhD-1b-rxO"/>
                                 <constraint firstItem="jCL-l5-ZI1" firstAttribute="leading" secondItem="m6Q-bu-hab" secondAttribute="leading" id="tmM-fG-1oC"/>
                                 <constraint firstItem="cIH-JN-QG1" firstAttribute="leading" secondItem="m6Q-bu-hab" secondAttribute="leading" constant="12" id="xmu-f6-JHh"/>
                             </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RecipeHeaderCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeHeaderCell" rowHeight="68" id="223-Ro-m55" customClass="RecipeTableViewCellHeaderCell">
-                                <rect key="frame" x="0.0" y="324.5" width="375" height="68"/>
+                                <rect key="frame" x="0.0" y="271.5" width="375" height="68"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="223-Ro-m55" id="Sty-jm-ESr">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="67.5"/>
@@ -128,7 +118,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="RecipeCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeCell" rowHeight="418" id="ncZ-9s-r9Q" customClass="RecipeTableViewCell">
-                                <rect key="frame" x="0.0" y="392.5" width="375" height="418"/>
+                                <rect key="frame" x="0.0" y="339.5" width="375" height="418"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ncZ-9s-r9Q" id="MTh-9Y-eGZ">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="417.5"/>
@@ -180,7 +170,6 @@
                     <connections>
                         <outlet property="friendsCollectionView" destination="jCL-l5-ZI1" id="wdF-YY-UYf"/>
                         <outlet property="recipeTableView" destination="pCf-6T-kq9" id="8lv-0w-5hJ"/>
-                        <outlet property="searchBar" destination="yEf-Ky-aeq" id="xdU-X0-9EQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EWs-XG-Grw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -285,7 +274,7 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.96470588239999999" green="0.0039215686269999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.74901960784313726" green="0.0039215686274509803" blue="0.0039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

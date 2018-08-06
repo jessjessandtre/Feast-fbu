@@ -39,6 +39,7 @@
     
     self.recipeTitleLabel.hidden = NO;
     self.recipeTitleLabel.text = self.recipe.name;
+    
 }
 
 @end
