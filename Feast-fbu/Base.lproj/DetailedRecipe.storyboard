@@ -308,10 +308,10 @@
                                                             <constraint firstItem="Vok-zj-goK" firstAttribute="leading" secondItem="erh-5E-Xej" secondAttribute="leadingMargin" id="nHo-Lc-RcP"/>
                                                             <constraint firstItem="Vok-zj-goK" firstAttribute="top" secondItem="erh-5E-Xej" secondAttribute="topMargin" id="wQs-p5-6Bd"/>
                                                         </constraints>
+                                                        <connections>
+                                                            <outletCollection property="gestureRecognizers" destination="w6i-xO-bCu" appends="YES" id="t9a-Bp-JHc"/>
+                                                        </connections>
                                                     </collectionReusableView>
-                                                    <connections>
-                                                        <outletCollection property="gestureRecognizers" destination="w6i-xO-bCu" appends="YES" id="QPz-PA-mcc"/>
-                                                    </connections>
                                                 </collectionView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojt-YE-lCa">
                                                     <rect key="frame" x="318" y="490" width="34" height="30"/>
