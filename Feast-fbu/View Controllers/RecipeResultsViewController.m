@@ -29,6 +29,7 @@
     // Do any additional setup after loading the view.
     NSLog(@"coursetype %@", self.courseType );
     NSLog(@"tagname %@", self.tagName);
+    NSLog(@"searchstring %@", self.searchString);
     [SVProgressHUD show];
     [self fetchRecipes];
 }
@@ -68,7 +69,22 @@
                 NSLog(@"error finding recipe results: %@", error.localizedDescription);
             }
         }];
+    }
+    else if (self.searchString) {
+        PFQuery *searchQuery = [PFQuery queryWithClassName:@"Recipe"];
+        [searchQuery whereKey:@"name" containsString:self.searchString];
+        searchQuery.limit = 20;
         
+        [searchQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+            [SVProgressHUD dismiss];
+            if (objects){
+                self.recipes = objects;
+                [self.tableView reloadData];
+            }
+            else {
+                NSLog(@"error finding recipe results: %@", error.localizedDescription);
+            }
+        }];
     }
 }
 

@@ -13,4 +13,6 @@
 
 @property (strong, nonatomic) CourseType* courseType;
 @property (strong, nonatomic) NSString* tagName;
+@property (strong, nonatomic) NSString *searchString;
+
 @end

@@ -144,7 +144,6 @@
     return self.orderedTagNamesArray.count;
 }
 
-
  #pragma mark - Navigation
  
  // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -160,6 +159,10 @@
          RecipeResultsViewController* recipeResults = [segue destinationViewController];
          TagCollectionViewCell* cell = (TagCollectionViewCell*)sender;
          recipeResults.tagName = cell.tagName;
+     }
+     else if ([segue.identifier isEqualToString:@"SearchResultsSegue"]) {
+         RecipeResultsViewController *recipeResults = [segue destinationViewController];
+         recipeResults.searchString = self.searchTextField.text;
      }
  }
 
