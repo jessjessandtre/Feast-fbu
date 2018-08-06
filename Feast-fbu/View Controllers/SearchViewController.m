@@ -36,6 +36,8 @@
     self.tagCollectionView.delegate = self;
     self.tagCollectionView.dataSource = self;
     
+    self.navigationItem.title = @"Search";
+    
     UICollectionViewFlowLayout *layout =(UICollectionViewFlowLayout *) self.tagCollectionView.collectionViewLayout;
     
     layout.estimatedItemSize = CGSizeMake(1.f, 1.f);
