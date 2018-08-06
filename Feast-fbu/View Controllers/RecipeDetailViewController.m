@@ -18,7 +18,7 @@
 @interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *recipeTableView;
-@property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
+//@property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
 @property (strong, nonatomic) NSArray *posts;
 
 @end
@@ -30,19 +30,19 @@
     // Do any additional setup after loading the view.
     self.recipeTableView.delegate = self;
     self.recipeTableView.dataSource = self;
-    self.postCollectionView.delegate = self;
-    self.postCollectionView.dataSource = self;
+    //self.postCollectionView.delegate = self;
+    //self.postCollectionView.dataSource = self;
     
     self.navigationItem.title = self.recipe.name; 
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"RecipeSaveNotification" object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"NewPostNotification" object:nil];
     
-    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*) self.postCollectionView.collectionViewLayout;
-    
-    collectionViewLayout.minimumInteritemSpacing = 0;
-    collectionViewLayout.minimumLineSpacing = 2;
-    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+//    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*) self.postCollectionView.collectionViewLayout;
+//
+//    collectionViewLayout.minimumInteritemSpacing = 0;
+//    collectionViewLayout.minimumLineSpacing = 2;
+//    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
     [self fetchPosts];
 }
@@ -60,7 +60,8 @@
         if (posts != nil) {
             self.posts = posts;
             NSLog(@"%@", posts);
-            [self.postCollectionView reloadData];
+            //[self.postCollectionView reloadData];
+            [self.recipeTableView reloadData];
         } else {
             NSLog(@"Error%@", error.localizedDescription);
         }
@@ -144,6 +145,9 @@
     [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
     cell.recipe = recipe;
     [cell setRecipe];
+    cell.postCollectionView.dataSource = self;
+    cell.postCollectionView.delegate = self;
+    [cell.postCollectionView reloadData];
     return cell;
 }
     

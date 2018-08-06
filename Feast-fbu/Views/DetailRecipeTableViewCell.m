@@ -16,6 +16,11 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*) self.postCollectionView.collectionViewLayout;
+    
+    collectionViewLayout.minimumInteritemSpacing = 0;
+    collectionViewLayout.minimumLineSpacing = 2;
+    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
