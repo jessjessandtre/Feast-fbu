@@ -71,8 +71,7 @@
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 20;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-    
-//    CGFloat postsPerLine = self.pos;
+
     
     [SVProgressHUD show];
     
