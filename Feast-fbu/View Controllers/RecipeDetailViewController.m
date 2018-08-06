@@ -35,12 +35,10 @@
     
     self.navigationItem.title = self.recipe.name; 
     
-    [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(recipeSavedNotification:)
-                                                 name:@"RecipeSaveNotification"
-                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"RecipeSaveNotification" object:nil];
+     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"NewPostNotification" object:nil];
     
-    UICollectionViewFlowLayout *collectionViewLayout = self.postCollectionView.collectionViewLayout;
+    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*) self.postCollectionView.collectionViewLayout;
     
     collectionViewLayout.minimumInteritemSpacing = 0;
     collectionViewLayout.minimumLineSpacing = 2;
@@ -69,15 +67,16 @@
     }];
 }
 
-- (void) recipeSavedNotification: (NSNotification *) notification {
+- (void) recieveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
         NSLog (@"Successfully received the recipe save notification!");
         DetailRecipeTableViewCell* cell = [self.recipeTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
         [cell updateSaveButton];
+    } else if ([[notification name] isEqualToString:@"NewPostNotification"]) {
+        NSLog (@"Successfully received the new post notification!");
+        [self fetchPosts];
     }
 }
-
-
 
 - (IBAction)saveButtonTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;

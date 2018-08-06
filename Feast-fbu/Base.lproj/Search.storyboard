@@ -150,9 +150,6 @@
                             <constraint firstAttribute="bottom" secondItem="Tz3-rz-6Ha" secondAttribute="bottom" id="hMe-hb-BAd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dgv-4u-bvS"/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="xB8-5O-PeF" appends="YES" id="LEq-RA-LOG"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="f7Z-Hu-pNQ"/>
                     <connections>
@@ -163,11 +160,6 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubj-Ig-1YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="xB8-5O-PeF">
-                    <connections>
-                        <action selector="didTapScreen:" destination="s3o-d0-1nP" id="izJ-ry-t7V"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="780" y="-83.208395802098963"/>
         </scene>

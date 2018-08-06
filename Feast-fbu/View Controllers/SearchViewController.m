@@ -43,6 +43,8 @@
     layout.minimumLineSpacing = 10;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(newTagNotification:)  name:@"NewTagNotification" object:nil];
+    
     CourseType *mainDish = [[CourseType alloc ] init];
     mainDish.name = @"main";
     mainDish.image = [UIImage imageNamed:@"main"];
@@ -73,6 +75,12 @@
     [self getTags];
 }
 
+- (void)newTagNotification:(NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"NewTagNotification"]) {
+        NSLog (@"Successfully received the new tag notification!");
+        [self getTags];
+    }
+}
 - (void) getTags {
     PFQuery* query = [PFQuery queryWithClassName:@"Tag"];
     self.tagDictionary = [[NSMutableDictionary alloc] init];
@@ -136,9 +144,6 @@
     return self.orderedTagNamesArray.count;
 }
 
-- (IBAction)didTapScreen:(id)sender {
-    [self.view endEditing:YES];
-}
 
  #pragma mark - Navigation
  
