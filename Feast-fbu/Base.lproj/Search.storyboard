@@ -20,17 +20,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tz3-rz-6Ha">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="81" estimatedRowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Tz3-rz-6Ha">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="pF2-t8-o1Y">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="54"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="73"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Search recipe name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QI1-Gq-cOr">
-                                            <rect key="frame" x="12" y="12" width="313" height="30"/>
+                                            <rect key="frame" x="12" y="17" width="313" height="51"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="30" id="PyN-66-aY0"/>
+                                                <constraint firstAttribute="height" constant="51" id="PyN-66-aY0"/>
                                             </constraints>
                                             <nil key="textColor"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -43,7 +43,7 @@
                                                 <constraint firstAttribute="width" constant="48" id="kY9-Si-YU7"/>
                                                 <constraint firstAttribute="width" secondItem="JkB-dq-l1B" secondAttribute="height" multiplier="1:1" id="s28-fJ-7L8"/>
                                             </constraints>
-                                            <state key="normal" title="Search" image="search (1)"/>
+                                            <state key="normal" title="Search" image="search"/>
                                             <connections>
                                                 <action selector="didTapSearch:" destination="s3o-d0-1nP" eventType="touchUpInside" id="Jz9-MX-d63"/>
                                                 <segue destination="4K6-xF-A9h" kind="show" identifier="SearchResultsSegue" id="Yyu-Fe-nHY"/>
@@ -51,7 +51,7 @@
                                         </button>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="QI1-Gq-cOr" firstAttribute="top" secondItem="pF2-t8-o1Y" secondAttribute="top" constant="12" id="0iq-kQ-nxV"/>
+                                        <constraint firstItem="QI1-Gq-cOr" firstAttribute="top" secondItem="pF2-t8-o1Y" secondAttribute="top" constant="17" id="0iq-kQ-nxV"/>
                                         <constraint firstItem="JkB-dq-l1B" firstAttribute="top" secondItem="pF2-t8-o1Y" secondAttribute="top" constant="12" id="bhf-XN-kfm"/>
                                         <constraint firstItem="JkB-dq-l1B" firstAttribute="leading" secondItem="QI1-Gq-cOr" secondAttribute="trailing" constant="8" id="kEX-lX-gTg"/>
                                         <constraint firstItem="QI1-Gq-cOr" firstAttribute="leading" secondItem="pF2-t8-o1Y" secondAttribute="leading" constant="12" id="p5A-SS-U2T"/>
@@ -59,7 +59,7 @@
                                     </constraints>
                                 </view>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="75l-hh-7aQ">
-                                    <rect key="frame" x="0.0" y="175" width="375" height="25"/>
+                                    <rect key="frame" x="0.0" y="182" width="375" height="25"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ze7-pc-CyS">
@@ -113,18 +113,18 @@
                                     </constraints>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseTypeCell" rowHeight="93" id="QEE-8G-4p5" customClass="CourseTypeTableViewCell">
-                                        <rect key="frame" x="0.0" y="82" width="375" height="93"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CourseTypeCell" rowHeight="81" id="QEE-8G-4p5" customClass="CourseTypeTableViewCell">
+                                        <rect key="frame" x="0.0" y="101" width="375" height="81"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QEE-8G-4p5" id="fFx-KT-fbM">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="80.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7aD-aS-U1Q">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="93"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7aD-aS-U1Q">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="course type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjx-So-Ltj">
-                                                    <rect key="frame" x="23" y="36" width="90.5" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="course type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zjx-So-Ltj">
+                                                    <rect key="frame" x="23" y="29" width="90.5" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -134,9 +134,9 @@
                                                 <constraint firstItem="7aD-aS-U1Q" firstAttribute="leading" secondItem="fFx-KT-fbM" secondAttribute="leading" id="0cR-Uh-7sn"/>
                                                 <constraint firstItem="7aD-aS-U1Q" firstAttribute="top" secondItem="fFx-KT-fbM" secondAttribute="top" id="TtJ-Jn-Ae5"/>
                                                 <constraint firstAttribute="trailing" secondItem="7aD-aS-U1Q" secondAttribute="trailing" id="Uzp-qY-Xjl"/>
-                                                <constraint firstAttribute="bottom" secondItem="7aD-aS-U1Q" secondAttribute="bottom" id="Vyk-7x-ppK"/>
+                                                <constraint firstAttribute="bottom" secondItem="7aD-aS-U1Q" secondAttribute="bottom" constant="5" id="Vyk-7x-ppK"/>
                                                 <constraint firstItem="zjx-So-Ltj" firstAttribute="leading" secondItem="fFx-KT-fbM" secondAttribute="leadingMargin" constant="8" id="WxH-zz-mxV"/>
-                                                <constraint firstItem="zjx-So-Ltj" firstAttribute="centerY" secondItem="fFx-KT-fbM" secondAttribute="centerY" id="trZ-uG-mgc"/>
+                                                <constraint firstItem="zjx-So-Ltj" firstAttribute="centerY" secondItem="fFx-KT-fbM" secondAttribute="centerY" constant="-5.75" id="trZ-uG-mgc"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -209,7 +209,7 @@
     </scenes>
     <resources>
         <image name="001-search-1" width="32" height="32"/>
-        <image name="search (1)" width="256" height="256"/>
+        <image name="search" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Fg1-Ex-xFV"/>

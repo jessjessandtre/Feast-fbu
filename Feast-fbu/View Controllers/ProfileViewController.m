@@ -109,7 +109,11 @@
 }
 
 - (void) refreshData {
+    [self getNumberFollowing];
+    [self getNumberFollowers];
+    
     [self fetchPosts];
+    
     self.usernameLabel.text = [PFUser currentUser].username;
     
     if (self.user[@"profileImage"] == nil) {
@@ -119,9 +123,6 @@
         self.profileImageView.file = self.user[@"profileImage"];
         [self.profileImageView loadInBackground];
     }
-    
-    [self getNumberFollowing];
-    [self getNumberFollowers];
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
