@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *instructionsLabel;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (strong, nonatomic) IBOutlet UITextView *urlTextView;
+@property (strong, nonatomic) IBOutlet UICollectionView *postCollectionView;
 
 @property (strong, nonatomic) Recipe *recipe;
 
