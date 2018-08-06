@@ -307,7 +307,7 @@
         <!--SavedRecipes-->
         <scene sceneID="gGc-oR-2Q8">
             <objects>
-                <viewControllerPlaceholder storyboardName="SavedRecipes" id="5Nb-t7-Fd0" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="SavedRecipes" referencedIdentifier="SavedRecipes" id="5Nb-t7-Fd0" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bcj-n6-J7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5680" y="1141"/>
