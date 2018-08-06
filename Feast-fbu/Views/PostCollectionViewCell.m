@@ -27,7 +27,6 @@
     self.profileImageView.clipsToBounds = true;
     self.profileImageView.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
     self.profileImageView.layer.borderWidth = 1.5;
-
     
 }
 

@@ -26,7 +26,7 @@
     self.recipesTableView.delegate = self;
     self.recipesTableView.dataSource = self;
     
-    self.navigationItem.title = @"Leaderboard";
+    self.navigationItem.title = @"Popular";
     
     [self.recipesTableView setShowsVerticalScrollIndicator:NO];
     

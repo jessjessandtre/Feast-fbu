@@ -315,7 +315,7 @@
         <!--DetailedPost-->
         <scene sceneID="1zY-aI-6on">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailedPost" id="e9Y-Rx-IOZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPost" id="e9Y-Rx-IOZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZl-yJ-Ovt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5737" y="1288"/>
@@ -347,7 +347,7 @@
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <color key="barTintColor" red="0.96470588239999999" green="0.0039215686269999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.74901960779999999" green="0.0039215686269999999" blue="0.0039215686269999999" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>

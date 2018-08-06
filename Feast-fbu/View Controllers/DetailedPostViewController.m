@@ -130,7 +130,7 @@
 
     [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
         if (likes != -1) {
-            self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
+            self.numLikesLabel.text = [NSString stringWithFormat:@"%d%@", likes, @" likes"];
         }
     }];
 }
@@ -158,7 +158,7 @@
 - (void)updateNumLikes {
     [Like numberOfLikesForPost:self.post withCompletion:^(int likes) {
         if (likes != -1) {
-            self.numLikesLabel.text = [NSString stringWithFormat:@"%d", likes];
+            self.numLikesLabel.text = [NSString stringWithFormat:@"%d%@", likes, @" likes"];
             [Post updateLikes:likes ForPost:self.post];
         }
     }];
