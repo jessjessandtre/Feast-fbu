@@ -90,6 +90,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RecipeResultsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
+    cell.recipeImageView.image = nil; 
     cell.recipe = self.recipes[indexPath.row];
     return cell;
 }
