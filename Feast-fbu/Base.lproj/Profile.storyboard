@@ -315,7 +315,7 @@
         <!--DetailedPost-->
         <scene sceneID="1zY-aI-6on">
             <objects>
-                <viewControllerPlaceholder storyboardName="DetailedPost" id="e9Y-Rx-IOZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="DetailedPost" referencedIdentifier="DetailedPost" id="e9Y-Rx-IOZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FZl-yJ-Ovt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5737" y="1288"/>
