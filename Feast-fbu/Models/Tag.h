@@ -15,4 +15,7 @@
 @property (strong, nonatomic) Recipe *recipe;
 @property (strong, nonatomic) NSString *name;
 
++ (void)createTag:(NSString*)tagName forRecipe:(Recipe*)recipe withCompletion:(void(^)(Boolean succeeded))completion;
+
++ (void)tagExists:(NSString*)tagName forRecipe:(Recipe*)recipe withCompletion:(void(^)(Boolean exists))completion;
 @end
