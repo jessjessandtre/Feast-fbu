@@ -24,7 +24,7 @@
 #import "Follow.h"
 #import "InfiniteScrollActivityView.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSMutableArray *recipes;
@@ -56,6 +56,8 @@
     self.recipeTableView.dataSource = self;
     self.friendsCollectionView.dataSource = self;
     self.friendsCollectionView.delegate = self;
+    
+    self.tabBarController.delegate = self;
     
     //self.searchBar.delegate = self;
     
@@ -383,6 +385,17 @@
     }
 }
 
+
+- (void)tabBarController:(UITabBarController *)tabBarController
+didSelectViewController:(UIViewController *)viewController
+{
+    static UIViewController *previousController = nil;
+    if (previousController == viewController) {
+        // the same tab was tapped a second time
+        [self.recipeTableView setContentOffset:CGPointMake(0, 0) animated:YES];
+    }
+    previousController = viewController;
+}
 
 
 #pragma mark - Navigation
