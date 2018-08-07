@@ -160,7 +160,7 @@
         <!--Profile View Controller-->
         <scene sceneID="rnV-22-md2">
             <objects>
-                <viewController id="bbL-O1-Hnz" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Profile2" id="bbL-O1-Hnz" customClass="ProfileViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="rkC-WJ-6eR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
