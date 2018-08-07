@@ -22,14 +22,17 @@
 #import "Tag.h"
 #import "AutofillResultCellTableViewCell.h"
 #import "Follow.h"
+#import "InfiniteScrollActivityView.h"
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
-@property (strong, nonatomic) NSArray *recipes;
+@property (strong, nonatomic) NSMutableArray *recipes;
 @property (nonatomic, strong) NSArray *friendsPosts;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
 @property (weak, nonatomic) IBOutlet UICollectionView *friendsCollectionView;
+@property (assign, nonatomic) BOOL dataIsLoading;
+@property InfiniteScrollActivityView *loadingMoreView;
 
 @end
 
@@ -65,7 +68,16 @@
     layout.minimumInteritemSpacing = 0;
     layout.minimumLineSpacing = 20;
     layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-
+    
+    // Setting up Infinite Scroll loading indicator
+    CGRect frame = CGRectMake(0, self.recipeTableView.contentSize.height, self.recipeTableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+    self.loadingMoreView = [[InfiniteScrollActivityView alloc] initWithFrame:frame];
+    self.loadingMoreView.hidden = true;
+    [self.recipeTableView addSubview:self.loadingMoreView];
+    
+    UIEdgeInsets insets = self.recipeTableView.contentInset;
+    insets.bottom += InfiniteScrollActivityView.defaultHeight;
+    self.recipeTableView.contentInset = insets;
     
     [SVProgressHUD show];
     
@@ -147,7 +159,7 @@
     [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (recipes) {
-            self.recipes = recipes;
+            self.recipes = [NSMutableArray arrayWithArray:recipes];
             [self.recipeTableView reloadData];
         }
         else {
@@ -160,6 +172,47 @@
         
         NSLog(@"%@", self.recipes[0][@"courseType"]);
     }];
+}
+
+- (void) fetchMoreRecipes {
+    
+    Recipe *lastRecipe = [self.recipes objectAtIndex:self.recipes.count - 1];
+    NSMutableArray *newIndexPaths = [NSMutableArray array];
+    
+    PFQuery *recipeQuery = [Recipe query];
+    [recipeQuery orderByDescending:@"createdAt"];
+    [recipeQuery whereKey:@"createdAt" lessThan:lastRecipe.createdAt];
+    recipeQuery.limit = 5;
+    
+    [recipeQuery findObjectsInBackgroundWithBlock:^(NSArray<Recipe *> * _Nullable recipes, NSError * _Nullable error) {
+        if (recipes) {
+            for (Recipe *i in recipes) {
+                [self.recipes addObject:i];
+                
+                NSIndexPath *newIndexPath = [NSIndexPath indexPathForRow:self.recipes.count-1 inSection:0];
+                [newIndexPaths addObject:newIndexPath];
+            }
+            [self.loadingMoreView stopAnimating];
+            
+            [self.recipeTableView performBatchUpdates:^{
+                [self.recipeTableView insertRowsAtIndexPaths:newIndexPaths withRowAnimation:UITableViewRowAnimationNone];
+            } completion:^(BOOL finished) {
+                if (finished) {
+                    self.dataIsLoading = NO;
+                }
+            }];
+        }
+        else {
+            NSLog(@"%@", error.localizedDescription);
+            [self alertControlWithTitle:@"Error fetching data" andMessage:error.localizedDescription];
+        }
+        
+        [self.recipeTableView reloadData];
+        [self.refreshControl endRefreshing];
+        
+        NSLog(@"%@", self.recipes[0][@"courseType"]);
+    }];
+    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -309,16 +362,26 @@
         // code for after alert controller has finished presenting
     }];
 }
-/*
+
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    if(!self.moreDataLoading) {
+    if(!self.dataIsLoading) {
         int scrollViewContentHeight = self.recipeTableView.contentSize.height;
         int scrollOffsetThreshold = scrollViewContentHeight - self.recipeTableView.bounds.size.height;
         
-        
+        if (scrollView.contentOffset.y > scrollOffsetThreshold && self.recipeTableView.isDragging) {
+            self.dataIsLoading = true;
+            NSLog(@"Data is loading");
+            
+            CGRect frame = CGRectMake(0, self.recipeTableView.contentSize.height, self.recipeTableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight);
+            
+            self.loadingMoreView.frame = frame;
+            [self.loadingMoreView startAnimating];
+            
+            [self fetchMoreRecipes];
+        }
     }
 }
-*/
+
 
 
 #pragma mark - Navigation
