@@ -27,6 +27,8 @@
 @property (strong, nonatomic) IBOutlet UILabel *recipeNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (strong, nonatomic) IBOutlet UILabel *numLikesLabel;
+@property (weak, nonatomic) IBOutlet UIView *likeView;
+@property (weak, nonatomic) IBOutlet UIButton *commentView;
 
 @property (strong, nonatomic) Recipe* recipe;
 
