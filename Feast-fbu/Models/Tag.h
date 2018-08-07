@@ -18,4 +18,5 @@
 + (void)createTag:(NSString*)tagName forRecipe:(Recipe*)recipe withCompletion:(void(^)(Boolean succeeded))completion;
 
 + (void)tagExists:(NSString*)tagName forRecipe:(Recipe*)recipe withCompletion:(void(^)(Boolean exists))completion;
+
 @end

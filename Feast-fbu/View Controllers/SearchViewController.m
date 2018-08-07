@@ -22,7 +22,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *searchTextField;
 @property (strong, nonatomic) IBOutlet UIButton *searchButton;
 @property (strong, nonatomic) IBOutlet UICollectionView *tagCollectionView;
-@property (strong, nonatomic) NSMutableDictionary<NSString*, NSNumber*>* tagDictionary;
 @property (strong, nonatomic) NSArray<NSString*>* orderedTagNamesArray;
 @property (strong, nonatomic) NSString *searchString;
 
@@ -86,24 +85,24 @@
 }
 - (void) getTags {
     PFQuery* query = [PFQuery queryWithClassName:@"Tag"];
-    self.tagDictionary = [[NSMutableDictionary alloc] init];
+    NSMutableDictionary<NSString*, NSNumber*>* tagDictionary = [[NSMutableDictionary alloc] init];
     
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (objects) {
             //NSLog(@"objects %@", objects);
             for (Tag* tag in objects){
-                if ([self.tagDictionary objectForKey:tag.name]){
-                    NSInteger num = [[self.tagDictionary objectForKey:tag.name] integerValue];
+                if ([tagDictionary objectForKey:tag.name]){
+                    NSInteger num = [[tagDictionary objectForKey:tag.name] integerValue];
                     num += 1;
-                    [self.tagDictionary setObject:[NSNumber numberWithInt:num] forKey:tag.name];
+                    [tagDictionary setObject:[NSNumber numberWithInt:num] forKey:tag.name];
                 }
                 else {
-                    [self.tagDictionary setObject:[NSNumber numberWithInt:1] forKey:tag.name];
+                    [tagDictionary setObject:[NSNumber numberWithInt:1] forKey:tag.name];
                 }
             }
             //NSLog(@" dictionary %@",self.tagDictionary);
-            self.orderedTagNamesArray = [self.tagDictionary keysSortedByValueUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
+            self.orderedTagNamesArray = [tagDictionary keysSortedByValueUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
                 NSNumber* left = (NSNumber*)obj1;
                 NSNumber* right = (NSNumber*)obj2;
                 if (left < right){
