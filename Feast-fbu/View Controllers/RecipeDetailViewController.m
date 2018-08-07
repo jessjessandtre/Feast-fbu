@@ -16,6 +16,7 @@
 #import "TagCollectionViewCell.h"
 #import "Tag.h"
 #import "RecipeResultsViewController.h"
+#import "AddTagViewController.h"
 
 @interface RecipeDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -64,6 +65,7 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"RecipeSaveNotification" object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"NewPostNotification" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"NewTagNotification" object:nil];
     
 //    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*) self.postCollectionView.collectionViewLayout;
 //
@@ -153,6 +155,9 @@
     } else if ([[notification name] isEqualToString:@"NewPostNotification"]) {
         NSLog (@"Successfully received the new post notification!");
         [self fetchPosts];
+    } else if ([[notification name] isEqualToString:@"NewTagNotification"]) {
+        NSLog (@"Successfully received the new tag notification!");
+        [self getTags];
     }
 }
 
@@ -189,6 +194,7 @@
 }
 - (IBAction)addTagTapped:(id)sender {
     NSLog(@"add tag");
+    [self performSegueWithIdentifier:@"AddTagSegue2" sender:nil];
 }
 
 - (void)createImagePickerController {
@@ -235,25 +241,7 @@
     
     return newImage;
 }
-/*
-- (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    DetailRecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell"];
-    Recipe *recipe = self.recipe;
-    [cell setSelectionStyle:UITableViewCellSelectionStyleNone];
-    cell.recipe = recipe;
-    [cell setRecipe];
-    cell.postCollectionView.dataSource = self;
-    cell.postCollectionView.delegate = self;
-    cell.tagCollectionView.dataSource = self;
-    cell.tagCollectionView.delegate = self;
-    [cell.postCollectionView reloadData];
-    return cell;
-}
-    
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
-}
-*/
+
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (collectionView == self.postCollectionView){
         PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
@@ -317,6 +305,10 @@
         RecipeResultsViewController* recipeResults = [segue destinationViewController];
         TagCollectionViewCell* cell = (TagCollectionViewCell*)sender;
         recipeResults.tagName = cell.tagName;
+    } else if ([segue.identifier isEqualToString:@"AddTagSegue2"]){
+        UINavigationController *navigationController =[segue destinationViewController];
+        AddTagViewController* addTag = (AddTagViewController*)navigationController.topViewController;
+        addTag.recipe = self.recipe;
     }
 }
 

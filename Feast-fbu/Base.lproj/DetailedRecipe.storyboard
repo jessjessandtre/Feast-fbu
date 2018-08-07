@@ -532,6 +532,7 @@
                         <outlet property="tagCollectionView" destination="QbO-1Z-mBR" id="2w8-4p-ysi"/>
                         <outlet property="urlTextView" destination="G7N-vx-3bo" id="Bkn-V9-R6f"/>
                         <segue destination="wqs-wH-4ct" kind="show" identifier="CreatePostSegue" id="JE8-QT-juO"/>
+                        <segue destination="foB-5t-E55" kind="show" identifier="AddTagSegue2" id="K3M-ou-dcH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="miF-pb-MEe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -588,6 +589,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="71g-Cf-bcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="784.79999999999995" y="72.413793103448285"/>
+        </scene>
+        <!--Add Tag View Controller-->
+        <scene sceneID="KBo-99-AIw">
+            <objects>
+                <viewController storyboardIdentifier="AddTag" id="Gz4-zr-EWq" customClass="AddTagViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bpz-zR-WUT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Write a tag and click &quot;Add&quot;..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jHG-Jp-Ymz">
+                                <rect key="frame" x="16" y="76" width="273" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9DL-Lw-uuO">
+                                <rect key="frame" x="321" y="76" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add"/>
+                                <connections>
+                                    <action selector="didTapAddTag:" destination="Gz4-zr-EWq" eventType="touchUpInside" id="ggU-l4-Uzo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <gestureRecognizers/>
+                        <viewLayoutGuide key="safeArea" id="FUs-Jf-MNz"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="fk4-QK-rZq" appends="YES" id="GMj-Cp-jVH"/>
+                        </connections>
+                    </view>
+                    <navigationItem key="navigationItem" id="F9U-KD-8Xh">
+                        <barButtonItem key="rightBarButtonItem" title="Cancel" id="Eee-he-AFt">
+                            <connections>
+                                <action selector="didTapDone:" destination="Gz4-zr-EWq" id="HFG-Z8-ULZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tagTextField" destination="jHG-Jp-Ymz" id="sJ1-BR-Cys"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z7H-xj-hCC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="fk4-QK-rZq">
+                    <connections>
+                        <action selector="didTapScreen:" destination="Gz4-zr-EWq" id="4fv-Oe-5ad"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3302" y="-796"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Ts-sd-nw9">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="foB-5t-E55" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8eT-qj-tGN">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Gz4-zr-EWq" kind="relationship" relationship="rootViewController" id="neQ-KA-hPj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nbc-6s-JTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2538" y="-809"/>
         </scene>
     </scenes>
     <resources>
