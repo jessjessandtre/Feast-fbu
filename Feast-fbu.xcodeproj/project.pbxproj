@@ -43,6 +43,7 @@
 		29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC2575210131EB00BD6C01 /* DetailViewController.m */; };
 		29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC257B210148EF00BD6C01 /* CreatePostViewController.m */; };
 		29CC258221015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC258021015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m */; };
+		5819420E211A0A8200257497 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5819420D211A0A8200257497 /* InfiniteScrollActivityView.m */; };
 		583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */; };
 		583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38321010E2D00A2C40F /* PopularMealsCell.m */; };
 		587401032106652E000425F3 /* Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 587401022106652E000425F3 /* Follow.m */; };
@@ -153,6 +154,8 @@
 		29CC258121015A7600BD6C01 /* RecipeTableViewCellHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCellHeaderCell.h; sourceTree = "<group>"; };
 		2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5819420C211A0A8200257497 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
+		5819420D211A0A8200257497 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
 		583DD38021010E2D00A2C40F /* PopularMealsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularMealsCell.h; sourceTree = "<group>"; };
 		583DD38121010E2D00A2C40F /* RecipeTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCell.h; sourceTree = "<group>"; };
 		583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipeTableViewCell.m; sourceTree = "<group>"; };
@@ -654,6 +657,7 @@
 				587401182107F969000425F3 /* Comment.m in Sources */,
 				290F36F92106B1FB00A1B704 /* Saved.m in Sources */,
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
+				5819420E211A0A8200257497 /* InfiniteScrollActivityView.m in Sources */,
 				587401032106652E000425F3 /* Follow.m in Sources */,
 				29CC2570210116F900BD6C01 /* Post.m in Sources */,
 				29888859211523AA00557B22 /* RecipeResultsViewController.m in Sources */,

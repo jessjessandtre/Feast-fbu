@@ -34,8 +34,8 @@
     CAGradientLayer *gradientLayer = [CAGradientLayer layer];
     gradientLayer.frame = self.bounds;
     gradientLayer.colors = @[(id)[UIColor clearColor].CGColor, (id)[UIColor grayColor].CGColor];
-    gradientLayer.startPoint = CGPointMake(0.5f, 0.7f);
-    gradientLayer.endPoint = CGPointMake(0.5f, 1.2f);
+    gradientLayer.startPoint = CGPointMake(0.5f, 0.5f);
+    gradientLayer.endPoint = CGPointMake(0.5f, 2.0f);
     [self.recipeImage.layer insertSublayer:gradientLayer atIndex:0];
     
     // self.recipeImage.layer.cornerRadius = self.recipeImage.frame.size.width / 32;
