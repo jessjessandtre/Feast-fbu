@@ -47,30 +47,28 @@
                                                     </connections>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFt-xO-eWZ">
-                                                    <rect key="frame" x="86" y="172" width="274" height="23.5"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                                    <rect key="frame" x="86" y="193" width="36" height="18"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="13"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THI-E5-1ZY">
-                                                    <rect key="frame" x="15" y="158.5" width="63" height="37"/>
+                                                    <rect key="frame" x="15" y="178" width="63" height="37"/>
                                                     <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="27"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" constant="161" id="718-7e-B89"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="BFt-xO-eWZ" secondAttribute="bottom" constant="8" id="GAo-7a-Eyb"/>
+                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="baseline" secondItem="THI-E5-1ZY" secondAttribute="baseline" id="0GF-kn-sPj"/>
+                                                <constraint firstItem="THI-E5-1ZY" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" constant="167" id="0x5-UZ-oGM"/>
                                                 <constraint firstAttribute="trailing" secondItem="ciC-T6-tlX" secondAttribute="trailing" id="HZk-oF-B8y"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="THI-E5-1ZY" secondAttribute="bottom" constant="8" id="J3o-y0-5V0"/>
                                                 <constraint firstItem="ciC-T6-tlX" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leading" id="Lz3-kV-cDc"/>
-                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="leading" secondItem="THI-E5-1ZY" secondAttribute="trailing" constant="8" id="R3d-Zp-5Tw"/>
+                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="leading" secondItem="THI-E5-1ZY" secondAttribute="trailing" constant="8" id="MEO-t1-Czu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="THI-E5-1ZY" secondAttribute="bottom" constant="8" id="ReV-2P-pJh"/>
                                                 <constraint firstItem="ciC-T6-tlX" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="top" id="cba-TT-HXu"/>
-                                                <constraint firstItem="THI-E5-1ZY" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leadingMargin" id="jiK-ho-lYg"/>
-                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="trailing" secondItem="REf-4h-ASS" secondAttribute="trailingMargin" id="lQc-ZS-EXQ"/>
-                                                <constraint firstItem="THI-E5-1ZY" firstAttribute="bottom" secondItem="BFt-xO-eWZ" secondAttribute="bottom" id="oR6-qH-l6n"/>
-                                                <constraint firstAttribute="bottom" secondItem="ciC-T6-tlX" secondAttribute="bottom" constant="8" id="rSe-Tf-joV"/>
+                                                <constraint firstItem="THI-E5-1ZY" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leadingMargin" id="iQg-zX-ZN8"/>
+                                                <constraint firstAttribute="bottom" secondItem="ciC-T6-tlX" secondAttribute="bottom" constant="2" id="rSe-Tf-joV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
