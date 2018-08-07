@@ -13,7 +13,7 @@ target 'Feast-fbu' do
   	pod 'DateTools'
 	pod 'MGSwipeTableCell'
 	pod 'ASHorizontalScrollViewForObjectiveC', '~> 1.3'
-
+	pod 'Toast', '~> 4.0.0'
 
   target 'Feast-fbuTests' do
     inherit! :search_paths

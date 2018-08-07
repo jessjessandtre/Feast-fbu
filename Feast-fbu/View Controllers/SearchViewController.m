@@ -91,7 +91,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
         [SVProgressHUD dismiss];
         if (objects) {
-            NSLog(@"objects %@", objects);
+            //NSLog(@"objects %@", objects);
             for (Tag* tag in objects){
                 if ([self.tagDictionary objectForKey:tag.name]){
                     NSInteger num = [[self.tagDictionary objectForKey:tag.name] integerValue];
@@ -102,7 +102,7 @@
                     [self.tagDictionary setObject:[NSNumber numberWithInt:1] forKey:tag.name];
                 }
             }
-            NSLog(@" dictionary %@",self.tagDictionary);
+            //NSLog(@" dictionary %@",self.tagDictionary);
             self.orderedTagNamesArray = [self.tagDictionary keysSortedByValueUsingComparator:^NSComparisonResult(id  _Nonnull obj1, id  _Nonnull obj2) {
                 NSNumber* left = (NSNumber*)obj1;
                 NSNumber* right = (NSNumber*)obj2;
@@ -116,7 +116,7 @@
                     return NSOrderedSame;
                 }
             }];
-            NSLog(@"tag array: %@", self.orderedTagNamesArray);
+            //NSLog(@"tag array: %@", self.orderedTagNamesArray);
             [self.tagCollectionView reloadData];
         }
         else {

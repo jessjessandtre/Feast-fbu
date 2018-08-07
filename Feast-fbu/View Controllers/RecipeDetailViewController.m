@@ -34,7 +34,7 @@
     //self.postCollectionView.dataSource = self;
     
     self.navigationItem.title = self.recipe.name; 
-    
+
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"RecipeSaveNotification" object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"NewPostNotification" object:nil];
     
