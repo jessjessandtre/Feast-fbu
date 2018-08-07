@@ -9,6 +9,7 @@
 #import "CreatePostViewController.h"
 #import "SVProgressHUD.h"
 #import "DetailViewController.h"
+#import <Toast/Toast.h>
 
 @interface CreatePostViewController () 
 
@@ -85,6 +86,7 @@
     [tagActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         if (succeeded) {
             NSLog(@"added tag");
+            [self.view makeToast:[NSString stringWithFormat:@"Added #%@ to %@!", name, self.recipe.name] duration:2.0 position:CSToastPositionBottom];
             [[NSNotificationCenter defaultCenter]
              postNotificationName:@"NewTagNotification"
              object:nil];
