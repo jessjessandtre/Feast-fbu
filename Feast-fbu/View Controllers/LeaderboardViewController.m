@@ -15,6 +15,7 @@
 
 @property (nonatomic, strong) NSArray *popularRecipes;
 @property (weak, nonatomic) IBOutlet UITableView *recipesTableView;
+@property (strong, nonatomic) UIRefreshControl *refreshControl;
 
 @end
 
@@ -31,8 +32,12 @@
     [self.recipesTableView setShowsVerticalScrollIndicator:NO];
     
     [SVProgressHUD show];
+    
     [self fetchPopularRecipes];
     
+    self.refreshControl = [[UIRefreshControl alloc]init];
+    [self.refreshControl addTarget:self action:@selector(fetchPopularRecipes) forControlEvents:UIControlEventValueChanged];
+    [self.recipesTableView insertSubview:self.refreshControl atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,13 +71,12 @@
             self.popularRecipes = recipes;
             
             [self.recipesTableView reloadData];
+            [self.refreshControl endRefreshing];
         }
         else {
             NSLog(@"%@", error.localizedDescription);
             [self alertControlWithTitle:@"Error fetching data" andMessage:error.localizedDescription];
         }
-        
-        [self.recipesTableView reloadData];
     }];
 }
 
