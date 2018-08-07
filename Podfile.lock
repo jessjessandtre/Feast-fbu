@@ -26,6 +26,7 @@ PODS:
     - Bolts/Tasks (~> 1.3)
     - Parse (~> 1.9)
   - SVProgressHUD (2.2.5)
+  - Toast (4.0.0)
 
 DEPENDENCIES:
   - AFNetworking
@@ -35,6 +36,7 @@ DEPENDENCIES:
   - Parse
   - ParseUI
   - SVProgressHUD
+  - Toast (~> 4.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -46,6 +48,7 @@ SPEC REPOS:
     - Parse
     - ParseUI
     - SVProgressHUD
+    - Toast
 
 SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
@@ -56,7 +59,8 @@ SPEC CHECKSUMS:
   Parse: d3edaf8c7c722cb33cb83ba7821d015ae32d362d
   ParseUI: 2b37a0bc692a3e7666cf0c37b5521dfddd74a1af
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  Toast: 91b396c56ee72a5790816f40d3a94dd357abc196
 
-PODFILE CHECKSUM: 14c57a4c0fcfadff25decd3509fc891972f2b8a6
+PODFILE CHECKSUM: 21fdbcb3975740e3b55e62d1b5a56988f39b5cbe
 
 COCOAPODS: 1.5.3
