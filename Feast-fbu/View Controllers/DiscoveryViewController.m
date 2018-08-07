@@ -34,6 +34,7 @@
 @property (assign, nonatomic) BOOL dataIsLoading;
 @property InfiniteScrollActivityView *loadingMoreView;
 
+
 @end
 
 @implementation DiscoveryViewController
