@@ -22,6 +22,13 @@
     collectionViewLayout.minimumLineSpacing = 2;
     collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
+    UICollectionViewFlowLayout *tagCollectionViewLayout = (UICollectionViewFlowLayout*) self.tagCollectionView.collectionViewLayout;
+    
+    tagCollectionViewLayout.estimatedItemSize = CGSizeMake(1.f, 1.f);
+    tagCollectionViewLayout.minimumInteritemSpacing = 0;
+    tagCollectionViewLayout.minimumLineSpacing = 10;
+    tagCollectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
     self.saveButton.layer.cornerRadius = self.saveButton.frame.size.width / 2;
     
     /*
