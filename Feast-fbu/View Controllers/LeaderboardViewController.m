@@ -45,6 +45,8 @@
     
     Recipe *recipe = self.popularRecipes[indexPath.row];
     [cell setRecipe:recipe];
+    
+    cell.rank.text = [NSString stringWithFormat:@"%@", [NSNumber numberWithInteger:indexPath.row + 1]];
     return cell;
     
 }

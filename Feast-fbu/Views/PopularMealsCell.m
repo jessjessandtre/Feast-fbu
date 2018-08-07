@@ -40,6 +40,7 @@
     
     // self.recipeImage.layer.cornerRadius = self.recipeImage.frame.size.width / 32;
     
+    
     self.recipeName.text = recipe.name;
     
 }

@@ -16,6 +16,8 @@
 
 @property (weak, nonatomic) IBOutlet PFImageView *recipeImage;
 @property (weak, nonatomic) IBOutlet UILabel *recipeName;
+@property (weak, nonatomic) IBOutlet UILabel *rank;
+
 
 
 @end
