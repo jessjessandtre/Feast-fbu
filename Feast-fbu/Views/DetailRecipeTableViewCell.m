@@ -21,6 +21,18 @@
     collectionViewLayout.minimumInteritemSpacing = 0;
     collectionViewLayout.minimumLineSpacing = 2;
     collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    self.saveButton.layer.cornerRadius = self.saveButton.frame.size.width / 2;
+    
+    /*
+    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+    gradientLayer.frame = self.saveButton.bounds;
+    gradientLayer.colors = [NSArray arrayWithObjects:(id)[UIColor whiteColor].CGColor, (id)[UIColor clearColor].CGColor, nil];
+    gradientLayer.startPoint = CGPointMake(0.0f, 1.0f);
+    gradientLayer.endPoint = CGPointMake(1.0f, 1.0f);
+    self.saveButton.layer.mask = gradientLayer;
+    */
+
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
