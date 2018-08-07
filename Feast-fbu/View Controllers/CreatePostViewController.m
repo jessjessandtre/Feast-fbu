@@ -10,6 +10,7 @@
 #import "SVProgressHUD.h"
 #import "DetailViewController.h"
 #import <Toast/Toast.h>
+#import "Tag.h"
 
 @interface CreatePostViewController () 
 
@@ -79,6 +80,29 @@
 }
 
 - (IBAction)didTapAddTag:(id)sender {
+    NSString* tagName = [self.tagTextField.text lowercaseString];
+    
+    [Tag tagExists:tagName forRecipe:self.recipe withCompletion:^(Boolean exists) {
+        if (exists){
+            [self.view makeToast:[NSString stringWithFormat:@"#%@ has already been added to this recipe", tagName] duration:2.0 position:CSToastPositionBottom];
+            self.tagTextField.text = @"";
+
+        } else {
+            [Tag createTag:tagName forRecipe:self.recipe withCompletion:^(Boolean succeeded) {
+                if (succeeded){
+                    [self.view makeToast:[NSString stringWithFormat:@"Added #%@ to %@!", tagName, self.recipe.name] duration:2.0 position:CSToastPositionBottom];
+                    [[NSNotificationCenter defaultCenter]
+                     postNotificationName:@"NewTagNotification"
+                     object:nil];
+                    self.tagTextField.text = @"";
+
+                }
+            }];
+        }
+
+    }];
+    
+    /*
     PFObject *tagActivity = [PFObject objectWithClassName:@"Tag"];
     NSString* name = self.tagTextField.text;
     [tagActivity setObject:[name lowercaseString] forKey:@"name"];
@@ -95,7 +119,8 @@
             NSLog(@"error adding tag %@", error.localizedDescription);
         }
     }];
-    
+     */
+    /*
     if (self.recipe[@"tags"][0] == nil) {
         self.recipe[@"tags"] = [NSMutableArray arrayWithObject:[self.tagTextField.text lowercaseString]];
         NSLog(@"Did initialize array");
@@ -104,6 +129,7 @@
         [self.recipe[@"tags"] addObject:[self.tagTextField.text lowercaseString]];
         NSLog(@"Did add tag");
     }
+    */
 }
 
 

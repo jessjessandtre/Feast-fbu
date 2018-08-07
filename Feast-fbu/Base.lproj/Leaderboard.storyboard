@@ -36,7 +36,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ciC-T6-tlX" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="300.5"/>
                                                     <color key="backgroundColor" red="0.94114847720000006" green="0.67770251879999999" blue="0.72044893229999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
@@ -46,25 +46,33 @@
                                                         <outletCollection property="gestureRecognizers" destination="R9q-It-eeB" appends="YES" id="473-27-KMD"/>
                                                     </connections>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFt-xO-eWZ">
-                                                    <rect key="frame" x="15" y="172" width="345" height="24"/>
-                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BFt-xO-eWZ">
+                                                    <rect key="frame" x="86" y="193" width="36" height="18"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="13"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="THI-E5-1ZY">
+                                                    <rect key="frame" x="15" y="178" width="63" height="37"/>
+                                                    <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="27"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" constant="161" id="718-7e-B89"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="BFt-xO-eWZ" secondAttribute="bottom" constant="8" id="GAo-7a-Eyb"/>
+                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="baseline" secondItem="THI-E5-1ZY" secondAttribute="baseline" id="0GF-kn-sPj"/>
+                                                <constraint firstItem="THI-E5-1ZY" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" constant="167" id="0x5-UZ-oGM"/>
                                                 <constraint firstAttribute="trailing" secondItem="ciC-T6-tlX" secondAttribute="trailing" id="HZk-oF-B8y"/>
                                                 <constraint firstItem="ciC-T6-tlX" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leading" id="Lz3-kV-cDc"/>
+                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="leading" secondItem="THI-E5-1ZY" secondAttribute="trailing" constant="8" id="MEO-t1-Czu"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="THI-E5-1ZY" secondAttribute="bottom" constant="8" id="ReV-2P-pJh"/>
                                                 <constraint firstItem="ciC-T6-tlX" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="top" id="cba-TT-HXu"/>
-                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="trailing" secondItem="REf-4h-ASS" secondAttribute="trailingMargin" id="lQc-ZS-EXQ"/>
-                                                <constraint firstAttribute="bottom" secondItem="ciC-T6-tlX" secondAttribute="bottom" constant="8" id="rSe-Tf-joV"/>
-                                                <constraint firstItem="BFt-xO-eWZ" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leadingMargin" id="sjX-n8-AQ0"/>
+                                                <constraint firstItem="THI-E5-1ZY" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leadingMargin" id="iQg-zX-ZN8"/>
+                                                <constraint firstAttribute="bottom" secondItem="ciC-T6-tlX" secondAttribute="bottom" constant="2" id="rSe-Tf-joV"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="rank" destination="THI-E5-1ZY" id="quY-Qx-MQ0"/>
                                             <outlet property="recipeImage" destination="ciC-T6-tlX" id="I59-qb-wE5"/>
                                             <outlet property="recipeName" destination="BFt-xO-eWZ" id="MTh-xo-LPg"/>
                                             <segue destination="o1p-np-5CI" kind="show" id="JX1-Hj-ToW"/>
