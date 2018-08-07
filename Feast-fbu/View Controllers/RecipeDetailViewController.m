@@ -8,18 +8,27 @@
 
 #import "UIImageView+AFNetworking.h"
 #import "RecipeDetailViewController.h"
-#import "DetailRecipeTableViewCell.h"
 #import "Saved.h"
 #import "Post.h"
 #import "CreatePostViewController.h"
 #import "PostCollectionViewCell.h"
 #import "DetailedPostViewController.h"
+#import "TagCollectionViewCell.h"
+#import "Tag.h"
 
-@interface RecipeDetailViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface RecipeDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITableView *recipeTableView;
 //@property (weak, nonatomic) IBOutlet UICollectionView *postCollectionView;
 @property (strong, nonatomic) NSArray *posts;
+@property (strong, nonatomic) NSArray* tags;
+@property (weak, nonatomic) IBOutlet PFImageView *recipeImageView;
+@property (weak, nonatomic) IBOutlet UILabel *recipeTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ingredientsLabel;
+@property (weak, nonatomic) IBOutlet UILabel *instructionsLabel;
+@property (weak, nonatomic) IBOutlet UIButton *saveButton;
+@property (strong, nonatomic) IBOutlet UITextView *urlTextView;
+@property (strong, nonatomic) IBOutlet UICollectionView *postCollectionView;
+@property (strong, nonatomic) IBOutlet UICollectionView *tagCollectionView;
 
 @end
 
@@ -28,13 +37,30 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.recipeTableView.delegate = self;
-    self.recipeTableView.dataSource = self;
-    //self.postCollectionView.delegate = self;
-    //self.postCollectionView.dataSource = self;
+    //self.recipeTableView.delegate = self;
+    //self.recipeTableView.dataSource = self;
+    self.postCollectionView.delegate = self;
+    self.postCollectionView.dataSource = self;
+    self.tagCollectionView.delegate = self;
+    self.tagCollectionView.dataSource = self;
     
     self.navigationItem.title = self.recipe.name; 
 
+    UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*) self.postCollectionView.collectionViewLayout;
+    
+    collectionViewLayout.minimumInteritemSpacing = 0;
+    collectionViewLayout.minimumLineSpacing = 2;
+    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    UICollectionViewFlowLayout *tagCollectionViewLayout = (UICollectionViewFlowLayout*) self.tagCollectionView.collectionViewLayout;
+    
+    tagCollectionViewLayout.estimatedItemSize = CGSizeMake(1.f, 1.f);
+    tagCollectionViewLayout.minimumInteritemSpacing = 0;
+    tagCollectionViewLayout.minimumLineSpacing = 10;
+    tagCollectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    self.saveButton.layer.cornerRadius = self.saveButton.frame.size.width / 2;
+    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"RecipeSaveNotification" object:nil];
      [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(recieveNotification:) name:@"NewPostNotification" object:nil];
     
@@ -44,7 +70,43 @@
 //    collectionViewLayout.minimumLineSpacing = 2;
 //    collectionViewLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
     
+    [self refreshData];
+}
+
+- (void) refreshData {
+    self.recipeImageView.file = self.recipe.image;
+    [self.recipeImageView loadInBackground];
+    NSLog(@"title %@", self.recipe.name);
+
+    self.recipeTitleLabel.text = self.recipe.name;
+    
+    NSString *ingredientsString = @"";
+    for (int i = 0; i < self.recipe.ingredients.count; i++) {
+        ingredientsString = [ingredientsString stringByAppendingString:[NSString stringWithFormat:@" - %@\n", self.recipe.ingredients[i]] ];
+    }
+    self.ingredientsLabel.text = ingredientsString;
+    
+    self.instructionsLabel.text = self.recipe.instructions;
+    
+    [self updateSaveButton];
+    
+    NSMutableAttributedString* attrString = [[NSMutableAttributedString alloc] initWithString:@"View original recipe"];
+    [attrString addAttribute:NSLinkAttributeName value:self.recipe.sourceURL range:NSMakeRange(0, attrString.length)];
+    self.urlTextView.attributedText = attrString;
+    
     [self fetchPosts];
+    [self getTags];
+    
+}
+
+- (void)updateSaveButton {
+    [Saved savedRecipeExists:self.recipe withCompletion:^(Boolean saved) {
+        if (saved){
+            [self.saveButton setSelected:YES];
+        } else {
+            [self.saveButton setSelected:NO];
+        }
+    }];
 }
 
 - (void) fetchPosts {
@@ -61,9 +123,24 @@
             self.posts = posts;
             NSLog(@"%@", posts);
             //[self.postCollectionView reloadData];
-            [self.recipeTableView reloadData];
+            [self.postCollectionView reloadData];
         } else {
             NSLog(@"Error%@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void)getTags {
+    PFQuery* query = [PFQuery queryWithClassName:@"Tag"];
+    [query whereKey:@"recipe" equalTo:self.recipe];
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        if (objects){
+            self.tags = objects;
+            [self.tagCollectionView reloadData];
+        }
+        else {
+            NSLog(@"error fetching tags %@", error.localizedDescription);
         }
     }];
 }
@@ -71,8 +148,7 @@
 - (void) recieveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
         NSLog (@"Successfully received the recipe save notification!");
-        DetailRecipeTableViewCell* cell = [self.recipeTableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]];
-        [cell updateSaveButton];
+        [self updateSaveButton];
     } else if ([[notification name] isEqualToString:@"NewPostNotification"]) {
         NSLog (@"Successfully received the new post notification!");
         [self fetchPosts];
@@ -107,7 +183,11 @@
 }
 
 - (IBAction)postTapped:(id)sender {
+    NSLog(@"add post");
     [self createImagePickerController];
+}
+- (IBAction)addTagTapped:(id)sender {
+    NSLog(@"add tag");
 }
 
 - (void)createImagePickerController {
@@ -154,7 +234,7 @@
     
     return newImage;
 }
-
+/*
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DetailRecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell"];
     Recipe *recipe = self.recipe;
@@ -163,6 +243,8 @@
     [cell setRecipe];
     cell.postCollectionView.dataSource = self;
     cell.postCollectionView.delegate = self;
+    cell.tagCollectionView.dataSource = self;
+    cell.tagCollectionView.delegate = self;
     [cell.postCollectionView reloadData];
     return cell;
 }
@@ -170,22 +252,43 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return 1;
 }
-
+*/
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-     PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
-    Post *post = self.posts[indexPath.item];
-    cell.post = post;
-    return cell;
+    if (collectionView == self.postCollectionView){
+        PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
+        Post *post = self.posts[indexPath.item];
+        cell.post = post;
+        return cell;
+    }
+    else {
+        TagCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"TagCollectionViewCell" forIndexPath:indexPath];
+        Tag* tag = self.tags[indexPath.item];
+        cell.tagName = tag.name;
+        return cell;
+    }
+
 }
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return self.posts.count;
+    if (collectionView == self.postCollectionView){
+        return self.posts.count;
+    }
+    else {
+        return self.tags.count;
+    }
 }
 
 -(UICollectionReusableView*)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
     //if (kind == UICollectionElementKindSectionFooter) {
+    if (collectionView == self.postCollectionView){
         UICollectionReusableView* header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"AddPostCollectionViewCell" forIndexPath:indexPath];
         return header;
+    }
+    else {
+        UICollectionReusableView* header = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"AddTagCollectionViewCell" forIndexPath:indexPath];
+        return header;
+    }
+
     
 }
 

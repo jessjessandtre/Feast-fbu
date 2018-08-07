@@ -38,7 +38,6 @@
 		298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E33792101091900290BF4 /* DiscoveryViewController.m */; };
 		298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E337D2101092600290BF4 /* LeaderboardViewController.m */; };
 		299699962112209B00C83061 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 299699952112209B00C83061 /* PostCollectionViewCell.m */; };
-		299FC6A52118BA15002F633F /* AddPostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 299FC6A42118BA15002F633F /* AddPostCollectionViewCell.m */; };
 		29CC2570210116F900BD6C01 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC256F210116F900BD6C01 /* Post.m */; };
 		29CC25732101311900BD6C01 /* DetailedRecipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */; };
 		29CC2576210131EB00BD6C01 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC2575210131EB00BD6C01 /* DetailViewController.m */; };
@@ -143,8 +142,6 @@
 		298E337D2101092600290BF4 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
 		299699942112209B00C83061 /* PostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
 		299699952112209B00C83061 /* PostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
-		299FC6A32118BA14002F633F /* AddPostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddPostCollectionViewCell.h; sourceTree = "<group>"; };
-		299FC6A42118BA15002F633F /* AddPostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddPostCollectionViewCell.m; sourceTree = "<group>"; };
 		29CC256E210116F900BD6C01 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
 		29CC256F210116F900BD6C01 /* Post.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Post.m; sourceTree = "<group>"; };
 		29CC25722101311500BD6C01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailedRecipe.storyboard; sourceTree = "<group>"; };
@@ -326,8 +323,6 @@
 				58BB7CD92114E20E0097A046 /* TagCollectionViewCell.m */,
 				2988885A211527FC00557B22 /* RecipeResultsTableViewCell.h */,
 				2988885B211527FC00557B22 /* RecipeResultsTableViewCell.m */,
-				299FC6A32118BA14002F633F /* AddPostCollectionViewCell.h */,
-				299FC6A42118BA15002F633F /* AddPostCollectionViewCell.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -667,7 +662,6 @@
 				29853C3D2108FE1E00971E56 /* SavedRecipesViewController.m in Sources */,
 				29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */,
 				214F5DA2210A9F0E00A47BC8 /* SuggestedTableViewCell.m in Sources */,
-				299FC6A52118BA15002F633F /* AddPostCollectionViewCell.m in Sources */,
 				587401152107F92A000425F3 /* Like.m in Sources */,
 				5874011D21091E94000425F3 /* CommentsViewController.m in Sources */,
 				2135FC84210681EB00543AF7 /* TimelineViewCell.m in Sources */,
