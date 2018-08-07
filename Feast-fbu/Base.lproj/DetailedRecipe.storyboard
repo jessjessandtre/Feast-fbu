@@ -439,6 +439,7 @@
                                                         </constraints>
                                                         <connections>
                                                             <outlet property="tagLabel" destination="9fs-YM-AdA" id="f1P-Xm-b2S"/>
+                                                            <segue destination="N6e-H4-XCh" kind="show" identifier="TagRecipeResultsSegue2" id="9Hr-Lk-886"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
@@ -560,6 +561,14 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YFx-Ae-y6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2624.8000000000002" y="54.422788605697157"/>
+        </scene>
+        <!--RecipeResults-->
+        <scene sceneID="qPS-nZ-VDd">
+            <objects>
+                <viewControllerPlaceholder storyboardName="RecipeResults" referencedIdentifier="RecipeResults" id="N6e-H4-XCh" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tuM-wi-wlD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2334" y="452"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uJm-q3-V1N">

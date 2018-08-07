@@ -15,6 +15,7 @@
 #import "DetailedPostViewController.h"
 #import "TagCollectionViewCell.h"
 #import "Tag.h"
+#import "RecipeResultsViewController.h"
 
 @interface RecipeDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -312,6 +313,10 @@
         DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
         detailedPostViewController.post = cell.post;
         NSLog(@"detailed post segue");
+    } else if ([segue.identifier isEqualToString:@"TagRecipeResultsSegue2"]){
+        RecipeResultsViewController* recipeResults = [segue destinationViewController];
+        TagCollectionViewCell* cell = (TagCollectionViewCell*)sender;
+        recipeResults.tagName = cell.tagName;
     }
 }
 
