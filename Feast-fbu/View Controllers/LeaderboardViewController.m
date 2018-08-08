@@ -11,7 +11,7 @@
 #import "PopularMealsCell.h"
 #import <SVProgressHUD.h>
 
-@interface LeaderboardViewController ()
+@interface LeaderboardViewController () <UITabBarDelegate>
 
 @property (nonatomic, strong) NSArray *popularRecipes;
 @property (weak, nonatomic) IBOutlet UITableView *recipesTableView;
@@ -26,6 +26,8 @@
     
     self.recipesTableView.delegate = self;
     self.recipesTableView.dataSource = self;
+    
+    self.tabBarController.delegate = self;
     
     self.navigationItem.title = @"Popular";
     
@@ -91,6 +93,17 @@
     [self presentViewController:alert animated:YES completion:^{
         // code for after alert controller has finished presenting
     }];
+}
+
+- (void)tabBarController:(UITabBarController *)tabBarController
+ didSelectViewController:(UIViewController *)viewController
+{
+    static UIViewController *previousController = nil;
+    if (previousController == viewController) {
+        // the same tab was tapped a second time
+        [self.recipesTableView setContentOffset:CGPointZero animated:YES];
+    }
+    previousController = viewController;
 }
 
 #pragma mark - Navigation
