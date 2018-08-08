@@ -15,7 +15,7 @@
 #import <Parse/Parse.h>
 #import "Tag.h"
 
-@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate>
+@interface SearchViewController () <UITableViewDelegate, UITableViewDataSource, UICollectionViewDataSource, UICollectionViewDelegate, UITextFieldDelegate>
 
 @property (nonatomic, strong) NSArray *courseTypes;
 @property (strong, nonatomic) IBOutlet UITableView *searchTableView;
@@ -24,6 +24,7 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *tagCollectionView;
 @property (strong, nonatomic) NSArray<NSString*>* orderedTagNamesArray;
 @property (strong, nonatomic) NSString *searchString;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGestureRecognizer;
 
 @end
 
@@ -37,7 +38,8 @@
     self.tagCollectionView.dataSource = self;
     
     self.navigationItem.title = @"Search";
-    
+    //self.tapGestureRecognizer.cancelsTouchesInView = NO;
+    self.searchTextField.delegate = self;
     UICollectionViewFlowLayout *layout =(UICollectionViewFlowLayout *) self.tagCollectionView.collectionViewLayout;
     
     layout.estimatedItemSize = CGSizeMake(1.f, 1.f);
@@ -150,6 +152,30 @@
     self.searchString = self.searchTextField.text;
     self.searchTextField.text = @"";
 }
+
+- (IBAction)tapScreen:(id)sender {
+    //NSLog(@"tap screen");
+    //self.tapGestureRecognizer.cancelsTouchesInView = NO;
+    //[self.searchTextField resignFirstResponder];
+    if ([self.searchTextField isEditing]){
+        //NSLog(@"is editing");
+        [self.view endEditing:YES];
+
+    }
+    else {
+        //NSLog(@"not editing");
+        self.tapGestureRecognizer.cancelsTouchesInView = NO;
+
+    }
+
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.tapGestureRecognizer.cancelsTouchesInView = YES;
+    //NSLog(@"begin edit");
+
+}
+
 
 
  #pragma mark - Navigation
