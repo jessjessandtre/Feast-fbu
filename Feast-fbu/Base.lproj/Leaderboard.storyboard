@@ -105,7 +105,7 @@
                                             <outlet property="user1Image" destination="OIR-Bt-1JG" id="IuZ-HK-kVR"/>
                                             <outlet property="user2Image" destination="OdL-1q-trF" id="zms-ul-Dhg"/>
                                             <outlet property="user3Image" destination="WKU-7g-tfF" id="hTr-zZ-4v5"/>
-                                            <segue destination="o1p-np-5CI" kind="show" id="JX1-Hj-ToW"/>
+                                            <segue destination="o1p-np-5CI" kind="show" identifier="DetailedRecipeSegue5" id="JX1-Hj-ToW"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

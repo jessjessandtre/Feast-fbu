@@ -29,6 +29,11 @@
     self.recipesTableView.delegate = self;
     self.recipesTableView.dataSource = self;
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"NewPostNotification"
+                                               object:nil];
+    
     self.tabBarController.delegate = self;
     
     self.navigationItem.title = @"Popular";
@@ -45,9 +50,13 @@
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) receiveNotification: (NSNotification *) notification {
+    if ([[notification name] isEqualToString:@"NewPostNotification"]) {
+        NSLog (@"Successfully received the post notification!");
+        [self fetchPopularRecipes];
+    }
+
+    
 }
 
 - (nonnull UITableViewCell *)tableView:(nonnull UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
@@ -58,6 +67,19 @@
     [self fetchUsers:recipe withBlock:^(Boolean completed) {
         NSLog(@"%@", self.users);
         if (completed){
+            NSArray<PFImageView*>* userImages = @[cell.user1Image, cell.user2Image, cell.user3Image];
+            for (int i = 0; i < self.users.count; i++){
+                PFImageView* pf = userImages[i];
+                pf.file = self.users[i][@"profileImage"];
+                [pf loadInBackground];
+                    
+                pf.layer.cornerRadius = pf.frame.size.width / 2;
+                pf.clipsToBounds = true;
+                pf.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
+                pf.layer.borderWidth = 1.5;
+                
+            }
+            /*
             if (self.users.count != 0) {
                 cell.user1Image.file = self.users[0][@"profileImage"];
                 [cell.user1Image loadInBackground];
@@ -85,6 +107,7 @@
                 cell.user3Image.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
                 cell.user3Image.layer.borderWidth = 1.5;
             }
+            */
         }
     }];
     
@@ -131,15 +154,16 @@
             NSMutableArray *users = [[NSMutableArray alloc] init];
             for (Post *post in posts) {
                 [users addObject:post.user];
-                NSLog(@"%@", users);
+                //NSLog(@"%@", users);
             }
             self.users = users;;
-            NSLog(@"%@ ************************************************************************", self.users[0][@"profileImage"]);
+            //NSLog(@"%@ ************************************************************************", self.users[0][@"profileImage"]);
             
             completion(true);
 
         } else {
             NSLog(@"Error%@", error.localizedDescription);
+            completion(false);
         }
     }];
 }
@@ -175,15 +199,16 @@
     /*UINavigationController *navigationController = [segue destinationViewController];
     DetailViewController* detailViewController = (DetailViewController*) navigationController.topViewController;
     */
-    
-    RecipeDetailViewController* detailViewController = [segue destinationViewController];
-    UITableViewCell *tappedCell = sender;
-    
-    NSIndexPath *indexPath = [self.recipesTableView indexPathForCell:tappedCell];
-    
-    Recipe *recipe = self.popularRecipes[indexPath.row];
-    
-    detailViewController.recipe = recipe;
+    if ([segue.identifier isEqualToString:@"DetailedRecipeSegue5"]){
+        RecipeDetailViewController* detailViewController = [segue destinationViewController];
+        PopularMealsCell *tappedCell = (PopularMealsCell*)sender;
+        
+        NSIndexPath *indexPath = [self.recipesTableView indexPathForCell:tappedCell];
+        
+        Recipe *recipe = self.popularRecipes[indexPath.row];
+        
+        detailViewController.recipe = recipe;
+    }
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
