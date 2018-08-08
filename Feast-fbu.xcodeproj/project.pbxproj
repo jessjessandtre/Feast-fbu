@@ -44,6 +44,8 @@
 		29CC257C210148EF00BD6C01 /* CreatePostViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC257B210148EF00BD6C01 /* CreatePostViewController.m */; };
 		29CC258221015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC258021015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m */; };
 		29EBB495211A451500D7EC34 /* InfiniteScrollActivityView.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBB494211A451400D7EC34 /* InfiniteScrollActivityView.m */; };
+		29EBB498211A50A800D7EC34 /* AddTagStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29EBB496211A50A800D7EC34 /* AddTagStoryboard.storyboard */; };
+		29EBB49B211A510F00D7EC34 /* AddTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EBB49A211A510F00D7EC34 /* AddTagViewController.m */; };
 		583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38221010E2D00A2C40F /* RecipeTableViewCell.m */; };
 		583DD38521010E2E00A2C40F /* PopularMealsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 583DD38321010E2D00A2C40F /* PopularMealsCell.m */; };
 		587401032106652E000425F3 /* Follow.m in Sources */ = {isa = PBXBuildFile; fileRef = 587401022106652E000425F3 /* Follow.m */; };
@@ -154,6 +156,9 @@
 		29CC258121015A7600BD6C01 /* RecipeTableViewCellHeaderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipeTableViewCellHeaderCell.h; sourceTree = "<group>"; };
 		29EBB493211A451400D7EC34 /* InfiniteScrollActivityView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfiniteScrollActivityView.h; sourceTree = "<group>"; };
 		29EBB494211A451400D7EC34 /* InfiniteScrollActivityView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfiniteScrollActivityView.m; sourceTree = "<group>"; };
+		29EBB497211A50A800D7EC34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/AddTagStoryboard.storyboard; sourceTree = "<group>"; };
+		29EBB499211A510F00D7EC34 /* AddTagViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddTagViewController.h; sourceTree = "<group>"; };
+		29EBB49A211A510F00D7EC34 /* AddTagViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddTagViewController.m; sourceTree = "<group>"; };
 		2CA6BE7050E61B151F184B50 /* Pods-Feast-fbuUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Feast-fbuUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Feast-fbuUITests/Pods-Feast-fbuUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		361653543C26D7BBAC589C2F /* libPods-Feast-fbuTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Feast-fbuTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		583DD38021010E2D00A2C40F /* PopularMealsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopularMealsCell.h; sourceTree = "<group>"; };
@@ -293,6 +298,8 @@
 				58740128210B8B1E000425F3 /* RecipeDetailViewController.m */,
 				29888857211523AA00557B22 /* RecipeResultsViewController.h */,
 				29888858211523AA00557B22 /* RecipeResultsViewController.m */,
+				29EBB499211A510F00D7EC34 /* AddTagViewController.h */,
+				29EBB49A211A510F00D7EC34 /* AddTagViewController.m */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -370,6 +377,7 @@
 				5874011921091E31000425F3 /* Comments.storyboard */,
 				58BB7CC92114D5370097A046 /* Search.storyboard */,
 				58BB7CCC2114D54B0097A046 /* RecipeResults.storyboard */,
+				29EBB496211A50A800D7EC34 /* AddTagStoryboard.storyboard */,
 				217CFDFA2114D97E00A2DE60 /* OpenSans-Bold.ttf */,
 				217CFDF92114D97D00A2DE60 /* OpenSans-ExtraBold.ttf */,
 				217CFDF82114D97C00A2DE60 /* OpenSans-SemiBold.ttf */,
@@ -523,6 +531,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29EBB498211A50A800D7EC34 /* AddTagStoryboard.storyboard in Resources */,
 				5874011A21091E31000425F3 /* Comments.storyboard in Resources */,
 				58740107210680C5000425F3 /* ExternalProfile.storyboard in Resources */,
 				297420762106551200B30175 /* DetailedPost.storyboard in Resources */,
@@ -660,6 +669,7 @@
 				290F36F92106B1FB00A1B704 /* Saved.m in Sources */,
 				583DD38421010E2E00A2C40F /* RecipeTableViewCell.m in Sources */,
 				587401032106652E000425F3 /* Follow.m in Sources */,
+				29EBB49B211A510F00D7EC34 /* AddTagViewController.m in Sources */,
 				29EBB495211A451500D7EC34 /* InfiniteScrollActivityView.m in Sources */,
 				29CC2570210116F900BD6C01 /* Post.m in Sources */,
 				29888859211523AA00557B22 /* RecipeResultsViewController.m in Sources */,
@@ -759,6 +769,14 @@
 				29CC25722101311500BD6C01 /* Base */,
 			);
 			name = DetailedRecipe.storyboard;
+			sourceTree = "<group>";
+		};
+		29EBB496211A50A800D7EC34 /* AddTagStoryboard.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				29EBB497211A50A800D7EC34 /* Base */,
+			);
+			name = AddTagStoryboard.storyboard;
 			sourceTree = "<group>";
 		};
 		58BB7CC92114D5370097A046 /* Search.storyboard */ = {

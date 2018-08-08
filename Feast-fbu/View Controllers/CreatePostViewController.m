@@ -28,11 +28,6 @@
     [self refreshData];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (IBAction)didTapCancel:(id)sender {
     [self dismissViewControllerAnimated:true completion:nil];
 }
@@ -102,34 +97,6 @@
 
     }];
     
-    /*
-    PFObject *tagActivity = [PFObject objectWithClassName:@"Tag"];
-    NSString* name = self.tagTextField.text;
-    [tagActivity setObject:[name lowercaseString] forKey:@"name"];
-    [tagActivity setObject:self.recipe forKey:@"recipe"];
-    [tagActivity saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
-        if (succeeded) {
-            NSLog(@"added tag");
-            [self.view makeToast:[NSString stringWithFormat:@"Added #%@ to %@!", name, self.recipe.name] duration:2.0 position:CSToastPositionBottom];
-            [[NSNotificationCenter defaultCenter]
-             postNotificationName:@"NewTagNotification"
-             object:nil];
-        }
-        else {
-            NSLog(@"error adding tag %@", error.localizedDescription);
-        }
-    }];
-     */
-    /*
-    if (self.recipe[@"tags"][0] == nil) {
-        self.recipe[@"tags"] = [NSMutableArray arrayWithObject:[self.tagTextField.text lowercaseString]];
-        NSLog(@"Did initialize array");
-    }
-    else {
-        [self.recipe[@"tags"] addObject:[self.tagTextField.text lowercaseString]];
-        NSLog(@"Did add tag");
-    }
-    */
 }
 
 
