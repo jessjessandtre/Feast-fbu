@@ -36,6 +36,11 @@
     self.externalPostCollectionView.delegate = self;
     self.externalPostCollectionView.dataSource = self;
 
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+     
+                                                 name:@"FollowUpdateNotification"
+                                               object:nil];
     
     self.profileImage.layer.cornerRadius = self.profileImage.frame.size.width / 2;
     self.profileImage.clipsToBounds = YES;
@@ -68,7 +73,7 @@
     }
     else if ([[notification name] isEqualToString:@"FollowUpdateNotification"]) {
         NSLog(@"Successfully received the follow notification!");
-        [self getNumberFollowing];
+        [self refreshData];
     }
     
 }
@@ -92,12 +97,6 @@
              object:nil];
         }
     }];
-/*    PFObject *followActivity = [PFObject objectWithClassName:@"Follow"];
-    [followActivity setObject:[PFUser currentUser] forKey:@"fromUser"];
-    [followActivity setObject:self.user forKey:@"toUser"];
-    [followActivity saveEventually];
-    [self getNumberFollowers];
- */
 }
 
 - (void) unfollowUser {
@@ -110,20 +109,6 @@
              object:nil];
         }
     }];
-    /*
-    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
-    [query whereKey:@"fromUser" equalTo:[PFUser currentUser]];
-    [query whereKey:@"toUser" equalTo:self.user];
-    [query getFirstObjectInBackgroundWithBlock:^(PFObject * _Nullable object, NSError * _Nullable error) {
-        if (object) {
-            [object deleteInBackground];
-        }
-        else {
-            NSLog(@"Unable to retrieve object");
-        }
-    }];
-    [self getNumberFollowers];
-    */
 }
 
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath {
@@ -145,13 +130,6 @@
             self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", following];
         }
     }];
-    /*
-    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
-    [query whereKey:@"fromUser" equalTo:self.user];
-    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        self.numberFollowingLabel.text = [NSString stringWithFormat:@"%d", number];
-    }];
-    */
 }
 
 - (void) getNumberFollowers {
@@ -160,13 +138,7 @@
             self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", followers];
         }
     }];
-    /*
-    PFQuery *query = [PFQuery queryWithClassName:@"Follow"];
-    [query whereKey:@"toUser" equalTo:self.user];
-    [query countObjectsInBackgroundWithBlock:^(int number, NSError * _Nullable error) {
-        self.numberFollowersLabel.text = [NSString stringWithFormat:@"%d", number];
-    }];
-    */
+    
 }
 
 - (void) fetchPosts {
@@ -215,6 +187,7 @@
             [self.followButton setSelected:NO];
         }
     }];
+    NSLog(@"refresh data");
 }
 
 -(void)alertControlWithTitle:(NSString*)title andMessage:(NSString*)message {
