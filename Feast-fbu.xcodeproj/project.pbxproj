@@ -102,6 +102,7 @@
 		217CFDF82114D97C00A2DE60 /* OpenSans-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiBold.ttf"; sourceTree = "<group>"; };
 		217CFDF92114D97D00A2DE60 /* OpenSans-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-ExtraBold.ttf"; sourceTree = "<group>"; };
 		217CFDFA2114D97E00A2DE60 /* OpenSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Bold.ttf"; sourceTree = "<group>"; };
+		21B4BB8B211B4FC500491071 /* Belmonte.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Belmonte.ttf; sourceTree = "<group>"; };
 		290F36F72106B1FB00A1B704 /* Saved.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Saved.h; sourceTree = "<group>"; };
 		290F36F82106B1FB00A1B704 /* Saved.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Saved.m; sourceTree = "<group>"; };
 		297420752106551200B30175 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/DetailedPost.storyboard; sourceTree = "<group>"; };
@@ -381,6 +382,7 @@
 				217CFDFA2114D97E00A2DE60 /* OpenSans-Bold.ttf */,
 				217CFDF92114D97D00A2DE60 /* OpenSans-ExtraBold.ttf */,
 				217CFDF82114D97C00A2DE60 /* OpenSans-SemiBold.ttf */,
+				21B4BB8B211B4FC500491071 /* Belmonte.ttf */,
 				297DED9220FFFAB800A469FA /* Views */,
 				297DED9120FFFAB200A469FA /* View Controllers */,
 				297DED9020FFFA7500A469FA /* Models */,
@@ -921,7 +923,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jessicashu7.Feast-fbu";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twiggs.Feast-fbu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -940,7 +942,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jessicashu7.Feast-fbu";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twiggs.Feast-fbu";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

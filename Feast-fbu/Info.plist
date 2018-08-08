@@ -33,6 +33,7 @@
 	<string>Need library access to upload images</string>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Belmonte.ttf</string>
 		<string>OpenSans-Bold.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
