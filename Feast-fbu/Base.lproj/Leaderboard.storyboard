@@ -37,7 +37,6 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ciC-T6-tlX" customClass="PFImageView">
                                                     <rect key="frame" x="0.0" y="0.0" width="375" height="300.5"/>
-                                                    <color key="backgroundColor" red="0.94114847720000006" green="0.67770251879999999" blue="0.72044893229999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <gestureRecognizers/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="300" id="5Hp-jK-HJu"/>
@@ -58,16 +57,44 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OIR-Bt-1JG" customClass="PFImageView">
+                                                    <rect key="frame" x="330" y="11" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="49C-pN-gpO"/>
+                                                        <constraint firstAttribute="height" constant="30" id="FX2-qu-zva"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdL-1q-trF" customClass="PFImageView">
+                                                    <rect key="frame" x="292" y="11" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="QC7-S1-lyt"/>
+                                                        <constraint firstAttribute="width" constant="30" id="p3b-Yc-Eto"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-7g-tfF" customClass="PFImageView">
+                                                    <rect key="frame" x="254" y="11" width="30" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="30" id="XBJ-D9-uOg"/>
+                                                        <constraint firstAttribute="height" constant="30" id="gLQ-pW-eqy"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BFt-xO-eWZ" firstAttribute="baseline" secondItem="THI-E5-1ZY" secondAttribute="baseline" id="0GF-kn-sPj"/>
                                                 <constraint firstItem="THI-E5-1ZY" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" constant="167" id="0x5-UZ-oGM"/>
+                                                <constraint firstItem="OIR-Bt-1JG" firstAttribute="leading" secondItem="OdL-1q-trF" secondAttribute="trailing" constant="8" id="4sV-Yi-Fad"/>
                                                 <constraint firstAttribute="trailing" secondItem="ciC-T6-tlX" secondAttribute="trailing" id="HZk-oF-B8y"/>
                                                 <constraint firstItem="ciC-T6-tlX" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leading" id="Lz3-kV-cDc"/>
                                                 <constraint firstItem="BFt-xO-eWZ" firstAttribute="leading" secondItem="THI-E5-1ZY" secondAttribute="trailing" constant="8" id="MEO-t1-Czu"/>
+                                                <constraint firstItem="WKU-7g-tfF" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leadingMargin" constant="239" id="ORK-O0-usc"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="THI-E5-1ZY" secondAttribute="bottom" constant="8" id="ReV-2P-pJh"/>
+                                                <constraint firstItem="OIR-Bt-1JG" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" id="UMz-VI-Zl6"/>
+                                                <constraint firstItem="WKU-7g-tfF" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" id="Vns-GJ-fNy"/>
+                                                <constraint firstItem="OdL-1q-trF" firstAttribute="leading" secondItem="WKU-7g-tfF" secondAttribute="trailing" constant="8" id="Y6S-Yv-Rnq"/>
                                                 <constraint firstItem="ciC-T6-tlX" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="top" id="cba-TT-HXu"/>
                                                 <constraint firstItem="THI-E5-1ZY" firstAttribute="leading" secondItem="REf-4h-ASS" secondAttribute="leadingMargin" id="iQg-zX-ZN8"/>
+                                                <constraint firstItem="OdL-1q-trF" firstAttribute="top" secondItem="REf-4h-ASS" secondAttribute="topMargin" id="ins-kt-bPC"/>
+                                                <constraint firstItem="OIR-Bt-1JG" firstAttribute="trailing" secondItem="REf-4h-ASS" secondAttribute="trailingMargin" id="jUO-Pk-t2y"/>
                                                 <constraint firstAttribute="bottom" secondItem="ciC-T6-tlX" secondAttribute="bottom" constant="2" id="rSe-Tf-joV"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -75,6 +102,9 @@
                                             <outlet property="rank" destination="THI-E5-1ZY" id="quY-Qx-MQ0"/>
                                             <outlet property="recipeImage" destination="ciC-T6-tlX" id="I59-qb-wE5"/>
                                             <outlet property="recipeName" destination="BFt-xO-eWZ" id="MTh-xo-LPg"/>
+                                            <outlet property="user1Image" destination="OIR-Bt-1JG" id="IuZ-HK-kVR"/>
+                                            <outlet property="user2Image" destination="OdL-1q-trF" id="zms-ul-Dhg"/>
+                                            <outlet property="user3Image" destination="WKU-7g-tfF" id="hTr-zZ-4v5"/>
                                             <segue destination="o1p-np-5CI" kind="show" id="JX1-Hj-ToW"/>
                                         </connections>
                                     </tableViewCell>
