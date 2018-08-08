@@ -43,14 +43,18 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(receivePostNotification:)
+                                             selector:@selector(receiveNotification:)
                                                  name:@"NewPostNotification"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(recipeSavedNotification:)
+                                             selector:@selector(receiveNotification:)
                                                  name:@"RecipeSaveNotification"
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"FollowUpdateNotification"
+                                               object:nil];
     
     self.recipeTableView.delegate = self;
     self.recipeTableView.dataSource = self;
@@ -95,20 +99,21 @@
     [self.recipeTableView insertSubview:self.refreshControl atIndex:0];
 }
 
-
-- (void) receivePostNotification: (NSNotification *) notification {
+- (void) receiveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"NewPostNotification"]) {
         NSLog (@"Successfully received the post notification!");
         [self fetchFriendsPosts];
     }
-}
-
-- (void) recipeSavedNotification: (NSNotification *) notification {
-    if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
+    else if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
         NSLog (@"Successfully received the recipe save notification!");
-        [self.recipeTableView reloadData];
+        [self fetchRecipes];
+    }
+    else if ([[notification name] isEqualToString:@"FollowUpdateNotification"]) {
+        NSLog (@"Successfully received the follow update notification!");
+        [self fetchFriendsPosts];
     }
 }
+
 
 - (void)fetchFriendsPosts {
     PFQuery *followerQuery = [Follow query];
@@ -218,16 +223,6 @@
     
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-        RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
-        Recipe *recipe = self.recipes[indexPath.row];
-        cell.recipe = recipe;
-        cell.recipeImageView.image = nil;
-        [cell setRecipe];
-        cell.delegate = self;
-        return cell;
-}
-
 - (void) onSaveTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;
     RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
@@ -256,6 +251,7 @@
          
     }
     [cell hideSwipeAnimated:YES];
+
     //NSLog(@"%@", [[[[[[[sender superview] superview] superview] superview] superview] superview] class]);
 
 }
@@ -280,6 +276,7 @@
                                swipeSettings:(nonnull MGSwipeSettings*) swipeSettings expansionSettings:(nonnull MGSwipeExpansionSettings*) expansionSettings {
     NSArray<UIView*>* arr = nil;
     if (direction == MGSwipeDirectionLeftToRight){
+        //cell.backgroundColor = [UIColor grayColor];
         UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
         RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)cell;
@@ -294,6 +291,8 @@
         
         [save setTitle:@"save" forState:UIControlStateNormal];
         [save setTitle:@"saved" forState:UIControlStateSelected];
+        [save setBackgroundImage:[self imageWithColor:[UIColor grayColor] forBounds:save.bounds] forState:UIControlStateSelected];
+        
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
         
@@ -317,11 +316,32 @@
         arr = @[stackView];
 
     }
+
     return arr;
 }
 
+- (UIImage*) imageWithColor:(UIColor*)color forBounds:(CGRect)bounds{
+    CGRect rect = bounds;
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    return image;
+    
+}
 
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
+    Recipe *recipe = self.recipes[indexPath.row];
+    cell.recipe = recipe;
+    cell.recipeImageView.image = nil;
+    [cell setRecipe];
+    cell.delegate = self;
+    return cell;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.recipes.count;
