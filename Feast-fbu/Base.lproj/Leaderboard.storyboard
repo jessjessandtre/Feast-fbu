@@ -57,25 +57,22 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OIR-Bt-1JG">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OIR-Bt-1JG" customClass="PFImageView">
                                                     <rect key="frame" x="330" y="11" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.52156862749999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="49C-pN-gpO"/>
                                                         <constraint firstAttribute="height" constant="30" id="FX2-qu-zva"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdL-1q-trF">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OdL-1q-trF" customClass="PFImageView">
                                                     <rect key="frame" x="292" y="11" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.52156862749999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="QC7-S1-lyt"/>
                                                         <constraint firstAttribute="width" constant="30" id="p3b-Yc-Eto"/>
                                                     </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-7g-tfF">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WKU-7g-tfF" customClass="PFImageView">
                                                     <rect key="frame" x="254" y="11" width="30" height="30"/>
-                                                    <color key="backgroundColor" red="0.99215686270000003" green="0.52156862749999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="XBJ-D9-uOg"/>
                                                         <constraint firstAttribute="height" constant="30" id="gLQ-pW-eqy"/>
@@ -105,6 +102,9 @@
                                             <outlet property="rank" destination="THI-E5-1ZY" id="quY-Qx-MQ0"/>
                                             <outlet property="recipeImage" destination="ciC-T6-tlX" id="I59-qb-wE5"/>
                                             <outlet property="recipeName" destination="BFt-xO-eWZ" id="MTh-xo-LPg"/>
+                                            <outlet property="user1Image" destination="OIR-Bt-1JG" id="IuZ-HK-kVR"/>
+                                            <outlet property="user2Image" destination="OdL-1q-trF" id="zms-ul-Dhg"/>
+                                            <outlet property="user3Image" destination="WKU-7g-tfF" id="hTr-zZ-4v5"/>
                                             <segue destination="o1p-np-5CI" kind="show" id="JX1-Hj-ToW"/>
                                         </connections>
                                     </tableViewCell>

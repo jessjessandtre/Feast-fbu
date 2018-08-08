@@ -14,8 +14,10 @@
 @interface LeaderboardViewController ()
 
 @property (nonatomic, strong) NSArray *popularRecipes;
+@property (strong, nonatomic) NSArray<PFUser*> *users;
 @property (weak, nonatomic) IBOutlet UITableView *recipesTableView;
 @property (strong, nonatomic) UIRefreshControl *refreshControl;
+
 
 @end
 
@@ -38,6 +40,7 @@
     self.refreshControl = [[UIRefreshControl alloc]init];
     [self.refreshControl addTarget:self action:@selector(fetchPopularRecipes) forControlEvents:UIControlEventValueChanged];
     [self.recipesTableView insertSubview:self.refreshControl atIndex:0];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -50,6 +53,38 @@
     
     Recipe *recipe = self.popularRecipes[indexPath.row];
     [cell setRecipe:recipe];
+    [self fetchUsers:recipe withBlock:^(Boolean completed) {
+        NSLog(@"%@", self.users);
+        if (completed){
+            if (self.users.count != 0) {
+                cell.user1Image.file = self.users[0][@"profileImage"];
+                [cell.user1Image loadInBackground];
+                
+                cell.user1Image.layer.cornerRadius = cell.user1Image.frame.size.width / 2;
+                cell.user1Image.clipsToBounds = true;
+                cell.user1Image.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
+                cell.user1Image.layer.borderWidth = 1.5;
+            }
+            if (self.users.count > 1) {
+                cell.user2Image.file = self.users[1][@"profileImage"];
+                [cell.user2Image loadInBackground];
+                
+                cell.user2Image.layer.cornerRadius = cell.user2Image.frame.size.width / 2;
+                cell.user2Image.clipsToBounds = true;
+                cell.user2Image.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
+                cell.user2Image.layer.borderWidth = 1.5;
+            }
+            if (self.users.count > 2) {
+                cell.user3Image.file = self.users[2][@"profileImage"];
+                [cell.user3Image loadInBackground];
+                
+                cell.user3Image.layer.cornerRadius = cell.user3Image.frame.size.width / 2;
+                cell.user3Image.clipsToBounds = true;
+                cell.user3Image.layer.borderColor = [UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:1.0].CGColor;
+                cell.user3Image.layer.borderWidth = 1.5;
+            }
+        }
+    }];
     
     cell.rank.text = [NSString stringWithFormat:@"%@", [NSNumber numberWithInteger:indexPath.row + 1]];
     return cell;
@@ -76,6 +111,33 @@
         else {
             NSLog(@"%@", error.localizedDescription);
             [self alertControlWithTitle:@"Error fetching data" andMessage:error.localizedDescription];
+        }
+    }];
+}
+
+- (void)fetchUsers: (Recipe *)recipe withBlock:( void(^)(Boolean completed))completion{
+    PFQuery *query = [PFQuery queryWithClassName:@"Post"];
+    [query orderByDescending:@"createdAt"];
+    [query includeKey:@"recipe"];
+    [query includeKey:@"user"];
+    [query whereKey:@"recipe" equalTo:recipe];
+    
+    query.limit = 3;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray *posts, NSError * _Nullable error) {
+        if (posts != nil) {
+            NSMutableArray *users = [[NSMutableArray alloc] init];
+            for (Post *post in posts) {
+                [users addObject:post.user];
+                NSLog(@"%@", users);
+            }
+            self.users = users;;
+            NSLog(@"%@ ************************************************************************", self.users[0][@"profileImage"]);
+            
+            completion(true);
+
+        } else {
+            NSLog(@"Error%@", error.localizedDescription);
         }
     }];
 }
