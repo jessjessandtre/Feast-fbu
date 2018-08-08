@@ -43,14 +43,18 @@
     [super viewDidLoad];
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(receivePostNotification:)
+                                             selector:@selector(receiveNotification:)
                                                  name:@"NewPostNotification"
                                                object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(recipeSavedNotification:)
+                                             selector:@selector(receiveNotification:)
                                                  name:@"RecipeSaveNotification"
                                                object:nil];
     
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(receiveNotification:)
+                                                 name:@"FollowUpdateNotification"
+                                               object:nil];
     
     self.recipeTableView.delegate = self;
     self.recipeTableView.dataSource = self;
@@ -95,20 +99,21 @@
     [self.recipeTableView insertSubview:self.refreshControl atIndex:0];
 }
 
-
-- (void) receivePostNotification: (NSNotification *) notification {
+- (void) receiveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"NewPostNotification"]) {
         NSLog (@"Successfully received the post notification!");
         [self fetchFriendsPosts];
     }
-}
-
-- (void) recipeSavedNotification: (NSNotification *) notification {
-    if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
+    else if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
         NSLog (@"Successfully received the recipe save notification!");
-        [self.recipeTableView reloadData];
+        [self fetchRecipes];
+    }
+    else if ([[notification name] isEqualToString:@"FollowUpdateNotification"]) {
+        NSLog (@"Successfully received the follow update notification!");
+        [self fetchFriendsPosts];
     }
 }
+
 
 - (void)fetchFriendsPosts {
     PFQuery *followerQuery = [Follow query];
