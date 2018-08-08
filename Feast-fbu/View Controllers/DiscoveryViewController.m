@@ -218,16 +218,6 @@
     
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-        RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
-        Recipe *recipe = self.recipes[indexPath.row];
-        cell.recipe = recipe;
-        cell.recipeImageView.image = nil;
-        [cell setRecipe];
-        cell.delegate = self;
-        return cell;
-}
-
 - (void) onSaveTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;
     RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
@@ -256,6 +246,7 @@
          
     }
     [cell hideSwipeAnimated:YES];
+
     //NSLog(@"%@", [[[[[[[sender superview] superview] superview] superview] superview] superview] class]);
 
 }
@@ -280,6 +271,7 @@
                                swipeSettings:(nonnull MGSwipeSettings*) swipeSettings expansionSettings:(nonnull MGSwipeExpansionSettings*) expansionSettings {
     NSArray<UIView*>* arr = nil;
     if (direction == MGSwipeDirectionLeftToRight){
+        //cell.backgroundColor = [UIColor grayColor];
         UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
         [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
         RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)cell;
@@ -294,6 +286,8 @@
         
         [save setTitle:@"save" forState:UIControlStateNormal];
         [save setTitle:@"saved" forState:UIControlStateSelected];
+        [save setBackgroundImage:[self imageWithColor:[UIColor grayColor] forBounds:save.bounds] forState:UIControlStateSelected];
+        
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
         
@@ -317,11 +311,32 @@
         arr = @[stackView];
 
     }
+
     return arr;
 }
 
+- (UIImage*) imageWithColor:(UIColor*)color forBounds:(CGRect)bounds{
+    CGRect rect = bounds;
+    UIGraphicsBeginImageContext(rect.size);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, rect);
+    
+    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
+    return image;
+    
+}
 
-
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    RecipeTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeCell" forIndexPath:indexPath];
+    Recipe *recipe = self.recipes[indexPath.row];
+    cell.recipe = recipe;
+    cell.recipeImageView.image = nil;
+    [cell setRecipe];
+    cell.delegate = self;
+    return cell;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.recipes.count;

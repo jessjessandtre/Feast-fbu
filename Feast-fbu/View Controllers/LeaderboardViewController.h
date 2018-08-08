@@ -9,7 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Post.h"
 #import "ParseUI.h"
+#import "Recipe.h"
 
 @interface LeaderboardViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (strong, nonatomic) Recipe *recipe;
 
 @end
