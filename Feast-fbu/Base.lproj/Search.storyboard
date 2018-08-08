@@ -158,6 +158,9 @@
                             <constraint firstAttribute="bottom" secondItem="Tz3-rz-6Ha" secondAttribute="bottom" id="hMe-hb-BAd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Dgv-4u-bvS"/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="4NX-HX-Y6i" appends="YES" id="A3B-Ir-U7s"/>
+                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="f7Z-Hu-pNQ"/>
                     <connections>
@@ -165,9 +168,15 @@
                         <outlet property="searchTableView" destination="Tz3-rz-6Ha" id="I7t-d2-Zgp"/>
                         <outlet property="searchTextField" destination="QI1-Gq-cOr" id="WFs-ez-DAg"/>
                         <outlet property="tagCollectionView" destination="Ze7-pc-CyS" id="CPA-8q-bK5"/>
+                        <outlet property="tapGestureRecognizer" destination="4NX-HX-Y6i" id="h0T-dl-E20"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubj-Ig-1YF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4NX-HX-Y6i">
+                    <connections>
+                        <action selector="tapScreen:" destination="s3o-d0-1nP" id="ofb-H3-yh4"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="780" y="-83.208395802098963"/>
         </scene>
@@ -213,6 +222,6 @@
         <image name="search" width="128" height="128"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yyu-Fe-nHY"/>
+        <segue reference="Fg1-Ex-xFV"/>
     </inferredMetricsTieBreakers>
 </document>
