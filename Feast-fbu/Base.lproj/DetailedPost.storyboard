@@ -491,13 +491,13 @@
                         <outlet property="profileImageView" destination="NeV-ba-0wS" id="udU-13-Z8Y"/>
                         <outlet property="recipeNameLabel" destination="oHH-On-y2B" id="qId-c6-9hc"/>
                         <outlet property="usernameLabel" destination="0Fu-sd-q1T" id="rgO-Iy-6tn"/>
+                        <segue destination="cem-7b-wqY" kind="show" identifier="ExternalProfileSegue" id="HxW-lt-pfp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tWA-S4-l3L" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="ywK-Mt-Iqi">
                     <connections>
                         <action selector="tapUsername:" destination="YT6-Nz-0eN" id="D99-IQ-fUh"/>
-                        <segue destination="cem-7b-wqY" kind="show" identifier="ExternalProfileSegue" id="DCA-J4-zDm"/>
                     </connections>
                 </tapGestureRecognizer>
                 <tapGestureRecognizer id="XSB-uh-5YY">

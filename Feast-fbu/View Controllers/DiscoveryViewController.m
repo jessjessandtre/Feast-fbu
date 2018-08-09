@@ -310,6 +310,8 @@
         UIImage *saveImage2 = [UIImage imageNamed:@"bookmark.png"];
         [save setImage:saveImage2 forState:UIControlStateSelected];
         [save setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
+        save.layer.cornerRadius = save.frame.size.width / 16;
+
         
         UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
         [share.widthAnchor constraintEqualToConstant:30].active = true;
@@ -318,6 +320,8 @@
         [share setImage:shareImage forState:UIControlStateNormal];
         [share setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
         [share addTarget:self action:@selector(onShareTapped:) forControlEvents:UIControlEventTouchUpInside];
+        share.layer.cornerRadius = share.frame.size.width / 16;
+
         
         UIView* v2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 50)];
         [v2 setBackgroundColor:[UIColor whiteColor]];
@@ -340,19 +344,6 @@
     }
     
     return arr;
-}
-
-- (UIImage*) imageWithColor:(UIColor*)color forBounds:(CGRect)bounds{
-    CGRect rect = bounds;
-    UIGraphicsBeginImageContext(rect.size);
-    CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextSetFillColorWithColor(context, color.CGColor);
-    CGContextFillRect(context, rect);
-    
-    UIImage* image = UIGraphicsGetImageFromCurrentImageContext();
-    return image;
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
