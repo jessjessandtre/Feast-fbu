@@ -15,6 +15,7 @@
 #import "DetailedPostViewController.h"
 #import "CreatePostViewController.h"
 #import "Follow.h"
+#import "FollowViewController.h"
 
 @interface ProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource,  UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
@@ -26,6 +27,9 @@
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
 
 @property (strong, nonatomic) NSArray* posts;
+
+@property (strong, nonatomic) NSString *followOrFollowing;
+
 @end
 
 @implementation ProfileViewController
@@ -289,6 +293,16 @@
         PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
         DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
         detailedPostViewController.post = cell.post;
+    }
+    else if ([segue.identifier isEqualToString:@"FollowersSegue"]) {
+        FollowViewController *followViewController = [segue destinationViewController];
+        followViewController.user = self.user;
+        followViewController.followOrFollowing = @"Followers";
+    }
+    else if ([segue.identifier isEqualToString:@"FollowingSegue"]) {
+        FollowViewController *followViewController = [segue destinationViewController];
+        followViewController.user = self.user;
+        followViewController.followOrFollowing = @"Followings";
     }
 }
 @end

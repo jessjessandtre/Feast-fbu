@@ -177,19 +177,27 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="115"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSg-QL-b2V">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Following" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSg-QL-b2V">
                                                     <rect key="frame" x="278" y="23" width="79" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="aNX-Ea-gZE" appends="YES" id="hZW-3V-rSa"/>
+                                                    </connections>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMI-cD-Rhl">
+                                                <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Followers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gMI-cD-Rhl">
                                                     <rect key="frame" x="165" y="24" width="79" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <gestureRecognizers/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <connections>
+                                                        <outletCollection property="gestureRecognizers" destination="yNO-tr-1G7" appends="YES" id="SN9-Nr-ES2"/>
+                                                    </connections>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="###" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GK-JC-NRY">
                                                     <rect key="frame" x="183" y="48" width="32" height="21"/>
@@ -308,8 +316,34 @@
                         <action selector="profileImageTapped:" destination="bbL-O1-Hnz" id="caO-bN-b4k"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="yNO-tr-1G7">
+                    <connections>
+                        <segue destination="up6-jk-Xch" kind="show" identifier="FollowersSegue" id="RKd-xG-TiU"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="aNX-Ea-gZE">
+                    <connections>
+                        <segue destination="xqq-bG-bou" kind="show" identifier="FollowingSegue" id="7fM-u6-6t7"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4903.1999999999998" y="1371.3643178410796"/>
+        </scene>
+        <!--Follow-->
+        <scene sceneID="RIw-Vd-41F">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Follow" referencedIdentifier="Follow" id="up6-jk-Xch" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mOM-uA-rfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5544" y="879"/>
+        </scene>
+        <!--Follow-->
+        <scene sceneID="ODT-5e-vhu">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Follow" referencedIdentifier="Follow" id="xqq-bG-bou" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="n8y-hu-RZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5547" y="983"/>
         </scene>
         <!--SavedRecipes-->
         <scene sceneID="gGc-oR-2Q8">
