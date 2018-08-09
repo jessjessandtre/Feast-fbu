@@ -14,6 +14,7 @@
 #import "ParseUI.h"
 #import <SVProgressHUD.h>
 #import "DetailedPostViewController.h"
+#import "FollowViewController.h"
 
 @interface ExternalProfileViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet PFImageView *profileImage;
@@ -215,6 +216,16 @@
         PostCollectionViewCell* cell = (PostCollectionViewCell*) sender;
         DetailedPostViewController* detailedPostViewController = [segue destinationViewController];
         detailedPostViewController.post = cell.post;
+    }
+    else if ([segue.identifier isEqualToString:@"FollowersSegue2"]) {
+        FollowViewController *followViewController = [segue destinationViewController];
+        followViewController.user = self.user;
+        followViewController.followOrFollowing = @"Followers";
+    }
+    else if ([segue.identifier isEqualToString:@"FollowingSegue2"]) {
+        FollowViewController *followViewController = [segue destinationViewController];
+        followViewController.user = self.user;
+        followViewController.followOrFollowing = @"Following";
     }
 }
 

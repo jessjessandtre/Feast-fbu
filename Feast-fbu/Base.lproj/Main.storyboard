@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="c4T-5z-LpX">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -172,8 +172,76 @@
             </objects>
             <point key="canvasLocation" x="2546" y="525"/>
         </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="gwm-Ea-aYg">
+            <objects>
+                <viewController id="c4T-5z-LpX" customClass="LaunchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xtZ-BR-d0C">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="rsT-Ib-wsq">
+                                <rect key="frame" x="87.5" y="283.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="ge5-WK-LFN"/>
+                                    <constraint firstAttribute="width" constant="200" id="jac-oK-p2g"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="rsT-Ib-wsq" firstAttribute="centerX" secondItem="xtZ-BR-d0C" secondAttribute="centerX" id="6T3-Tf-a35"/>
+                            <constraint firstItem="rsT-Ib-wsq" firstAttribute="centerY" secondItem="xtZ-BR-d0C" secondAttribute="centerY" constant="50" id="Mmg-y8-1sH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XNz-ne-zBR"/>
+                    </view>
+                    <connections>
+                        <outlet property="iconImageView" destination="rsT-Ib-wsq" id="z5v-4T-M8E"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="AfterAnimationSegue" customClass="StartSegue" id="7ET-xc-N9m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTK-Zn-tZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-170.40000000000001" y="131.78410794602701"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="2xm-Q9-EU7">
+            <objects>
+                <viewController storyboardIdentifier="Restart" id="HNo-q3-I5q" customClass="LaunchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="91l-ic-DW4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-jE-dDW">
+                                <rect key="frame" x="87.5" y="283.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="9Aj-0a-HHI"/>
+                                    <constraint firstAttribute="height" constant="200" id="Xfd-CG-TV7"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <constraints>
+                            <constraint firstItem="SPd-jE-dDW" firstAttribute="centerY" secondItem="91l-ic-DW4" secondAttribute="centerY" constant="50" id="5By-nJ-dkf"/>
+                            <constraint firstItem="SPd-jE-dDW" firstAttribute="centerX" secondItem="91l-ic-DW4" secondAttribute="centerX" id="k0S-wZ-XNE"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MWz-39-4be"/>
+                    </view>
+                    <connections>
+                        <outlet property="iconImageView" destination="SPd-jE-dDW" id="3Ff-OO-6hr"/>
+                        <segue destination="8OP-g6-ON3" kind="custom" identifier="AfterAnimationSegue" customClass="StartSegue" id="vPe-kx-zOw"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKC-jP-Gwx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1436" y="-887"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="Icon" width="1024" height="1024"/>
         <image name="eatin-1" width="2000" height="2000"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="vPe-kx-zOw"/>
+    </inferredMetricsTieBreakers>
 </document>
