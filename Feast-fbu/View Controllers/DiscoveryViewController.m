@@ -218,8 +218,8 @@
             [self alertControlWithTitle:@"Error fetching data" andMessage:error.localizedDescription];
         }
         
-        [self.recipeTableView reloadData];
-        [self.refreshControl endRefreshing];
+        // [self.recipeTableView reloadData];
+        // [self.refreshControl endRefreshing];
         
         NSLog(@"%@", self.recipes[0][@"courseType"]);
     }];
@@ -430,7 +430,6 @@ didSelectViewController:(UIViewController *)viewController
     }
     previousController = viewController;
 }
-
 
 #pragma mark - Navigation
 
