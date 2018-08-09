@@ -304,7 +304,7 @@
     else if ([segue.identifier isEqualToString:@"FollowingSegue"]) {
         FollowViewController *followViewController = [segue destinationViewController];
         followViewController.user = self.user;
-        followViewController.followOrFollowing = @"Followings";
+        followViewController.followOrFollowing = @"Following";
     }
 }
 @end

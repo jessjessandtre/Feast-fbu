@@ -26,6 +26,8 @@
     self.followTableView.delegate = self;
     self.followTableView.dataSource = self;
     
+    self.navigationItem.title = self.followOrFollowing;
+    
     [self fetchFollows];
 }
 
@@ -56,12 +58,14 @@
             [self.followTableView reloadData];
         }];
     }
-    else if ([self.followOrFollowing isEqualToString:@"Followings"]) {
+    else if ([self.followOrFollowing isEqualToString:@"Following"]) {
         PFQuery *followersQuery = [PFQuery queryWithClassName:@"Follow"];
         [followersQuery includeKey:@"toUser"];
         [followersQuery whereKey:@"fromUser" equalTo:self.user];
         
         [followersQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable follows, NSError * _Nullable error) {
+            self.follows = [NSMutableArray array];
+
             if (!error) {
                 for (Follow *u in follows) {
                     [self.follows addObject:u.toUser];
@@ -70,6 +74,8 @@
             else {
                 NSLog(@"error fetching followings: %@", error.localizedDescription);
             }
+            
+            [self.followTableView reloadData];
         }];
     }
 }
