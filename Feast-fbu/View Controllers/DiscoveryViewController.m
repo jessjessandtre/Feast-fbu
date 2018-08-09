@@ -95,9 +95,8 @@
     [self fetchRecipes];
     // [self fetchTags];
     
-//    UIImage *title = [UIImage imageNamed:@"eatinlogo.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    imageView.image = [UIImage imageNamed:@"eatinlogo1.png"];
+    imageView.image = [UIImage imageNamed:@"eatinlogo2.png"];
     //    [imageView setImage:title];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
     self.navigationItem.titleView = imageView;
@@ -312,7 +311,7 @@
         
         [save setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
         
-        UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, -50, 100, 100)];
 //        [share setTitle:@"share" forState:UIControlStateNormal];
 //        [share setTitle:@"unshare" forState:UIControlStateSelected];
         [share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
