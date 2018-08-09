@@ -15,7 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *followTableView;
 @property (strong, nonatomic) NSMutableArray *follows;
-@property (strong, nonatomic) NSArray *followsArray;
 
 @end
 
@@ -54,7 +53,6 @@
                 NSLog(@"error fetching followers: %@", error.localizedDescription);
             }
             
-            [self.followsArray initWithArray:self.follows];
             [self.followTableView reloadData];
         }];
     }
@@ -78,14 +76,14 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     SuggestedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SuggestedCell" forIndexPath:indexPath];
-    PFUser *user = self.followsArray[indexPath.row];
+    PFUser *user = self.follows[indexPath.row];
     cell.user = user;
     [cell setUser];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.followsArray.count;
+    return self.follows.count;
 }
 
 /*
