@@ -29,6 +29,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *numLikesLabel;
 @property (weak, nonatomic) IBOutlet UIView *likeView;
 @property (weak, nonatomic) IBOutlet UIButton *commentView;
+@property (weak, nonatomic) IBOutlet UITableView *detailedPostTableView;
 
 @property (strong, nonatomic) Recipe* recipe;
 
@@ -40,6 +41,8 @@
     [super viewDidLoad];
     
     self.navigationItem.title = [NSString stringWithFormat:@"%@%@", self.post.user.username, @"'s post"];
+    
+    [self.detailedPostTableView setShowsVerticalScrollIndicator:NO];
     // Do any additional setup after loading the view. ter
     [self refreshData];
 }

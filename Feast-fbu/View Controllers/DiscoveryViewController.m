@@ -61,6 +61,9 @@
     self.friendsCollectionView.dataSource = self;
     self.friendsCollectionView.delegate = self;
     
+    
+    [self.recipeTableView setShowsVerticalScrollIndicator:NO];
+    
     self.tabBarController.delegate = self;
     
     //self.searchBar.delegate = self;
@@ -289,19 +292,30 @@
             }
         }];
         
-        [save setTitle:@"save" forState:UIControlStateNormal];
-        [save setTitle:@"saved" forState:UIControlStateSelected];
-        [save setBackgroundImage:[self imageWithColor:[UIColor grayColor] forBounds:save.bounds] forState:UIControlStateSelected];
+//        [save setTitle:@"save" forState:UIControlStateNormal];
+//        [save setTitle:@"saved" forState:UIControlStateSelected];
+//        [save setBackgroundImage:[self imageWithColor:[UIColor grayColor] forBounds:save.bounds] forState:UIControlStateSelected];
         
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [save setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
         
+        UIImage *saveImage = [UIImage imageNamed:@"bookmark-outline.png"];
+        [save setImage:saveImage forState:UIControlStateNormal];
+        UIImage *saveImage2 = [UIImage imageNamed:@"bookmark.png"];
+        [save setImage:saveImage2 forState:UIControlStateSelected];
+        
+        [save setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
+        
         UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
-        [share setTitle:@"share" forState:UIControlStateNormal];
-        [share setTitle:@"unshare" forState:UIControlStateSelected];
+//        [share setTitle:@"share" forState:UIControlStateNormal];
+//        [share setTitle:@"unshare" forState:UIControlStateSelected];
         [share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [share setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
         [share addTarget:self action:@selector(onShareTapped:) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIImage *shareImage = [UIImage imageNamed:@"share.png"];
+        [share setImage:shareImage forState:UIControlStateNormal];
+        [share setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
         
         UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[save,share] ];
         stackView.frame = CGRectMake(0, 0, 80, 80);

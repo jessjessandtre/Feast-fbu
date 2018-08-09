@@ -484,6 +484,7 @@
                         <outlet property="captionLabel" destination="5tz-AU-UCi" id="O31-ZK-Cp7"/>
                         <outlet property="commentView" destination="E1I-gc-Vpj" id="B6T-FL-Uhj"/>
                         <outlet property="createdAtLabel" destination="LXA-it-VM9" id="4Xu-QU-Yia"/>
+                        <outlet property="detailedPostTableView" destination="DIH-yr-yIt" id="fJr-oE-3Ge"/>
                         <outlet property="likeButton" destination="bhp-7f-t31" id="dGK-VX-ie2"/>
                         <outlet property="numLikesLabel" destination="GNP-cj-8pf" id="4Gc-it-p35"/>
                         <outlet property="postImageView" destination="tNf-l1-0z1" id="YnB-Ud-Kme"/>

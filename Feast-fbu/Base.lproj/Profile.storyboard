@@ -238,26 +238,25 @@
                                     <rect key="frame" x="0.0" y="175" width="375" height="400"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Q3-MV-Vtk">
-                                            <rect key="frame" x="0.0" y="0.0" width="367" height="400"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9Q3-MV-Vtk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="400"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Aya-9H-yue">
-                                                <size key="itemSize" width="108" height="100"/>
+                                                <size key="itemSize" width="100" height="100"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
                                                 <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PostCollectionViewCell" id="i3h-Mh-F6u" customClass="PostCollectionViewCell">
-                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="100"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                                        <rect key="frame" x="0.0" y="0.0" width="108" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P3G-XJ-2iB" customClass="PFImageView">
-                                                                <rect key="frame" x="0.0" y="0.0" width="108" height="100"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                             </imageView>
                                                         </subviews>
@@ -271,6 +270,13 @@
                                         </collectionView>
                                     </subviews>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstItem="9Q3-MV-Vtk" firstAttribute="top" secondItem="DgW-Ll-ZMj" secondAttribute="top" id="3AO-2L-9Wc"/>
+                                        <constraint firstAttribute="bottom" secondItem="9Q3-MV-Vtk" secondAttribute="bottom" id="KiR-hv-has"/>
+                                        <constraint firstAttribute="trailing" secondItem="9Q3-MV-Vtk" secondAttribute="trailing" id="T3c-4C-fkg"/>
+                                        <constraint firstItem="9Q3-MV-Vtk" firstAttribute="leading" secondItem="DgW-Ll-ZMj" secondAttribute="leading" id="c7F-Xe-vwa"/>
+                                        <constraint firstItem="9Q3-MV-Vtk" firstAttribute="top" secondItem="DgW-Ll-ZMj" secondAttribute="top" id="ezF-hF-hrn"/>
+                                    </constraints>
                                 </view>
                             </tableView>
                         </subviews>
@@ -307,6 +313,7 @@
                         <outlet property="numberFollowersLabel" destination="9GK-JC-NRY" id="NHd-qI-yak"/>
                         <outlet property="numberFollowingLabel" destination="0es-IR-aFX" id="c3o-vz-nHC"/>
                         <outlet property="profileImageView" destination="Imn-uq-kyl" id="ff1-aW-Fhs"/>
+                        <outlet property="profileTableView" destination="fpr-8f-AKm" id="3gq-fF-cIX"/>
                         <outlet property="usernameLabel" destination="LnY-77-Gen" id="UCt-C0-DtE"/>
                     </connections>
                 </viewController>
