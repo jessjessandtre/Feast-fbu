@@ -267,9 +267,6 @@
 
 -(void) onShareTapped:(id)sender{
     NSLog(@"share");
-    RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
-    [cell hideSwipeAnimated:YES];
-
 }
 
 
