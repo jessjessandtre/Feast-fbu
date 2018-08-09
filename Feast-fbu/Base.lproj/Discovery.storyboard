@@ -8,6 +8,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -158,15 +159,18 @@
                         </prototypes>
                     </tableView>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="GXn-9O-WDE">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="xQy-bP-T5y">
+                        <barButtonItem key="leftBarButtonItem" image="icons8-add-user-male-26" id="xQy-bP-T5y">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="yz4-QH-NZG" kind="show" id="gyv-uk-ZqR"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" enabled="NO" image="success.png" id="j4C-0o-k2e">
-                            <color key="tintColor" red="0.80392156862745101" green="0.20392156862745098" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem enabled="NO" image="success.png" id="j4C-0o-k2e">
+                                <color key="tintColor" red="0.80392156862745101" green="0.20392156862745098" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
+                            <barButtonItem enabled="NO" id="Pt5-1a-fGR"/>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>
                     <connections>
@@ -293,6 +297,7 @@
     </scenes>
     <resources>
         <image name="007-home-1" width="32" height="32"/>
+        <image name="icons8-add-user-male-26" width="26" height="26"/>
         <image name="success.png" width="28" height="28"/>
     </resources>
 </document>

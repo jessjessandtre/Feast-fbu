@@ -59,7 +59,7 @@
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.clipsToBounds = YES;
     
-    self.profileImageView.layer.borderColor = [UIColor colorWithRed:0.91 green:0.91 blue:0.91 alpha:1.0].CGColor;
+    self.profileImageView.layer.borderColor = [UIColor colorWithRed:0.80 green:0.20 blue:0.13 alpha:1.0].CGColor;
     self.profileImageView.layer.borderWidth = 1.5;
     
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;

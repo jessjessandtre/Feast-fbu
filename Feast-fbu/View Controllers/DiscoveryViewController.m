@@ -95,9 +95,8 @@
     [self fetchRecipes];
     // [self fetchTags];
     
-//    UIImage *title = [UIImage imageNamed:@"eatinlogo.png"];
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
-    imageView.image = [UIImage imageNamed:@"eatinlogo1.png"];
+    imageView.image = [UIImage imageNamed:@"eatinlogo2.png"];
     //    [imageView setImage:title];
     [imageView setContentMode:UIViewContentModeScaleAspectFit];
     self.navigationItem.titleView = imageView;

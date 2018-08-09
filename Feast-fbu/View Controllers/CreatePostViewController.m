@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UITextField *captionTextField;
 @property (weak, nonatomic) IBOutlet UITextField *tagTextField;
+@property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
 
 @end
 
@@ -25,6 +26,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
+    self.profileImageView.clipsToBounds = YES;
+    self.profileImageView.layer.borderColor = [UIColor colorWithRed:0.80 green:0.20 blue:0.13 alpha:1.0].CGColor;
+    self.profileImageView.layer.borderWidth = 1.5;
+    
+    if ([PFUser currentUser][@"profileImage"] == nil) {
+        self.profileImageView.image = [UIImage imageNamed: @"profile-image-blank"];
+    }
+    else {
+        self.profileImageView.file = [PFUser currentUser][@"profileImage"];
+        [self.profileImageView loadInBackground];
+    }
+    
     [self refreshData];
 }
 
