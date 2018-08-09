@@ -17,20 +17,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon" translatesAutoresizingMaskIntoConstraints="NO" id="sqH-oT-h3f">
-                                <rect key="frame" x="87" y="233" width="200" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="FGk-cD-JEE"/>
-                                    <constraint firstAttribute="width" constant="200" id="SmC-tD-oNn"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <constraints>
-                            <constraint firstItem="sqH-oT-h3f" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2FG-SE-d94"/>
-                            <constraint firstItem="sqH-oT-h3f" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="LaS-qm-FWp"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -39,7 +26,4 @@
             <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Icon" width="1024" height="1024"/>
-    </resources>
 </document>
