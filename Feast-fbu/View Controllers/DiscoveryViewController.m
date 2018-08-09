@@ -282,13 +282,14 @@
  **/
 -(nullable NSArray<UIView*>*) swipeTableCell:(nonnull MGSwipeTableCell*) cell swipeButtonsForDirection:(MGSwipeDirection)direction
                                swipeSettings:(nonnull MGSwipeSettings*) swipeSettings expansionSettings:(nonnull MGSwipeExpansionSettings*) expansionSettings {
+
     NSArray<UIView*>* arr = nil;
     if (direction == MGSwipeDirectionLeftToRight){
         //cell.backgroundColor = [UIColor grayColor];
-        UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 100, 100)];
+        UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 100)];
         [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
         RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)cell;
-
+        
         [Saved savedRecipeExists:recipeCell.recipe withCompletion:^(Boolean saved) {
             if (saved){
                 [save setSelected:YES];
@@ -297,35 +298,37 @@
             }
         }];
         
-//        [save setTitle:@"save" forState:UIControlStateNormal];
-//        [save setTitle:@"saved" forState:UIControlStateSelected];
-//        [save setBackgroundImage:[self imageWithColor:[UIColor grayColor] forBounds:save.bounds] forState:UIControlStateSelected];
+        UIView* v1 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 50)];
+        [v1 setBackgroundColor:[UIColor whiteColor]];
+        [v1.widthAnchor constraintEqualToConstant:30].active = true;
+        [v1.heightAnchor constraintEqualToConstant:8].active = true;
         
-        [save setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [save setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-        
+        [save.widthAnchor constraintEqualToConstant:30].active = true;
+        [save.heightAnchor constraintEqualToConstant:(recipeCell.recipeImageView.bounds.size.height)/2].active = true;
         UIImage *saveImage = [UIImage imageNamed:@"bookmark-outline.png"];
         [save setImage:saveImage forState:UIControlStateNormal];
         UIImage *saveImage2 = [UIImage imageNamed:@"bookmark.png"];
         [save setImage:saveImage2 forState:UIControlStateSelected];
-        
         [save setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
         
-        UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, -50, 100, 100)];
-//        [share setTitle:@"share" forState:UIControlStateNormal];
-//        [share setTitle:@"unshare" forState:UIControlStateSelected];
-        [share setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-        [share setTitleColor:[UIColor blackColor] forState:UIControlStateSelected];
-        [share addTarget:self action:@selector(onShareTapped:) forControlEvents:UIControlEventTouchUpInside];
-        
+        UIButton* share = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 50)];
+        [share.widthAnchor constraintEqualToConstant:30].active = true;
+        [share.heightAnchor constraintEqualToConstant:(recipeCell.recipeImageView.bounds.size.height)/2].active = true;;
         UIImage *shareImage = [UIImage imageNamed:@"share.png"];
         [share setImage:shareImage forState:UIControlStateNormal];
         [share setBackgroundColor:[UIColor colorWithRed:0.97 green:0.97 blue:0.97 alpha:1.0]];
+        [share addTarget:self action:@selector(onShareTapped:) forControlEvents:UIControlEventTouchUpInside];
         
-        UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[save,share] ];
+        UIView* v2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 50)];
+        [v2 setBackgroundColor:[UIColor whiteColor]];
+        [v2.widthAnchor constraintEqualToConstant:30].active = true;
+        [v2.heightAnchor constraintEqualToConstant:recipeCell.recipeTitleLabel.bounds.size.height + 24].active = true;
+        
+        UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[v1,save,share, v2] ];
         stackView.frame = CGRectMake(0, 0, 80, 80);
         stackView.axis = UILayoutConstraintAxisVertical;
-        stackView.distribution = UIStackViewDistributionFillEqually;
+        stackView.distribution = UIStackViewDistributionEqualSpacing;
+        stackView.spacing = 0;
         save.layer.zPosition = 1;
         
         
@@ -333,9 +336,9 @@
         cell.leftSwipeSettings.transition = MGSwipeTransitionStatic;
         
         arr = @[stackView];
-
+        
     }
-
+    
     return arr;
 }
 
