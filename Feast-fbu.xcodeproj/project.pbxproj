@@ -38,6 +38,7 @@
 		298E337B2101091900290BF4 /* DiscoveryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E33792101091900290BF4 /* DiscoveryViewController.m */; };
 		298E337E2101092600290BF4 /* LeaderboardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 298E337D2101092600290BF4 /* LeaderboardViewController.m */; };
 		2991892A211CB50700FD68A2 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29918929211CB50700FD68A2 /* LaunchViewController.m */; };
+		2991892D211CBB8A00FD68A2 /* StartSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = 2991892C211CBB8A00FD68A2 /* StartSegue.m */; };
 		299699962112209B00C83061 /* PostCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 299699952112209B00C83061 /* PostCollectionViewCell.m */; };
 		29CC2570210116F900BD6C01 /* Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 29CC256F210116F900BD6C01 /* Post.m */; };
 		29CC25732101311900BD6C01 /* DetailedRecipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29CC25712101311500BD6C01 /* DetailedRecipe.storyboard */; };
@@ -149,6 +150,8 @@
 		298E337D2101092600290BF4 /* LeaderboardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LeaderboardViewController.m; sourceTree = "<group>"; };
 		29918928211CB50700FD68A2 /* LaunchViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		29918929211CB50700FD68A2 /* LaunchViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
+		2991892B211CBB8A00FD68A2 /* StartSegue.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartSegue.h; sourceTree = "<group>"; };
+		2991892C211CBB8A00FD68A2 /* StartSegue.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartSegue.m; sourceTree = "<group>"; };
 		299699942112209B00C83061 /* PostCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PostCollectionViewCell.h; sourceTree = "<group>"; };
 		299699952112209B00C83061 /* PostCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PostCollectionViewCell.m; sourceTree = "<group>"; };
 		29CC256E210116F900BD6C01 /* Post.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Post.h; sourceTree = "<group>"; };
@@ -270,6 +273,8 @@
 				589382CF21111E870045670D /* Tag.m */,
 				58BB7CE1211519E90097A046 /* CourseType.h */,
 				58BB7CE2211519E90097A046 /* CourseType.m */,
+				2991892B211CBB8A00FD68A2 /* StartSegue.h */,
+				2991892C211CBB8A00FD68A2 /* StartSegue.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -709,6 +714,7 @@
 				58340E67211B9E2E00BE4291 /* FollowViewController.m in Sources */,
 				589382D6211262FA0045670D /* AutofillResultCellTableViewCell.m in Sources */,
 				297420792106557500B30175 /* DetailedPostViewController.m in Sources */,
+				2991892D211CBB8A00FD68A2 /* StartSegue.m in Sources */,
 				214F5DA8210A9F5400A47BC8 /* SuggestedViewController.m in Sources */,
 				298E33752100F82500290BF4 /* ProfileViewController.m in Sources */,
 				29CC258221015A7600BD6C01 /* RecipeTableViewCellHeaderCell.m in Sources */,
@@ -932,7 +938,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3ZDZ24QV4;
+				DEVELOPMENT_TEAM = 8XY78Q2YPY;
 				INFOPLIST_FILE = "Feast-fbu/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -951,7 +957,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = C3ZDZ24QV4;
+				DEVELOPMENT_TEAM = 8XY78Q2YPY;
 				INFOPLIST_FILE = "Feast-fbu/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (

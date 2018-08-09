@@ -95,7 +95,12 @@
     [self fetchRecipes];
     // [self fetchTags];
     
-    self.navigationItem.title = @"Discover";
+//    UIImage *title = [UIImage imageNamed:@"eatinlogo.png"];
+    UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 30, 30)];
+    imageView.image = [UIImage imageNamed:@"eatinlogo1.png"];
+    //    [imageView setImage:title];
+    [imageView setContentMode:UIViewContentModeScaleAspectFit];
+    self.navigationItem.titleView = imageView;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
     [self.refreshControl addTarget:self action:@selector(fetchRecipes) forControlEvents:UIControlEventValueChanged];
@@ -151,6 +156,7 @@
     PostCollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"PostCollectionViewCell" forIndexPath:indexPath];
     
     Post *post = self.friendsPosts[indexPath.row];
+    cell.layer.cornerRadius = cell.frame.size.width / 16;
     
     cell.post = post;
     return cell;

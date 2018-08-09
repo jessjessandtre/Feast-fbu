@@ -197,7 +197,7 @@
                     </view>
                     <connections>
                         <outlet property="iconImageView" destination="rsT-Ib-wsq" id="z5v-4T-M8E"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="AfterAnimationSegue" id="7ET-xc-N9m"/>
+                        <segue destination="BYZ-38-t0r" kind="custom" identifier="AfterAnimationSegue" customClass="StartSegue" id="7ET-xc-N9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TTK-Zn-tZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -229,7 +229,7 @@
                     </view>
                     <connections>
                         <outlet property="iconImageView" destination="SPd-jE-dDW" id="3Ff-OO-6hr"/>
-                        <segue destination="8OP-g6-ON3" kind="show" identifier="AfterAnimationSegue" id="vPe-kx-zOw"/>
+                        <segue destination="8OP-g6-ON3" kind="custom" identifier="AfterAnimationSegue" customClass="StartSegue" id="vPe-kx-zOw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eKC-jP-Gwx" userLabel="First Responder" sceneMemberID="firstResponder"/>

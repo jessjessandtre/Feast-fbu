@@ -37,6 +37,7 @@
     gradientLayer.startPoint = CGPointMake(0.5f, 0.7f);
     gradientLayer.endPoint = CGPointMake(0.5f, 1.2f);
     
+    self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width / 16;
     self.recipeTitleLabel.hidden = NO;
     self.recipeTitleLabel.text = self.recipe.name;
     
