@@ -21,6 +21,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowersLabel;
 @property (weak, nonatomic) IBOutlet UILabel *numberFollowingLabel;
 
+@property (weak, nonatomic) IBOutlet UITableView *profileTableView;
 @property (weak, nonatomic) IBOutlet PFImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
@@ -38,6 +39,7 @@
     
     self.user = [PFUser currentUser];
     
+    [self.profileTableView setShowsVerticalScrollIndicator:NO];
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(receiveNotification:)
                                                  name:@"NewPostNotification"

@@ -305,6 +305,7 @@
                         <outlet property="numberFollowersLabel" destination="9GK-JC-NRY" id="NHd-qI-yak"/>
                         <outlet property="numberFollowingLabel" destination="0es-IR-aFX" id="c3o-vz-nHC"/>
                         <outlet property="profileImageView" destination="Imn-uq-kyl" id="ff1-aW-Fhs"/>
+                        <outlet property="profileTableView" destination="fpr-8f-AKm" id="3gq-fF-cIX"/>
                         <outlet property="usernameLabel" destination="LnY-77-Gen" id="UCt-C0-DtE"/>
                     </connections>
                 </viewController>

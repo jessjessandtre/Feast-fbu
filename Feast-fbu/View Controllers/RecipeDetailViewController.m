@@ -31,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *urlTextView;
 @property (strong, nonatomic) IBOutlet UICollectionView *postCollectionView;
 @property (strong, nonatomic) IBOutlet UICollectionView *tagCollectionView;
+@property (weak, nonatomic) IBOutlet UIScrollView *recipeScrollView;
 
 @end
 
@@ -45,6 +46,9 @@
     self.postCollectionView.dataSource = self;
     self.tagCollectionView.delegate = self;
     self.tagCollectionView.dataSource = self;
+    
+    
+    [self.recipeScrollView setShowsVerticalScrollIndicator:NO];
     
     self.navigationItem.title = self.recipe.name; 
 

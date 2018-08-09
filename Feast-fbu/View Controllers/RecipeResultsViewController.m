@@ -26,6 +26,9 @@
     [super viewDidLoad];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [self.tableView setShowsVerticalScrollIndicator:NO];
+    
     // Do any additional setup after loading the view.
     NSLog(@"coursetype %@", self.courseType );
     NSLog(@"tagname %@", self.tagName);

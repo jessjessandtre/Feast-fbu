@@ -61,6 +61,9 @@
     self.friendsCollectionView.dataSource = self;
     self.friendsCollectionView.delegate = self;
     
+    
+    [self.recipeTableView setShowsVerticalScrollIndicator:NO];
+    
     self.tabBarController.delegate = self;
     
     //self.searchBar.delegate = self;

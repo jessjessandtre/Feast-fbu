@@ -527,6 +527,7 @@
                         <outlet property="instructionsLabel" destination="7V3-nK-veD" id="Ksf-9C-ilc"/>
                         <outlet property="postCollectionView" destination="J1H-af-fmB" id="oD7-Tj-0mR"/>
                         <outlet property="recipeImageView" destination="KrZ-Zb-7IR" id="mYJ-Pd-klw"/>
+                        <outlet property="recipeScrollView" destination="CWW-Jh-HUF" id="YLp-ES-7bx"/>
                         <outlet property="recipeTitleLabel" destination="dpH-8L-2yD" id="NxT-qy-rcT"/>
                         <outlet property="saveButton" destination="Ojt-YE-lCa" id="Oaz-j3-V6w"/>
                         <outlet property="tagCollectionView" destination="QbO-1Z-mBR" id="2w8-4p-ysi"/>
