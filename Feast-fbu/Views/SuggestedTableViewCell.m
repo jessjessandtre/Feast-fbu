@@ -12,8 +12,8 @@
 
 -(void)setUser{
     
-    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
     if (self.user[@"profileImage"] == nil) {
+        
         self.profilePic.image = [UIImage imageNamed: @"profile-image-blank"];
     }
     else {
@@ -23,7 +23,7 @@
     }
     self.username.text = self.user.username;
     
-    
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
 }
 
 @end
