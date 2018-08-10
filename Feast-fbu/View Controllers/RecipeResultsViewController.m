@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* recipes;
+@property (assign, nonatomic) BOOL *emptyFlag;
+
 
 @end
 
@@ -45,63 +47,84 @@
 
 - (void) receiveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
-        NSLog (@"Successfully received the recipe save notification!");
-        [self fetchRecipes];
+        NSLog (@"Successfully received the recipe save notification results!");
+        [self recipesWithCourseType];
     }
     //tag updates?
 }
 - (void) fetchRecipes {
     if (self.courseType){
-        PFQuery* query = [PFQuery queryWithClassName:@"Recipe"];
-        [query whereKey:@"courseType" equalTo:self.courseType.name];
-        query.limit = 20;
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            if (objects){
-                self.recipes = objects;
-                [self.tableView reloadData];
-            }
-            else {
-                NSLog(@"error finding recipe results: %@", error.localizedDescription);
-            }
-        }];
+        [self recipesWithCourseType];
     } else if (self.tagName){
-        PFQuery* tagQuery = [PFQuery queryWithClassName:@"Tag"];
-        [tagQuery whereKey:@"name" equalTo:self.tagName];
-        [tagQuery includeKey:@"recipe"];
-        tagQuery.limit = 20;
-        
-        [tagQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            if (objects){
-                NSMutableArray* arr = [[NSMutableArray alloc]init];
-                for (Tag* tag in objects){
-                    [arr addObject:tag.recipe];
-                }
-                self.recipes = [NSArray arrayWithArray:arr];
-                [self.tableView reloadData];
-            }else {
-                NSLog(@"error finding recipe results: %@", error.localizedDescription);
-            }
-        }];
+        [self recipesWithTag];
     }
     else if (self.searchString) {
-        PFQuery *searchQuery = [PFQuery queryWithClassName:@"Recipe"];
-        [searchQuery whereKey:@"name" containsString:self.searchString];
-        searchQuery.limit = 20;
-        
-        [searchQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            if (objects){
-                self.recipes = objects;
-                [self.tableView reloadData];
+        [self recipesWithSearchString];
+    }
+}
+
+- (void) recipesWithCourseType {
+    PFQuery* query = [PFQuery queryWithClassName:@"Recipe"];
+    [query whereKey:@"courseType" equalTo:self.courseType.name];
+    query.limit = 20;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (objects){
+            self.recipes = objects;
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"error finding recipe results: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void) recipesWithTag {
+    PFQuery* tagQuery = [PFQuery queryWithClassName:@"Tag"];
+    [tagQuery whereKey:@"name" equalTo:self.tagName];
+    [tagQuery includeKey:@"recipe"];
+    tagQuery.limit = 20;
+    
+    [tagQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (objects){
+            NSMutableArray* arr = [[NSMutableArray alloc]init];
+            for (Tag* tag in objects){
+                [arr addObject:tag.recipe];
+            }
+            self.recipes = [NSArray arrayWithArray:arr];
+            [self.tableView reloadData];
+        }else {
+            NSLog(@"error finding recipe results: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void) recipesWithSearchString {
+    PFQuery *searchQuery = [PFQuery queryWithClassName:@"Recipe"];
+    [searchQuery whereKey:@"name" containsString:self.searchString];
+    searchQuery.limit = 20;
+    
+    [searchQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (objects){
+            self.recipes = objects;
+            
+            if (self.recipes.count == 0) {
+                self.emptyFlag = YES;
+                self.recipes = [NSArray arrayWithObject:@"Empty"];
             }
             else {
-                NSLog(@"error finding recipe results: %@", error.localizedDescription);
+                self.emptyFlag = NO;
             }
-        }];
-    }
+            
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"error finding recipe results: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (void) onSaveTapped:(id)sender {
@@ -222,12 +245,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
-    cell.recipeImageView.image = nil; 
-    cell.recipe = self.recipes[indexPath.row];
-    [cell setRecipe];
-    cell.delegate = self;
-    return cell;
+    if (self.emptyFlag) {
+        RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
+        cell.recipeImageView.image = [UIImage imageNamed:@"tray"];
+        cell.recipeTitleLabel.text = @"No results! Try again. :)";
+        return cell;
+    }
+    else {
+        RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
+        cell.recipeImageView.image = nil;
+        cell.recipe = self.recipes[indexPath.row];
+        [cell setRecipe];
+        cell.delegate = self;
+        return cell;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
