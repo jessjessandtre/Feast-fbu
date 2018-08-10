@@ -7,7 +7,7 @@
 //
 
 #import "RecipeResultsViewController.h"
-#import "RecipeResultsTableViewCell.h"
+#import "RecipeTableViewCell.h"
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
 #import "RecipeDetailViewController.h"
@@ -106,7 +106,7 @@
 
 - (void) onSaveTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;
-    RecipeResultsTableViewCell* cell = (RecipeResultsTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
+    RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
     Recipe* recipe = cell.recipe;
     if ([saveButton isSelected]){
         [Saved deleteSavedRecipe:recipe withCompletion:^(Boolean succeeded) {
@@ -139,7 +139,7 @@
 
 -(void) onShareTapped:(id)sender{
     NSLog(@"share");
-    RecipeResultsTableViewCell* cell = (RecipeResultsTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
+    RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
     [cell hideSwipeAnimated:YES];
 }
 
@@ -163,7 +163,7 @@
         //cell.backgroundColor = [UIColor grayColor];
         UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 100)];
         [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
-        RecipeResultsTableViewCell* recipeCell = (RecipeResultsTableViewCell*)cell;
+        RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)cell;
         
         [Saved savedRecipeExists:recipeCell.recipe withCompletion:^(Boolean saved) {
             if (saved){
@@ -201,7 +201,7 @@
         UIView* v2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 50)];
         [v2 setBackgroundColor:[UIColor whiteColor]];
         [v2.widthAnchor constraintEqualToConstant:30].active = true;
-        [v2.heightAnchor constraintEqualToConstant:recipeCell.recipeNameLabel.bounds.size.height + 24].active = true;
+        [v2.heightAnchor constraintEqualToConstant:recipeCell.recipeTitleLabel.bounds.size.height + 24].active = true;
         
         UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[v1,save,share, v2] ];
         stackView.frame = CGRectMake(0, 0, 80, 80);
@@ -222,9 +222,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RecipeResultsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
+    RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
     cell.recipeImageView.image = nil; 
     cell.recipe = self.recipes[indexPath.row];
+    [cell setRecipe];
     cell.delegate = self;
     return cell;
 }
@@ -241,7 +242,7 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"DetailedRecipeSegue4"]){
         RecipeDetailViewController* recipeDetail = [segue destinationViewController];
-        RecipeResultsTableViewCell* cell = (RecipeResultsTableViewCell*)sender;
+        RecipeTableViewCell* cell = (RecipeTableViewCell*)sender;
         recipeDetail.recipe = cell.recipe;
     }
 }
