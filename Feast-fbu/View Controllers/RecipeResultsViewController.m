@@ -7,7 +7,7 @@
 //
 
 #import "RecipeResultsViewController.h"
-#import "RecipeResultsTableViewCell.h"
+#import "RecipeTableViewCell.h"
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
 #import "RecipeDetailViewController.h"
@@ -45,68 +45,80 @@
 
 - (void) receiveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
-        NSLog (@"Successfully received the recipe save notification!");
-        [self fetchRecipes];
+        NSLog (@"Successfully received the recipe save notification results!");
+        [self recipesWithCourseType];
     }
     //tag updates?
 }
 - (void) fetchRecipes {
     if (self.courseType){
-        PFQuery* query = [PFQuery queryWithClassName:@"Recipe"];
-        [query whereKey:@"courseType" equalTo:self.courseType.name];
-        query.limit = 20;
-        
-        [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            if (objects){
-                self.recipes = objects;
-                [self.tableView reloadData];
-            }
-            else {
-                NSLog(@"error finding recipe results: %@", error.localizedDescription);
-            }
-        }];
+        [self recipesWithCourseType];
     } else if (self.tagName){
-        PFQuery* tagQuery = [PFQuery queryWithClassName:@"Tag"];
-        [tagQuery whereKey:@"name" equalTo:self.tagName];
-        [tagQuery includeKey:@"recipe"];
-        tagQuery.limit = 20;
-        
-        [tagQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            if (objects){
-                NSMutableArray* arr = [[NSMutableArray alloc]init];
-                for (Tag* tag in objects){
-                    [arr addObject:tag.recipe];
-                }
-                self.recipes = [NSArray arrayWithArray:arr];
-                [self.tableView reloadData];
-            }else {
-                NSLog(@"error finding recipe results: %@", error.localizedDescription);
-            }
-        }];
+        [self recipesWithTag];
     }
     else if (self.searchString) {
-        PFQuery *searchQuery = [PFQuery queryWithClassName:@"Recipe"];
-        [searchQuery whereKey:@"name" containsString:self.searchString];
-        searchQuery.limit = 50;
-        
-        [searchQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
-            [SVProgressHUD dismiss];
-            if (objects){
-                self.recipes = objects;
-                [self.tableView reloadData];
-            }
-            else {
-                NSLog(@"error finding recipe results: %@", error.localizedDescription);
-            }
-        }];
+        [self recipesWithSearchString];
     }
+}
+
+- (void) recipesWithCourseType {
+    PFQuery* query = [PFQuery queryWithClassName:@"Recipe"];
+    [query whereKey:@"courseType" equalTo:self.courseType.name];
+    query.limit = 20;
+    
+    [query findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (objects){
+            self.recipes = objects;
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"error finding recipe results: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void) recipesWithTag {
+    PFQuery* tagQuery = [PFQuery queryWithClassName:@"Tag"];
+    [tagQuery whereKey:@"name" equalTo:self.tagName];
+    [tagQuery includeKey:@"recipe"];
+    tagQuery.limit = 20;
+    
+    [tagQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (objects){
+            NSMutableArray* arr = [[NSMutableArray alloc]init];
+            for (Tag* tag in objects){
+                [arr addObject:tag.recipe];
+            }
+            self.recipes = [NSArray arrayWithArray:arr];
+            [self.tableView reloadData];
+        }else {
+            NSLog(@"error finding recipe results: %@", error.localizedDescription);
+        }
+    }];
+}
+
+- (void) recipesWithSearchString {
+    PFQuery *searchQuery = [PFQuery queryWithClassName:@"Recipe"];
+    [searchQuery whereKey:@"name" containsString:self.searchString];
+    searchQuery.limit = 20;
+    
+    [searchQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
+        [SVProgressHUD dismiss];
+        if (objects){
+            self.recipes = objects;
+            [self.tableView reloadData];
+        }
+        else {
+            NSLog(@"error finding recipe results: %@", error.localizedDescription);
+        }
+    }];
 }
 
 - (void) onSaveTapped:(id)sender {
     UIButton* saveButton = (UIButton*)sender;
-    RecipeResultsTableViewCell* cell = (RecipeResultsTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
+    RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
     Recipe* recipe = cell.recipe;
     if ([saveButton isSelected]){
         [Saved deleteSavedRecipe:recipe withCompletion:^(Boolean succeeded) {
@@ -139,7 +151,7 @@
 
 -(void) onShareTapped:(id)sender{
     NSLog(@"share");
-    RecipeResultsTableViewCell* cell = (RecipeResultsTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
+    RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
     [cell hideSwipeAnimated:YES];
 }
 
@@ -163,7 +175,7 @@
         //cell.backgroundColor = [UIColor grayColor];
         UIButton* save = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 50, 100)];
         [save addTarget:self action:@selector(onSaveTapped:) forControlEvents:UIControlEventTouchUpInside];
-        RecipeResultsTableViewCell* recipeCell = (RecipeResultsTableViewCell*)cell;
+        RecipeTableViewCell* recipeCell = (RecipeTableViewCell*)cell;
         
         [Saved savedRecipeExists:recipeCell.recipe withCompletion:^(Boolean saved) {
             if (saved){
@@ -201,7 +213,7 @@
         UIView* v2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 30, 50)];
         [v2 setBackgroundColor:[UIColor whiteColor]];
         [v2.widthAnchor constraintEqualToConstant:30].active = true;
-        [v2.heightAnchor constraintEqualToConstant:recipeCell.recipeNameLabel.bounds.size.height + 24].active = true;
+        [v2.heightAnchor constraintEqualToConstant:recipeCell.recipeTitleLabel.bounds.size.height + 24].active = true;
         
         UIStackView* stackView = [[UIStackView alloc] initWithArrangedSubviews:@[v1,save,share, v2] ];
         stackView.frame = CGRectMake(0, 0, 80, 80);
@@ -222,9 +234,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RecipeResultsTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
-    cell.recipeImageView.image = nil; 
+    RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
+    cell.recipeImageView.image = nil;
     cell.recipe = self.recipes[indexPath.row];
+    [cell setRecipe];
     cell.delegate = self;
     return cell;
 }
@@ -241,7 +254,7 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"DetailedRecipeSegue4"]){
         RecipeDetailViewController* recipeDetail = [segue destinationViewController];
-        RecipeResultsTableViewCell* cell = (RecipeResultsTableViewCell*)sender;
+        RecipeTableViewCell* cell = (RecipeTableViewCell*)sender;
         recipeDetail.recipe = cell.recipe;
     }
 }
