@@ -76,7 +76,7 @@
     else if (self.searchString) {
         PFQuery *searchQuery = [PFQuery queryWithClassName:@"Recipe"];
         [searchQuery whereKey:@"name" containsString:self.searchString];
-        searchQuery.limit = 20;
+        searchQuery.limit = 50;
         
         [searchQuery findObjectsInBackgroundWithBlock:^(NSArray * _Nullable objects, NSError * _Nullable error) {
             [SVProgressHUD dismiss];

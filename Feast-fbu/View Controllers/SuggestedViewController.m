@@ -56,8 +56,9 @@
     SuggestedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SuggestedCell" forIndexPath:indexPath];
     
     PFUser *user = self.users[indexPath.row];
-        cell.user = user;
-        [cell setUser];
+    cell.user = user;
+    
+    [cell setUser];
     return cell;
 }
 
