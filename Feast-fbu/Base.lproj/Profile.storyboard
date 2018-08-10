@@ -229,11 +229,14 @@
                                         </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="LnY-77-Gen" secondAttribute="trailing" constant="150" id="27e-Ov-UvY"/>
                                         <constraint firstItem="gMI-cD-Rhl" firstAttribute="centerY" secondItem="cSg-QL-b2V" secondAttribute="centerY" id="BSe-MB-vCo"/>
                                         <constraint firstItem="Imn-uq-kyl" firstAttribute="leading" secondItem="WvK-sY-mqs" secondAttribute="leading" constant="150" id="BYZ-Wg-mty"/>
                                         <constraint firstAttribute="trailing" secondItem="Imn-uq-kyl" secondAttribute="trailing" constant="150" id="DHW-7S-ShY"/>
                                         <constraint firstItem="9GK-JC-NRY" firstAttribute="leading" secondItem="cSg-QL-b2V" secondAttribute="trailing" constant="44" id="MrX-2z-YCF"/>
-                                        <constraint firstItem="0es-IR-aFX" firstAttribute="top" secondItem="LnY-77-Gen" secondAttribute="bottom" constant="7.5" id="Rs7-3Y-whe"/>
+                                        <constraint firstItem="LnY-77-Gen" firstAttribute="leading" secondItem="WvK-sY-mqs" secondAttribute="leading" constant="150" id="Mxp-L7-QzH"/>
+                                        <constraint firstItem="0es-IR-aFX" firstAttribute="top" secondItem="LnY-77-Gen" secondAttribute="bottom" constant="8" id="Rs7-3Y-whe"/>
+                                        <constraint firstItem="LnY-77-Gen" firstAttribute="top" secondItem="Imn-uq-kyl" secondAttribute="bottom" constant="8" id="bSz-1d-upq"/>
                                         <constraint firstItem="0es-IR-aFX" firstAttribute="centerX" secondItem="cSg-QL-b2V" secondAttribute="centerX" id="fF2-B3-bvU"/>
                                         <constraint firstItem="Imn-uq-kyl" firstAttribute="top" secondItem="WvK-sY-mqs" secondAttribute="top" constant="24" id="gnG-pf-gVA"/>
                                         <constraint firstItem="9GK-JC-NRY" firstAttribute="centerX" secondItem="gMI-cD-Rhl" secondAttribute="centerX" id="gpO-bl-gnW"/>
@@ -318,15 +321,17 @@
                                 <action selector="didTapLogout:" destination="bbL-O1-Hnz" id="6Br-r7-v2Z"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="HdT-rh-H9x">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="4fw-Rl-A0Z">
-                                <rect key="frame" x="258" y="7" width="101" height="30"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="HdT-rh-H9x">
+                            <inset key="landscapeImageInsets" minX="0.0" minY="0.0" maxX="101" maxY="0.0"/>
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="4fw-Rl-A0Z">
+                                <rect key="frame" x="309" y="0.0" width="50" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Saved Recipes"/>
+                                <state key="normal" image="icons8-meal-30 (1)"/>
                                 <connections>
                                     <segue destination="5Nb-t7-Fd0" kind="show" id="fU1-Xl-Efj"/>
                                 </connections>
                             </button>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -436,5 +441,6 @@
     </scenes>
     <resources>
         <image name="005-user-1" width="32" height="32"/>
+        <image name="icons8-meal-30 (1)" width="30" height="30"/>
     </resources>
 </document>
