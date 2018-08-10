@@ -13,17 +13,16 @@
 -(void)setUser{
     
     if (self.user[@"profileImage"] == nil) {
-        
         self.profilePic.image = [UIImage imageNamed: @"profile-image-blank"];
+        self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
     }
     else {
         self.profilePic.file = self.user[@"profileImage"];
         [self.profilePic loadInBackground];
-        
+        self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
     }
     self.username.text = self.user.username;
     
-    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
 }
 
 @end

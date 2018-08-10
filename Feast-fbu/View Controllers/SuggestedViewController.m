@@ -57,7 +57,6 @@
     
     PFUser *user = self.users[indexPath.row];
     cell.user = user;
-    
     [cell setUser];
     return cell;
 }
