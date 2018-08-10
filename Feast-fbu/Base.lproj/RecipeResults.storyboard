@@ -7,7 +7,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -39,19 +38,20 @@
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipe name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FA4-oo-yYB">
-                                                    <rect key="frame" x="15" y="377" width="345" height="37"/>
+                                                    <rect key="frame" x="16" y="383" width="343" height="49.5"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="FA4-oo-yYB" secondAttribute="bottom" constant="26.5" id="1Y4-Zn-nbg"/>
+                                                <constraint firstAttribute="bottom" secondItem="FA4-oo-yYB" secondAttribute="bottom" constant="8" id="1Y4-Zn-nbg"/>
                                                 <constraint firstAttribute="trailing" secondItem="cT7-iW-AeZ" secondAttribute="trailing" id="5ML-Z2-z9l"/>
-                                                <constraint firstItem="FA4-oo-yYB" firstAttribute="leading" secondItem="NO6-hx-jK2" secondAttribute="leadingMargin" id="KuX-FG-uhH"/>
-                                                <constraint firstItem="FA4-oo-yYB" firstAttribute="trailing" secondItem="NO6-hx-jK2" secondAttribute="trailingMargin" id="NEz-0r-TmY"/>
                                                 <constraint firstItem="cT7-iW-AeZ" firstAttribute="top" secondItem="NO6-hx-jK2" secondAttribute="top" id="Tsv-Z4-SGs"/>
-                                                <constraint firstItem="FA4-oo-yYB" firstAttribute="top" secondItem="cT7-iW-AeZ" secondAttribute="bottom" constant="2" id="w84-EJ-x0B"/>
+                                                <constraint firstItem="FA4-oo-yYB" firstAttribute="leading" secondItem="NO6-hx-jK2" secondAttribute="leading" constant="16" id="cIB-oG-DlM"/>
+                                                <constraint firstItem="FA4-oo-yYB" firstAttribute="centerX" secondItem="cT7-iW-AeZ" secondAttribute="centerX" id="oS5-cZ-AzU"/>
+                                                <constraint firstAttribute="trailing" secondItem="FA4-oo-yYB" secondAttribute="trailing" constant="16" id="pp1-Ox-AQp"/>
+                                                <constraint firstItem="FA4-oo-yYB" firstAttribute="top" secondItem="cT7-iW-AeZ" secondAttribute="bottom" constant="8" id="w84-EJ-x0B"/>
                                                 <constraint firstItem="cT7-iW-AeZ" firstAttribute="leading" secondItem="NO6-hx-jK2" secondAttribute="leading" id="wCs-HS-sKD"/>
                                             </constraints>
                                         </tableViewCellContentView>
