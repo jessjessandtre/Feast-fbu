@@ -10,8 +10,9 @@
 #import "Recipe.h"
 #import <Parse/Parse.h>
 #import <ParseUI/ParseUI.h>
+#import "MGSwipeTableCell.H"
 
-@interface RecipeResultsTableViewCell : UITableViewCell
+@interface RecipeResultsTableViewCell : MGSwipeTableCell
 
 @property (strong, nonatomic) Recipe* recipe;
 @property (strong, nonatomic) IBOutlet PFImageView *recipeImageView;
