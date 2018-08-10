@@ -235,7 +235,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
-    cell.recipeImageView.image = nil;
+    cell.recipeImageView.image = nil; 
     cell.recipe = self.recipes[indexPath.row];
     [cell setRecipe];
     cell.delegate = self;
