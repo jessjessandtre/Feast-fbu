@@ -24,9 +24,14 @@
 }
 
 - (void) setRecipe {
-    NSString *recipeImageURLString = self.recipe.image.url;
+    /* NSString *recipeImageURLString = self.recipe.image.url;
     NSURL *recipeImageURL = [NSURL URLWithString:recipeImageURLString];
     [self.recipeImageView setImageWithURL:recipeImageURL];
+    */
+    
+    self.recipeImageView.file = self.recipe.image;
+    [self.recipeImageView loadInBackground];
+    
     
     // self.recipeImageView.contentMode = UIViewContentModeScaleAspectFit;
     // self.recipeImageView.layer.cornerRadius = self.recipeImageView.frame.size.width / 32;

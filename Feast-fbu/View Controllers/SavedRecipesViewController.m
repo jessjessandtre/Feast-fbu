@@ -57,10 +57,6 @@
         [self fetchSavedRecipes];
     }
 }
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 - (void) fetchSavedRecipes {
     PFQuery* query = [PFQuery queryWithClassName:@"Saved"];

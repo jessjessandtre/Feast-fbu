@@ -31,7 +31,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jCL-l5-ZI1">
-                                    <rect key="frame" x="0.0" y="49" width="375" height="500"/>
+                                    <rect key="frame" x="0.0" y="49" width="375" height="284"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Et3-GD-9Wz">
                                         <size key="itemSize" width="150" height="150"/>
@@ -125,7 +125,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="417.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAh-uf-RXP">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KAh-uf-RXP" customClass="PFImageView">
                                             <rect key="frame" x="16" y="11" width="343" height="343"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="KAh-uf-RXP" secondAttribute="height" multiplier="1:1" id="GGG-aJ-Kuo"/>

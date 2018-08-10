@@ -9,9 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "Recipe.h"
 #import "MGSwipeTableCell.H"
+#import <ParseUI/ParseUI.h>
 
 @interface RecipeTableViewCell : MGSwipeTableCell
-@property (weak, nonatomic) IBOutlet UIImageView *recipeImageView;
+@property (weak, nonatomic) IBOutlet PFImageView *recipeImageView;
 @property (weak, nonatomic) IBOutlet UILabel *recipeTitleLabel;
 
 @property (strong, nonatomic) Recipe *recipe;

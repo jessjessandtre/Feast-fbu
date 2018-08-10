@@ -24,7 +24,7 @@
 #import "Follow.h"
 #import "InfiniteScrollActivityView.h"
 
-@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
+@interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *recipeTableView;
 @property (strong, nonatomic) NSMutableArray *recipes;
@@ -266,6 +266,9 @@
 
 -(void) onShareTapped:(id)sender{
     NSLog(@"share");
+    RecipeTableViewCell* cell = (RecipeTableViewCell*) [[[[[[sender superview] superview] superview] superview] superview] superview];
+    [cell hideSwipeAnimated:YES];
+
 }
 
 
