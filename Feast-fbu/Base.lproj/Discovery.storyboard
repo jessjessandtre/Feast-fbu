@@ -192,7 +192,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nMg-LC-zpR">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="-11" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Who To Follow" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Knx-4z-KgD">
@@ -210,18 +210,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9XM-kQ-ukW" customClass="PFImageView">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9XM-kQ-ukW" customClass="PFImageView">
                                                     <rect key="frame" x="15" y="11" width="38" height="38"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="38" id="YZj-vy-drG"/>
+                                                        <constraint firstAttribute="width" constant="38" id="cTp-nL-mS8"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyQ-wN-Rbm">
-                                                    <rect key="frame" x="61" y="20" width="299" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyQ-wN-Rbm">
+                                                    <rect key="frame" x="61" y="22.5" width="60" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="9XM-kQ-ukW" firstAttribute="bottom" secondItem="loL-G2-fO0" secondAttribute="bottomMargin" id="0Gn-fi-kVd"/>
+                                                <constraint firstItem="yyQ-wN-Rbm" firstAttribute="centerY" secondItem="9XM-kQ-ukW" secondAttribute="centerY" id="Cbg-X7-ckP"/>
+                                                <constraint firstItem="9XM-kQ-ukW" firstAttribute="top" secondItem="loL-G2-fO0" secondAttribute="topMargin" id="Ir6-ok-tAh"/>
+                                                <constraint firstItem="yyQ-wN-Rbm" firstAttribute="top" secondItem="loL-G2-fO0" secondAttribute="topMargin" constant="11.5" id="ZG4-Eu-Mlg"/>
+                                                <constraint firstItem="9XM-kQ-ukW" firstAttribute="leading" secondItem="loL-G2-fO0" secondAttribute="leadingMargin" id="cdK-ux-OoL"/>
+                                                <constraint firstItem="yyQ-wN-Rbm" firstAttribute="leading" secondItem="9XM-kQ-ukW" secondAttribute="trailing" constant="8" id="pwC-H0-ntw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="profilePic" destination="9XM-kQ-ukW" id="6uJ-gd-lZA"/>

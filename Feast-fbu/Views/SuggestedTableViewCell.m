@@ -10,26 +10,20 @@
 
 @implementation SuggestedTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 -(void)setUser{
+    
+    self.profilePic.layer.cornerRadius = self.profilePic.frame.size.width / 2;
     if (self.user[@"profileImage"] == nil) {
         self.profilePic.image = [UIImage imageNamed: @"profile-image-blank"];
     }
     else {
         self.profilePic.file = self.user[@"profileImage"];
         [self.profilePic loadInBackground];
+        
     }
     self.username.text = self.user.username;
+    
+    
 }
 
 @end
