@@ -33,6 +33,8 @@
     self.collectionView.delegate = self;
     self.collectionView.dataSource = self;
     
+    self.navigationItem.title = @"Saved";
+    
     UICollectionViewFlowLayout *layout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
     
     layout.minimumInteritemSpacing = 0;

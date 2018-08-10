@@ -72,6 +72,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <gestureRecognizers/>
                         <constraints>
+                            <constraint firstItem="ca2-lI-MOf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1CT-jI-mgU"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="J8c-6c-D90" secondAttribute="trailing" constant="67" id="2Bf-vg-K0X"/>
                             <constraint firstItem="ca2-lI-MOf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="201" id="51c-PU-WtY"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ca2-lI-MOf" secondAttribute="trailing" constant="67" id="5YT-dR-hus"/>
@@ -83,10 +84,11 @@
                             <constraint firstItem="xr1-kA-xRa" firstAttribute="top" secondItem="J8c-6c-D90" secondAttribute="bottom" constant="8" id="TxT-OQ-w7P"/>
                             <constraint firstItem="ca2-lI-MOf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="g0S-T8-5Wu"/>
                             <constraint firstItem="L7f-uD-joo" firstAttribute="top" secondItem="J8c-6c-D90" secondAttribute="bottom" constant="8" id="iVo-M1-hh2"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="EfK-ul-2Ae" secondAttribute="trailing" constant="67" id="kTI-9Y-j9I"/>
                             <constraint firstItem="ca2-lI-MOf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="201" id="kyV-VK-H2S"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ca2-lI-MOf" secondAttribute="trailing" constant="67" id="nMP-aI-A7H"/>
                             <constraint firstItem="L7f-uD-joo" firstAttribute="centerY" secondItem="xr1-kA-xRa" secondAttribute="centerY" id="q8z-PH-g1d"/>
+                            <constraint firstItem="J8c-6c-D90" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="s1P-zj-nsX"/>
+                            <constraint firstItem="EfK-ul-2Ae" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wDi-d8-ldQ"/>
                             <constraint firstItem="EfK-ul-2Ae" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="ydM-ss-99p"/>
                             <constraint firstItem="xr1-kA-xRa" firstAttribute="top" secondItem="EfK-ul-2Ae" secondAttribute="bottom" constant="70" id="zas-Do-0se"/>
                             <constraint firstItem="xr1-kA-xRa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="67" id="zbx-1q-2eI"/>
@@ -180,14 +182,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="inlogo" translatesAutoresizingMaskIntoConstraints="NO" id="fRl-48-EvR">
-                                <rect key="frame" x="110" y="278" width="154" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inlogo" translatesAutoresizingMaskIntoConstraints="NO" id="fRl-48-EvR">
+                                <rect key="frame" x="110" y="328.5" width="154" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="UZK-0J-Lzf"/>
+                                    <constraint firstAttribute="height" constant="110" id="Y9p-pN-tiJ"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.80392156859999997" green="0.20392156859999999" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fRl-48-EvR" firstAttribute="centerY" secondItem="xtZ-BR-d0C" secondAttribute="centerY" constant="50" id="G62-si-ySA"/>
+                            <constraint firstItem="fRl-48-EvR" firstAttribute="centerX" secondItem="xtZ-BR-d0C" secondAttribute="centerX" id="dJf-ly-rab"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="XNz-ne-zBR"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="iconImageView" destination="fRl-48-EvR" id="cym-K9-nzO"/>
                         <segue destination="BYZ-38-t0r" kind="custom" identifier="AfterAnimationSegue" customClass="StartSegue" id="7ET-xc-N9m"/>
@@ -205,14 +215,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="inlogo" translatesAutoresizingMaskIntoConstraints="NO" id="5zT-f9-j0K">
-                                <rect key="frame" x="110" y="278" width="154" height="110"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inlogo" translatesAutoresizingMaskIntoConstraints="NO" id="5zT-f9-j0K">
+                                <rect key="frame" x="110" y="328.5" width="154" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="43l-dl-vgd"/>
+                                    <constraint firstAttribute="height" constant="110" id="uax-wQ-rXr"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.80392156859999997" green="0.20392156859999999" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="5zT-f9-j0K" firstAttribute="centerX" secondItem="91l-ic-DW4" secondAttribute="centerX" id="deK-sn-vg2"/>
+                            <constraint firstItem="5zT-f9-j0K" firstAttribute="centerY" secondItem="91l-ic-DW4" secondAttribute="centerY" constant="50" id="tZG-Bv-iqN"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="MWz-39-4be"/>
                     </view>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="iconImageView" destination="5zT-f9-j0K" id="TS7-Mn-a8Q"/>
                         <segue destination="8OP-g6-ON3" kind="custom" identifier="AfterAnimationSegue" customClass="StartSegue" id="vPe-kx-zOw"/>
@@ -228,6 +246,6 @@
         <image name="inlogo" width="693" height="495"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="vPe-kx-zOw"/>
+        <segue reference="Zdd-oA-FVk"/>
     </inferredMetricsTieBreakers>
 </document>
