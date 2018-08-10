@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) NSArray* recipes;
+@property (assign, nonatomic) BOOL *emptyFlag;
+
 
 @end
 
@@ -108,6 +110,15 @@
         [SVProgressHUD dismiss];
         if (objects){
             self.recipes = objects;
+            
+            if (self.recipes.count == 0) {
+                self.emptyFlag = YES;
+                self.recipes = [NSArray arrayWithObject:@"Empty"];
+            }
+            else {
+                self.emptyFlag = NO;
+            }
+            
             [self.tableView reloadData];
         }
         else {
@@ -234,12 +245,20 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
-    cell.recipeImageView.image = nil; 
-    cell.recipe = self.recipes[indexPath.row];
-    [cell setRecipe];
-    cell.delegate = self;
-    return cell;
+    if (self.emptyFlag) {
+        RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
+        cell.recipeImageView.image = [UIImage imageNamed:@"tray"];
+        cell.recipeTitleLabel.text = @"No results! Try again. :)";
+        return cell;
+    }
+    else {
+        RecipeTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:@"RecipeResultsTableViewCell" forIndexPath:indexPath];
+        cell.recipeImageView.image = nil;
+        cell.recipe = self.recipes[indexPath.row];
+        [cell setRecipe];
+        cell.delegate = self;
+        return cell;
+    }
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
