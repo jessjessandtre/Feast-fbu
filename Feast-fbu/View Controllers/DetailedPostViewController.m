@@ -19,7 +19,6 @@
 @interface DetailedPostViewController ()
 
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *username2Label;
 @property (strong, nonatomic) IBOutlet PFImageView *profileImageView;
 @property (strong, nonatomic) IBOutlet UILabel *createdAtLabel;
 @property (strong, nonatomic) IBOutlet PFImageView *postImageView;
@@ -27,7 +26,6 @@
 @property (strong, nonatomic) IBOutlet UILabel *recipeNameLabel;
 @property (weak, nonatomic) IBOutlet UIButton *likeButton;
 @property (strong, nonatomic) IBOutlet UILabel *numLikesLabel;
-@property (weak, nonatomic) IBOutlet UIView *likeView;
 @property (weak, nonatomic) IBOutlet UIButton *commentView;
 @property (weak, nonatomic) IBOutlet UITableView *detailedPostTableView;
 
@@ -58,7 +56,6 @@
 
 - (void) refreshData {
     self.usernameLabel.text = self.post.user.username;
-    self.username2Label.text = self.post.user.username;
     self.captionLabel.text = self.post.caption;
     
     NSDate* date = self.post.createdAt;
