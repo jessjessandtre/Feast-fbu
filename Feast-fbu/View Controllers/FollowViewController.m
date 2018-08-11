@@ -102,7 +102,10 @@
     // Pass the selected object to the new view controller.
     if ([segue.identifier isEqualToString:@"ExternalProfileSegue5"]) {
         ExternalProfileViewController *externalProfileViewController = [segue destinationViewController];
-        externalProfileViewController.user = self.user;
+        UITableViewCell *tappedCell = sender;
+        NSIndexPath *indexPath = [self.followTableView indexPathForCell:tappedCell];
+        PFUser *user = self.follows[indexPath.row];
+        externalProfileViewController.user = user;
     }
 }
 
