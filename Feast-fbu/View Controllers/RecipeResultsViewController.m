@@ -40,9 +40,13 @@
                                                object:nil];
     
     // Do any additional setup after loading the view.
+
     NSLog(@"coursetype %@", self.courseType );
     NSLog(@"tagname %@", self.tagName);
     NSLog(@"searchstring %@", self.searchString);
+    
+    [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleNone];
+    
     [SVProgressHUD show];
     [self fetchRecipes];
 }
