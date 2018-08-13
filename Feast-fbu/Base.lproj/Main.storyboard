@@ -190,7 +190,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.80392156859999997" green="0.20392156859999999" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.80392156862745101" green="0.20392156862745098" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fRl-48-EvR" firstAttribute="centerY" secondItem="xtZ-BR-d0C" secondAttribute="centerY" constant="50" id="G62-si-ySA"/>
                             <constraint firstItem="fRl-48-EvR" firstAttribute="centerX" secondItem="xtZ-BR-d0C" secondAttribute="centerX" id="dJf-ly-rab"/>
@@ -246,6 +246,6 @@
         <image name="inlogo" width="693" height="495"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Zdd-oA-FVk"/>
+        <segue reference="vPe-kx-zOw"/>
     </inferredMetricsTieBreakers>
 </document>
