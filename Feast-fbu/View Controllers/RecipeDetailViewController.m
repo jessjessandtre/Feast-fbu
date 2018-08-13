@@ -207,19 +207,39 @@
 }
 
 - (void)createImagePickerController {
-    UIImagePickerController *imagePickerVC = [UIImagePickerController new];
-    imagePickerVC.delegate = self;
-    imagePickerVC.allowsEditing = YES;
-    //imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Post Photo"
+                                                                   message:@"Select the source of your photo"
+                                                            preferredStyle:(UIAlertControllerStyleAlert)];
+    UIAlertAction* accessCamera = [UIAlertAction actionWithTitle:@"Camera" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+        imagePickerVC.delegate = self;
+        imagePickerVC.allowsEditing = YES;
+        
+        if ([UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypeCamera)]){
+            imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
+        }
+        else {
+            NSLog(@"Camera 🚫 available so we will use photo library instead");
+            imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        }
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+    }];
     
-    if ([UIImagePickerController isSourceTypeAvailable:(UIImagePickerControllerSourceTypeCamera)]){
-        imagePickerVC.sourceType = UIImagePickerControllerSourceTypeCamera;
-    }
-    else {
-        NSLog(@"Camera 🚫 available so we will use photo library instead");
+    UIAlertAction* accessCameraRoll = [UIAlertAction actionWithTitle:@"Camera Roll" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UIImagePickerController *imagePickerVC = [UIImagePickerController new];
+        imagePickerVC.delegate = self;
+        imagePickerVC.allowsEditing = YES;
+        
         imagePickerVC.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-    }
-    [self presentViewController:imagePickerVC animated:YES completion:nil];
+       
+        [self presentViewController:imagePickerVC animated:YES completion:nil];
+    }];
+    
+    [alert addAction:accessCamera];
+    [alert addAction:accessCameraRoll];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(nonnull NSDictionary<NSString *,id> *)info {
