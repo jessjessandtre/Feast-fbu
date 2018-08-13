@@ -12,7 +12,7 @@
 #import <Toast/Toast.h>
 #import "Tag.h"
 
-@interface CreatePostViewController () 
+@interface CreatePostViewController () <UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UIImageView *postImageView;
 @property (strong, nonatomic) IBOutlet UITextField *captionTextField;
@@ -26,6 +26,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.captionTextField.delegate = self;
+    self.tagTextField.delegate = self;
     
     self.profileImageView.layer.cornerRadius = self.profileImageView.frame.size.width / 2;
     self.profileImageView.clipsToBounds = YES;
@@ -125,6 +128,18 @@
 }
 - (IBAction)didTapScreen:(id)sender {
     [self.view endEditing:YES];
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view.frame = CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y - 200, self.view.frame.size.width, self.view.frame.size.height);
+    }];
+}
+
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    [UIView animateWithDuration:0.3 animations:^{
+        self.view.frame = CGRectMake(self.view.frame.origin.x,self.view.frame.origin.y + 200, self.view.frame.size.width, self.view.frame.size.height);
+    }];
 }
 
 -(void)alertControlWithTitle:(NSString*)title andMessage:(NSString*)message {
