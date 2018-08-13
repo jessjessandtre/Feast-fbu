@@ -48,7 +48,7 @@
 - (void) receiveNotification: (NSNotification *) notification {
     if ([[notification name] isEqualToString:@"RecipeSaveNotification"]) {
         NSLog (@"Successfully received the recipe save notification results!");
-        [self recipesWithCourseType];
+        [self fetchRecipes];
     }
     //tag updates?
 }
