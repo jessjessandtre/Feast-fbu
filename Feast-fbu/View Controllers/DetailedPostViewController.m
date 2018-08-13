@@ -9,7 +9,6 @@
 #import "DetailedPostViewController.h"
 #import <ParseUI/ParseUI.h>
 #import <DateTools.h>
-#import "DetailViewController.h"
 #import "CommentsViewController.h"
 #import "Like.h"
 #import "RecipeDetailViewController.h"
