@@ -13,6 +13,8 @@
 #import "RecipeDetailViewController.h"
 #import "Tag.h"
 #import "Saved.h"
+#import <Toast/Toast.h>
+
 
 @interface RecipeResultsViewController () <UITableViewDelegate, UITableViewDataSource, MGSwipeTableCellDelegate>
 
@@ -138,6 +140,8 @@
                 [[NSNotificationCenter defaultCenter]
                  postNotificationName:@"RecipeSaveNotification"
                  object:nil];
+                [[self.view superview] makeToast:@"unsaved" duration:2.0 position:CSToastPositionBottom];
+
             }
         }];
         
@@ -150,6 +154,8 @@
                 [[NSNotificationCenter defaultCenter]
                  postNotificationName:@"RecipeSaveNotification"
                  object:nil];
+                [[self.view superview] makeToast:@"saved" duration:2.0 position:CSToastPositionBottom];
+
             }
         }];
         

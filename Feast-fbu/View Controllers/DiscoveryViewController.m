@@ -23,6 +23,7 @@
 #import "AutofillResultCellTableViewCell.h"
 #import "Follow.h"
 #import "InfiniteScrollActivityView.h"
+#import <Toast/Toast.h>
 
 @interface DiscoveryViewController () <UITableViewDelegate, UITableViewDataSource,  MGSwipeTableCellDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UITabBarDelegate>
 
@@ -242,6 +243,8 @@
                 [[NSNotificationCenter defaultCenter]
                  postNotificationName:@"RecipeSaveNotification"
                  object:nil];
+                [[self.view superview] makeToast:@"unsaved" duration:2.0 position:CSToastPositionBottom];
+
             }
         }];
         
@@ -254,6 +257,9 @@
                 [[NSNotificationCenter defaultCenter]
                  postNotificationName:@"RecipeSaveNotification"
                  object:nil];
+                [[self.view superview] makeToast:@"saved" duration:2.0 position:CSToastPositionBottom];
+                
+
             }
         }];
          

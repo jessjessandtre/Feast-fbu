@@ -17,6 +17,7 @@
 #import "Tag.h"
 #import "RecipeResultsViewController.h"
 #import "AddTagViewController.h"
+#import <Toast/Toast.h>
 
 @interface RecipeDetailViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
@@ -174,6 +175,8 @@
                 [[NSNotificationCenter defaultCenter]
                  postNotificationName:@"RecipeSaveNotification"
                  object:nil];
+                [self.view makeToast:@"unsaved" duration:2.0 position:CSToastPositionBottom];
+
             }
         }];
         
@@ -186,6 +189,8 @@
                 [[NSNotificationCenter defaultCenter]
                  postNotificationName:@"RecipeSaveNotification"
                  object:nil];
+                [self.view makeToast:@"saved" duration:2.0 position:CSToastPositionBottom];
+
             }
         }];
         
