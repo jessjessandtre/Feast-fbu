@@ -14,7 +14,7 @@
         <!--Comments View Controller-->
         <scene sceneID="umq-oz-4ra">
             <objects>
-                <viewController id="i10-Xo-A11" customClass="CommentsViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Comments" id="i10-Xo-A11" customClass="CommentsViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="doR-jm-e8y">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

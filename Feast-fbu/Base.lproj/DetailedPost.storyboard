@@ -527,7 +527,7 @@
         <!--Comments-->
         <scene sceneID="tKw-8E-B4U">
             <objects>
-                <viewControllerPlaceholder storyboardName="Comments" id="kFh-La-rhV" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="Comments" referencedIdentifier="Comments" id="kFh-La-rhV" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CS8-Nf-zib" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2337" y="520"/>
