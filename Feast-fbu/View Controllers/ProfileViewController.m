@@ -195,9 +195,7 @@
     
     editedImage = [self resizeImage:editedImage withSize:imageSize];
     
-    self.profileImageView = editedImage;
-    
-    [self setProfilePicture];
+    [self setProfilePicture:editedImage];
     
     [self dismissViewControllerAnimated:YES completion:nil];
 
@@ -217,8 +215,8 @@
     return newImage;
 }
 
-- (void) setProfilePicture {
-    self.user[@"profileImage"] = [self getPFFileFromImage:self.profileImageView];
+- (void) setProfilePicture:(UIImage*)image {
+    self.user[@"profileImage"] = [self getPFFileFromImage:image];
     
     [self.user saveInBackgroundWithBlock:^(BOOL succeeded, NSError * _Nullable error) {
         self.profileImageView.file = self.user[@"profileImage"];
