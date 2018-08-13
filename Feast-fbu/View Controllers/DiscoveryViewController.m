@@ -20,7 +20,6 @@
 #import "ParseUI.h"
 #import "PostCollectionViewCell.h"
 #import "Tag.h"
-#import "AutofillResultCellTableViewCell.h"
 #import "Follow.h"
 #import "InfiniteScrollActivityView.h"
 #import <Toast/Toast.h>

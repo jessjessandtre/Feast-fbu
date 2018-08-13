@@ -308,17 +308,9 @@
                         <viewLayoutGuide key="safeArea" id="yub-Fb-eij"/>
                     </view>
                     <navigationItem key="navigationItem" id="J1b-OA-ThL">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="RXN-af-UXz">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aqD-rJ-0mq">
-                                <rect key="frame" x="16" y="7" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="didTapLogout:" destination="bbL-O1-Hnz" eventType="touchUpInside" id="eXf-ju-KdH"/>
-                                </connections>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="bYG-U3-Fs7">
                             <connections>
-                                <action selector="didTapLogout:" destination="bbL-O1-Hnz" id="6Br-r7-v2Z"/>
+                                <action selector="didTapLogout:" destination="bbL-O1-Hnz" id="OHn-O9-Jzb"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" style="plain" id="HdT-rh-H9x">
