@@ -133,6 +133,7 @@
         
         //Update the object variables
         if (periods.count > 0) {
+            
             //Set object's variables with updated array values
             [self updateVariables];
         }
