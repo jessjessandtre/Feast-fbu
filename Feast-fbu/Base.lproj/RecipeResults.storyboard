@@ -24,15 +24,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeResultsTableViewCell" rowHeight="441" id="6wg-IE-40r" customClass="RecipeTableViewCell">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="441"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipeResultsTableViewCell" rowHeight="445" id="6wg-IE-40r" customClass="RecipeTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="445"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6wg-IE-40r" id="NO6-hx-jK2">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="440.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="444.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="bottomLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipe name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FA4-oo-yYB">
-                                                    <rect key="frame" x="16" y="364" width="343" height="68.5"/>
+                                                    <rect key="frame" x="16" y="364" width="343" height="58"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -46,7 +46,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cT7-iW-AeZ" firstAttribute="top" secondItem="NO6-hx-jK2" secondAttribute="topMargin" id="0ak-eS-ZKc"/>
-                                                <constraint firstAttribute="bottom" secondItem="FA4-oo-yYB" secondAttribute="bottom" constant="8" id="1Y4-Zn-nbg"/>
+                                                <constraint firstAttribute="bottom" secondItem="FA4-oo-yYB" secondAttribute="bottom" constant="22.5" id="1Y4-Zn-nbg"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="cT7-iW-AeZ" secondAttribute="trailing" id="LpW-MF-ZkE"/>
                                                 <constraint firstItem="FA4-oo-yYB" firstAttribute="leading" secondItem="NO6-hx-jK2" secondAttribute="leading" constant="16" id="cIB-oG-DlM"/>
                                                 <constraint firstItem="FA4-oo-yYB" firstAttribute="centerX" secondItem="cT7-iW-AeZ" secondAttribute="centerX" id="oS5-cZ-AzU"/>
