@@ -43,6 +43,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ic3-7f-lgb">
                         <barButtonItem key="leftBarButtonItem" title="Done" id="TMQ-n3-c5u">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapCancel:" destination="YK7-H0-Fmt" id="ltJ-wT-1wi"/>
                             </connections>
@@ -66,9 +67,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tHj-v3-qRh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="OVH-U4-rQ5">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="OVH-U4-rQ5">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80392156859999997" green="0.20392156859999999" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

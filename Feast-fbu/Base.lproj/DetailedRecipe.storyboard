@@ -223,11 +223,13 @@
                     </view>
                     <navigationItem key="navigationItem" id="IlS-n0-D4z">
                         <barButtonItem key="leftBarButtonItem" title="Cancel" id="E5v-4P-pgb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapCancel:" destination="hY7-Cj-cgi" id="dCd-hT-z93"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="tp2-KG-vUv">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapPost:" destination="hY7-Cj-cgi" id="VaJ-vw-nct"/>
                             </connections>
@@ -556,9 +558,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wqs-wH-4ct" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QAy-8N-4zo">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="QAy-8N-4zo">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80392156859999997" green="0.20392156859999999" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -585,7 +588,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="Z6N-n0-eex">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.99215686274509807" green="0.23137254901960785" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.80392156862745101" green="0.20392156862745098" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -629,6 +632,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="F9U-KD-8Xh">
                         <barButtonItem key="rightBarButtonItem" title="Cancel" id="Eee-he-AFt">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="didTapDone:" destination="Gz4-zr-EWq" id="HFG-Z8-ULZ"/>
                             </connections>
@@ -652,9 +656,10 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="foB-5t-E55" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8eT-qj-tGN">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="8eT-qj-tGN">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.80392156859999997" green="0.20392156859999999" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
