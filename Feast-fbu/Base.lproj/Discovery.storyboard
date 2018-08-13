@@ -167,9 +167,11 @@
                         </barButtonItem>
                         <rightBarButtonItems>
                             <barButtonItem enabled="NO" image="success.png" id="j4C-0o-k2e">
-                                <color key="tintColor" red="0.80392156862745101" green="0.20392156862745098" blue="0.13333333333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.80000000000000004" green="0.20000000000000001" blue="0.12941176470588237" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </barButtonItem>
-                            <barButtonItem enabled="NO" id="Pt5-1a-fGR"/>
+                            <barButtonItem enabled="NO" image="success.png" id="Pt5-1a-fGR">
+                                <color key="tintColor" red="0.80392156859999997" green="0.20392156859999999" blue="0.1333333333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <size key="freeformSize" width="375" height="1000"/>

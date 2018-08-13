@@ -382,6 +382,7 @@
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OIY-83-aSB">
                                                             <rect key="frame" x="8" y="8" width="89" height="89"/>
+                                                            <color key="backgroundColor" white="0.91219075524166671" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" image="add-48"/>
                                                             <connections>
                                                                 <action selector="postTapped:" destination="6AO-MX-ZfB" eventType="touchUpInside" id="HQV-CJ-yuN"/>

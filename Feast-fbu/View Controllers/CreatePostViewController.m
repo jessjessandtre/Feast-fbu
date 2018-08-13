@@ -8,9 +8,9 @@
 
 #import "CreatePostViewController.h"
 #import "SVProgressHUD.h"
-#import "DetailViewController.h"
-#import <Toast/Toast.h>
-#import "Tag.h"
+#import <Toast/Toast.h> 
+#import "Tag.h".
+#import <ParseUI/ParseUI.h>
 
 @interface CreatePostViewController () <UITextFieldDelegate>
 
