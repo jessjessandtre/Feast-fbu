@@ -31,12 +31,15 @@
     self.recipeImage.file = recipe.image;
     [self.recipeImage loadInBackground];
     
-    CAGradientLayer *gradientLayer = [CAGradientLayer layer];
-    gradientLayer.frame = self.bounds;
-    gradientLayer.colors = @[(id)[UIColor clearColor].CGColor, (id)[UIColor grayColor].CGColor];
-    gradientLayer.startPoint = CGPointMake(0.5f, 0.5f);
-    gradientLayer.endPoint = CGPointMake(0.5f, 2.0f);
-    [self.recipeImage.layer insertSublayer:gradientLayer atIndex:0];
+    if (self.recipeImage.layer.sublayers == nil){
+        NSLog(@"no sublayers");
+        CAGradientLayer *gradientLayer = [CAGradientLayer layer];
+        gradientLayer.frame = self.bounds;
+        gradientLayer.colors = @[(id)[UIColor clearColor].CGColor, (id)[UIColor blackColor].CGColor];
+        gradientLayer.startPoint = CGPointMake(0.5f, 0.5f);
+        gradientLayer.endPoint = CGPointMake(0.5f, 2.0f);
+        [self.recipeImage.layer insertSublayer:gradientLayer atIndex:0];
+    }
     
     // self.recipeImage.layer.cornerRadius = self.recipeImage.frame.size.width / 32;
     
